@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.png">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7491bed1a1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tutor</title>
+</head>
+<body>
+    <div id="app">
+        <div class="blog-details-main container">
+            <br>
+            <section id="header" class="frontend-navbar sticky-top">
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
+                    <div class="container">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="assets/logo.png" width="150px">
+                        </a>
+                        <span class="mobile-view d-lg-none">
+                            <a href="login.html" class="btn btn-outline-danger nav-login">Login</a>
+                            <a href="registration.html" class="btn btn-danger nav-login">Sign Up</a>
+                        </span>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0"></ul>
+                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
+                                <li class="nav-item mgl-1"><a href="index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item mgl-1"><a href="tutionBoards.html" class="nav-link">Tution Boards</a></li>
+                                <li class="nav-item mgl-1"><a href="about.html" class="nav-link">About</a></li>
+                                <li class="nav-item mgl-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
+                                <li class="nav-item mgl-1"><a href="blog.html" class="nav-link">Blogs</a></li>
+                                <li class="nav-item mgl-1"><a href="galleries.html" class="nav-link">Galleries</a></li>
+                                <li class="nav-item mgl-1 d-none d-md-block"><a href="login.html"><button class="btn btn-outline-danger px-4">LOGIN</button></a></li>
+                                <li class="nav-item mgl-1 d-none d-md-block"><a href="registration.html"><button class="btn btn-primary1">REGISTRATION</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+
+            <section class="slider mt-4 ">
+                <div id="carouselExample" class="carousel slide rounded-4" style="height: 300px; overflow: hidden;"  data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/365a2dcf-4d29-4686-95e3-076e8b711402" class="d-block w-100 rounded-4" alt="Slide 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/f9d8762e-6009-4ac6-8ba1-c378dcc7c715" class="d-block w-100 rounded-4" alt="Slide 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/28102ee3-599b-4828-bfa8-3bf9f826431c" class="d-block w-100 rounded-4" alt="Slide 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+            
+            <section class="mt-5 premium-tutor">
+                <div class="top text-center ">
+                    <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">PREMIUM </span> TUTOR</h2>
+                    <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Find tutor of your choise</p>
+                </div>
+
+                <div class="premium-tutor-body mt-5">
+                    <div class="search row ">
+                        <div class="card mt-3 rounded-4 col-lg-4">
+                            <div class="card-body">
+                                <h4 style="color: rgb(235, 118, 42); text-align: center;">SEARCH FOR TUTORS</h4>
+                                <div class="form-control mt-2">
+                                    <div class="mb-3 position-relative" id="selectDivision">
+                                        <div>
+                                            <input type="text" id="divisionInput" class="p-2 rounded-2 border-1 border-dark-subtle w-100" placeholder="Select Division" title="Select Division" readonly>
+                                        </div>
+                                        <div class="position-absolute d-flex align-items-center" style="top: 30%; right: 5%;">
+                                            <img src="assets/icons/close.png" id="clearDivisionSelection" alt="close" height="10px" style="display: none;">
+                                            <img src="assets/icons/down.png" alt="down" id="divisionDropdownIcon" height="10px" class="ms-2">
+                                        </div>
+                                        <ul id="divisionList" class="list-group position-absolute w-100" style="display: none; background: white; z-index: 1000; border: 1px solid #ddd;">
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Dhaka')">Dhaka</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Chattogram')">Chattogram</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Rajshahi')">Rajshahi</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Khulna')">Khulna</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Barishal')">Barishal</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Sylhet')">Sylhet</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Rangpur')">Rangpur</li>
+                                            <li class="list-group-item" onclick="selectOption('divisionInput', 'Mymensingh')">Mymensingh</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-3 position-relative" id="selectDistrict">
+                                        <div>
+                                            <input type="text" id="districtInput" class="p-2 rounded-2 border-1 border-dark-subtle w-100" placeholder="Select District" title="Select District" readonly>
+                                        </div>
+                                        <div class="position-absolute d-flex align-items-center" style="top: 30%; right: 5%;">
+                                            <img src="assets/icons/close.png" id="clearDistrictSelection" alt="close" height="10px" style="display: none;">
+                                            <img src="assets/icons/down.png" alt="down" id="districtDropdownIcon" height="10px" class="ms-2">
+                                        </div>
+                                        <ul id="districtList" class="list-group position-absolute w-100" style="display: none; background: white; z-index: 1000; border: 1px solid #ddd;">
+                                            <li class="list-group-item" onclick="selectOption('districtInput', 'District 1')">District 1</li>
+                                            <li class="list-group-item" onclick="selectOption('districtInput', 'District 2')">District 2</li>
+                                            <li class="list-group-item" onclick="selectOption('districtInput', 'District 3')">District 3</li>
+                                            <li class="list-group-item" onclick="selectOption('districtInput', 'District 4')">District 4</li>
+                                            <li class="list-group-item" onclick="selectOption('districtInput', 'District 5')">District 5</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-3 position-relative" id="selectArea">
+                                        <div>
+                                            <input type="text" id="areaInput" class="p-2 rounded-2 border-1 border-dark-subtle w-100" placeholder="Select Area" title="Select Area" readonly>
+                                        </div>
+                                        <div class="position-absolute d-flex align-items-center" style="top: 30%; right: 5%;">
+                                            <img src="assets/icons/close.png" id="clearAreaSelection" alt="close" height="10px" style="display: none;">
+                                            <img src="assets/icons/down.png" alt="down" id="areaDropdownIcon" height="10px" class="ms-2">
+                                        </div>
+                                        <ul id="areaList" class="list-group position-absolute w-100" style="display: none; background: white; z-index: 1000; border: 1px solid #ddd;">
+                                            <li class="list-group-item" onclick="selectOption('areaInput', 'Area 1')">Area 1</li>
+                                            <li class="list-group-item" onclick="selectOption('areaInput', 'Area 2')">Area 2</li>
+                                            <li class="list-group-item" onclick="selectOption('areaInput', 'Area 3')">Area 3</li>
+                                            <li class="list-group-item" onclick="selectOption('areaInput', 'Area 4')">Area 4</li>
+                                            <li class="list-group-item" onclick="selectOption('areaInput', 'Area 5')">Area 5</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-3 position-relative" id="selectGender">
+                                        <div>
+                                            <input type="text" id="genderInput" class="p-2 rounded-2 border-1 border-dark-subtle w-100" placeholder="Select Gender" title="Select Gender" readonly>
+                                        </div>
+                                        <div class="position-absolute d-flex align-items-center" style="top: 30%; right: 5%;">
+                                            <img src="assets/icons/close.png" id="clearGenderSelection" alt="close" height="10px" style="display: none;">
+                                            <img src="assets/icons/down.png" alt="down" id="genderDropdownIcon" height="10px" class="ms-2">
+                                        </div>
+                                        <ul id="genderList" class="list-group position-absolute w-100" style="display: none; background: white; z-index: 1000; border: 1px solid #ddd;">
+                                            <li class="list-group-item" onclick="selectOption('genderInput', 'Male')">Male</li>
+                                            <li class="list-group-item" onclick="selectOption('genderInput', 'Female')">Female</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 mt-4">
+                            <div class="maleFemaleTutor  ms-5 rounded-4 bg-info-subtle p-4">
+                                <div class="maleFemale d-flex">
+                                    <div class="d-flex ">
+                                        <img src="assets/icons/man.png" alt="" height="25px">
+                                        <p class="text-dark-emphasis fw-semibold ms-2">Male Tutors</p>
+                                    </div>
+                                    <div class="d-flex ms-5">
+                                        <img src="assets/icons/woman.png" alt="" height="25px">
+                                        <p class="text-dark-emphasis fw-semibold ms-2">Female Tutors</p>
+                                    </div>
+                                </div>
+    
+                                <div class="totorBtns d-flex align-items-center ">
+                                    <button class="btn btn-info text-white rounded-3">Previous</button>
+                                    <p class="m-1">Page</p>
+                                    <p class="d-flex align-items-center mt-3"><span class="bg-info p-1 m-2"> 1 </span> of <span class="bg-success-subtle m-2 p-1"> 1 </span></p>
+                                    <button class="btn btn-success text-white rounded-3">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="container popular-category mt-5">
+                        <div class="popular-category-top text-center">
+                            <div class="title">
+                                <h2 class="fw-semibold">
+                                    <span style="color: rgb(37, 109, 138);;">POPULAR</span> CATEGORY</h2>
+                                </div>
+                                <div class="slogan mt-4">
+                                    <div class="slogan-text">
+                                        <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Select your categories</p>
+                                    </div>
+                                </div>
+                                <div class="btn-title-view-all mt-3 me-0">
+                                    <a href="#" class="d-flex justify-content-end">
+                                        <button class="btn">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                                        </button>
+                                    </a>
+                                </div>
+                        </div>
+
+
+                        <div class="row mt-4">
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category col-lg-2 col-6 mt-4">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/773b693b-677a-484f-9698-6b0afbea0b53" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                                                </div>
+                                                <div class="col-4 mt-4 rounded-3 arrowBtn">
+                                                    <img class="arrow1 mt-2" src="assets/icons/arrow.png" >
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">Bangla Version</h5>
+                                            <span class="text-danger">14222 Tuitions</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                </section>
+        
+            <section class="container pt-4 mt-5" >
+                <div class="text-center mb-5">
+                    <div class="title ">
+                        <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">FREE</span> SERVICE</h2>
+                    </div>
+                    <div class="slogan mt-4">
+                        <div class="slogan-text">
+                            <p  class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Choose your service </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row free-service px-3  bg-black p-4 rounded-5">
+                    <div class="col-lg-4 px-3">
+                        <div class="card text-center mt-5" style="border-radius:20px;">
+                            <div>
+                                <img src="/assets/blood%201-C5s9Wmxj.png">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Blood Bank</div>
+                                <div class="card-text">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                <button class="btn mt-3" style="background:linear-gradient(110deg, #2fee72 9.99%, #E0149B 208.85%);color:#fff;font-weight:bold;">Take Service 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 px-3">
+                        <div class="card text-center mt-5" style="border-radius:20px;">
+                            <div>
+                                <img src="/assets/bus-school%201-CSqS10Bp.png">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Transport Fare</div>
+                                <div class="card-text">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                <button class="btn mt-3" style="background:linear-gradient(110deg, #2fee72 9.99%, #E0149B 208.85%);color:#fff;font-weight:bold;">Take Service 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 px-3">
+                        <div class="card text-center mt-5" style="border-radius:20px;">
+                            <div>
+                                <img src="/assets/bookshelf%201-DrY_dwGn.png">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Library For All</div>
+                                <div class="card-text">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                <button class="btn mt-3" style="background:linear-gradient(110deg, #2fee72 9.99%, #E0149B 208.85%);color:#fff;font-weight:bold;">Take Service 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        
+            <section class="container update-blog mt-5">
+                <div class="title text-center">
+                    <h2><span style="color: rgb(37, 109, 138);">UPDATE</span> BLOG</h2>
+                    <p  class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Recent news for you</p>
+                </div>
+                <div class="btn-title-view-all mt-4">
+                    <a href="#" class="d-flex justify-content-end ">
+                        <button class="btn">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                        </button>
+                    </a>
+                </div>
+                <div class="blogs mt-4">
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card">
+                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/a0a587e9-3e46-44fc-bb5b-fb4bfda21e18" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">প্রতিদিন টিউশন পড়িয়ে ক্লান্ত থাকছেন ?</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card">
+                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/1d7e7fe0-0dea-4d15-8e11-d5a284b2f50b" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Tutor Provide এখন সাভারে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container clients-review mt-5">
+                <div class="text-center ">
+                    <div class="title">
+                        <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);" >What some</span> awesome people</h2>
+                    </div>
+                    <div class="title">
+                        <h2 class="fw-semibold"><span  style="color: rgb(37, 109, 138);" >says</span> about us</h2>
+                    </div>
+                    <div class="slogan mt-4">
+                        <div class="slogan-text">
+                            <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3">TESTIMONIAL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-rev mt-5">
+                    <div class="slider-items-rev row ">
+                        <div class=" col-lg-6">
+                            <div class="card" style="width: 480px;">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="/assets/gurdian-qZ8bYXOc.png" alt="client-review" style="width: 100%; height: auto;">
+                                        </div>
+                                        <div class="col-7">
+                                            <h5>Mizanur Rafi</h5>
+                                            <p>Mirpur, Dhaka, Bangladesh</p>
+                                        </div>
+                                        <div class="col-3 text-end">
+                                            <button class="btn" style="color: rgb(231, 85, 16);">GUARDIAN</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-text mt-4">Verry Good Service.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card" style="width: 480px;">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="/assets/gurdian-qZ8bYXOc.png" alt="client-review" style="width: 100%; height: auto;">
+                                        </div>
+                                        <div class="col-7">
+                                            <h5>Demo Guardian 1</h5>
+                                            <p>Mirpur, Dhaka, Bangladesh</p>
+                                        </div>
+                                        <div class="col-3 text-end">
+                                            <button class="btn" style="color: rgb(231, 85, 16);">GUARDIAN</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-text mt-4">I am happy by take  your service thank you . </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container tution-live-count pt-5 mt-5">
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <div class="card card-pending text-center rounded-4">
+                            <div class="card-body  ">
+                                <h2 class="text-info">11</h2>
+                                <div class="card-text">
+                                    <p>Appointed Tuitions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="card card-pending text-center rounded-4">
+                            <div class="card-body">
+                                <h2 class="text-info">107</h2>
+                                <div class="card-text">
+                                    <p>Live Tuitions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="card card-pending text-center rounded-4">
+                            <div class="card-body">
+                                <h2 class="text-info">309</h2>
+                                <div class="card-text">
+                                    <p>Total Tutors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="card card-pending text-center rounded-4">
+                            <div class="card-body">
+                                <h2 class="text-info">1015</h2>
+                                <div class="card-text">
+                                    <p>Pending Tutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container why-choose-us pt-5 mt-5">
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <iframe src="https://www.youtube.com/embed/kxlKhp2_EFI" frameborder="0" allowfullscreen="" width="100%" height="100%" class="rounded-4"></iframe>
+                    </div>
+                    <div class="col-lg-6 p-5">
+                        <div class="title">
+                            <h2 >WHY <span style="color: rgb(37, 109, 138);">CHOOSE US !</span></h2>
+                        </div>
+                        <p class="why-choose-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                    </div>
+                </div>
+            </section>
+
+    </div>
+    <section id="footer" class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mt-3">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.png" height="70px">
+                        <p class="ms-5">details for TUTOR </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 mt-3">
+                    <div class="footer-address">
+                        <h2 class="font-color fw-semibold">ADDRESS</h2>
+                        <p>Mirpur, Dhaka</p>
+                        <p>017***********</p>
+                        <p>tutor@gmail.com</p>
+                    </div>
+                    <p>
+                        <strong style="color:#fff;font-size:16px;">Tin Number : 12345678, </strong>
+                        <strong style="color:#fff;font-size:16px;"> Licence Number : 12345678 </strong>
+                    </p>
+                    <div class="rounded-social-buttons mt-4">
+                        <a class="social-button facebook" href="#" target="_blank">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button linkedin" href="#" target="_blank">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button youtube" href="#" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button rounded-5 instagram" href="#" target="_blank">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 mt-3">
+                    <div class="footer-link">
+                        <h2 class="font-color fw-semibold">Quick Links</h2>
+                        <div class="footer-link-list">
+                            <ul class="list-unstyled ">
+                                <li class="nav-item  p-1"><a href="/our/tutors" class="nav-link">Our Tutors</a></li>
+                                <li class="nav-item p-1"><a href="/faqs" class="nav-link">FAQ</a></li>
+                                <li class="nav-item p-1"><a href="/about-us" class="nav-link">Our Team</a></li>
+                                <li class="nav-item p-1"><a href="/about-us" class="nav-link">Our Mission Vision</a></li>
+                                <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                                <li class="nav-item p-1"><a href="/terms&amp;conditions" class="nav-link">Terms &amp; Conditions</a></li>
+                                <li class="nav-item p-1"><a href="/privacy&amp;policy" class="nav-link">Privacy &amp; Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-3 mb-5">
+                    <p style="color: rgb(255, 255, 255); text-align: center;">Copyright © 2025 tutor.com All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/assets/js/iconify-icon.min.js"></script>
+</body>
+</html>

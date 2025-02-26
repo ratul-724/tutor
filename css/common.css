@@ -1,0 +1,57 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+.social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+body{
+    background: linear-gradient(to bottom right, #a9e4a9, #f1f1f1);
+}
+.font-color{
+    color: #7ab97a;
+}
+.footer{
+    background-color: rgb(21, 3, 3);
+    color: white;
+}
+
+/* Style for social buttons */
+.rounded-social-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    color: white; 
+    background-color: var(--real-color);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    text-decoration: none; 
+    transition: all 0.4s ease-in-out;
+}
+.social-button.facebook { --real-color: #1877F2; } 
+.social-button.twitter { --real-color: #1DA1F2; }
+.social-button.linkedin { --real-color: #0077B5; }
+.social-button.youtube { --real-color: #FF0000; }
+.social-button.instagram { --real-color: #E4405F; }
+
+.rounded-social-buttons a:hover {
+    background-color: white; 
+    color: var(--real-color);
+    border: 1px solid var(--real-color);
+    transform: rotate(360deg); 
+    text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-expand-md {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+    .logo{
+        width: 100px;
+    }
+}

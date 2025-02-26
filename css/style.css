@@ -1,0 +1,33 @@
+/* code for home */
+.popular-category .arrowBtn{
+    background-color: #eceaea;
+     height: 40px;
+}
+.popular-category .category :hover .arrowBtn{
+    background-color: #fab7b7;
+}
+.popular-category .category:hover .arrowBtn img{
+    transform: rotate(90deg);
+}
+.popular-category .arrowBtn img{
+    height: 25px;
+    /* background-color: #f77c7c; */
+    transform: rotate(50deg);
+}
+/* code for home */
+
+/* code for about */
+.management-team{
+    background: linear-gradient(to  right, #f7f5f5, #f77c7c);
+}
+/* code for about */
+
+/* code for tutor */
+.asset-filter-our-tutor{
+    background-image: url(/assets/asset-filter-our-tutor-BiZJsDcR.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+
+/* code for tutor */

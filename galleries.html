@@ -15,31 +15,36 @@
     <div id="app">
         <div class="blog-details-main">
             <br>
-            <section id="header" class="frontend-navbar container sticky-top">
+            <section id="header" class="frontend-navbar container">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
-                            <img src="assets/logo.png" width="150px">
+                            <img src="/assets/logo.png" width="130px">
                         </a>
-                        <span class="mobile-view d-lg-none">
-                            <a href="login.html" class="btn btn-outline-danger nav-login">Login</a>
-                            <a href="registration.html" class="btn btn-danger nav-login">Sign Up</a>
-                        </span>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            
+                        <!-- Mobile view Login & Sign Up -->
+                        <div class="mobile-auth d-lg-none">
+                            <a href="login.html" class="login">Login</a>
+                            <a href="registration.html" class="registration">Sign Up</a>
+                        </div>
+            
+                        <!-- Smaller menu button -->
+                        <div class="navbar-toggler small-toggler rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                        </button>
-                
+                        </div>
+            
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0"></ul>
-                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
-                                <li class="nav-item mgl-1"><a href="index.html" class="nav-link">Home</a></li>
-                                <li class="nav-item mgl-1"><a href="tutionBoards.html" class="nav-link">Tution Boards</a></li>
-                                <li class="nav-item mgl-1"><a href="about.html" class="nav-link">About</a></li>
-                                <li class="nav-item mgl-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
-                                <li class="nav-item mgl-1"><a href="blog.html" class="nav-link">Blogs</a></li>
-                                <li class="nav-item mgl-1"><a href="galleries.html" class="nav-link">Galleries</a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="login.html"><button class="btn btn-outline-danger px-4">LOGIN</button></a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="registration.html"><button class="btn btn-primary1">REGISTRATION</button></a></li>
+                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0 "></ul>
+                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto d-flex align-items-center">
+                                <li class="nav-item"><a href="index.html" class="nav-link m-1">Home</a></li>
+                                <li class="nav-item"><a href="tutionBoards.html" class="nav-link m-1">Tution Boards</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
+                                <li class="nav-item"><a href="tutors.html" class="nav-link m-1">Our Tutors</a></li>
+                                <li class="nav-item"><a href="blog.html" class="nav-link m-1">Blogs</a></li>
+                                <li class="nav-item"><a href="galleries.html" class="nav-link m-1">Galleries</a></li>
+                                <!-- Desktop Login & Registration -->
+                                <li class="nav-item d-none d-lg-block"><a href="login.html" class="login">Login</a></li>
+                                <li class="nav-item d-none d-lg-block"><a href="registration.html" class="registration">Registration</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,36 +55,29 @@
                 <div class="row rounded-4 mt-3">
                     <iframe class="rounded-5" style="height: 300px; background-size:contain;" src="https://www.youtube.com/embed/kxlKhp2_EFI" frameborder="0" allowfullscreen=""></iframe>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-lg-5 p-5">
-                        <h2 class="title" style="font-size: 28px;">Life in tutor provide</h2>
-                        <p style="color: rgb(114, 115, 128); line-height: 30px; font-size: 16px; font-weight: 500;">Here will be Dynamic Work Details</p>
-                        <div>
-                            <button class="btn" style="background: linear-gradient(110deg, rgb(231, 85, 16) 9.99%, rgb(224, 20, 155) 208.85%); color: rgb(255, 255, 255); font-weight: bold;">Join Us 
-                                <svg style="margin-left: 8px;" xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M0.292893 11.7929C-0.0976311 12.1834 -0.0976311 12.8166 0.292893 13.2071C0.683418 13.5976 1.31658 13.5976 1.70711 13.2071L0.292893 11.7929ZM13 1.5C13 0.947715 12.5523 0.5 12 0.5L3 0.5C2.44772 0.5 2 0.947715 2 1.5C2 2.05228 2.44772 2.5 3 2.5L11 2.5L11 10.5C11 11.0523 11.4477 11.5 12 11.5C12.5523 11.5 13 11.0523 13 10.5L13 1.5ZM1.70711 13.2071L12.7071 2.20711L11.2929 0.792893L0.292893 11.7929L1.70711 13.2071Z" fill="white"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-lg-7"></div>
-                    <div class="col-lg-4 mt-3">
-                        <img src="/assets/out2-BfB_hAUN.png" id="image-undefined" alt="Work details image" style="width: 100%; height: auto;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    </div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body"></div>
-                                    <div class="modal-footer"></div>
-                                </div>
+
+                <div class="ms-5 mt-5">
+                    <div class="row">
+                        <div class="col-md-6 p-5 ">
+                            <h2 class="title" style="font-size: 28px;">Life in tutor provide</h2>
+                            <p style="color: rgb(114, 115, 128); line-height: 30px; font-size: 16px; font-weight: 500;">Here will be Dynamic Work Details</p>
+                            <div>
+                                <button class="btn" style="background: linear-gradient(110deg, rgb(231, 85, 16) 9.99%, rgb(224, 20, 155) 208.85%); color: rgb(255, 255, 255); font-weight: bold;">Join Us 
+                                    <svg style="margin-left: 8px;" xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M0.292893 11.7929C-0.0976311 12.1834 -0.0976311 12.8166 0.292893 13.2071C0.683418 13.5976 1.31658 13.5976 1.70711 13.2071L0.292893 11.7929ZM13 1.5C13 0.947715 12.5523 0.5 12 0.5L3 0.5C2.44772 0.5 2 0.947715 2 1.5C2 2.05228 2.44772 2.5 3 2.5L11 2.5L11 10.5C11 11.0523 11.4477 11.5 12 11.5C12.5523 11.5 13 11.0523 13 10.5L13 1.5ZM1.70711 13.2071L12.7071 2.20711L11.2929 0.792893L0.292893 11.7929L1.70711 13.2071Z" fill="white"></path></svg>
+                                </button>
                             </div>
                         </div>
+                        <div class="col-md-6 mt-3">
+                            <img class="rounded-4" src="/assets/out2-BfB_hAUN.png" id="image-undefined" alt="Work details image" style="width: 70%; height: auto;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        </div>
                     </div>
+                    
                     <div class="row mt-5">
-                        <div class="col-lg-7"></div>
-                        <div class="col-lg-5 p-5">
+                        <div class="col-lg-5 ms-5">
+                            <img  class="rounded-4" src="/assets/out1-BNB3rFGN.png" alt="" style="width: 70%; height: auto;" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                        </div>
+
+                        <div class="col-lg-6 p-5">
                             <h2 class="title" style="font-size: 28px;">Call &amp; Support center</h2>
                             <p style="color: rgb(114, 115, 128); line-height: 30px; font-size: 16px; font-weight: 500;">Dynamic Call center and support details will be here.</p>
                             <div>
@@ -87,21 +85,10 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-lg-4 mt-3">
-                            <img src="/assets/out1-BNB3rFGN.png" alt="" style="width: 100%; height: auto;" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                        </div>
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body"></div>
-                                <div class="modal-footer"></div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
+        </div>  
             </section>
         
             <section id="footer" class="footer mt-5">

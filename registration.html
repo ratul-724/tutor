@@ -15,38 +15,43 @@
     <div id="app">
         <div class="blog-details-main">
             <br>
-            <section id="header" class="frontend-navbar container sticky-top">
+            <section id="header" class="frontend-navbar container">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
-                            <img src="assets/logo.png" width="150px">
+                            <img src="/assets/logo.png" width="130px">
                         </a>
-                        <span class="mobile-view d-lg-none">
-                            <a href="login.html" class="btn btn-outline-danger nav-login">Login</a>
-                            <a href="registration.html" class="btn btn-danger nav-login">Sign Up</a>
-                        </span>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            
+                        <!-- Mobile view Login & Sign Up -->
+                        <div class="mobile-auth d-lg-none">
+                            <a href="login.html" class="login">Login</a>
+                            <a href="registration.html" class="registration">Sign Up</a>
+                        </div>
+            
+                        <!-- Smaller menu button -->
+                        <div class="navbar-toggler small-toggler rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                        </button>
-                
+                        </div>
+            
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0"></ul>
-                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
-                                <li class="nav-item mgl-1"><a href="index.html" class="nav-link">Home</a></li>
-                                <li class="nav-item mgl-1"><a href="tutionBoards.html" class="nav-link">Tution Boards</a></li>
-                                <li class="nav-item mgl-1"><a href="about.html" class="nav-link">About</a></li>
-                                <li class="nav-item mgl-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
-                                <li class="nav-item mgl-1"><a href="blog.html" class="nav-link">Blogs</a></li>
-                                <li class="nav-item mgl-1"><a href="galleries.html" class="nav-link">Galleries</a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="login.html"><button class="btn btn-outline-danger px-4">LOGIN</button></a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="registration.html"><button class="btn btn-primary1">REGISTRATION</button></a></li>
+                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0 "></ul>
+                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto d-flex align-items-center">
+                                <li class="nav-item"><a href="index.html" class="nav-link m-1">Home</a></li>
+                                <li class="nav-item"><a href="tutionBoards.html" class="nav-link m-1">Tution Boards</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
+                                <li class="nav-item"><a href="tutors.html" class="nav-link m-1">Our Tutors</a></li>
+                                <li class="nav-item"><a href="blog.html" class="nav-link m-1">Blogs</a></li>
+                                <li class="nav-item"><a href="galleries.html" class="nav-link m-1">Galleries</a></li>
+                                <!-- Desktop Login & Registration -->
+                                <li class="nav-item d-none d-lg-block"><a href="login.html" class="login">Login</a></li>
+                                <li class="nav-item d-none d-lg-block"><a href="registration.html" class="registration">Registration</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </section>
 
-            <div class="container login">
+            <div class="container ">
                 <div class="row">
                     <div class="col-lg-6 p-4">
                         <div class="login-header-left"><strong style="font-size:30px !important;">Welcome</strong><span style="font-size:30px !important;">🖐</span>

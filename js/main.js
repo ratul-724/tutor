@@ -1,3 +1,29 @@
+// code for header start
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+    // Set active class on click
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.forEach(l => l.classList.remove("active")); // Remove active from all
+            this.classList.add("active"); // Add active to clicked link
+        });
+    });
+
+    // Preserve active state when refreshing the page
+    const currentPage = window.location.pathname.split("/").pop();
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+// code for header end
+
+
+
+
+
 // code for tutor section 
 document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = [

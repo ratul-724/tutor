@@ -1,4 +1,39 @@
-/* code for home */
+/* code for home start*/
+.carousel-img {
+    width: 100%;
+    height: 300px; /* Default height on large screens */
+    object-fit: cover; /* Ensures images are cropped properly */
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); } /* Tilt left */
+    50% { transform: rotate(5deg); }  /* Tilt right */
+    75% { transform: rotate(-5deg); } /* Tilt left */
+    100% { transform: rotate(0deg); } /* Back to normal */
+}  
+.title-paragraph{
+    width: 250px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    transform: rotate(355deg);
+    background-color: #7cf786;
+} 
+.title-paragraph:hover {
+animation: shake 0.4s ease-in-out;
+}
+.title-paragraph-bg{
+    width: 250px;
+    margin: auto;
+    padding-top: 5px;
+    border-radius: 10px;
+    color: white;
+    /* transform: rotate(355deg); */
+    background-color: #5b5a5a;
+}
+
 .popular-category .arrowBtn{
     background-color: #eceaea;
      height: 40px;
@@ -14,15 +49,15 @@
     /* background-color: #f77c7c; */
     transform: rotate(50deg);
 }
-/* code for home */
+/* code for home end*/
 
-/* code for about */
+/* code for about start*/
 .management-team{
     background: linear-gradient(to  right, #f7f5f5, #f77c7c);
 }
-/* code for about */
+/* code for about end*/
 
-/* code for tutor */
+/* code for tutor start*/
 .asset-filter-our-tutor{
     background-image: url(/assets/asset-filter-our-tutor-BiZJsDcR.png);
     background-repeat: no-repeat;
@@ -30,4 +65,25 @@
     background-size: cover;
 }
 
-/* code for tutor */
+/* code for tutor end*/
+
+
+/* responsive code  */
+
+@media (max-width: 992px) {
+    .carousel-img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 150px;
+    }
+}

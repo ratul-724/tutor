@@ -15,51 +15,56 @@
     <div id="app">
         <div class="blog-details-main container">
             <br>
-            <section id="header" class="frontend-navbar sticky-top">
+            <section id="header" class="frontend-navbar container">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
-                            <img src="assets/logo.png" width="150px">
+                            <img src="/assets/logo.png" width="130px">
                         </a>
-                        <span class="mobile-view d-lg-none">
-                            <a href="login.html" class="btn btn-outline-danger nav-login">Login</a>
-                            <a href="registration.html" class="btn btn-danger nav-login">Sign Up</a>
-                        </span>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            
+                        <!-- Mobile view Login & Sign Up -->
+                        <div class="mobile-auth d-lg-none">
+                            <a href="login.html" class="login">Login</a>
+                            <a href="registration.html" class="registration">Sign Up</a>
+                        </div>
+            
+                        <!-- Smaller menu button -->
+                        <div class="navbar-toggler small-toggler rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                        </button>
-                
+                        </div>
+            
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0"></ul>
-                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
-                                <li class="nav-item mgl-1"><a href="index.html" class="nav-link">Home</a></li>
-                                <li class="nav-item mgl-1"><a href="tutionBoards.html" class="nav-link">Tution Boards</a></li>
-                                <li class="nav-item mgl-1"><a href="about.html" class="nav-link">About</a></li>
-                                <li class="nav-item mgl-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
-                                <li class="nav-item mgl-1"><a href="blog.html" class="nav-link">Blogs</a></li>
-                                <li class="nav-item mgl-1"><a href="galleries.html" class="nav-link">Galleries</a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="login.html"><button class="btn btn-outline-danger px-4">LOGIN</button></a></li>
-                                <li class="nav-item mgl-1 d-none d-md-block"><a href="registration.html"><button class="btn btn-primary1">REGISTRATION</button></a></li>
+                            <ul class="navbar-nav mt-2 mt-lg-0 me-auto mb-2 mb-lg-0 "></ul>
+                            <ul class="navbar-nav mt-2 mt-lg-0 ms-auto d-flex align-items-center">
+                                <li class="nav-item"><a href="index.html" class="nav-link m-1">Home</a></li>
+                                <li class="nav-item"><a href="tutionBoards.html" class="nav-link m-1">Tution Boards</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
+                                <li class="nav-item"><a href="tutors.html" class="nav-link m-1">Our Tutors</a></li>
+                                <li class="nav-item"><a href="blog.html" class="nav-link m-1">Blogs</a></li>
+                                <li class="nav-item"><a href="galleries.html" class="nav-link m-1">Galleries</a></li>
+                                <!-- Desktop Login & Registration -->
+                                <li class="nav-item d-none d-lg-block"><a href="login.html" class="login">Login</a></li>
+                                <li class="nav-item d-none d-lg-block"><a href="registration.html" class="registration">Registration</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </section>
 
-            <section class="slider mt-4 ">
-                <div id="carouselExample" class="carousel slide rounded-4 position-relative"   data-bs-ride="carousel">
+            <section class="slider mt-4">
+                <div id="carouselExample" class="carousel slide rounded-4 position-relative" data-bs-ride="carousel" data-bs-interval="3000">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/365a2dcf-4d29-4686-95e3-076e8b711402" class="d-block w-100 rounded-4" alt="Slide 1">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/365a2dcf-4d29-4686-95e3-076e8b711402" class="d-block w-100 rounded-4 carousel-img" alt="Slide 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/f9d8762e-6009-4ac6-8ba1-c378dcc7c715" class="d-block w-100 rounded-4" alt="Slide 2">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/f9d8762e-6009-4ac6-8ba1-c378dcc7c715" class="d-block w-100 rounded-4 carousel-img" alt="Slide 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/28102ee3-599b-4828-bfa8-3bf9f826431c" class="d-block w-100 rounded-4" alt="Slide 3">
+                            <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/28102ee3-599b-4828-bfa8-3bf9f826431c" class="d-block w-100 rounded-4 carousel-img" alt="Slide 3">
                         </div>
                     </div>
-                    <div class="nextBtn ">
+                    <div class="nextBtn">
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -71,14 +76,16 @@
                     </div>
                 </div>
             </section>
-            
+ 
             <section class="mt-5 premium-tutor">
                 <div class="top text-center ">
                     <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">PREMIUM </span> TUTOR</h2>
-                    <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Find tutor of your choise</p>
+                    <div class="title-paragraph-bg">
+                        <p class=" title-paragraph">Find tutor of your choise</p>
+                    </div>
                 </div>
 
-                <div class="premium-tutor-body mt-5">
+                <div class="premium-tutor-body m-auto mt-5" style="width: 90%;">
                     <div class="search row ">
                         <div class="card mt-3 rounded-4 col-lg-4">
                             <div class="card-body">
@@ -154,8 +161,9 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-7 mt-4">
-                            <div class="maleFemaleTutor  ms-5 rounded-4 bg-info-subtle p-4">
+                            <div class="maleFemaleTutor  ms-lg-5 rounded-4 bg-info-subtle p-4">
                                 <div class="maleFemale d-flex">
                                     <div class="d-flex ">
                                         <img src="assets/icons/man.png" alt="" height="25px">
@@ -185,13 +193,13 @@
                                     <span style="color: rgb(37, 109, 138);;">POPULAR</span> CATEGORY</h2>
                                 </div>
                                 <div class="slogan mt-4">
-                                    <div class="slogan-text">
-                                        <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Select your categories</p>
+                                    <div class="title-paragraph-bg">
+                                        <p class="title-paragraph">Select your categories</p>
                                     </div>
                                 </div>
                                 <div class="btn-title-view-all mt-3 me-0">
-                                    <a href="#" class="d-flex justify-content-end">
-                                        <button class="btn">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                                    <a href="#" class="d-flex justify-content-end text-decoration-none">
+                                        <button class="login">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
                                         </button>
                                     </a>
                                 </div>
@@ -424,8 +432,8 @@
                         <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">FREE</span> SERVICE</h2>
                     </div>
                     <div class="slogan mt-4">
-                        <div class="slogan-text">
-                            <p  class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Choose your service </p>
+                        <div class="title-paragraph-bg">
+                            <p  class="title-paragraph">Choose your service </p>
                         </div>
                     </div>
                 </div>
@@ -476,11 +484,13 @@
             <section class="container update-blog mt-5">
                 <div class="title text-center">
                     <h2><span style="color: rgb(37, 109, 138);">UPDATE</span> BLOG</h2>
-                    <p  class="bg-danger-subtle w-25 m-auto p-2 rounded-3 ">Recent news for you</p>
+                    <div class="title-paragraph-bg">
+                        <p  class="title-paragraph ">Recent news for you</p>
+                    </div>
                 </div>
                 <div class="btn-title-view-all mt-4">
-                    <a href="#" class="d-flex justify-content-end ">
-                        <button class="btn">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                    <a href="#" class="d-flex justify-content-end text-decoration-none">
+                        <button class="login">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
                         </button>
                     </a>
                 </div>
@@ -497,7 +507,7 @@
                             </a>
                         </div>
                         <div class="col-lg-4 col-6">
-                            <a href="#" class="text-decoration-none">
+                            <a href="blogPost.html" class="text-decoration-none">
                                 <div class="card">
                                     <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/1d7e7fe0-0dea-4d15-8e11-d5a284b2f50b" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -519,21 +529,21 @@
                         <h2 class="fw-semibold"><span  style="color: rgb(37, 109, 138);" >says</span> about us</h2>
                     </div>
                     <div class="slogan mt-4">
-                        <div class="slogan-text">
-                            <p class="bg-danger-subtle w-25 m-auto p-2 rounded-3">TESTIMONIAL</p>
+                        <div class="title-paragraph-bg">
+                            <p class="title-paragraph">TESTIMONIAL</p>
                         </div>
                     </div>
                 </div>
-                <div class="slider-rev mt-5">
+                <div class="slider-rev mt-3">
                     <div class="slider-items-rev row ">
-                        <div class=" col-lg-6">
-                            <div class="card" style="width: 480px;">
+                        <div class=" col-lg-6 mt-4">
+                            <div class="card w-auto" >
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-2">
                                             <img src="/assets/gurdian-qZ8bYXOc.png" alt="client-review" style="width: 100%; height: auto;">
                                         </div>
-                                        <div class="col-7">
+                                        <div class="col-6">
                                             <h5>Mizanur Rafi</h5>
                                             <p>Mirpur, Dhaka, Bangladesh</p>
                                         </div>
@@ -546,14 +556,14 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <div class="card" style="width: 480px;">
+                        <div class="col-lg-6 mt-4">
+                            <div class="card w-auto" >
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-2">
                                             <img src="/assets/gurdian-qZ8bYXOc.png" alt="client-review" style="width: 100%; height: auto;">
                                         </div>
-                                        <div class="col-7">
+                                        <div class="col-6">
                                             <h5>Demo Guardian 1</h5>
                                             <p>Mirpur, Dhaka, Bangladesh</p>
                                         </div>
@@ -571,7 +581,7 @@
 
             <section class="container tution-live-count pt-5 mt-5">
                 <div class="row">
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4">
                             <div class="card-body  ">
                                 <h2 class="text-info">11</h2>
@@ -581,7 +591,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4">
                             <div class="card-body">
                                 <h2 class="text-info">107</h2>
@@ -591,7 +601,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4">
                             <div class="card-body">
                                 <h2 class="text-info">309</h2>
@@ -601,7 +611,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4">
                             <div class="card-body">
                                 <h2 class="text-info">1015</h2>

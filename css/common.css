@@ -6,6 +6,10 @@ body{
     color: #7ab97a;
 }
 
+.navbar-brand img{
+    width: 130px;
+}
+
 .registration , .login{
     border: 1px solid rgb(0, 234, 39);
     margin: 0 5px;
@@ -103,15 +107,17 @@ body{
 }
 
 /* Mobile View */
-@media (max-width: 768px) {
-    #header {
+@media (max-width: 968px) {
+    nav {
         position: absolute;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 1000;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img{
+        width: 100px;
+        padding: 0;
     }
     .small-toggler {
         padding: 5px 10px;
@@ -123,12 +129,10 @@ body{
         height: 20px;
     }
     .navbar {
-        padding: 5px 10px;
+        padding: 5px 0px;
     }
     .mobile-auth {
         display: flex;
-        gap: 5px;
-        margin-right: 10px;
     }
     .mobile-auth a {
         padding: 5px 10px;

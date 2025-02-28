@@ -55,11 +55,31 @@ animation: shake 0.4s ease-in-out;
 .management-team{
     background: linear-gradient(to  right, #f7f5f5, #f77c7c);
 }
+.slider-ivestor {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+.slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: calc(180px * 8); 
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 /* code for about end*/
 
 /* code for tutor start*/
 .asset-filter-our-tutor{
-    background-image: url(/assets/asset-filter-our-tutor-BiZJsDcR.png);
+    background-image: url(../assets/images/asset-filter-our-tutor.png);
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;

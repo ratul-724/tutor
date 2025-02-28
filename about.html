@@ -15,11 +15,11 @@
     <div id="app">
         <div class="about-main">
             <br>
-            <section id="header" class="frontend-navbar container">
+            <section id="header" class="frontend-navbar container sticky-top">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
-                            <img src="/assets/logo.png" width="130px">
+                            <img src="assets/images/logo.png" width="130px">
                         </a>
             
                         <!-- Mobile view Login & Sign Up -->
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="img-out1">
-                    <img src="/assets/out1-BNB3rFGN.png" style="width: 100%;"class="rounded-4">
+                    <img src="assets/images/out1.png" style="width: 100%;"class="rounded-4">
                 </div>
                 <div class="row mt-3">
                     <div class="col-6">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="col-6 img-out2">
-                        <img src="/assets/out2-BfB_hAUN.png" style="width: 100%;" class="rounded-4">
+                        <img src="assets/images/out2.png" style="width: 100%;" class="rounded-4">
                     </div>
                 </div>
             </div>
@@ -162,10 +162,10 @@
             <div class="col-lg-6 mission-img">
                 <div class="row">
                     <div class="col-6">
-                        <img src="/assets/mission1-CiGJTy0-.png" width="100%">
+                        <img src="assets/images/mission.png" width="100%">
                     </div>
                     <div class="col-6">
-                        <img src="/assets/mission2-B57VX0PZ.png" width="100%">
+                        <img src="assets/images/mission2.png" width="100%">
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
             <h1 class="title p-3">Our Managment Team</h1>
             <div class="row p-5">
                 <div class="col-lg-6" style="text-align:center;">
-                    <img src="/assets/tutor-BHAB1J5X.png">
+                    <img src="assets/images/tutor.png">
                     <div class="management-team-designation mt-5">
                         <h1>Saiful Islam</h1>
                         <p>Ceo &amp; Founder</p>
@@ -277,7 +277,7 @@
             <h1 class="title p-3">Our Managment Team</h1>
             <div class="row p-5">
                 <div class="col-lg-6" style="text-align:center;">
-                    <img src="/assets/tutor-BHAB1J5X.png" alt="">
+                    <img src="assets/images/gurdian.png" alt="">
                     <div class="management-team-designation mt-5">
                         <h2>Ratul</h2>
                         <p>Web Developer</p>
@@ -303,10 +303,11 @@
 
     <section class="our-investor container mt-5">
         <h1 class="title mt-5">Our Partners</h1>
-        <div class="row mt-5">
-            <div class="slider">
-                <div class="slider-items d-flex">
-                    <div class="row  mx-4">
+        <div class="row mt-5 overflow-hidden">
+            <div class="slider-ivestor">
+                <div class="slider-items d-flex slide-track">
+                    <!-- Original Items -->
+                    <div class="row mx-4">
                         <div class="card" style="width: 180px;">
                             <div class="card-body">
                                 <div class="row">
@@ -315,7 +316,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row  mx-4">
+                    <div class="row mx-4">
                         <div class="card" style="width: 180px;">
                             <div class="card-body">
                                 <div class="row">
@@ -324,7 +325,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row  mx-4">
+                    <div class="row mx-4">
                         <div class="card" style="width: 180px;">
                             <div class="card-body">
                                 <div class="row">
@@ -333,7 +334,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row  mx-4">
+                    <div class="row mx-4">
+                        <div class="card" style="width: 180px;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/2bbe7714-893c-44ec-a6e0-2d53ba0de7e0" alt="Our Partners" style="width: 100%; height: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Duplicate Items for Seamless Loop -->
+                    <div class="row mx-4">
+                        <div class="card" style="width: 180px;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <img src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/public/ab49de42-94df-4b30-9bc3-d7ea4547f5e5" alt="Our Partners" style="width: 100%; height: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-4">
                         <div class="card" style="width: 180px;">
                             <div class="card-body">
                                 <div class="row">
@@ -346,13 +367,14 @@
             </div>
         </div>
     </section>
-
+    
+    
     <section id="footer" class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 mt-3">
                     <div class="footer-logo">
-                        <img src="/assets/logo.png" height="70px">
+                        <img src="assets/images/logo.png" height="70px">
                         <p class="ms-5">details for TUTOR </p>
                     </div>
                 </div>

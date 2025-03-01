@@ -49,27 +49,163 @@
                 </nav>
             </section>
 
+           <div class="tutionPost container">
+            <button class="btn btn-primary my-4 ms-5" id="tutionPostBtn">আপনি কি টিউটর খুঁজছেন?</button>
+                <section class="tutoroPosting bg-success-subtle rounded-4 pb-4 container mt-2 mb-5 d-none" id="tutionPost">
+                    <div class="postingText  text-center">
+                        <h1>আপনি কি টিউটর খুঁজছেন?</h1>
+                        <p>তাহলে নিচে দেয়া ফর্ম টি পূরণ করে সাবমিট করুন।</p>
+                    </div>
+                    <div class="row w-75 m-auto align-items-center">
+                        <div class="col-md-6 col-sm-12">
+                            <label for="name" class="fw-bold">Name*</label><br>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" class="border-0 p-2 rounded-3 w-100">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label for="phone" class="fw-bold">Phone*</label><br>
+                            <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="border-0 p-2 rounded-3 w-100">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="py-2">
+                                <h6 class="fw-bold">Select District*</h6>
+                                <select name="districts" class="districts single-select form-select">
+                                    <option class="" value="">All</option>
+                                    <option value="3">Dhaka</option>
+                                    <option value="4">Chattogram</option>
+                                    <option value="5">Rajshahi</option>
+                                    <option value="6">Sylhet</option>
+                                    <option value="7">Khulna</option>
+                                    <option value="8">Barishal</option>
+                                    <option value="9">Rangpur</option>
+                                    <option value="10">Mymensingh</option>
+                                    <option value="11">Narayanganj</option>
+                                    <option value="12">Savar</option>
+                                    <option value="13">Gazipur</option>
+                                    <option value="14">Bagerhat</option>
+                                    <option value="15">Bandarban</option>
+                                    <option value="16">Barguna</option>
+                                    <option value="17">Bhola</option>
+                                    <option value="18">Bogra</option>
+                                    <option value="19">Brahmanbaria</option>
+                                    <option value="20">Chandpur</option>
+                                    <option value="21">Chapai Nawabganj</option>
+                                    <option value="22">Chuadanga</option>
+                                    <option value="23">Cumilla</option>
+                                    <option value="24">Cox's Bazar</option>
+                                    <option value="25">Dinajpur</option>
+                                    <option value="26">Faridpur</option>
+                                    <option value="27">Feni</option>
+                                    <option value="28">Gaibandha</option>
+                                    <option value="29">Gazipur</option>
+                                    <option value="30">Gopalgong</option>
+                                    <option value="31">Habiganj</option>
+                                    <option value="32">Jamalpur</option>
+                                    <option value="33">Jessore</option>
+                                    <option value="34">Jhalokati</option>
+                                    <option value="35">Jhenaidaha</option>
+                                    <option value="36">Joypurhat</option>
+                                    <option value="37">Khagrachhari</option>
+                                    <option value="38">Kishoreganj</option>
+                                    <option value="39">Kurigram</option>
+                                    <option value="40">Kustia</option>
+                                    <option value="41">Lakshmipur</option>
+                                    <option value="42">Lalmonirhat</option>
+                                    <option value="43">MADARIPUR</option>
+                                    <option value="44">Magura</option>
+                                    <option value="45">Manikganj</option>
+                                    <option value="46">Maulivi Bazar</option>
+                                    <option value="47">Meherpur</option>
+                                    <option value="48">Munshuganj</option>
+                                    <option value="49">Munshuganj</option>
+                                    <option value="50">Naogaon</option>
+                                    <option value="51">Narail</option>
+                                    <option value="52">tesT</option>
+                                    <option value="53">Narsingdi</option>
+                                    <option value="54">Natore</option>
+                                    <option value="55">Netrokona</option>
+                                    <option value="56">Nilphamari</option>
+                                    <option value="57">Noakhali</option>
+                                    <option value="58">Pabna</option>
+                                    <option value="59">Panchagarh</option>
+                                    <option value="60">Patuakhali</option>
+                                    <option value="61">Pirojpur</option>
+                                    <option value="62">Rajbari</option>
+                                    <option value="63">Rangamati</option>
+                                    <option value="64">Satkhira</option>
+                                    <option value="65">Shariatpur</option>
+                                    <option value="67">Sherpur</option>
+                                    <option value="68">Sirajganj</option>
+                                    <option value="69">Sunamganj</option>
+                                    <option value="70">Tangail</option>
+                                    <option value="71">Thakurgaon</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="py-2 col-md-6 col-sm-12">
+                            <h6 class="fw-bold">Select Subject*</h6>
+                            <select class="form-select" id="mediumSelect">
+                                <option value="">All</option>
+                                <option value="1">Bangla</option>
+                                <option value="2">English</option>
+                                <option value="3">Math</option>
+                                <option value="4">History</option>
+                                <option value="5">ICT</option>
+                                <option value="6">Computer</option>
+                            </select>
+                        </div>
+                        <div class="py-2 col-md-6 col-sm-12">
+                            <h6 class="fw-bold">Day/Week*</h6>
+                            <select class="form-select" id="mediumSelect">
+                                <option value="">All</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="py-2 col-md-6 col-sm-12">
+                            <h6 class="fw-bold">Select Class*</h6>
+                            <select class="form-select" id="classSelect">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="py-2 col-md-6 col-sm-12">
+                            <h6 class="fw-bold">Preferred Tutor*</h6>
+                            <select class="form-select" id="genderSelect">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="salary col-md-6 col-sm-12">
+                            <label for="salary" class="fw-bold">Salary*</label><br>
+                            <input type="text" placeholder="Preferred salary" class="w-100 border-0 p-2 rounded-3">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-success fw-bold my-4 w-100">Create Your Post</button>
+                        </div>
+                    </div>
+                </section>
+           </div>
+
+
             <div class="container mt-4">
                 <div class="row container">
                     <div class="col-lg-5  h-100">
-                        <div class="bg-success-subtle w-100 position-relative">
-                            <div class="row p-3 bg-success-subtle rounded-4 " >
-                                <div class="col-7" style="border-right: 1px solid rgb(255, 255, 255);">
-                                    <div class="maleTutor">
-                                        <p class="text-black-50 fw-bold">Male Tutor : <span class="text-white fs-5">320</span></p>
-                                    </div>
-                                    <div class="femaleTutor">
-                                        <p class="text-black-50 fw-bold">Female Tutor : <span class="text-white fs-5">132</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-5">
-                                    <p style="color: rgb(231, 85, 16); font-weight: bold; text-align: center; margin-top: 10px;"> Total : 6090</p>
-                                </div>
-                            </div>
-                        </div>
-
-    
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="col-12">
                             <div class="filter-sidebar custom-scrollbar ">
                                 <div class="filter-header w-100 p-3 text-center">
                                     <h5>🔍 Advanced Filter</h5>   
@@ -222,8 +358,6 @@
                         
                     </div>  
     
-
-
                     <div class="col-lg-7">
                         <div class="bg-white p-4 rounded-4 tutor-card  mb-3">
                             <div class="tutor-header mb-3 row">
@@ -445,5 +579,19 @@
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/assets/js/iconify-icon.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("tutionPostBtn").addEventListener("click", function () {
+            const tutionPost = document.getElementById("tutionPost");
+
+            if (tutionPost) {
+                tutionPost.classList.toggle("d-none");
+            } else {
+                console.error("Element with ID 'tutionPost' not found.");
+            }
+        });
+    });
+    </script>
 </body>
 </html>

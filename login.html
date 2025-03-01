@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Tutor</title>
 </head>
-<body>
+<body style="background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp); background-size: cover;background-position: center; background-attachment: fixed; background-repeat: no-repeat; ">
     <div id="app">
         <div class="blog-details-main">
             <br>
@@ -38,10 +38,8 @@
                             <ul class="navbar-nav mt-2 mt-lg-0 ms-auto d-flex align-items-center">
                                 <li class="nav-item"><a href="index.html" class="nav-link m-1">Home</a></li>
                                 <li class="nav-item"><a href="tutionBoards.html" class="nav-link m-1">Tution Boards</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
                                 <li class="nav-item"><a href="tutors.html" class="nav-link m-1">Our Tutors</a></li>
-                                <li class="nav-item"><a href="blog.html" class="nav-link m-1">Blogs</a></li>
-                                <li class="nav-item"><a href="galleries.html" class="nav-link m-1">Galleries</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
                                 <!-- Desktop Login & Registration -->
                                 <li class="nav-item d-none d-lg-block"><a href="login.html" class="login">Login</a></li>
                                 <li class="nav-item d-none d-lg-block"><a href="registration.html" class="registration">Registration</a></li>
@@ -53,53 +51,48 @@
 
             <div class="container ">
                 <div class="row">
-                    <div class="col-lg-5 mt-5">
+                    <div class="col-lg-6 mt-5">
                         <div class="login-header-left">
-                            <div class="wellcome">
-                                <strong style="color: #E75510; font-size: 35px; font-weight: 600;">Welcome Back</strong>
-                            </div>
-                            <p style="font-size: 26px; padding-right:30px;"><span style="font-size:28px;color:#E75510;text-decoration:none;font-weight:bold;">Login</span> with your data that you entered during registration.</p>
-                            <div class="login-img">
-                                <img class="" alt="mom with children" src="assets/images/login-left.webp" height="300px">
-                                <h4 class="shadow bg-white w-75 p-3" style="color: #E75510; transform: rotate(4deg); margin-top: -20px;">টিউশন বা টিউটর খুঁজে পাবার সেরা প্লাটফর্ম tutor.com</h4>
-                            </div>
+                            <img src="assets/images/loginVector.png" alt="" class="floating-image" width="100%">
                         </div>
                     </div>
-                    <div class="col-lg-7 mt-5">
-                        <div class="login-right">
-                            <div class="login-right-header-img">
-                                <img alt="" src="assets/images/choseLogin.png">
-                            </div>
-                            <form>
-                                <div class="row mt-5">
-                                    <div class="col-6">
-                                        <div style="background: rgb(255, 255, 255); border-radius: 20px; padding: 10px; border: medium;">
-                                            <img class="userTypeImage" alt="" src="assets/images/gurdian.png"><span class="userTypeName">Guardian</span>
-                                            <img class="userTypeCheckedMark" alt="Guardian" src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='17'%20cy='16.998'%20r='16.5'%20stroke='%23EB762A'/%3e%3cpath%20d='M11%2017.4883L14.6908%2020.998L22%2012.998'%20stroke='%23EB762A'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e">
-                                        </div>
+                    <div class="col-lg-6 mt-5">
+                        <div class="login-right ">
+                            <form >
+                                <div class="row mt-2 bg-white w-100 m-auto rounded-4">
+                                    <div class="col-6 align-items-center d-flex">
+                                        <img class="userTypeImage" alt="" src="assets/images/student.png" width="70px">
+                                        <span class="userTypeName pe-2">Student </span>
+                                        <input type="checkbox" name="student" id="studentSelection" style="width: 25px; height: 25px; border-radius: 50%; border: 1px solid black;">
                                     </div>
-                                    <div class="col-6">
-                                        <div style="background: rgb(255, 255, 255); border-radius: 20px; padding: 10px; border: medium;">
-                                            <img class="userTypeImage" alt="" src="assets/images/tutor.png"><span class="userTypeName">Tutor</span>
-                                            <img class="userTypeCheckedMark" alt="Tutor" src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='17'%20cy='16.998'%20r='16.5'%20stroke='%23EB762A'/%3e%3cpath%20d='M11%2017.4883L14.6908%2020.998L22%2012.998'%20stroke='%23EB762A'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e">
-                                        </div>
+                                    <div class="col-5 align-items-center d-flex">
+                                        <img class="userTypeImage pe-2" width="60px" alt="" src="assets/images/gurdian.png">
+                                        <span class="userTypeName pe-2">Tutor</span>
+                                        <input type="checkbox" name="tutor" id="tutorSelection" style="width: 25px; height: 25px; border-radius: 50%; border: 1px solid black;">
                                     </div>
                                 </div>
+                            
                                 <div class="card login-right-card shadow p-2 mt-3" style="border-radius: 30px; box-shadow: rgb(246, 192, 157) 0px 2px 6px !important;">
                                     <div class="card-body">
-                                        <h1 style="color: rgb(231, 85, 16); text-align: center; font-weight: bold;">Login Now</h1><!---->
-                                        <div class="login-body mt-3">
+                                        <h1 style="color: rgb(53, 216, 16); text-align: center; font-weight: bold;">
+                                            Login as <span id="studentOrtutor">....</span>
+                                        </h1>
+                                        <div class="login-body mt-3 px-5 py-2">
                                             <div class="email mt-3">
                                                 <label for="phone">Mobile Number</label>
-                                                <span style="display: inline; font-size: 18px; padding-right: 5px;">( +88 )</span>
-                                                <input id="phone" autocomplete="username" autofocus="" class="form-control" placeholder="01*********" type="text" style="width: 80%; color: rgb(117, 117, 156) !important;"><!---->
+                                                <div class="d-flex mt-2 align-items-center rounded-5 px-2" style="border: 1px solid black;">
+                                                    <span style="display: inline; font-size: 18px; padding-right: 5px;">+880</span>
+                                                    <input id="phone" autocomplete="username" autofocus="" class="form-control rounded-5 border-0" placeholder="Enter your phone number" type="text" style="width: 90%; color: rgb(117, 117, 156) !important;">
+                                                </div>
                                             </div>
                                             <div class="password mt-3">
                                                 <label for="password" style="display: block;">Password</label>
-                                                <input id="password" type="password" autocomplete="current-password" class="form-control" placeholder="example: employee@+%123" style="display: inline; color: rgb(117, 117, 156) !important; width: 80%;">
-                                                <a class="btn" tabindex="-1" type="button">
-                                                    <i class="fas fa-eye-slash" aria-hidden="true"></i>
-                                                </a><!---->
+                                                <div class="d-flex mt-2 align-items-center rounded-5" style="border: 1px solid black;">
+                                                    <input id="password" type="password" autocomplete="current-password" class="rounded-5 form-control border-0" placeholder="Enter your password" style="display: inline; color: rgb(0, 0, 0) !important; width: 90%;">
+                                                    <a class="btn" tabindex="-1" type="button">
+                                                        <i class="fas fa-eye-slash" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                             <div class="login-footer">
                                                 <div class="row mt-3">
@@ -108,19 +101,16 @@
                                                         <span>Remember me </span>
                                                     </div>
                                                         <div class="col-6 text-center login-footer-left">
-                                                            <a href="/forgot-password" class="text-decoration-none" style="color: #E75510;"><strong class="mt-3">Forget password?</strong>
+                                                            <a href="/forgot-password" class="text-decoration-none" style="color: #22e710;"><strong class="mt-3">Forget password?</strong>
                                                             </a>
                                                         </div>
-                                                        <div class="login-buttons">
-                                                            <div class="row">
-                                                                <div class="col-lg-6"></div>
-                                                                <div class="col-lg-4">
-                                                                    <button class="opacity-50 form-control loginButton" disabled="" type="submit" style="background-color: #E75510; color: #fff; font-weight: 600;"> Login </button>
-                                                                </div>
+                                                        <div class="login-buttons my-3">
+                                                            <div>
+                                                                <button class="w-100 form-control btn btn-success bg-success text-white fw-semibold opacity-100" disabled="" type="submit"> Login </button>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 login-footer-right"> If You are not registered please register first 
-                                                            <a href="registration.html" class="text-decoration-none" style="color: #E75510;"> Register . </a>
+                                                            <a href="registration.html" class="text-decoration-none fw-semibold" style="color: #06b706;"> Register . </a>
                                                         </div>
                                                     </div>
                                                 </div>

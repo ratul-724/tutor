@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Tutor</title>
 </head>
-<body>
+<body style="background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp); background-size: cover;background-position: center; background-attachment: fixed; background-repeat: no-repeat; ">
     <div id="app">
         <div class="blog-details-main">
             <br>
@@ -38,10 +38,8 @@
                             <ul class="navbar-nav mt-2 mt-lg-0 ms-auto d-flex align-items-center">
                                 <li class="nav-item"><a href="index.html" class="nav-link m-1">Home</a></li>
                                 <li class="nav-item"><a href="tutionBoards.html" class="nav-link m-1">Tution Boards</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
                                 <li class="nav-item"><a href="tutors.html" class="nav-link m-1">Our Tutors</a></li>
-                                <li class="nav-item"><a href="blog.html" class="nav-link m-1">Blogs</a></li>
-                                <li class="nav-item"><a href="galleries.html" class="nav-link m-1">Galleries</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link m-1">About</a></li>
                                 <!-- Desktop Login & Registration -->
                                 <li class="nav-item d-none d-lg-block"><a href="login.html" class="login">Login</a></li>
                                 <li class="nav-item d-none d-lg-block"><a href="registration.html" class="registration">Registration</a></li>
@@ -50,549 +48,274 @@
                     </div>
                 </nav>
             </section>
+            
+<main class="main mt-5">
+    <section class="section-box">
+        <div class="container">
+            <div class="row">
 
-       
-            <section class="container">
-                <div class="tutionTopFilter mt-5 row sticky-top">
-                    <div class="col-2 ">
-                        <div class="jobfound d-flex align-items-center bg-white rounded-4 p-2">
-                            <img src="assets/icons/man.png" alt="" width="20px">
-                            <span class="text-danger fw-semibold px-2">1111</span>
-                            <span>Job Found</span>
-                        </div>
-                    </div>
-                    <div class="col-8"></div>
-                    <div class="col-1 bg-white text-center rounded-4 d-flex align-items-center justify-content-center">
-                        <img src="assets/icons/filter.png" alt="" width="20px">
-                        <span >Filter</span>
-                    </div>
+                <div style="overflow-y: auto; height: 80vh; scrollbar-width: none;" class=" col-lg-3 col-md-12 col-sm-12 col-12 bg-white rounded-4 me-2 p-3">
+                    <div class=" sidebar-shadow none-shadow mb-30 sticky-filter">
+                        <div class="sidebar-filters">
+                            <div class="filter-block head-border mt-3">
+                                <h5>Advance Filter </h5>
+                                <hr>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-danger-emphasis fw-semibold">Search By Job Id</h6>
+                                <input type="text" class="form-control" placeholder="Enter job id here...">
+                            </div>
+
+                            <div class="filter-block mb-10">
+                                <h6 class="medium-heading mb-15">Tuition Type</h6>
+                                <div class="form-group">
+                                    <ul class="list-checkbox list-unstyled">
+                                        <li>
+                                            <label class="cb-container">
+                                                <input type="radio" value="Home" checked="">
+                                                <span class="text-small">All Tuition</span>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="cb-container">
+                                                <input type="radio" value="Home">
+                                                <span class="text-small">Home Tuition</span>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            </li>
+                                            <li>
+                                                <label class="cb-container">
+                                                    <input type="radio" value="Online">
+                                                    <span class="text-small">Online Tuition</span>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="filter-block mb-10">
+                                        <h6 class="medium-heading mb-15">Tutor Preferance</h6>
+                                        <div class="form-group">
+                                            <ul class="list-checkbox list-unstyled">
+                                                <li>
+                                                    <label class="cb-container">
+                                                        <input type="radio" value="" checked="">
+                                                        <span class="text-small">All</span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="cb-container">
+                                                            <input type="radio" value="Male">
+                                                            <span class="text-small">Male</span>
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        </li>
+                                                        <li>
+                                                            <label class="cb-container">
+                                                                <input type="radio" value="Female">
+                                                                <span class="text-small">Female</span>
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="filter-block mb-10">
+                                                    <div class="form-group select-style select-style-icon">
+                                                        <h6 class="medium-heading mb-15">Select District </h6>
+                                                        <select name="districts" class="districts single-select form-select">
+                                                            <option class="" value="">All</option>
+                                                            <option value="3">Dhaka</option>
+                                                            <option value="4">Chattogram</option>
+                                                            <option value="5">Rajshahi</option>
+                                                            <option value="6">Sylhet</option>
+                                                            <option value="7">Khulna</option>
+                                                            <option value="8">Barishal</option>
+                                                            <option value="9">Rangpur</option>
+                                                            <option value="10">Mymensingh</option>
+                                                            <option value="11">Narayanganj</option>
+                                                            <option value="12">Savar</option>
+                                                            <option value="13">Gazipur</option>
+                                                            <option value="14">Bagerhat</option>
+                                                            <option value="15">Bandarban</option>
+                                                            <option value="16">Barguna</option>
+                                                            <option value="17">Bhola</option>
+                                                            <option value="18">Bogra</option>
+                                                            <option value="19">Brahmanbaria</option>
+                                                            <option value="20">Chandpur</option>
+                                                            <option value="21">Chapai Nawabganj</option>
+                                                            <option value="22">Chuadanga</option>
+                                                            <option value="23">Cumilla</option>
+                                                            <option value="24">Cox's Bazar</option>
+                                                            <option value="25">Dinajpur</option>
+                                                            <option value="26">Faridpur</option>
+                                                            <option value="27">Feni</option>
+                                                            <option value="28">Gaibandha</option>
+                                                            <option value="29">Gazipur</option>
+                                                            <option value="30">Gopalgong</option>
+                                                            <option value="31">Habiganj</option>
+                                                            <option value="32">Jamalpur</option>
+                                                            <option value="33">Jessore</option>
+                                                            <option value="34">Jhalokati</option>
+                                                            <option value="35">Jhenaidaha</option>
+                                                            <option value="36">Joypurhat</option>
+                                                            <option value="37">Khagrachhari</option>
+                                                            <option value="38">Kishoreganj</option>
+                                                            <option value="39">Kurigram</option>
+                                                            <option value="40">Kustia</option>
+                                                            <option value="41">Lakshmipur</option>
+                                                            <option value="42">Lalmonirhat</option>
+                                                            <option value="43">MADARIPUR</option>
+                                                            <option value="44">Magura</option>
+                                                            <option value="45">Manikganj</option>
+                                                            <option value="46">Maulivi Bazar</option>
+                                                            <option value="47">Meherpur</option>
+                                                            <option value="48">Munshuganj</option>
+                                                            <option value="49">Munshuganj</option>
+                                                            <option value="50">Naogaon</option>
+                                                            <option value="51">Narail</option>
+                                                            <option value="52">tesT</option>
+                                                            <option value="53">Narsingdi</option>
+                                                            <option value="54">Natore</option>
+                                                            <option value="55">Netrokona</option>
+                                                            <option value="56">Nilphamari</option>
+                                                            <option value="57">Noakhali</option>
+                                                            <option value="58">Pabna</option>
+                                                            <option value="59">Panchagarh</option>
+                                                            <option value="60">Patuakhali</option>
+                                                            <option value="61">Pirojpur</option>
+                                                            <option value="62">Rajbari</option>
+                                                            <option value="63">Rangamati</option>
+                                                            <option value="64">Satkhira</option>
+                                                            <option value="65">Shariatpur</option>
+                                                            <option value="67">Sherpur</option>
+                                                            <option value="68">Sirajganj</option>
+                                                            <option value="69">Sunamganj</option>
+                                                            <option value="70">Tangail</option>
+                                                            <option value="71">Thakurgaon</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="filter-block mb-10">
+                                                    <div class="form-group select-style select-style-icon">
+                                                        <h6 class="medium-heading mb-15">Select Area</h6>
+                                                        <select name="area" class="area single-select form-select">
+                                                            <option value="">All</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="filter-block mb-10">
+                                                    <div class="form-group select-style select-style-icon">
+                                                        <h6 class="medium-heading mb-15">Select Medium</h6>
+                                                        <select name="medium" class="medium single-select form-select">
+                                                            <option value="">All</option>
+                                                            <option value="1">Bangla Medium</option>
+                                                            <option value="2">English Version</option>
+                                                            <option value="3">English Medium</option>
+                                                            <option value="4">Religious Studies</option>
+                                                            <option value="5">Admission Test</option>
+                                                            <option value="6">Professional skill Development</option>
+                                                            <option value="7">Arts</option>
+                                                            <option value="8">Special Skill Development</option>
+                                                            <option value="9">Uni Help</option>
+                                                            <option value="10">Language Learning</option>
+                                                            <option value="11">Test Preparation</option>
+                                                            <option value="12">Madrasa Medium</option>
+                                                            <option value="13">Special Child Education</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                    <div class="filter-block mb-10">
+                                                        <div class="form-group select-style select-style-icon">
+                                                            <h6 class="medium-heading mb-15">Select Class</h6>
+                                                            <select name="class" class="class single-select form-select">
+                                                                <option value="">All</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                 </div>
+                                            
 
-  
-                <div class="row">
-                    <div class="col-lg-6 mt-3">
-                        <div class="card" style="border-radius: 18px; ">
-                            <div class="card-body" >
-                                <div class="row p-2 cardInsideBox m-1 rounded-4" style="background-color: rgb(204, 246, 232);">
-                                    <div class="col-lg-4 col-6">
-                                        <div class="px-1 bg-white p-2 rounded-4 px-3">
-                                            <span>Tution Type : </span>
-                                            <strong class="text-success" style="font-size: 12px !important;">HOME</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6 ">
-                                        <div class="px-1 bg-white p-2 px-2 rounded-4"><span>Tution ID : </span><span style="color: rgb(121, 101, 240);"><strong>T-27248</strong></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 m-1 col-6 text-end"><strong class="p-1 bg-white">20 hours ago</strong></div>
-                                </div>
-                                <h4 class="mt-3">Need a OTHER Tutor for <span style="font-size: 1.4rem !important; color: rgb(17, 28, 45);">Bangla Version <span> , </span></span> Dhanmondi , Dhaka</h4>
-
-                                <div class="row mt-3">
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12 rounded-4 py-2" style="background-color: #dbfadf; margin: 0 2px;">
-                                                <div class="cardInsideBox row">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/cat.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start" >
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Category</span>
-                                                        <h5 class="mt-2">Bangla Version <span>,</span></h5>
+                                            <div style="overflow-y: auto; height: 100vh; scrollbar-width: none;" class="col-lg-8 col-md-12 col-sm-12 col-12 float-right ">
+                                                <div class=" content-page">
+                                                    <div class="row">
+                                                        <div class="bg-white my-2 rounded-4 p-4 h-100">
+                                                            <div class="justify-content-between align-items-center d-flex">
+                                                                <div class="right-info">
+                                                                    <img src="assets/icons/location.png" width="20px" alt="">
+                                                                    <a class="text-decoration-none text-black" href=""> Azimpur, &nbsp;Dhaka</a>
+                                                                </div>
+                                                                <span class="btn btn-grey-small ml-auto login fs-6 p-2">Job ID: 34168</span>
+                                                            </div>
+                                                            <div class="card-block-info">
+                                                                <h4 class="text-ellipsis" style="cursor: pointer;">Tutor Needed For Bangla Medium</h4>
+                                                                <div class="mt-4 mb-3">
+                                                                    <span class="bg-body-secondary p-2 rounded-4">  Home Tutoring</span> 
+                                                                    <span class="p-2 rounded-4 bg-danger-subtle"> 11 minutes ago</span>
+                                                                </div>
+                                                                <div class="job-details mt-3">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-6 ">
+                                                                            <img src="assets/icons/medium.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Medium:<br><strong> Bangla Medium</strong>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-6">
+                                                                            <img src="assets/icons/book.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Class: <br><strong> Class 9</strong></div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-6">
+                                                                            <img src="assets/icons/gander.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Preferred Tutor:<br><strong>Male</strong></div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-6">
+                                                                            <img src="assets/icons/calendar.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Tutoring Days:<br><strong>5 Days/Week </strong>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-6">
+                                                                            <img src="assets/icons/book.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Subject: <br>
+                                                                                <span class=" bg-success-subtle m-1 rounded-5">General Maths</span>
+                                                                                <span class=" bg-danger-subtle m-1 rounded-5">Higher maths</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-6">
+                                                                            <img src="assets/icons/salary.png" width="20px" alt="">
+                                                                            <div class="pb-2"> Salary: <br>
+                                                                                <span class="card-text-price text-primary">5,000 Tk</span>
+                                                                                <span class="text-muted">/Month</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-2-bottom d-flex">
+                                                                    <p class="text-secondary mt-2">Posted at: March 1, 2025</p>
+                                                                    <div class="ml-auto">
+                                                                        <div class="btn btn-1 gradient_bg text-light" style="font-size: 15px;">View Details</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row cardInsideBox py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Class</span>
-                                                        <h5 class="mt-2">HSC- 2nd Year <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Subject</span>
-                                                        <h5 class="mt-2">Physics <span> , </span></h5>
-                                                        <h5 class="mt-2">Maths <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/time-left.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Day</span>
-                                                        <h5 class="mt-2">3 Days/Week</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/location.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Location</span>
-                                                        <h5 class="mt-2">Dhanmondi</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/taka.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Tuition fees</span>
-                                                        <h5 class="mt-2">6000</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3 p-2">
-                                    <div class="col-6">
-                                        <button class="btn text-dark" style="font-weight: 700; background-color: rgb(244, 255, 246);"> 
-                                            <img src="assets/icons/share.png" width="20px" alt=""> Share
-                                        </button>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                        <a href="/posts/27248" class="btn" style="background: rgb(235, 118, 42); border-radius: 5px !important; color: rgb(255, 255, 255); font-size: 16px !important;"> More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3">
-                        <div class="card" style="border-radius: 18px; ">
-                            <div class="card-body" >
-                                <div class="row p-2 cardInsideBox m-1 rounded-4" style="background-color: rgb(204, 246, 232);">
-                                    <div class="col-lg-4 col-6">
-                                        <div class="px-1 bg-white p-2 rounded-4 px-3">
-                                            <span>Tution Type : </span>
-                                            <strong class="text-success" style="font-size: 12px !important;">HOME</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6 ">
-                                        <div class="px-1 bg-white p-2 px-2 rounded-4"><span>Tution ID : </span><span style="color: rgb(121, 101, 240);"><strong>T-27248</strong></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 m-1 col-6 text-end"><strong class="p-1 bg-white">20 hours ago</strong></div>
-                                </div>
-                                <h4 class="mt-3">Need a OTHER Tutor for <span style="font-size: 1.4rem !important; color: rgb(17, 28, 45);">Bangla Version <span> , </span></span> Dhanmondi , Dhaka</h4>
-
-                                <div class="row mt-3">
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12 rounded-4 py-2" style="background-color: #dbfadf; margin: 0 2px;">
-                                                <div class="cardInsideBox row">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/cat.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start" >
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Category</span>
-                                                        <h5 class="mt-2">Bangla Version <span>,</span></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row cardInsideBox py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Class</span>
-                                                        <h5 class="mt-2">HSC- 2nd Year <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Subject</span>
-                                                        <h5 class="mt-2">Physics <span> , </span></h5>
-                                                        <h5 class="mt-2">Maths <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/time-left.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Day</span>
-                                                        <h5 class="mt-2">3 Days/Week</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/location.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Location</span>
-                                                        <h5 class="mt-2">Dhanmondi</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/taka.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Tuition fees</span>
-                                                        <h5 class="mt-2">6000</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3 p-2">
-                                    <div class="col-6">
-                                        <button class="btn text-dark" style="font-weight: 700; background-color: rgb(244, 255, 246);"> 
-                                            <img src="assets/icons/share.png" width="20px" alt=""> Share
-                                        </button>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                        <a href="/posts/27248" class="btn" style="background: rgb(235, 118, 42); border-radius: 5px !important; color: rgb(255, 255, 255); font-size: 16px !important;"> More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3">
-                        <div class="card" style="border-radius: 18px; ">
-                            <div class="card-body" >
-                                <div class="row p-2 cardInsideBox m-1 rounded-4" style="background-color: rgb(204, 246, 232);">
-                                    <div class="col-lg-4 col-6">
-                                        <div class="px-1 bg-white p-2 rounded-4 px-3">
-                                            <span>Tution Type : </span>
-                                            <strong class="text-success" style="font-size: 12px !important;">HOME</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6 ">
-                                        <div class="px-1 bg-white p-2 px-2 rounded-4"><span>Tution ID : </span><span style="color: rgb(121, 101, 240);"><strong>T-27248</strong></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 m-1 col-6 text-end"><strong class="p-1 bg-white">20 hours ago</strong></div>
-                                </div>
-                                <h4 class="mt-3">Need a OTHER Tutor for <span style="font-size: 1.4rem !important; color: rgb(17, 28, 45);">Bangla Version <span> , </span></span> Dhanmondi , Dhaka</h4>
-
-                                <div class="row mt-3">
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12 rounded-4 py-2" style="background-color: #dbfadf; margin: 0 2px;">
-                                                <div class="cardInsideBox row">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/cat.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start" >
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Category</span>
-                                                        <h5 class="mt-2">Bangla Version <span>,</span></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row cardInsideBox py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Class</span>
-                                                        <h5 class="mt-2">HSC- 2nd Year <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Subject</span>
-                                                        <h5 class="mt-2">Physics <span> , </span></h5>
-                                                        <h5 class="mt-2">Maths <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/time-left.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Day</span>
-                                                        <h5 class="mt-2">3 Days/Week</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/location.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Location</span>
-                                                        <h5 class="mt-2">Dhanmondi</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/taka.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Tuition fees</span>
-                                                        <h5 class="mt-2">6000</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3 p-2">
-                                    <div class="col-6">
-                                        <button class="btn text-dark" style="font-weight: 700; background-color: rgb(244, 255, 246);"> 
-                                            <img src="assets/icons/share.png" width="20px" alt=""> Share
-                                        </button>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                        <a href="/posts/27248" class="btn" style="background: rgb(235, 118, 42); border-radius: 5px !important; color: rgb(255, 255, 255); font-size: 16px !important;"> More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3">
-                        <div class="card" style="border-radius: 18px; ">
-                            <div class="card-body" >
-                                <div class="row p-2 cardInsideBox m-1 rounded-4" style="background-color: rgb(204, 246, 232);">
-                                    <div class="col-lg-4 col-6">
-                                        <div class="px-1 bg-white p-2 rounded-4 px-3">
-                                            <span>Tution Type : </span>
-                                            <strong class="text-success" style="font-size: 12px !important;">HOME</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6 ">
-                                        <div class="px-1 bg-white p-2 px-2 rounded-4"><span>Tution ID : </span><span style="color: rgb(121, 101, 240);"><strong>T-27248</strong></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 m-1 col-6 text-end"><strong class="p-1 bg-white">20 hours ago</strong></div>
-                                </div>
-                                <h4 class="mt-3">Need a OTHER Tutor for <span style="font-size: 1.4rem !important; color: rgb(17, 28, 45);">Bangla Version <span> , </span></span> Dhanmondi , Dhaka</h4>
-
-                                <div class="row mt-3">
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12 rounded-4 py-2" style="background-color: #dbfadf; margin: 0 2px;">
-                                                <div class="cardInsideBox row">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/cat.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start" >
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Category</span>
-                                                        <h5 class="mt-2">Bangla Version <span>,</span></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row cardInsideBox py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" alt="" width="30px">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Class</span>
-                                                        <h5 class="mt-2">HSC- 2nd Year <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/book.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Subject</span>
-                                                        <h5 class="mt-2">Physics <span> , </span></h5>
-                                                        <h5 class="mt-2">Maths <!----></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/time-left.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Day</span>
-                                                        <h5 class="mt-2">3 Days/Week</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/location.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Location</span>
-                                                        <h5 class="mt-2">Dhanmondi</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-6 mt-2">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="cardInsideBox row py-2 rounded-4" style="background-color: #dbfadf; margin: 0 2px;">
-                                                    <div class="col-4 text-center">
-                                                        <img src="assets/icons/taka.png" width="30px" alt="">    
-                                                    </div>
-                                                    <div class="col-8 text-start">
-                                                        <span style="color: rgb(114, 115, 128); font-weight: 500; font-size: 16px !important;">Tuition fees</span>
-                                                        <h5 class="mt-2">6000</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3 p-2">
-                                    <div class="col-6">
-                                        <button class="btn text-dark" style="font-weight: 700; background-color: rgb(244, 255, 246);"> 
-                                            <img src="assets/icons/share.png" width="20px" alt=""> Share
-                                        </button>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                        <a href="/posts/27248" class="btn" style="background: rgb(235, 118, 42); border-radius: 5px !important; color: rgb(255, 255, 255); font-size: 16px !important;"> More Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </div>
+        </div>
+    </section>
+</main>
         
         <section id="footer" class="footer mt-5">
             <div class="container">

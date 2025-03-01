@@ -1,6 +1,9 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 body{
     background: linear-gradient(to bottom right, #a9e4a9, #f1f1f1);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .font-color{
     color: #7ab97a;
@@ -20,26 +23,26 @@ body{
     transition: all ease 0.4s;
 }
 .registration {
-    color: white;
-    background-color: rgb(0, 234, 39);
+    color: rgb(72, 72, 72);
+    background: linear-gradient(to top right, #80d8ee, #89f18b);
 }
 .login{
-    background-color: white;
-    color: rgb(0, 234, 39);
+    background: rgb(255, 255, 255);
+    color:rgb(46, 46, 46);
 }
 .registration:hover {
-    background-color: white;
-    color: rgb(0, 234, 39);
+    background: rgb(255, 255, 255);
+    color: linear-gradient(to top right, #80d8ee, #89f18b);
 }
 .login:hover{
-    color: white;
-    background-color: rgb(0, 234, 39);
+    color: rgb(72, 72, 72);
+    background: linear-gradient(to top right, #80d8ee, #89f18b);
 }
 
 
 
 .footer{
-    background-color: rgb(21, 3, 3);
+    background-color: rgb(1, 5, 36);
     color: white;
 }
 
@@ -104,6 +107,12 @@ body{
 .navbar-nav .nav-link.active::after {
     width: 100%;
     left: 0;
+}
+
+.border-0:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 /* Mobile View */

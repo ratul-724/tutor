@@ -6,11 +6,12 @@
 }
 
 @keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); } /* Tilt left */
-    50% { transform: rotate(5deg); }  /* Tilt right */
-    75% { transform: rotate(-5deg); } /* Tilt left */
-    100% { transform: rotate(0deg); } /* Back to normal */
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); } 
+    
 }  
 .title-paragraph{
     width: 250px;
@@ -18,7 +19,7 @@
     padding: 10px;
     border-radius: 10px;
     color: black;
-    transform: rotate(355deg);
+    /* transform: rotate(355deg); */
     background-color: #7cf786;
 } 
 .title-paragraph:hover {
@@ -34,12 +35,21 @@ animation: shake 0.4s ease-in-out;
     background-color: #5b5a5a;
 }
 
+
+.popular-category .category .card{
+    border-radius: 20px;
+    transition: all ease 0.5s;
+}
+.popular-category .category .card:hover{
+    margin-top: -7px;
+}
 .popular-category .arrowBtn{
     background-color: #eceaea;
-     height: 40px;
+    height: 30px;
+    width: 40px;
 }
 .popular-category .category :hover .arrowBtn{
-    background-color: #fab7b7;
+    background-color: #b7fab8;
 }
 .popular-category .category:hover .arrowBtn img{
     transform: rotate(90deg);
@@ -49,6 +59,22 @@ animation: shake 0.4s ease-in-out;
     /* background-color: #f77c7c; */
     transform: rotate(50deg);
 }
+
+
+@media screen and (min-width: 1280px) {
+    .hero {
+      background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp);
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+  .hero-section-general {
+    background-color: var(--white);
+    background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp);
+    background-position: 50%;
+    background-size: cover;
+    padding: 140px 20px 60px;
+  }
 /* code for home end*/
 
 /* code for about start*/
@@ -77,15 +103,21 @@ animation: shake 0.4s ease-in-out;
 
 /* code for about end*/
 
-/* code for tutor start*/
-.asset-filter-our-tutor{
-    background-image: url(../assets/images/asset-filter-our-tutor.png);
-    background-repeat: no-repeat;
-    position: relative;
-    background-size: cover;
+/* code for login section start */
+.floating-image {
+    animation: floatUpDown 2s ease-in-out infinite alternate;
 }
 
-/* code for tutor end*/
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50px);
+    }
+}
+
+/* code for login section end */
 
 
 /* responsive code  */

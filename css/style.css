@@ -167,9 +167,27 @@ animation: shake 0.4s ease-in-out;
 /* code for home end*/
 
 /* code for about start*/
-.management-team{
-    background: linear-gradient(to  right, #f7f5f5, #f77c7c);
+/* Background Section */
+.management-team {
+    background: linear-gradient(135deg, #029b47, #0285a9);
+    padding: 80px 0;
+    color: white;
 }
+/* Team Card */
+.team-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
 .slider-ivestor {
     overflow: hidden;
     white-space: nowrap;

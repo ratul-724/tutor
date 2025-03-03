@@ -137,11 +137,16 @@ animation: shake 0.4s ease-in-out;
 /* code for .popular-category start */
 .popular-category .category .card{
     border-radius: 20px;
-    transition: all ease 0.5s;
+    /* opacity: 0.5px; */
+    transition: all ease 0.2s;
 }
 .popular-category .category .card:hover{
-    margin-top: -7px;
-    opacity: 100%;
+    transform: translateY(-7px);
+    opacity: .6;
+   filter: alpha(opacity=50);
+   background-color: rgba(39, 36, 36, 0.2);
+   transition: all 0.5s;
+
 }
 .popular-category .arrowBtn{
     background-color: #eceaea;

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.png">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7491bed1a1.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+    
+    <!-- Font Awesome CDN (Replaces Kit) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    
     <title>Tutor</title>
 </head>
 <body>
@@ -29,7 +32,7 @@
 
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="assets/icons/language.png" width="20px" alt="">
+                                    <i class="fa-solid fa-globe"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                     <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
@@ -37,7 +40,6 @@
                                 </ul>
                             </div>
                         </div>
-            
                         <!-- Smaller menu button -->
                         <div class="navbar-toggler small-toggler rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -55,7 +57,7 @@
                                 <!-- Language Dropdown -->
                                 <li class="nav-item dropdown language">
                                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/icons/language.png" width="25px" alt="">
+                                        <i class="fa-solid fa-globe"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                         <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
@@ -89,8 +91,9 @@
 
                         <div class="homeBtns d-flex align-items-center ">
                             <a href="login.html" class="btn btn-primary text-white">Get Started</a>
-                            <div class="homeBtnsRight mx-3">
-                                <img src="assets/icons/play-button.png" width="30x" class="glow-always" alt="">
+                            <div class="homeBtnsRight mx-3 d-flex align-items-center">
+                                <!-- <img src="assets/icons/play-button.png" width="30x" class="glow-always" alt=""> -->
+                                <i class="fa-solid fa-circle-play glow-always fs-3 mx-2"></i>
                                 <a href="#" class="text-decoration-none text-black">What is Connect Education?</a>
                             </div>
                         </div>
@@ -142,18 +145,18 @@
                         <div class="col-lg-3 col-md-12 col-sm-12 col-12">
                             <div class="filter-sidebar custom-scrollbar ">
                                 <div class="filter-header w-100 p-3 text-center">
-                                    <h5>🔍 Advanced Filter</h5>   
+                                    <h5><i class="fa-solid fa-magnifying-glass fs-5"></i> Advanced Filter</h5>   
                                 </div>
 
                             <div class="p-4"> 
                                 <!-- Search By Job Id -->
                                 <div class="py-2">
-                                    <h6 class="text-danger fw-bold">🔎 Search By Job ID</h6>
+                                    <h6 class="text-danger fw-bold"><i class="fa-solid fa-magnifying-glass"></i> Search By Job ID</h6>
                                     <input type="text" class="form-control" placeholder="Enter job ID here..." id="jobIdInput">
                                 </div>
                         
                                 <!-- Tuition Type -->
-                                <h6 class="fw-bold">📚 Tuition Type</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Tuition Type</h6>
                                 <div class="form-check">
                                     <input type="radio" class="form-check-input" id="tuitionAll" name="tuitionType" checked>
                                     <label class="form-check-label" for="tuitionAll">All Tuition</label>
@@ -168,7 +171,7 @@
                                 </div>
                         
                                 <!-- Tutor Preference -->
-                                <h6 class="fw-bold">👨‍🏫 Tutor Preference</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-venus-mars fs-5"></i> Tutor Preference</h6>
                                 <div class="form-check">
                                     <input type="radio" class="form-check-input" id="tutorAll" name="tutorPreference" checked>
                                     <label class="form-check-label" for="tutorAll">All</label>
@@ -184,7 +187,7 @@
                         
                                 <!-- Select District -->
                                 <div class="py-2">
-                                    <h6 class="fw-bold">📍 Select District</h6>
+                                    <h6 class="fw-bold"><i class="fa-solid fa-location-dot fs-5"></i> Select District</h6>
                                     <select name="districts" class="districts single-select form-select">
                                         <option class="" value="">All</option>
                                         <option value="3">Dhaka</option>
@@ -260,7 +263,7 @@
                         
                                 <!-- Select sub -->
                                 <div class="py-2">
-                                    <h6 class="fw-bold">📖 Select Subject</h6>
+                                    <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject</h6>
                                     <select class="form-select" id="mediumSelect">
                                         <option value="">All</option>
                                         <option value="1">Bangla</option>
@@ -274,18 +277,12 @@
                         
                                 <!-- Select Class -->
                                 <div class="py-2">
-                                    <h6 class="fw-bold">📘 Select Class</h6>
+                                    <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class</h6>
                                     <select class="form-select" id="classSelect">
                                         <option value="">All</option>
                                     </select>
                                 </div>
                         
-                                <!-- Filter Button -->
-                                <div class="text-center">
-                                    <button class="btn btn-primary w-100 fw-bold">
-                                        Apply Filter 🚀
-                                    </button>
-                                </div>
                             </div>
                             </div>
                         </div>
@@ -299,7 +296,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Mymenshingh</a>
                                         <br>
                                         
                                     </div>
@@ -311,7 +308,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Shavar</a>
                                         <br>
                                         
                                     </div>
@@ -323,7 +320,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Gazipur</a>
                                         <br>
                                         
                                     </div>
@@ -335,7 +332,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Sylhet</a>
                                         <br>
                                         
                                     </div>
@@ -347,7 +344,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Dhaka</a>
                                         <br>
                                         
                                     </div>
@@ -359,7 +356,7 @@
                                         <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
                                         <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
                                         <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><img src="assets/icons/location.png" width="20px" alt="">Mymenshingh</a>
+                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Mymenshingh</a>
                                         <br>
                                         
                                     </div>
@@ -402,7 +399,7 @@
                             </div>
                             <div class="btn-title-view-all mt-3 me-0">
                                 <a href="#" class="d-flex justify-content-end text-decoration-none">
-                                    <button class="login">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                                    <button class="login">View All <i class="fa-solid fa-arrow-right" style="color: green; transform: rotate(315deg);"></i>
                                     </button>
                                 </a>
                             </div>
@@ -578,7 +575,7 @@
                 </div>
                 <div class="btn-title-view-all mt-4">
                     <a href="#" class="d-flex justify-content-end text-decoration-none">
-                        <button class="login">View All <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgBZc8xTsNAEAXQP/YmYJtigyiIRCSLC3AELkCBEHAPTrDjI3ATRIEoOAIFBRUljdOBKxJ2dya2E0Vy8ostdp5G86m+s5cAGH1UASK0L3wBXVrIwn6YFGhiNwOhB30MELILDdmEYl5uPoepr86d+CPGwv5gOWnSPXB95jQcsoS8wt/xXH1RJgNwc+IkGo4yqmZv7yyxIPU5tqi+tU5lzEkc8+z1k/saLYDP1qgD0BGTGJ6+fFXb1V3DUCCp71sAcogpT5+/q8GB7RaE/NeooEmIHk6f5o+7JeQ/ZYSDcgVLflri2dTkhAAAAABJRU5ErkJggg==">
+                        <button class="login">View All <i class="fa-solid fa-arrow-right" style="color: green; transform: rotate(315deg);"></i>
                         </button>
                     </a>
                 </div>
@@ -774,7 +771,7 @@
     <section id="footer" class="footer mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 mt-3">
+                <div class="col-lg-4 mt-3">
                     <div class="footer-logo">
                         <img src="assets/images/logo.png" height="70px">
                         <p class="ms-5">details for TUTOR </p>
@@ -807,7 +804,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 mt-3">
+                <div class="col-lg-3 mt-3">
                     <div class="footer-link">
                         <h2 class="font-color fw-semibold">Quick Links</h2>
                         <div class="footer-link-list">

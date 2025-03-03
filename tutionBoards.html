@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.png">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7491bed1a1.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+    
+    <!-- Font Awesome CDN (Replaces Kit) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    
     <title>Tutor</title>
 </head>
 <body>
     <div id="app">
-        <div class="blog-details-main">
+        <div class="container">
             <br>
             <section id="header" class="frontend-navbar container sticky-top">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
@@ -29,7 +32,7 @@
 
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="assets/icons/language.png" width="20px" alt="">
+                                    <i class="fa-solid fa-globe"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                     <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
@@ -37,7 +40,6 @@
                                 </ul>
                             </div>
                         </div>
-            
                         <!-- Smaller menu button -->
                         <div class="navbar-toggler small-toggler rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -55,7 +57,7 @@
                                 <!-- Language Dropdown -->
                                 <li class="nav-item dropdown language">
                                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/icons/language.png" width="25px" alt="">
+                                        <i class="fa-solid fa-globe"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                         <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
@@ -72,8 +74,9 @@
                 </nav>
             </section>
             
+            
     <main class="main container mt-4">
-        <button class="btn btn-primary mb-4 ms-5" id="tutionPostBtn">আপনি কি টিউটর খুঁজছেন?</button>
+        <button class="btn btn-primary mb-4 ms-5" id="tutionPostBtn"><i class="fa-solid fa-person-chalkboard"></i> আপনি কি টিউটর খুঁজছেন?</button>
                 <section class="tutoroPosting bg-success-subtle rounded-4 pb-4 container mt-2 mb-5 d-none" id="tutionPost">
                     <div class="postingText  text-center">
                         <h1>আপনি কি টিউটর খুঁজছেন?</h1>
@@ -81,16 +84,16 @@
                     </div>
                     <div class="row w-75 m-auto align-items-center">
                         <div class="col-md-6 col-sm-12">
-                            <label for="name" class="fw-bold">Name*</label><br>
+                            <label for="name" class="fw-bold"><i class="fa-regular fa-user"></i> Name*</label><br>
                             <input type="text" name="name" id="name" placeholder="Enter your name" class="border-0 p-2 rounded-3 w-100">
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <label for="phone" class="fw-bold">Phone*</label><br>
+                            <label for="phone" class="fw-bold"><i class="fa-solid fa-phone"></i> Phone*</label><br>
                             <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="border-0 p-2 rounded-3 w-100">
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="py-2">
-                                <h6 class="fw-bold">Select District*</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-location-dot"></i> Select District*</h6>
                                 <select name="districts" class="districts single-select form-select">
                                     <option class="" value="">All</option>
                                     <option value="3">Dhaka</option>
@@ -165,7 +168,7 @@
                             </div>
                         </div>
                         <div class="py-2 col-md-6 col-sm-12">
-                            <h6 class="fw-bold">Select Subject*</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject*</h6>
                             <select class="form-select" id="mediumSelect">
                                 <option value="">All</option>
                                 <option value="1">Bangla</option>
@@ -177,7 +180,7 @@
                             </select>
                         </div>
                         <div class="py-2 col-md-6 col-sm-12">
-                            <h6 class="fw-bold">Day/Week*</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-hourglass"></i> Day/Week*</h6>
                             <select class="form-select" id="mediumSelect">
                                 <option value="">All</option>
                                 <option value="1">1</option>
@@ -189,7 +192,7 @@
                             </select>
                         </div>
                         <div class="py-2 col-md-6 col-sm-12">
-                            <h6 class="fw-bold">Select Class*</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class*</h6>
                             <select class="form-select" id="classSelect">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -206,7 +209,7 @@
                             </select>
                         </div>
                         <div class="py-2 col-md-6 col-sm-12">
-                            <h6 class="fw-bold">Preferred Tutor*</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-venus-mars"></i> Preferred Tutor*</h6>
                             <select class="form-select" id="genderSelect">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -214,11 +217,23 @@
                             </select>
                         </div>
                         <div class="salary col-md-6 col-sm-12">
-                            <label for="salary" class="fw-bold">Salary*</label><br>
+                            <label for="salary" class="fw-bold"><i class="fa-solid fa-money-bill-1-wave"></i> Salary*</label><br>
                             <input type="text" placeholder="Preferred salary" class="w-100 border-0 p-2 rounded-3">
                         </div>
+                        <div class="title col-md-6 col-sm-12">
+                            <label for="title" class="fw-bold"><i class="fa-solid fa-text-width"></i> Title*</label><br>
+                            <textarea name="title" id="title" class="w-100 border-0 p-2 rounded-3"></textarea>
+                        </div>
+                        <div class="type col-md-6 col-sm-12">
+                            <label for="type" class="fw-bold"><i class="fa-solid fa-chalkboard-user"></i> Tution Type*</label><br>
+                            <select name="type" id="type" class="border-0 w-100 bg-white py-2 rounded-3">
+                                <option value="home">Home Tutor</option>
+                                <option value="online">Online Tutor</option>
+                                <option value="batch">Batch Tutor</option>
+                            </select>
+                        </div>
                         <div class="col-12">
-                            <button class="btn btn-success fw-bold my-4 w-100">Create Your Post</button>
+                            <button class="btn btn-success fw-bold my-4 w-100 justify-content-center d-flex align-items-center"><i class="fa-solid fa-rocket fs-3 mx-2"></i> Create Your Post</button>
                         </div>
                     </div>
                 </section>
@@ -229,18 +244,18 @@
                     <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="filter-sidebar custom-scrollbar ">
                             <div class="filter-header w-100 p-3 text-center">
-                                <h5>🔍 Advanced Filter</h5>   
+                                <h5><i class="fa-solid fa-magnifying-glass"></i> Advanced Filter</h5>   
                             </div>
 
                         <div class="p-4"> 
                             <!-- Search By Job Id -->
                             <div class="py-2">
-                                <h6 class="text-danger fw-bold">🔎 Search By Job ID</h6>
+                                <h6 class="text-danger fw-bold"><i class="fa-solid fa-magnifying-glass"></i> Search By Job ID</h6>
                                 <input type="text" class="form-control" placeholder="Enter job ID here..." id="jobIdInput">
                             </div>
                     
                             <!-- Tuition Type -->
-                            <h6 class="fw-bold">📚 Tuition Type</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Tuition Type</h6>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" id="tuitionAll" name="tuitionType" checked>
                                 <label class="form-check-label" for="tuitionAll">All Tuition</label>
@@ -255,7 +270,7 @@
                             </div>
                     
                             <!-- Tutor Preference -->
-                            <h6 class="fw-bold">👨‍🏫 Tutor Preference</h6>
+                            <h6 class="fw-bold"><i class="fa-solid fa-venus-mars"></i> Tutor Preference</h6>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" id="tutorAll" name="tutorPreference" checked>
                                 <label class="form-check-label" for="tutorAll">All</label>
@@ -271,7 +286,7 @@
                     
                             <!-- Select District -->
                             <div class="py-2">
-                                <h6 class="fw-bold">📍 Select District</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-location-dot"></i> Select District</h6>
                                 <select name="districts" class="districts single-select form-select">
                                     <option class="" value="">All</option>
                                     <option value="3">Dhaka</option>
@@ -347,7 +362,7 @@
                     
                             <!-- Select sub -->
                             <div class="py-2">
-                                <h6 class="fw-bold">📖 Select Subject</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject</h6>
                                 <select class="form-select" id="mediumSelect">
                                     <option value="">All</option>
                                     <option value="1">Bangla</option>
@@ -361,86 +376,67 @@
                     
                             <!-- Select Class -->
                             <div class="py-2">
-                                <h6 class="fw-bold">📘 Select Class</h6>
+                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class</h6>
                                 <select class="form-select" id="classSelect">
                                     <option value="">All</option>
                                 </select>
-                            </div>
-                    
-                            <!-- Filter Button -->
-                            <div class="text-center">
-                                <button class="btn btn-primary w-100 fw-bold">
-                                    Apply Filter 🚀
-                                </button>
                             </div>
                         </div>
                         </div>
                     </div>
                                                 
 
-                                            <div style="overflow-y: auto; height: 100vh; scrollbar-width: none;" class="col-lg-8 col-md-12 col-sm-12 col-12 float-right ">
-                                                <div class=" content-page">
-                                                    <div class="row">
-                                                        <div class="bg-white rounded-4 p-4 h-100">
-                                                            <div class="justify-content-between align-items-center d-flex">
-                                                                <div class="right-info">
-                                                                    <img src="assets/icons/location.png" width="20px" alt="">
-                                                                    <a class="text-decoration-none text-black" href=""> Azimpur, &nbsp;Dhaka</a>
-                                                                </div>
-                                                                <span class="btn btn-grey-small ml-auto login fs-6 p-2">Job ID: 34168</span>
-                                                            </div>
-                                                            <div class="card-block-info">
-                                                                <h4 class="text-ellipsis" style="cursor: pointer;">Tutor Needed For Bangla Medium</h4>
-                                                                <div class="mt-4 mb-3">
-                                                                    <span class="bg-body-secondary p-2 rounded-4">  Home Tutoring</span> 
-                                                                    <span class="p-2 rounded-4 bg-danger-subtle"> 11 minutes ago</span>
-                                                                </div>
-                                                                <div class="job-details mt-3">
-                                                                    <div class="row">
-                                                                        <div class="col-md-4 col-6 ">
-                                                                            <img src="assets/icons/medium.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Medium:<br><strong> Bangla Medium</strong>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-6">
-                                                                            <img src="assets/icons/book.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Class: <br><strong> Class 9</strong></div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-6">
-                                                                            <img src="assets/icons/gander.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Preferred Tutor:<br><strong>Male</strong></div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-6">
-                                                                            <img src="assets/icons/calendar.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Tutoring Days:<br><strong>5 Days/Week </strong>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-6">
-                                                                            <img src="assets/icons/book.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Subject: <br>
-                                                                                <span class=" bg-success-subtle m-1 rounded-5">General Maths</span>
-                                                                                <span class=" bg-danger-subtle m-1 rounded-5">Higher maths</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-6">
-                                                                            <img src="assets/icons/salary.png" width="20px" alt="">
-                                                                            <div class="pb-2"> Salary: <br>
-                                                                                <span class="card-text-price text-primary">5,000 Tk</span>
-                                                                                <span class="text-muted">/Month</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-2-bottom d-flex">
-                                                                    <p class="text-secondary mt-2">Posted at: March 1, 2025</p>
-                                                                    <div class="ml-auto">
-                                                                        <div class="btn btn-1 gradient_bg text-light" style="font-size: 15px;">View Details</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                    <div style="overflow-y: auto; height: 100vh; scrollbar-width: none;" class="col-lg-8 col-md-12 col-sm-12 col-12 float-right ">
+                        <div class=" content-page">
+                            <div class="row">
+                                <div class="bg-white rounded-4 p-4 h-100">
+                                    <div class="justify-content-between align-items-center d-flex">
+                                        <div class="right-info">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <a class="text-decoration-none text-black" href=""> Azimpur, &nbsp;Dhaka</a>
+                                        </div>
+                                        <span class="btn btn-grey-small ml-auto login fs-6 p-2">Job ID: 34168</span>
+                                    </div>
+                                    <div class="card-block-info">
+                                        <h4 class="text-ellipsis" style="cursor: pointer;">Tutor Needed For Bangla Medium</h4>
+                                        <div class="mt-4 mb-3">
+                                            <span class="bg-body-secondary p-2 rounded-4">  Home Tutoring</span> 
+                                            <span class="p-2 rounded-4 bg-danger-subtle"> 11 minutes ago</span>
+                                        </div>
+                                        <div class="job-details mt-3">
+                                            <div class="row">
+                                                <div class="col-md-4 col-6 ">
+                                                    <div class="pb-2"> <i class="fa-solid fa-school"></i> Medium:<br><strong> Bangla Medium</strong>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="pb-2"><i class="fa-solid fa-book"></i> Class: <br><strong> Class 9</strong></div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                  
+                                                    <div class="pb-2"> <i class="fa-solid fa-venus-mars"></i> Preferred Tutor : <br><strong>Male</strong></div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="pb-2"><i class="fa-regular fa-calendar-check"></i> Tutoring Days:<br><strong>5 Days/Week </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="pb-2"><i class="fa-solid fa-book"></i> Subject: <br>
+                                                        <span class=" bg-success-subtle mt-2 p-1 rounded-5">General Maths</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="pb-2"><i class="fa-solid fa-money-bill-1-wave"></i> Salary: <br>
+                                                        <span class="card-text-price text-primary">5,000 Tk</span>
+                                                        <span class="text-muted">/Month</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-2-bottom d-flex justify-content-between">
+                                            <p class="text-secondary mt-2">Posted at: March 1, 2025</p>
+                                            <div class="ml-auto">
+                                                <a href="#" class="text-decoration-none"><button class="btn btn-outline-dark" style="font-size: 15px;">View Details</button></a>
                                             </div>
                                         </div>
                                     </div>
@@ -450,87 +446,73 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
-        
-<section id="footer" class="footer mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 mt-3">
-                <div class="footer-logo">
-                    <img src="assets/images/logo.png" height="70px">
-                    <p class="ms-5">details for TUTOR </p>
-                </div>
-            </div>
-
-            <div class="col-lg-5 mt-3">
-                <div class="footer-address">
-                    <h2 class="font-color fw-semibold">Contacts</h2>
-                    <p>Mirpur, Dhaka</p>
-                    <p>017***********</p>
-                    <p>tutor@gmail.com</p>
-                </div>
-                <p>
-                    <strong style="color:#fff;font-size:16px;">Tin Number : 12345678, </strong>
-                    <strong style="color:#fff;font-size:16px;"> Licence Number : 12345678 </strong>
-                </p>
-                <div class="rounded-social-buttons mt-4">
-                    <a class="social-button facebook" href="#" target="_blank">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-button linkedin" href="#" target="_blank">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-button youtube" href="#" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-button rounded-5 instagram" href="#" target="_blank">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-2 mt-3">
-                <div class="footer-link">
-                    <h2 class="font-color fw-semibold">Quick Links</h2>
-                    <div class="footer-link-list">
-                        <ul class="list-unstyled ">
-                            <li class="nav-item  p-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
-                            <li class="nav-item p-1"><a href="faqs.html" class="nav-link">FAQ</a></li>
-                            <li class="nav-item p-1"><a href="about.html" class="nav-link">Our Team</a></li>
-                            <li class="nav-item p-1"><a href="about.html" class="nav-link">Our Mission Vision</a></li>
-                            <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
-                            <li class="nav-item p-1"><a href="#" class="nav-link">Terms &amp; Conditions</a></li>
-                            <li class="nav-item p-1"><a href="#" class="nav-link">Privacy &amp; Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 mt-3 mb-5">
-                <p style="color: rgb(255, 255, 255); text-align: center;">Copyright © 2025 tutor.com All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
-</section>
-    </div>
+        </section>
+    </main>    
 </div>
 
+
+    <section id="footer" class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mt-3">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" height="70px">
+                        <p class="ms-5">details for TUTOR </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 mt-3">
+                    <div class="footer-address">
+                        <h2 class="font-color fw-semibold">Contacts</h2>
+                        <p>Mirpur, Dhaka</p>
+                        <p>017***********</p>
+                        <p>tutor@gmail.com</p>
+                    </div>
+                    <p>
+                        <strong style="color:#fff;font-size:16px;">Tin Number : 12345678, </strong>
+                        <strong style="color:#fff;font-size:16px;"> Licence Number : 12345678 </strong>
+                    </p>
+                    <div class="rounded-social-buttons mt-4">
+                        <a class="social-button facebook" href="#" target="_blank">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button linkedin" href="#" target="_blank">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button youtube" href="#" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a class="social-button rounded-5 instagram" href="#" target="_blank">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mt-3">
+                    <div class="footer-link">
+                        <h2 class="font-color fw-semibold">Quick Links</h2>
+                        <div class="footer-link-list">
+                            <ul class="list-unstyled ">
+                                <li class="nav-item  p-1"><a href="tutors.html" class="nav-link">Our Tutors</a></li>
+                                <li class="nav-item p-1"><a href="faqs.html" class="nav-link">FAQ</a></li>
+                                <li class="nav-item p-1"><a href="about.html" class="nav-link">Our Team</a></li>
+                                <li class="nav-item p-1"><a href="about.html" class="nav-link">Our Mission Vision</a></li>
+                                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                                <li class="nav-item p-1"><a href="#" class="nav-link">Terms &amp; Conditions</a></li>
+                                <li class="nav-item p-1"><a href="#" class="nav-link">Privacy &amp; Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-3 mb-4">
+                    <p style="color: rgb(255, 255, 255); text-align: center;">Copyright © 2025 tutor.com All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <script src="js/tution.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="src/assets/js/iconify-icon.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("tutionPostBtn").addEventListener("click", function () {
-            const tutionPost = document.getElementById("tutionPost");
-
-            if (tutionPost) {
-                tutionPost.classList.toggle("d-none");
-            } else {
-                console.error("Element with ID 'tutionPost' not found.");
-            }
-        });
-    });
-    </script>
 </body>
 </html>

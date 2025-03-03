@@ -1,8 +1,23 @@
 /* code for home start*/
+
 .carousel-img {
     width: 100%;
     height: 300px; /* Default height on large screens */
     object-fit: cover; /* Ensures images are cropped properly */
+}
+.glow-always {
+    cursor: pointer;
+    animation: glowing 1.5s infinite alternate;
+    border-radius: 50%;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px #9cc8f1;
+    }
+    100% {
+        box-shadow: 0 0 50px #03002c;
+    }
 }
 
 @keyframes shake {
@@ -90,11 +105,7 @@ animation: shake 0.4s ease-in-out;
     /* padding-right: 40px;  */
     width: 100%;
 }
-.form-select:focus,
-.form-control:focus {
-    border-color: #0077cc;
-    box-shadow: 0px 0px 10px rgba(0, 119, 204, 0.2);
-}
+
 /* Radio Button Styling */
 .form-check-input {
     border: 2px solid #0077cc;
@@ -130,6 +141,7 @@ animation: shake 0.4s ease-in-out;
 }
 .popular-category .category .card:hover{
     margin-top: -7px;
+    opacity: 100%;
 }
 .popular-category .arrowBtn{
     background-color: #eceaea;
@@ -201,10 +213,10 @@ animation: shake 0.4s ease-in-out;
 }
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
 

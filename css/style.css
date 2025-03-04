@@ -13,19 +13,19 @@
 
 @keyframes glowing {
     0% {
-        box-shadow: 0 0 10px #9cc8f1;
+        box-shadow: 0 0 10px #001c07;
     }
     100% {
-        box-shadow: 0 0 50px #03002c;
+        box-shadow: 0 0 50px #006704;
     }
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); } 
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
     
 }  
 .title-paragraph{
@@ -138,15 +138,12 @@ animation: shake 0.4s ease-in-out;
 .popular-category .category .card{
     border-radius: 20px;
     /* opacity: 0.5px; */
-    transition: all ease 0.2s;
+    transition: all ease 0.4s;
 }
 .popular-category .category .card:hover{
-    transform: translateY(-7px);
-    opacity: .6;
-   filter: alpha(opacity=50);
-   background-color: rgba(39, 36, 36, 0.2);
-   transition: all 0.5s;
-
+    transform: translateY(-5px);
+   background-color: rgb(230, 227, 227);
+    border: 1px solid rgb(3, 94, 14);
 }
 .popular-category .arrowBtn{
     background-color: #eceaea;

@@ -1,3 +1,25 @@
+// code select tutor or student start
+document.getElementById("studentSelection").addEventListener("change", function () {
+    if (this.checked) {
+        document.getElementById("tutorSelection").checked = false;
+        document.getElementById("studentOrtutor").textContent = "Student";
+    } else {
+        document.getElementById("studentOrtutor").textContent = "....";
+    }
+});
+
+document.getElementById("tutorSelection").addEventListener("change", function () {
+    if (this.checked) {
+        document.getElementById("studentSelection").checked = false;
+        document.getElementById("studentOrtutor").textContent = "Tutor";
+    } else {
+        document.getElementById("studentOrtutor").textContent = "...";
+    }
+});
+// code for select tutor or student end
+
+
+
 // password hide and show start 
 document.querySelectorAll(".toggle-password").forEach(button => {
     button.addEventListener("click", function () {

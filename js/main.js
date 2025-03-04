@@ -2,15 +2,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-    // Set active class on click
     navLinks.forEach(link => {
         link.addEventListener("click", function () {
-            navLinks.forEach(l => l.classList.remove("active")); // Remove active from all
-            this.classList.add("active"); // Add active to clicked link
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
         });
     });
-
-    // Preserve active state when refreshing the page
     const currentPage = window.location.pathname.split("/").pop();
     navLinks.forEach(link => {
         if (link.getAttribute("href") === currentPage) {
@@ -20,42 +17,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // code for header end
 
-
-
-
-
-// code for login  section start
-document.getElementById("studentSelection").addEventListener("change", function () {
-    if (this.checked) {
-        document.getElementById("tutorSelection").checked = false;
-        document.getElementById("studentOrtutor").textContent = "Student";
-    } else {
-        document.getElementById("studentOrtutor").textContent = "....";
-    }
-});
-
-document.getElementById("tutorSelection").addEventListener("change", function () {
-    if (this.checked) {
-        document.getElementById("studentSelection").checked = false;
-        document.getElementById("studentOrtutor").textContent = "Tutor";
-    } else {
-        document.getElementById("studentOrtutor").textContent = "....";
-    }
-});
-// code for login section end
-
-
-// code for tution Board section start 
+// counter in home strt
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("tutionPostBtn").addEventListener("click", function () {
-        const tutionPost = document.getElementById("tutionPost");
+    function startCounter(element, target) {
+        let count = 0;
+        let speed = target / 100; // Adjust speed as needed
 
-        if (tutionPost) {
-            tutionPost.classList.toggle("d-none");
-        } else {
-            console.error("Element with ID 'tutionPost' not found.");
-        }
+        let counter = setInterval(() => {
+            count += Math.ceil(speed);
+            if (count >= target) {
+                count = target;
+                clearInterval(counter);
+            }
+            element.innerText = count;
+        }, 20);
+    }
+
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let number = entry.target;
+                let targetValue = parseInt(number.getAttribute("data-target"));
+                startCounter(number, targetValue);
+                observer.unobserve(number);
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+    document.querySelectorAll(".counter").forEach(counter => {
+        counter.setAttribute("data-target", counter.innerText);
+        counter.innerText = "0"; 
+        observer.observe(counter);
     });
 });
 
-// code for tution Board section end 
+// counter in home end

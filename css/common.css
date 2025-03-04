@@ -50,7 +50,9 @@ body{
     background: linear-gradient(to top right, #80d8ee, #89f18b);
 }
 
-
+.btn-view-all a button{
+    padding: 5px 10px;
+}
 
 .footer{
     background-color: rgb(1, 5, 36);
@@ -164,4 +166,4 @@ body{
     } 
 
 }
-
+   

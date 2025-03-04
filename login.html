@@ -20,21 +20,29 @@
             <br>
             <section id="header" class="frontend-navbar container sticky-top">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded-bottom-4 sticky-top">
-                    <div class="container">
-                        <a href="index.html" class="navbar-brand">
+                    <div class="container-md">
+                        <a href="index.html" class="navbar-brand m-0">
                             <img src="assets/images/logo.png" width="130px">
                         </a>
             
                         <!-- Mobile view Login & Sign Up -->
                         <div class="mobile-auth d-lg-none">
-                            <a href="login.html" class="login">Login</a>
-                            <a href="registration.html" class="registration">Sign Up</a>
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-regular fa-circle-user fs-3"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                    <a href="login.html" class="login">Login</a>
+                                    <a href="registration.html" class="registration">Sign Up</a>
+                                </ul>
+                            </div>
+                           
 
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-globe"></i>
+                                    <i class="fa-solid fa-globe fs-3"></i>
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <ul class="dropdown-menu" style="min-width: 50px;"  aria-labelledby="languageDropdown">
                                     <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
                                     <li><a class="dropdown-item" href="?lang=bn">🇧🇩 বাংলা</a></li>
                                 </ul>

@@ -28,10 +28,10 @@ body{
     border: 1px solid rgb(0, 234, 39);
     margin: 0 5px;
     border-radius: 15px;
-    padding: 10px 30px;
+    padding: 6px 25px;
     text-decoration: none;
     font-size: 18px;
-    transition: all ease 0.4s;
+    transition: all ease 0.5s;
 }
 .registration {
     color: rgb(72, 72, 72);
@@ -44,10 +44,12 @@ body{
 .registration:hover {
     background: rgb(255, 255, 255);
     color: linear-gradient(to top right, #80d8ee, #89f18b);
+    transition: all ease 0.5s;
 }
 .login:hover{
     color: rgb(72, 72, 72);
     background: linear-gradient(to top right, #80d8ee, #89f18b);
+    transition: all ease 0.5s;
 }
 
 .btn-view-all a button{

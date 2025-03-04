@@ -1,4 +1,19 @@
 /* code for home start*/
+@media (max-width: 992px) {
+    .carousel-img {
+        height: 250px;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 200px;
+    }
+}
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 150px;
+    }
+}
 
 .carousel-img {
     width: 100%;
@@ -142,46 +157,35 @@ animation: shake 0.4s ease-in-out;
 }
 .popular-category .category .card:hover{
     transform: translateY(-5px);
-   background-color: rgb(230, 227, 227);
+    background: rgba(222, 222, 222, 0.8);
     border: 1px solid rgb(3, 94, 14);
 }
-.popular-category .arrowBtn{
-    background-color: #eceaea;
-    height: 30px;
-    width: 40px;
-}
-.popular-category .category :hover .arrowBtn{
-    background-color: #b7fab8;
-}
-.popular-category .category:hover .arrowBtn img{
-    transform: rotate(90deg);
-}
-.popular-category .arrowBtn img{
-    height: 25px;
-    /* background-color: #f77c7c; */
-    transform: rotate(50deg);
-}
-
 /* code for .popular-category end */
 
-@media screen and (min-width: 1280px) {
-    .hero {
-      background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp);
-      padding-top: 40px;
-      padding-bottom: 60px;
-    }
-  }
-  .hero-section-general {
+.hero-section-general {
     background-color: var(--white);
     background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp);
     background-position: 50%;
     background-size: cover;
     padding: 140px 20px 60px;
+   
+  }
+  .hero{
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 /* code for home end*/
 
 /* code for about start*/
-/* Background Section */
+@media (max-width: 992px) {
+    .aboutMissionLeft, .aboutMissionRight{
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    .team-card {
+        margin-top: 20px;
+    }
+}
 .management-team {
     background: linear-gradient(135deg, #029b47, #0285a9);
     padding: 80px 0;
@@ -222,6 +226,13 @@ animation: shake 0.4s ease-in-out;
     }
 }
 
+.value .row .card:hover{
+    border: 1px solid green;
+    background: rgba(222, 222, 222, 0.8);
+    transform: translateY(-5px);
+    transition: all ease 0.5s;
+}
+
 /* code for about end*/
 
 /* code for login section start */
@@ -239,24 +250,3 @@ animation: shake 0.4s ease-in-out;
 }
 
 /* code for login section end */
-
-
-/* responsive code  */
-
-@media (max-width: 992px) {
-    .carousel-img {
-        height: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-img {
-        height: 200px;
-    }
-}
-
-@media (max-width: 576px) {
-    .carousel-img {
-        height: 150px;
-    }
-}

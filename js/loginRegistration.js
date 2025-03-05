@@ -1,23 +1,22 @@
 // code select tutor or student start
-document.getElementById("studentSelection").addEventListener("change", function () {
-    if (this.checked) {
-        document.getElementById("tutorSelection").checked = false;
-        document.getElementById("studentOrtutor").textContent = "Student";
-    } else {
-        document.getElementById("studentOrtutor").textContent = "....";
-    }
-});
+document.addEventListener("DOMContentLoaded", function () {
+    function selectOption(element, role) {
+        document.querySelectorAll('.option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        element.classList.add('selected');
 
-document.getElementById("tutorSelection").addEventListener("change", function () {
-    if (this.checked) {
-        document.getElementById("studentSelection").checked = false;
-        document.getElementById("studentOrtutor").textContent = "Tutor";
-    } else {
-        document.getElementById("studentOrtutor").textContent = "...";
+        document.getElementById("studentOrtutor").textContent = role;
     }
+
+    document.querySelectorAll('.option').forEach(option => {
+        option.addEventListener('click', function () {
+            const role = this.textContent.includes("Student") ? "Student" : "Tutor";
+            selectOption(this, role);
+        });
+    });
 });
 // code for select tutor or student end
-
 
 
 // password hide and show start 

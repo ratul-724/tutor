@@ -245,8 +245,31 @@ animation: shake 0.4s ease-in-out;
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-50px);
+        transform: translateY(-20px);
     }
 }
 
+
+/* Selected State */
+.selected {
+    border-bottom: 3px solid #28a745 !important;
+    background: rgba(33, 90, 46, 0.1);
+}
+/* Selected Image */
+.selected img {
+    border: 2px solid #28a745 !important;
+}
+.selected .checkmark {
+    display: block !important;
+}
+.checkmark {
+    position: absolute;
+    top: -35px;
+    left: 57%;
+    z-index: 10;
+    font-size: 20px;
+    color: #28a745;
+    border-radius: 50%;
+    display: none;
+}
 /* code for login section end */

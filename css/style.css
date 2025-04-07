@@ -1,4 +1,47 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
 /* code for home start*/
+.hero {
+    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    padding: 60px 20px;
+    border-radius: 20px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    color: #0077cc;
+}
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+}
+.hero .btn-primary {
+    background-color: #0077cc;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+button:hover {
+    opacity: 0.8;
+}
+.modal-backdrop.show {
+    opacity: 0.85 !important;
+}
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.btn-close {
+    font-size: 0.75rem;
+}
+
 @media (max-width: 992px) {
     .carousel-img {
         height: 250px;
@@ -24,14 +67,16 @@
     cursor: pointer;
     animation: glowing 1.5s infinite alternate;
     border-radius: 50%;
+    text-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+    color: #0077cc;
 }
 
 @keyframes glowing {
     0% {
-        box-shadow: 0 0 10px #001c07;
+        box-shadow: 0 0 10px #4291f8;
     }
     100% {
-        box-shadow: 0 0 50px #006704;
+        box-shadow: 0 0 50px #74a0e3;
     }
 }
 
@@ -150,6 +195,23 @@ animation: shake 0.4s ease-in-out;
 /* code for popular tutors end */
 
 /* code for .popular-category start */
+.popular-category .category .card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.popular-category .category .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.popular-category .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0077cc;
+}
+.popular-category .text-danger {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 .popular-category .category .card{
     border-radius: 20px;
     /* opacity: 0.5px; */
@@ -162,6 +224,22 @@ animation: shake 0.4s ease-in-out;
 }
 /* code for .popular-category end */
 
+/* Update Blog Section  start*/
+.update-blog .card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.update-blog .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.update-blog .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+/* Update Blog Section  end*/
 .hero-section-general {
     background-color: var(--white);
     background-image: url(https://cdn.prod.website-files.com/645bb805d559c029b8ab5032/66ea2d467afb30315813906a_Background%20Connect%20Education%20Tutor.webp);
@@ -232,8 +310,8 @@ animation: shake 0.4s ease-in-out;
     transform: translateY(-5px);
     transition: all ease 0.5s;
 }
-
 /* code for about end*/
+
 
 /* code for login section start */
 .floating-image {
@@ -248,7 +326,6 @@ animation: shake 0.4s ease-in-out;
         transform: translateY(-20px);
     }
 }
-
 
 /* Selected State */
 .selected {

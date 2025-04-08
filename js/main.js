@@ -1,23 +1,3 @@
-// code for header start
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-    // Get the current page's filename
-    const currentPage = window.location.pathname.split("/").pop();
-
-    // Loop through each nav link
-    navLinks.forEach(link => {
-        // Check if the href matches the current page
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
-    });
-});
-// code for header end
-
-
 // code for modal start here 
 // YouTube video modal functionality
 let videoModal = null;
@@ -116,7 +96,7 @@ const tutors = [
         salary: "Above 7000/Month",
         subjects: "Mathematics, Physics",
         experience: "5 years",
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 2,
@@ -127,7 +107,7 @@ const tutors = [
         salary: "Above 5000/Month",
         subjects: "Chemistry, Biology",
         experience: "3 years",
-        avatar: "https://randomuser.me/api/portraits/men/2.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 3,
@@ -138,7 +118,7 @@ const tutors = [
         salary: "6000-10000/Month",
         subjects: "English, History",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/men/3.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 4,
@@ -149,7 +129,7 @@ const tutors = [
         salary: "3500+/Month",
         subjects: "Computer Science",
         experience: "2 years",
-        avatar: "https://randomuser.me/api/portraits/men/4.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 5,
@@ -160,7 +140,7 @@ const tutors = [
         salary: "Negotiable",
         subjects: "Economics, Business",
         experience: "3 years",
-        avatar: "https://randomuser.me/api/portraits/women/1.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 6,
@@ -171,7 +151,7 @@ const tutors = [
         salary: "Above 6000/Month",
         subjects: "Textile Engineering",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/men/5.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 7,
@@ -182,7 +162,7 @@ const tutors = [
         salary: "12k/Month",
         subjects: "Civil Engineering",
         experience: "6 years",
-        avatar: "https://randomuser.me/api/portraits/men/6.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 8,
@@ -193,7 +173,7 @@ const tutors = [
         salary: "5000/Month",
         subjects: "Accounting, Finance",
         experience: "3 years",
-        avatar: "https://randomuser.me/api/portraits/men/7.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 9,
@@ -204,7 +184,7 @@ const tutors = [
         salary: "Negotiable",
         subjects: "Marine Science",
         experience: "2 years",
-        avatar: "https://randomuser.me/api/portraits/men/8.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 10,
@@ -215,7 +195,7 @@ const tutors = [
         salary: "9000-12000/Month",
         subjects: "Electrical Engineering",
         experience: "5 years",
-        avatar: "https://randomuser.me/api/portraits/men/9.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 11,
@@ -226,7 +206,7 @@ const tutors = [
         salary: "6000-9000/Month",
         subjects: "Computer Science",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/men/10.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 12,
@@ -237,7 +217,7 @@ const tutors = [
         salary: "10000-15000",
         subjects: "Various Subjects",
         experience: "5+ years",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 13,
@@ -248,7 +228,7 @@ const tutors = [
         salary: "8000-10000/Month",
         subjects: "Biology, Chemistry",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/men/12.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 14,
@@ -259,7 +239,7 @@ const tutors = [
         salary: "7000-9000/Month",
         subjects: "English Literature",
         experience: "3 years",
-        avatar: "https://randomuser.me/api/portraits/women/2.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 15,
@@ -270,7 +250,7 @@ const tutors = [
         salary: "8500-11000/Month",
         subjects: "Economics",
         experience: "5 years",
-        avatar: "https://randomuser.me/api/portraits/men/13.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 16,
@@ -281,7 +261,7 @@ const tutors = [
         salary: "9000+/Month",
         subjects: "Business Administration",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/women/3.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 17,
@@ -292,7 +272,7 @@ const tutors = [
         salary: "10000-15000/Month",
         subjects: "Mechanical Engineering",
         experience: "6 years",
-        avatar: "https://randomuser.me/api/portraits/men/14.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 18,
@@ -303,7 +283,7 @@ const tutors = [
         salary: "7500-9500/Month",
         subjects: "Psychology",
         experience: "3 years",
-        avatar: "https://randomuser.me/api/portraits/women/4.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 19,
@@ -314,7 +294,7 @@ const tutors = [
         salary: "6000-8000/Month",
         subjects: "Political Science",
         experience: "2 years",
-        avatar: "https://randomuser.me/api/portraits/men/15.jpg"
+        avatar: "assets/icons/user.png"
     },
     {
         id: 20,
@@ -325,7 +305,7 @@ const tutors = [
         salary: "8500+/Month",
         subjects: "Marketing",
         experience: "4 years",
-        avatar: "https://randomuser.me/api/portraits/women/5.jpg"
+        avatar: "assets/icons/user.png"
     }
 ];
 

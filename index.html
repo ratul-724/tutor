@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
+        
     <title>Tutor</title>
 </head>
 <body>
@@ -91,260 +92,158 @@
                 </div>
             </div>
 
-            <section class="mt-5 premium-tutor" >
+            <!-- popular tutor category section strat here -->
+            <section>
+                <section class="py-5">
+                    <div class="container">
+                      <h2 class="text-center mb-4">Popular Categories</h2>
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                  
+                        <!-- Card 1 -->
+                        <div class="col">
+                          <div class="card h-100 border-0 shadow">
+                            <div class="card-header bg-info text-white text-center">
+                              Looking for lady tutor?
+                            </div>
+                            <img src="assets/images/ladyTeacher.jpg" class="" alt="Lady Tutor">
+                            <div class="card-footer bg-info text-center">
+                              <a href="#" class="btn btn-sm btn-light">Click here</a>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Card 2 -->
+                        <div class="col">
+                          <div class="card h-100 border-0 shadow">
+                            <div class="card-header bg-info text-white text-center">
+                              Looking for BUETian?
+                            </div>
+                            <img src="assets/images/buet.jpg" class="" alt="BUET Tutor">
+                            <div class="card-footer bg-info text-center">
+                              <a href="#" class="btn btn-sm btn-light">Click here</a>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Add more cards here like above -->
+                        <!-- Card 3 -->
+                        <div class="col">
+                          <div class="card h-100 border-0 shadow">
+                            <div class="card-header bg-info text-white text-center">
+                              English medium tutor?
+                            </div>
+                            <img src="assets/images/englishMedium.jpg" class="" alt="English Medium">
+                            <div class="card-footer bg-info text-center">
+                              <a href="#" class="btn btn-sm btn-light">Click here</a>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Card 4 -->
+                        <div class="col">
+                          <div class="card h-100 border-0 shadow">
+                            <div class="card-header bg-info text-white text-center">
+                              Looking for science tutor?
+                            </div>
+                            <img src="assets/images/scienceTeacher.jpg" class="" alt="Science">
+                            <div class="card-footer bg-info text-center">
+                              <a href="#" class="btn btn-sm btn-light">Click here</a>
+                            </div>
+                          </div>
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </section>
+                  
+            </section>
+            <!-- popular tutor category section end here -->
+
+            <!-- premium Tutor section end here -->
+            <section class="mt-5 premiumTutor" >
                 <div class="top text-center ">
-                    <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">OUR POPULAR  </span> TUTORS</h2>
+                    <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">OUR PREMIUM</span> TUTORS</h2>
                     <div class="title-paragraph-bg">
-                        <p class=" title-paragraph">Find tutor of your choise</p>
+                        <p class=" title-paragraph">Highly qualified tutors</p>
                     </div>
                 </div>
-
-                <div class="premium-tutor-body m-auto mt-5 container">
-                    <div class="search row ">
- 
-                        <div class="col-lg-3 col-md-12 col-sm-12 col-12">
-                            <div class="filter-sidebar custom-scrollbar ">
-                                <div class="filter-header w-100 p-3 text-center">
-                                    <h5><i class="fa-solid fa-magnifying-glass fs-5"></i> Advanced Filter</h5>   
-                                </div>
-
-                            <div class="p-4"> 
-                                <!-- Search By Job Id -->
-                                <div class="py-2">
-                                    <h6 class="text-danger fw-bold"><i class="fa-solid fa-magnifying-glass"></i> Search By Job ID</h6>
-                                    <input type="text" class="form-control" placeholder="Enter job ID here..." id="jobIdInput">
-                                </div>
-                        
-                                <!-- Tuition Type -->
-                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Tuition Type</h6>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tuitionAll" name="tuitionType" checked>
-                                    <label class="form-check-label" for="tuitionAll">All Tuition</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tuitionHome" name="tuitionType">
-                                    <label class="form-check-label" for="tuitionHome">Home Tuition</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tuitionOnline" name="tuitionType">
-                                    <label class="form-check-label" for="tuitionOnline">Online Tuition</label>
-                                </div>
-                        
-                                <!-- Tutor Preference -->
-                                <h6 class="fw-bold"><i class="fa-solid fa-venus-mars fs-5"></i> Tutor Preference</h6>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tutorAll" name="tutorPreference" checked>
-                                    <label class="form-check-label" for="tutorAll">All</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tutorMale" name="tutorPreference">
-                                    <label class="form-check-label" for="tutorMale">Male</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" id="tutorFemale" name="tutorPreference">
-                                    <label class="form-check-label" for="tutorFemale">Female</label>
-                                </div>
-                        
-                                <!-- Select District -->
-                                <div class="py-2">
-                                    <h6 class="fw-bold"><i class="fa-solid fa-location-dot fs-5"></i> Select District</h6>
-                                    <select name="districts" class="districts single-select form-select">
-                                        <option class="" value="">All</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Chattogram</option>
-                                        <option value="5">Rajshahi</option>
-                                        <option value="6">Sylhet</option>
-                                        <option value="7">Khulna</option>
-                                        <option value="8">Barishal</option>
-                                        <option value="9">Rangpur</option>
-                                        <option value="10">Mymensingh</option>
-                                        <option value="11">Narayanganj</option>
-                                        <option value="12">Savar</option>
-                                        <option value="13">Gazipur</option>
-                                        <option value="14">Bagerhat</option>
-                                        <option value="15">Bandarban</option>
-                                        <option value="16">Barguna</option>
-                                        <option value="17">Bhola</option>
-                                        <option value="18">Bogra</option>
-                                        <option value="19">Brahmanbaria</option>
-                                        <option value="20">Chandpur</option>
-                                        <option value="21">Chapai Nawabganj</option>
-                                        <option value="22">Chuadanga</option>
-                                        <option value="23">Cumilla</option>
-                                        <option value="24">Cox's Bazar</option>
-                                        <option value="25">Dinajpur</option>
-                                        <option value="26">Faridpur</option>
-                                        <option value="27">Feni</option>
-                                        <option value="28">Gaibandha</option>
-                                        <option value="29">Gazipur</option>
-                                        <option value="30">Gopalgong</option>
-                                        <option value="31">Habiganj</option>
-                                        <option value="32">Jamalpur</option>
-                                        <option value="33">Jessore</option>
-                                        <option value="34">Jhalokati</option>
-                                        <option value="35">Jhenaidaha</option>
-                                        <option value="36">Joypurhat</option>
-                                        <option value="37">Khagrachhari</option>
-                                        <option value="38">Kishoreganj</option>
-                                        <option value="39">Kurigram</option>
-                                        <option value="40">Kustia</option>
-                                        <option value="41">Lakshmipur</option>
-                                        <option value="42">Lalmonirhat</option>
-                                        <option value="43">MADARIPUR</option>
-                                        <option value="44">Magura</option>
-                                        <option value="45">Manikganj</option>
-                                        <option value="46">Maulivi Bazar</option>
-                                        <option value="47">Meherpur</option>
-                                        <option value="48">Munshuganj</option>
-                                        <option value="49">Munshuganj</option>
-                                        <option value="50">Naogaon</option>
-                                        <option value="51">Narail</option>
-                                        <option value="52">tesT</option>
-                                        <option value="53">Narsingdi</option>
-                                        <option value="54">Natore</option>
-                                        <option value="55">Netrokona</option>
-                                        <option value="56">Nilphamari</option>
-                                        <option value="57">Noakhali</option>
-                                        <option value="58">Pabna</option>
-                                        <option value="59">Panchagarh</option>
-                                        <option value="60">Patuakhali</option>
-                                        <option value="61">Pirojpur</option>
-                                        <option value="62">Rajbari</option>
-                                        <option value="63">Rangamati</option>
-                                        <option value="64">Satkhira</option>
-                                        <option value="65">Shariatpur</option>
-                                        <option value="67">Sherpur</option>
-                                        <option value="68">Sirajganj</option>
-                                        <option value="69">Sunamganj</option>
-                                        <option value="70">Tangail</option>
-                                        <option value="71">Thakurgaon</option>
-                                    </select>
-                                </div>
-                        
-                                <!-- Select sub -->
-                                <div class="py-2">
-                                    <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject</h6>
-                                    <select class="form-select" id="mediumSelect">
-                                        <option value="">All</option>
-                                        <option value="1">Bangla</option>
-                                        <option value="2">English</option>
-                                        <option value="3">Math</option>
-                                        <option value="4">History</option>
-                                        <option value="5">ICT</option>
-                                        <option value="6">Computer</option>
-                                    </select>
-                                </div>
-                        
-                                <!-- Select Class -->
-                                <div class="py-2">
-                                    <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class</h6>
-                                    <select class="form-select" id="classSelect">
-                                        <option value="">All</option>
-                                    </select>
-                                </div>
-                        
-                            </div>
-                            </div>
-                        </div>
-          
-                        
-                        <div class="col-lg-9">
-                            <div class="row bg-info-subtle justify-content-center w-100">
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Mymenshingh</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Shavar</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Gazipur</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Sylhet</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Dhaka</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-                                <div class="tutorsPerson p-3 d-flex flex-column align-items-center justify-content-center text-center col-lg-4 rounded-4 " style="background: linear-gradient(to bottom right, #96f896, #f3f9cf);">
-                                    <img src="assets/icons/man.png" alt="" width="100px"><br>
-                                    <div class="tutorsPersonInfo">
-                                        <p class="fw-bold fs-4 p-0 m-0">Ratul Hasan</p>
-                                        <p class="text-secondary m-0">Moulvibazar Polytechnic Institue</p>
-                                        <p class="fw-semibold">Computer Technology</p>
-                                        <a class="text-decoration-none text-black p-2 login" style="background-color: #c8f7d9;" href="#"><i class="fa-solid fa-location-dot"></i> Mymenshingh</a>
-                                        <br>
-                                        
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3 fw-bold" href="#">View Details</button>
-                                </div>
-
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination mt-4 justify-content-center">
-                                      <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                          <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                      </li>
-                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                          <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                      </li>
-                                    </ul>
-                                  </nav>
-                            </div>
-                        </div>
+                
+                <div class="container premium-section row">
+                    <div id="tutors-container" class="row col-lg-9">
+                        <!-- Tutors will be loaded here by JavaScript -->
                     </div>
+                    
+                    <div class="search-container mt-3 col-lg-3">
+                        <div class="search-box">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="district" class="form-label">Select District</label>
+                                    <select class="form-select" id="district">
+                                        <option value="">Any District</option>
+                                        <option value="dhaka">Dhaka</option>
+                                        <option value="chittagong">Chittagong</option>
+                                        <option value="rajshahi">Rajshahi</option>
+                                        <option value="rangpur">Rangpur</option>
+                                        <option value="khulna">Khulna</option>
+                                        <option value="barishal">Barishal</option>
+                                        <option value="sylhet">Sylhet</option>
+                                        <option value="mymenshingh">Mymenshingh</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 position-relative">
+                                    <label for="area" class="form-label">Select Area</label>
+                                    <input type="text" class="form-control" id="area" placeholder="Any Area" disabled>
+                                    <div id="area-suggestions" class="suggestion-box"></div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select class="form-select" id="subject">
+                                        <option value="">Any Subject</option>
+                                        <option value="math">Mathematics</option>
+                                        <option value="physics">Physics</option>
+                                        <option value="chemistry">Chemistry</option>
+                                        <option value="english">English</option>
+                                        <option value="biology">Biology</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="medium" class="form-label">Medium</label>
+                                    <select class="form-select" id="medium">
+                                        <option value="">Any Medium</option>
+                                        <option value="english">English Medium</option>
+                                        <option value="bangla">Bangla Medium</option>
+                                        <option value="both">Both</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="gender" class="form-label">Gender Preference</label>
+                                    <select class="form-select" id="gender">
+                                        <option value="">Any Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 d-flex align-items-end">
+                                    <button class="btn btn-primary btn-search w-100">Search Tutors</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <nav aria-label="Page navigation">
+                        <ul id="pagination" class="pagination">
+                            <!-- Pagination will be loaded here by JavaScript -->
+                        </ul>
+                    </nav>
                 </div>
             </section>
+            <!-- premium Tutor section end here -->
 
             <section class="container popular-category mt-5">
                     <div class="popular-category-top text-center">

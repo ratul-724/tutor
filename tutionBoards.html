@@ -3,409 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
-    
-    <!-- Font Awesome CDN (Replaces Kit) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Green Tuition Board - Find Teachers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Tutor</title>
+    <style>
+        .post-card {
+            border-radius: 12px;
+            border-left: 5px solid rgb(87, 145, 207);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(46, 196, 182, 0.2);
+        }
+        .badge-status {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+        }
+        .search-container {
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .icon-feature {
+            color: rgb(0, 124, 128);
+            font-size: 1.1rem;
+        }
+        @media (min-width : 768px) {
+            .search-container {
+                padding: auto !important;
+        }
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
+    <header id="header"></header>
+    <!-- Header -->
+    <section class="hero-gradient text-dark py-4 mb-4">
         <div class="container">
-            <br>
-            <section id="header" class="frontend-navbar container sticky-top"> </section>  
+            <div class="text-center mb-4">
+                <h1 class="fw-bold mb-3 display-4 text-primary-emphasis">Tuition Job Board</h1>
+                <p class="lead fs-5 text-primary-emphasis">Connect students with the perfect teachers</p>
+            </div>
             
-            
-    <main class="main container mt-4">
-        <div class=" d-flex align-items-center justify-content-end">
-            <button class="btn btn-primary mb-4 d-flex align-items-center justify-content-center" id="tutionPostBtn"><i class="fa-solid fa-person-chalkboard px-2"></i> আপনি কি টিউটর খুঁজছেন?</button>
+            <div class="search-container mx-auto bg-white rounded-pill p-1 position-relative">
+                <input type="text" class="form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
+                       placeholder="Search by subject, location or post..." id="searchInput">
+                <button class="btn btn-success position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1" 
+                        id="searchButton">
+                    <i class="fas fa-search me-1"></i> Search
+                </button>
+            </div><hr>
         </div>
-                <section class="tutoroPosting bg-success-subtle rounded-4 p-2 container mt-2 mb-5 d-none" id="tutionPost">
-                    <div class="postingText  text-center">
-                        <h1>আপনি কি টিউটর খুঁজছেন?</h1>
-                        <p>তাহলে নিচে দেয়া ফর্ম টি পূরণ করে সাবমিট করুন।</p>
-                    </div>
-                    <div class="row w-100 m-auto align-items-center ">
-                        <div class="col-md-6 col-sm-12 pb-2">
-                            <label for="name" class="fw-bold"><i class="fa-regular fa-user"></i> Name*</label><br>
-                            <input type="text" name="name" id="name" placeholder="Enter your name" class="border-0 p-2 rounded-3 w-100">
-                        </div>
-                        <div class="col-md-6 col-sm-12 pb-2">
-                            <label for="phone" class="fw-bold"><i class="fa-solid fa-phone"></i> Phone*</label><br>
-                            <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="border-0 p-2 rounded-3 w-100">
-                        </div>
-                        <div class="col-md-6 col-sm-12 pb-2">
-                            <div class="py-2">
-                                <h6 class="fw-bold"><i class="fa-solid fa-location-dot"></i> Select District*</h6>
-                                <select name="districts" class="districts single-select form-select">
-                                    <option class="" value="">All</option>
-                                    <option value="3">Dhaka</option>
-                                    <option value="4">Chattogram</option>
-                                    <option value="5">Rajshahi</option>
-                                    <option value="6">Sylhet</option>
-                                    <option value="7">Khulna</option>
-                                    <option value="8">Barishal</option>
-                                    <option value="9">Rangpur</option>
-                                    <option value="10">Mymensingh</option>
-                                    <option value="11">Narayanganj</option>
-                                    <option value="12">Savar</option>
-                                    <option value="13">Gazipur</option>
-                                    <option value="14">Bagerhat</option>
-                                    <option value="15">Bandarban</option>
-                                    <option value="16">Barguna</option>
-                                    <option value="17">Bhola</option>
-                                    <option value="18">Bogra</option>
-                                    <option value="19">Brahmanbaria</option>
-                                    <option value="20">Chandpur</option>
-                                    <option value="21">Chapai Nawabganj</option>
-                                    <option value="22">Chuadanga</option>
-                                    <option value="23">Cumilla</option>
-                                    <option value="24">Cox's Bazar</option>
-                                    <option value="25">Dinajpur</option>
-                                    <option value="26">Faridpur</option>
-                                    <option value="27">Feni</option>
-                                    <option value="28">Gaibandha</option>
-                                    <option value="29">Gazipur</option>
-                                    <option value="30">Gopalgong</option>
-                                    <option value="31">Habiganj</option>
-                                    <option value="32">Jamalpur</option>
-                                    <option value="33">Jessore</option>
-                                    <option value="34">Jhalokati</option>
-                                    <option value="35">Jhenaidaha</option>
-                                    <option value="36">Joypurhat</option>
-                                    <option value="37">Khagrachhari</option>
-                                    <option value="38">Kishoreganj</option>
-                                    <option value="39">Kurigram</option>
-                                    <option value="40">Kustia</option>
-                                    <option value="41">Lakshmipur</option>
-                                    <option value="42">Lalmonirhat</option>
-                                    <option value="43">MADARIPUR</option>
-                                    <option value="44">Magura</option>
-                                    <option value="45">Manikganj</option>
-                                    <option value="46">Maulivi Bazar</option>
-                                    <option value="47">Meherpur</option>
-                                    <option value="48">Munshuganj</option>
-                                    <option value="49">Munshuganj</option>
-                                    <option value="50">Naogaon</option>
-                                    <option value="51">Narail</option>
-                                    <option value="52">tesT</option>
-                                    <option value="53">Narsingdi</option>
-                                    <option value="54">Natore</option>
-                                    <option value="55">Netrokona</option>
-                                    <option value="56">Nilphamari</option>
-                                    <option value="57">Noakhali</option>
-                                    <option value="58">Pabna</option>
-                                    <option value="59">Panchagarh</option>
-                                    <option value="60">Patuakhali</option>
-                                    <option value="61">Pirojpur</option>
-                                    <option value="62">Rajbari</option>
-                                    <option value="63">Rangamati</option>
-                                    <option value="64">Satkhira</option>
-                                    <option value="65">Shariatpur</option>
-                                    <option value="67">Sherpur</option>
-                                    <option value="68">Sirajganj</option>
-                                    <option value="69">Sunamganj</option>
-                                    <option value="70">Tangail</option>
-                                    <option value="71">Thakurgaon</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="py-2 col-md-6 col-sm-12 pb-2">
-                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject*</h6>
-                            <select class="form-select" id="mediumSelect">
-                                <option value="">All</option>
-                                <option value="1">Bangla</option>
-                                <option value="2">English</option>
-                                <option value="3">Math</option>
-                                <option value="4">History</option>
-                                <option value="5">ICT</option>
-                                <option value="6">Computer</option>
-                            </select>
-                        </div>
-                        <div class="py-2 col-md-6 col-sm-12 pb-2">
-                            <h6 class="fw-bold"><i class="fa-solid fa-hourglass"></i> Day/Week*</h6>
-                            <select class="form-select" id="mediumSelect">
-                                <option value="">All</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="py-2 col-md-6 col-sm-12 pb-2">
-                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class*</h6>
-                            <select class="form-select" id="classSelect">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </div>
-                        <div class="py-2 col-md-6 col-sm-12 pb-2">
-                            <h6 class="fw-bold"><i class="fa-solid fa-venus-mars"></i> Preferred Tutor*</h6>
-                            <select class="form-select" id="genderSelect">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="others">Others</option>
-                            </select>
-                        </div>
-                        <div class="salary col-md-6 col-sm-12 pb-2">
-                            <label for="salary" class="fw-bold"><i class="fa-solid fa-money-bill-1-wave"></i> Salary*</label><br>
-                            <input type="text" placeholder="Preferred salary" class="w-100 border-0 p-2 rounded-3">
-                        </div>
-                        <div class="title col-md-6 col-sm-12 pb-2">
-                            <label for="title" class="fw-bold"><i class="fa-solid fa-text-width"></i> Title*</label><br>
-                            <textarea name="title" id="title" class="w-100 border-0 p-2 rounded-3"></textarea>
-                        </div>
-                        <div class="type col-md-6 col-sm-12 pb-2">
-                            <label for="type" class="fw-bold"><i class="fa-solid fa-chalkboard-user"></i> Tution Type*</label><br>
-                            <select name="type" id="type" class="border-0 w-100 bg-white py-2 rounded-3">
-                                <option value="home">Home Tutor</option>
-                                <option value="online">Online Tutor</option>
-                                <option value="batch">Batch Tutor</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-success fw-bold my-4 w-100 justify-content-center d-flex align-items-center"><i class="fa-solid fa-rocket fs-3 mx-2"></i> Create Your Post</button>
-                        </div>
-                    </div>
-                </section>
+    </section>
 
-        <section class="section-box">
-            <div class="container">
-                <div class="row">
+    <!-- Main Content -->
+    <div class="container mb-5">
+        <!-- Action Row -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+            <div class="d-flex flex-wrap gap-2 mb-3 mb-md-0" id="filterChips">
+                <!-- Filter chips will be added dynamically -->
+            </div>
+            <button class="btn btn-success px-4 py-2 fw-bold" id="createPostBtn">
+                <i class="fas fa-plus me-2"></i>Create Post
+            </button>
+        </div>
 
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-lg-0 mb-5">
-                        <div class="filter-sidebar custom-scrollbar ">
-                            <div class="filter-header w-100 p-3 text-center">
-                                <h5><i class="fa-solid fa-magnifying-glass"></i> Advanced Filter</h5>   
-                            </div>
+        <!-- Posts Grid -->
+        <div class="row g-4" id="postsContainer">
+            <!-- Posts will be loaded dynamically -->
+        </div>
+        
+        <!-- Loading Spinner -->
+        <div class="text-center py-5 d-none" id="loadingSpinner">
+            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3 text-muted">Loading posts...</p>
+        </div>
+        
+        <!-- No Results -->
+        <div class="text-center py-5 d-none" id="noResults">
+            <i class="fas fa-book-open fa-4x mb-4 text-muted"></i>
+            <h4 class="fw-bold mb-2">No posts found</h4>
+            <p class="text-muted mb-4">Try adjusting your search filters</p>
+            <button class="btn btn-outline-success">Clear filters</button>
+        </div>
+        
+        <!-- Pagination -->
+        <nav class="mt-5" id="paginationContainer">
+            <ul class="pagination justify-content-center">
+                <!-- Pagination will be added dynamically -->
+            </ul>
+        </nav>
+    </div>
 
-                        <div class="p-4"> 
-                            <!-- Search By Job Id -->
-                            <div class="py-2">
-                                <h6 class="text-danger fw-bold"><i class="fa-solid fa-magnifying-glass"></i> Search By Job ID</h6>
-                                <input type="text" class="form-control" placeholder="Enter job ID here..." id="jobIdInput">
-                            </div>
-                    
-                            <!-- Tuition Type -->
-                            <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Tuition Type</h6>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tuitionAll" name="tuitionType" checked>
-                                <label class="form-check-label" for="tuitionAll">All Tuition</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tuitionHome" name="tuitionType">
-                                <label class="form-check-label" for="tuitionHome">Home Tuition</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tuitionOnline" name="tuitionType">
-                                <label class="form-check-label" for="tuitionOnline">Online Tuition</label>
-                            </div>
-                    
-                            <!-- Tutor Preference -->
-                            <h6 class="fw-bold"><i class="fa-solid fa-venus-mars"></i> Tutor Preference</h6>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tutorAll" name="tutorPreference" checked>
-                                <label class="form-check-label" for="tutorAll">All</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tutorMale" name="tutorPreference">
-                                <label class="form-check-label" for="tutorMale">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="tutorFemale" name="tutorPreference">
-                                <label class="form-check-label" for="tutorFemale">Female</label>
-                            </div>
-                    
-                            <!-- Select District -->
-                            <div class="py-2">
-                                <h6 class="fw-bold"><i class="fa-solid fa-location-dot"></i> Select District</h6>
-                                <select name="districts" class="districts single-select form-select">
-                                    <option class="" value="">All</option>
-                                    <option value="3">Dhaka</option>
-                                    <option value="4">Chattogram</option>
-                                    <option value="5">Rajshahi</option>
-                                    <option value="6">Sylhet</option>
-                                    <option value="7">Khulna</option>
-                                    <option value="8">Barishal</option>
-                                    <option value="9">Rangpur</option>
-                                    <option value="10">Mymensingh</option>
-                                    <option value="11">Narayanganj</option>
-                                    <option value="12">Savar</option>
-                                    <option value="13">Gazipur</option>
-                                    <option value="14">Bagerhat</option>
-                                    <option value="15">Bandarban</option>
-                                    <option value="16">Barguna</option>
-                                    <option value="17">Bhola</option>
-                                    <option value="18">Bogra</option>
-                                    <option value="19">Brahmanbaria</option>
-                                    <option value="20">Chandpur</option>
-                                    <option value="21">Chapai Nawabganj</option>
-                                    <option value="22">Chuadanga</option>
-                                    <option value="23">Cumilla</option>
-                                    <option value="24">Cox's Bazar</option>
-                                    <option value="25">Dinajpur</option>
-                                    <option value="26">Faridpur</option>
-                                    <option value="27">Feni</option>
-                                    <option value="28">Gaibandha</option>
-                                    <option value="29">Gazipur</option>
-                                    <option value="30">Gopalgong</option>
-                                    <option value="31">Habiganj</option>
-                                    <option value="32">Jamalpur</option>
-                                    <option value="33">Jessore</option>
-                                    <option value="34">Jhalokati</option>
-                                    <option value="35">Jhenaidaha</option>
-                                    <option value="36">Joypurhat</option>
-                                    <option value="37">Khagrachhari</option>
-                                    <option value="38">Kishoreganj</option>
-                                    <option value="39">Kurigram</option>
-                                    <option value="40">Kustia</option>
-                                    <option value="41">Lakshmipur</option>
-                                    <option value="42">Lalmonirhat</option>
-                                    <option value="43">MADARIPUR</option>
-                                    <option value="44">Magura</option>
-                                    <option value="45">Manikganj</option>
-                                    <option value="46">Maulivi Bazar</option>
-                                    <option value="47">Meherpur</option>
-                                    <option value="48">Munshuganj</option>
-                                    <option value="49">Munshuganj</option>
-                                    <option value="50">Naogaon</option>
-                                    <option value="51">Narail</option>
-                                    <option value="52">tesT</option>
-                                    <option value="53">Narsingdi</option>
-                                    <option value="54">Natore</option>
-                                    <option value="55">Netrokona</option>
-                                    <option value="56">Nilphamari</option>
-                                    <option value="57">Noakhali</option>
-                                    <option value="58">Pabna</option>
-                                    <option value="59">Panchagarh</option>
-                                    <option value="60">Patuakhali</option>
-                                    <option value="61">Pirojpur</option>
-                                    <option value="62">Rajbari</option>
-                                    <option value="63">Rangamati</option>
-                                    <option value="64">Satkhira</option>
-                                    <option value="65">Shariatpur</option>
-                                    <option value="67">Sherpur</option>
-                                    <option value="68">Sirajganj</option>
-                                    <option value="69">Sunamganj</option>
-                                    <option value="70">Tangail</option>
-                                    <option value="71">Thakurgaon</option>
-                                </select>
-                            </div>
-                    
-                            <!-- Select sub -->
-                            <div class="py-2">
-                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Subject</h6>
-                                <select class="form-select" id="mediumSelect">
-                                    <option value="">All</option>
-                                    <option value="1">Bangla</option>
-                                    <option value="2">English</option>
-                                    <option value="3">Math</option>
-                                    <option value="4">History</option>
-                                    <option value="5">ICT</option>
-                                    <option value="6">Computer</option>
-                                </select>
-                            </div>
-                    
-                            <!-- Select Class -->
-                            <div class="py-2">
-                                <h6 class="fw-bold"><i class="fa-solid fa-book"></i> Select Class</h6>
-                                <select class="form-select" id="classSelect">
-                                    <option value="">All</option>
-                                </select>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                                                
-
-                    <div style="overflow-y: auto; height: 100vh; scrollbar-width: none;" class="col-lg-8 col-md-12 col-sm-12 col-12 float-right ">
-                        <div class=" content-page">
-                            <div class="row">
-                                <div class="bg-white rounded-4 p-4 h-100">
-                                    <div class="justify-content-between align-items-center d-flex">
-                                        <div class="right-info">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            <a class="text-decoration-none text-black" href=""> Azimpur, &nbsp;Dhaka</a>
-                                        </div>
-                                        <span class="btn btn-grey-small ml-auto login fs-6 p-2">Job ID: 34168</span>
-                                    </div>
-                                    <div class="card-block-info">
-                                        <h4 class="text-ellipsis" style="cursor: pointer;">Tutor Needed For Bangla Medium</h4>
-                                        <div class="mt-4 mb-3">
-                                            <span class="bg-body-secondary p-2 rounded-4">  Home Tutoring</span> 
-                                            <span class="p-2 rounded-4 bg-danger-subtle"> 11 minutes ago</span>
-                                        </div>
-                                        <div class="job-details mt-3">
-                                            <div class="row">
-                                                <div class="col-md-4 col-6 ">
-                                                    <div class="pb-2"> <i class="fa-solid fa-school"></i> Medium:<br><strong> Bangla Medium</strong>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-6">
-                                                    <div class="pb-2"><i class="fa-solid fa-book"></i> Class: <br><strong> Class 9</strong></div>
-                                                </div>
-                                                <div class="col-md-4 col-6">
-                                                  
-                                                    <div class="pb-2"> <i class="fa-solid fa-venus-mars"></i> Preferred Tutor : <br><strong>Male</strong></div>
-                                                </div>
-                                                <div class="col-md-4 col-6">
-                                                    <div class="pb-2"><i class="fa-regular fa-calendar-check"></i> Tutoring Days:<br><strong>5 Days/Week </strong>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-6">
-                                                    <div class="pb-2"><i class="fa-solid fa-book"></i> Subject: <br>
-                                                        <span class=" bg-success-subtle mt-2 p-1 rounded-5">General Maths</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-6">
-                                                    <div class="pb-2"><i class="fa-solid fa-money-bill-1-wave"></i> Salary: <br>
-                                                        <span class="card-text-price text-primary">5,000 Tk</span>
-                                                        <span class="text-muted">/Month</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-2-bottom d-flex justify-content-between">
-                                            <p class="text-secondary mt-2">Posted at: March 1, 2025</p>
-                                            <div class="ml-auto">
-                                                <a href="#" class="text-decoration-none"><button class="btn btn-outline-dark" style="font-size: 15px;">View Details</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Create Post Modal -->
+    <div class="modal fade" id="createPostModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Create New Teacher Request</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="postForm">
+                        <!-- Form will be filled dynamically -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="submitPostBtn">Post Requirement</button>
                 </div>
             </div>
-        </section>
-    </main>    
-</div>
+        </div>
+    </div>
 
+    <!-- Apply Modal -->
+    <div class="modal fade" id="applyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="applyModalTitle">Apply for Teaching Position</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="applyForm">
+                        <!-- Form will be filled dynamically -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="submitApplyBtn">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section id="footer" class="footer mt-5"></section>
-</div>
-
-    <script src="js/tution.js"></script>
-    <script src="js/main.js"></script>
+    <footer id="footer"></footer>
+    <script src="js/tutionBoard.js"></script>
     <script src="js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

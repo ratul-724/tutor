@@ -3,121 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
-    
-    <!-- Font Awesome CDN (Replaces Kit) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>My Blog - Tutorial Finder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Tutor</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #a9e4a9;
+            --accent-color: #27ae60;
+            --light-color: #f1f1f1;
+        }
+        .blog-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .blog-img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .blog-card:hover .blog-img {
+            transform: scale(1.03);
+        }
+        .thumbnail-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 20px;
+            background: rgb(235, 246, 222);
+        }
+        .thumbnail-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .thumbnail-card.active {
+            border: 2px solid var(--accent-color);
+        }
+        .thumbnail-img {
+            height: 150px;
+        }
+        .sidebar-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            background: rgb(255, 255, 255);
+        }
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        .category-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #c4c3c3;
+        }
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+        .category-list a {
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <div class="container">
-            <br>
-            <section id="header" class="frontend-navbar container sticky-top"> </section>  
+    <!-- Navigation -->
+    <header id="header"></header>
 
-
-        <section class="container mt-5">
-            <div class="row">
-                <div class="col-lg-8">            
-                    <div class="card mb-4 rounded-4">
-                        <div class="card-body">
-                            <div class="post-user-details row">
-                                <div class="col-lg-4 border-right">
-                                    <h4>Posted By</h4>
-                                    <p class="mt-4"><img src="assets/images/tutor.png" alt="User Image" class="user-image" style="width: 40px; height: 40px; border-radius: 100%;"> <span style="margin-left: 10px;">System</span></p>
-                                </div>
-
-                                <div class="col-lg-4 border-right">
-                                    <h4>Published</h4>
-                                    <p class=" mt-4 font-color fw-semibold" >January 16, 2025</p>
-                                </div>
-                                
-                                <div class="col-lg-4">
-                                    <h4>Category</h4>
-                                    <p class="font-color fw-semibold mt-4">Blog Test</p>
-                                </div>
-                            </div>
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Main Blog Content -->
+            <div class="col-lg-8">
+                <div class="blog-card mb-4 " id="main-blog">
+                    <img src="" class="card-img-top blog-img" alt="Blog Image" id="main-blog-image">
+                    <div class="card-body p-4">
+                        <h1 class="card-title mb-3" id="main-blog-title">Loading Blog...</h1>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="text-muted me-3" id="main-blog-date">
+                                <i class="far fa-calendar-alt me-1"></i> Date
+                            </span>
+                            <span class="text-muted" id="main-blog-author">
+                                <i class="far fa-user me-1"></i> Author
+                            </span>
                         </div>
-                    </div>
-
-                    <div class="card mb-3 rounded-4">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 40 days ago</small></p>
-                            <h2 class="mt-3">Tutor Provide এখন সাভারে</h2>
-                            <img class="card-img-top" alt="Blog Photo" style="width: 100%; " src="https://tutor-provide-primary.ap-south-1.linodeobjects.com/production/public/1d7e7fe0-0dea-4d15-8e11-d5a284b2f50b">
-                            <p class="mt-4">
-                                <div>
-                                    <p><span style="color:#ffcfc9;">Pending</span></p>
-                                </div>
-                            </p>
+                        <div id="main-blog-tags" class="mb-3">
+                            <!-- Tags will be added here -->
                         </div>
+                        <p class="card-text mb-4" id="main-blog-content">Please wait while we load the blog post...</p>
                     </div>
                 </div>
-
-                    <div class="col-lg-4 ">
-                        <div class="card rounded-4">
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Blog Thumbnails -->
+                <div class="card sidebar-card mb-4">
+                    <div class="card-body bg-success-subtle">
+                        <h4 class="card-title mb-4">Recent Posts</h4>
+                        
+                        <div class="thumbnail-card active" data-id="1" onclick="loadBlog(1)">
+                            <img src="assets/blog/blogKlanto.png" class="card-img-top thumbnail-img" alt="Blog Thumbnail" >
                             <div class="card-body">
-                                <div class="blog-details-category">
-                                    <h3 class="font-color fw-semibold">POPULAR CATEGORIES</h3>
-                                    <ul class="list-group"></ul>
-                                </div>
+                                <h5 class="card-title">Getting Started with JavaScript</h5>
+                                <p class="card-text text-muted small">Learn the basics of JavaScript programming language</p>
                             </div>
                         </div>
-                        <div class="blog-details-tags mt-4">
-                            <h3 class="font-color fw-semibold">POST TAGS</h3>
-                            <div class="mt-3">
-                                <span><button class="btn btn-dark rounded-4 p-2">school</button>
-                                    <span class="badge text-bg-primary m-2"></span>
-                                </span>
+                        
+                        <div class="thumbnail-card" data-id="2" onclick="loadBlog(2)">
+                            <img src="assets/blog/confidance.png" class="card-img-top thumbnail-img" alt="Blog Thumbnail">
+                            <div class="card-body">
+                                <h5 class="card-title">Responsive Web Design Principles</h5>
+                                <p class="card-text text-muted small">Essential techniques for creating responsive websites</p>
                             </div>
                         </div>
-                        <div>
-                            <div class="card mt-5" style="border:1px solid #E75510;">
-                                <div class="card-body">
-                                    <img src="assets/images/welcome.png" alt="" style="width:100%;">
-                                </div>
-                            </div>
-                            <div class="card mt-5" style="border:1px solid #E75510;">
-                                <div class="card-body">
-                                    <img src="assets/images/welcome.png" alt="" style="width:100%;">
-                                </div>
-                            </div>
-                            <div class="card mt-5" style="border:1px solid #E75510;">
-                                <div class="card-body">
-                                    <img src="assets/images/welcome.png" alt="" style="width:100%;">
-                                </div>
+                        
+                        <div class="thumbnail-card" data-id="3" onclick="loadBlog(3)">
+                            <img src="assets/blog/findTutor.jpg" class="card-img-top thumbnail-img" alt="Blog Thumbnail">
+                            <div class="card-body">
+                                <h5 class="card-title">Advanced CSS Tricks</h5>
+                                <p class="card-text text-muted small">Take your CSS skills to the next level with these techniques</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="row mt-5">
-                    <div class="col-6 text-start">
-                        <h2 class="title">Recent Post</h2>
-                    </div>
-                    <div class="col-6 btn-view-all text-end">
-                        <a href="blogPost.html" class="">
-                            <div class="btn-title-view-all">
-                                <button class="btn login">View All <i class="fa-solid fa-arrow-right" style="color: green; transform: rotate(315deg);"></i></button>
-                            </div>
-                        </a>
+                <!-- Categories -->
+                <div class="card sidebar-card mb-4">
+                    <div class="card-body ">
+                        <h4 class="card-title mb-4">Categories</h4>
+                        <ul class="category-list">
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Teacher</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Student</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Brain </a></li>
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Hard Work</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Tutorials</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right me-2"></i> Tips & Tricks</a></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="row mt-5"></div>
-        </section>
-</div>
-    <section id="footer" class="footer mt-5"></section>
-</div>
+                <!-- Newsletter -->
+                <div class="card sidebar-card">
+                    <div class="card-body ">
+                        <h4 class="card-title mb-4">Newsletter</h4>
+                        <p class="card-text text-muted mb-4">Subscribe to our newsletter to receive the latest tutorials and updates.</p>
+                        <form class="newsletter-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control py-3 " placeholder="Your email address" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success w-100">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/common.js"></script>
+    <!-- Footer -->
+  <footer id="footer"></footer>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="src/assets/js/iconify-icon.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        // Blog data - in a real scenario, this would come from a database
+        const blogPosts = {
+            1: {
+                title: "Getting Started with JavaScript",
+                image: "assets/blog/blogKlanto.png",
+                date: "March 15, 2025",
+                author: "Sarah Johnson",
+                tags: ["JavaScript", "Beginner", "Web Development"],
+                content: "JavaScript is one of the most popular programming languages in the world. It's the language of the web, allowing you to create interactive websites and applications. In this beginner's guide, we'll cover the fundamental concepts of JavaScript including variables, data types, functions, and control structures. By the end of this tutorial, you'll be able to write basic JavaScript code and understand how it interacts with HTML and CSS to create dynamic web pages. JavaScript's versatility makes it an essential skill for any web developer, whether you're building simple websites or complex web applications."
+            },
+            2: {
+                title: "আত্মবিশ্বাস বাড়াতে টিউশনের ভূমিকা।",
+                image: "assets/blog/confidance.png",
+                date: "March 2, 2025",
+                author: "Michael Chen",
+                tags: ["রেজাল্ট", "টিউশনের", "আত্মবিশ্বাস"],
+                content: "বর্তমান প্রতিযোগিতামূলক শিক্ষাজগতে শুধু ভালো রেজাল্ট করলেই হয় না, আত্মবিশ্বাস থাকাটাও সমান গুরুত্বপূর্ণ। একজন শিক্ষার্থী যদি নিজের ওপর বিশ্বাস রাখতে পারে, তাহলে সে যেকোনো চ্যালেঞ্জ মোকাবিলা করতে পারে। এই আত্মবিশ্বাস গঠনে টিউশনের ভূমিকা অত্যন্ত গুরুত্বপূর্ণ। <br> স্কুল বা কলেজে অনেক সময় শিক্ষকরা সবার দিকে সমানভাবে নজর দিতে পারেন না। কিন্তু একজন টিউটর ছাত্রের দুর্বলতা বুঝে তাকে সেই অনুযায়ী গাইড করতে পারে। এতে শিক্ষার্থীর ধারণা পরিষ্কার হয় এবং নিজের ওপর বিশ্বাস বাড়ে।"
+            },
+            3: {
+                title: "Advanced CSS Tricks",
+                image: "assets/blog/findTutor.jpg",
+                date: "January 10, 2025",
+                author: "Emily Rodriguez",
+                tags: ["CSS", "Advanced", "Design"],
+                content: "Once you've mastered the basics of CSS, it's time to explore some advanced techniques that can take your designs to the next level. CSS Grid and Flexbox offer powerful layout capabilities that go beyond traditional float-based designs. CSS variables (custom properties) allow for more maintainable and themeable stylesheets. Advanced selectors like :nth-child() and :not() give you precise control over styling. CSS animations and transitions can bring your interfaces to life without JavaScript. For performance optimization, consider techniques like will-change and contain properties. These advanced CSS features can help you create more sophisticated, efficient, and maintainable designs."
+            }
+        };
+        
+        // Function to load a blog post by ID
+        function loadBlog(blogId) {
+            const blog = blogPosts[blogId];
+            
+            if (blog) {
+                // Update main blog content
+                document.getElementById('main-blog-image').src = blog.image;
+                document.getElementById('main-blog-title').textContent = blog.title;
+                document.getElementById('main-blog-date').innerHTML = `<i class="far fa-calendar-alt me-1"></i> ${blog.date}`;
+                document.getElementById('main-blog-author').innerHTML = `<i class="far fa-user me-1"></i> ${blog.author}`;
+                document.getElementById('main-blog-content').textContent = blog.content;
+                
+                // Update tags
+                const tagsContainer = document.getElementById('main-blog-tags');
+                tagsContainer.innerHTML = '';
+                blog.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'tag';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
+                
+                // Update active thumbnail
+                document.querySelectorAll('.thumbnail-card').forEach(thumb => {
+                    thumb.classList.remove('active');
+                    if (thumb.getAttribute('data-id') == blogId) {
+                        thumb.classList.add('active');
+                    }
+                });
+                
+                // Update URL without reloading the page
+                history.pushState(null, null, `?id=${blogId}`);
+            }
+        }
+        
+        // Function to get blog ID from URL
+        function getBlogIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            return id ? parseInt(id) : 1; // Default to first blog if no ID specified
+        }
+        
+        // Load blog when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialBlogId = getBlogIdFromUrl();
+            loadBlog(initialBlogId);
+        });
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', function() {
+            const blogId = getBlogIdFromUrl();
+            loadBlog(blogId);
+        });
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter.`);
+            this.querySelector('input').value = '';
+        });
+    </script>
 </body>
 </html>

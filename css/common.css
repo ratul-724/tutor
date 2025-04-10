@@ -28,6 +28,7 @@ body{
 .navbar-nav .nav-link {
     position: relative;
     padding-bottom: 5px;
+    font-weight: 400;
     transition: color 0.3s ease-in-out;
 }
 .navbar-nav .nav-link::after {

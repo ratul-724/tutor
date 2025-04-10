@@ -36,16 +36,16 @@
     <div class="container py-4">
         <div class="row">
             <!-- Main Content -->
-            <div class="col-lg-8">
+            <div class="col-lg-8" >
                 <div class="card mb-4">
-                    <div class="card-body" id="mainContent">
+                    <div class="card-body" id="mainContent" style="background: linear-gradient(to bottom right,#f4f6f4, #e6f0f8);">
                         <!-- Content will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
 
             <!-- Sidebar -->
-            <div class="col-lg-4" id="sidebarContent">
+            <div class="col-lg-4" id="sidebarContent" >
                 <!-- Sidebar content will be dynamically inserted here -->
             </div>
         </div>
@@ -253,7 +253,7 @@
         // Create contact form
         function createContactForm() {
             const formHTML = `
-                <div class="card bg-light">
+                <div class="card border-0" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
                     <div class="card-body">
                         <h2 class="h5 mb-3">Contact Tutor</h2>
                         <form id="contactForm">
@@ -281,7 +281,7 @@
         function createSidebarContent() {
             // Search by category
             let sidebarHTML = `
-                <div class="card sidebar-card">
+                <div class="card sidebar-card" style="background: linear-gradient(to bottom right,#f4f6f4, #e6f0f8);">
                     <div class="card-body">
                         <h3 class="h5 border-bottom pb-2 mb-3">Search By Category</h3>
                         <div class="d-flex flex-wrap">
@@ -300,7 +300,7 @@
 
                 <!-- Quick Actions -->
                 <div class="card sidebar-card">
-                    <div class="card-body">
+                    <div class="card-body" style="background: linear-gradient(to bottom right,#f4f6f4, #e6f0f8);">
                         <h3 class="h5 border-bottom pb-2 mb-3">Quick Actions</h3>
                         <a href="${tutorData.cvLink}" class="btn btn-outline-primary w-100 mb-2" id="downloadCV">
                             <i class="fas fa-download me-2"></i>Download CV
@@ -313,7 +313,7 @@
 
                 <!-- Tutor ID -->
                 <div class="card sidebar-card">
-                    <div class="card-body">
+                    <div class="card-body" style="background: linear-gradient(to bottom right,#f4f6f4, #e6f0f8);">
                         <h3 class="h5 border-bottom pb-2 mb-3">Tutor ID</h3>
                         <p class="h3 text-primary mb-1">${tutorData.id}</p>
                         <p class="text-muted">Recruited: ${tutorData.recruitmentDate}</p>

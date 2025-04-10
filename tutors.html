@@ -8,69 +8,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
     <style>
-        /* Only 3 essential custom CSS rules for design elements Bootstrap can't handle */
-        .hero-gradient {
-            background: linear-gradient(135deg, #4361ee, #3a0ca3);
-        }
         .tutor-card {
             border-left: 4px solid #4361ee;
         }
         .badge-category {
             background-color: #f72585;
         }
+        .search-container {
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        @media (min-width : 768px) {
+            .search-container {
+                padding: auto !important;
+        }
+        }
     </style>
 </head>
 <body><br>
     <header id="header"></header>
     <!-- Header with Search -->
-    <header class="hero-gradient text-white py-4 mb-4">
+    <header class="hero-gradient text-white py-4 mb-2">
         <div class="container">
             <div class="text-center mb-4">
-                <h1 class="fw-bold mb-3">Find Your Perfect Tutor</h1>
-                <p class="lead">Connect with qualified teachers for all subjects</p>
+                <h1 class="fw-bold mb-3 text-primary-emphasis">Find Your Perfect Tutor</h1>
+                <p class="lead text-primary-emphasis">Connect with qualified teachers for all subjects</p>
             </div>
             
-            <div class="position-relative mx-auto" style="max-width: 800px;">
-                <input type="text" class="form-control rounded-pill border-0 shadow py-3 px-4" 
-                       placeholder="Search by subject, location or tutor name..." id="searchInput">
-                <button class="btn btn-danger position-absolute top-0 end-0 rounded-pill mt-1 me-1 px-4 py-2" 
+            <div class="search-container mx-auto bg-white rounded-pill p-1 position-relative">
+                <input type="text" class="focusNone form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
+                       placeholder="Search your teacher......" id="searchInput">
+                <button class="btn btn-success position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1" 
                         id="searchButton">
                     <i class="fas fa-search me-1"></i> Search
                 </button>
-            </div>
+            </div><hr class="text-secondary border-1 ">
         </div>
     </header>
-    
     <!-- Main Content -->
     <div class="container">
         <!-- Filters -->
-        <div class="card shadow-sm mb-4 border-0">
-            <div class="card-body p-4">
+        <div class="card shadow-sm mb-4 border-0" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+            <div class="card-body p-4 ">
                 <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label fw-bold text-primary">Subject</label>
-                        <select class="form-select" id="subjectFilter">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-book"></i> Subject</label>
+                        <select class="form-select focusNone" id="subjectFilter">
                             <option value="all">All Subjects</option>
                             <option value="math">Mathematics</option>
                             <option value="science">Science</option>
                             <option value="english">English</option>
-                            <option value="history">History</option>
+                            <option value="history">ICT</option>
                             <option value="programming">Programming</option>
                         </select>
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label fw-bold text-primary">Location</label>
-                        <select class="form-select" id="locationFilter">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-location-dot"></i> Location</label>
+                        <select class="form-select focusNone" id="locationFilter">
                             <option value="all">All Locations</option>
                             <option value="dhaka">Dhaka</option>
                             <option value="chittagong">Chittagong</option>
-                            <option value="sylhet">Sylhet</option>
+                            <option value="rajshahi">Rajshahi</option>
+                            <option value="rangpur">Rangpur</option>
                             <option value="khulna">Khulna</option>
+                            <option value="barisal">Barisal</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="mymenshingh">Mymenshingh</option>
                         </select>
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label fw-bold text-primary">Price Range</label>
-                        <select class="form-select" id="priceFilter">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                        <select class="form-select focusNone" id="genderFilter">
+                            <option value="both">Both</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
+                        <select class="form-select focusNone" id="priceFilter">
                             <option value="all">Any Price</option>
                             <option value="0-500">Under ৳500</option>
                             <option value="500-1000">৳500 - ৳1000</option>
@@ -82,270 +98,61 @@
             </div>
         </div>
         
-        <!-- Tutor Listings -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="fw-bold mb-0">Available Tutors</h4>
-            <div class="text-muted" id="resultCount">Loading tutors...</div>
-        </div>
-        
-        <div class="text-center py-5" id="loadingSpinner">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+        <div class="row">
+            <div class="col-lg-9 ">
+                <!-- Tutor Listings -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold mb-0">Available Tutors</h4>
+                    <div class="text-muted" id="resultCount">Loading tutors...</div>
+                </div>
+                
+                <div class="text-center py-5" id="loadingSpinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Finding tutors...</p>
+                </div>
+                
+                <div class="text-center py-5 d-none" id="noResults">
+                    <i class="fas fa-user-graduate fa-3x text-muted mb-3"></i>
+                    <h5 class="fw-bold">No tutors found</h5>
+                    <p class="text-muted">Try adjusting your search filters</p>
+                </div>
+                
+                <div id="tutorListings">
+                    <!-- Tutor cards will be loaded dynamically here -->
+                </div>
             </div>
-            <p class="mt-2 text-muted">Finding tutors...</p>
-        </div>
-        
-        <div class="text-center py-5 d-none" id="noResults">
-            <i class="fas fa-user-graduate fa-3x text-muted mb-3"></i>
-            <h5 class="fw-bold">No tutors found</h5>
-            <p class="text-muted">Try adjusting your search filters</p>
-        </div>
-        
-        <div id="tutorListings">
-            <!-- Tutor cards will be loaded dynamically here -->
+            <div class="col-lg-3 mt-4 pt-2">
+                <!-- serch my click start-->
+                <div class="searchByCategory rounded-2 p-3 mt-3" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+                    <h4 class="text-center text-secondary">Search By Category</h4><hr>
+                    <div class="searchByCategoryAncors">
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">female</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Science</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Math</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Physics</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chemistry</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Biology</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Bangla</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">DU</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">male</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">public</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">JU</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Subjects</a>
+                    </div>
+                </div>
+                <!-- serch my click end -->
+            </div>
         </div>
     </div>
     
     <footer id="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const tutorListings = document.getElementById('tutorListings');
-            const searchInput = document.getElementById('searchInput');
-            const searchButton = document.getElementById('searchButton');
-            const subjectFilter = document.getElementById('subjectFilter');
-            const locationFilter = document.getElementById('locationFilter');
-            const priceFilter = document.getElementById('priceFilter');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const noResults = document.getElementById('noResults');
-            const resultCount = document.getElementById('resultCount');
-            
-            // Sample tutor data
-            const tutors = [
-                {
-                    id: 1,
-                    name: "Dr. Ahmed Rahman",
-                    subject: "math",
-                    subjects: ["Mathematics", "Calculus", "Statistics"],
-                    location: "dhaka",
-                    areas: ["Mirpur", "Dhanmondi", "Gulshan"],
-                    price: 800,
-                    experience: "8 years",
-                    education: "PhD in Mathematics, DU",
-                    bio: "Specialized in advanced mathematics with 8 years of teaching experience at university level.",
-                    contact: "ahmed.math@example.com"
-                },
-                {
-                    id: 2,
-                    name: "Fatima Khan",
-                    subject: "science",
-                    subjects: ["Physics", "Chemistry"],
-                    location: "chittagong",
-                    areas: ["Agrabad", "Nasirabad"],
-                    price: 600,
-                    experience: "5 years",
-                    education: "MSc in Physics, CU",
-                    bio: "Passionate about making science fun and understandable for students of all levels.",
-                    contact: "fatima.science@example.com"
-                },
-                {
-                    id: 3,
-                    name: "John Smith",
-                    subject: "english",
-                    subjects: ["English Literature", "IELTS Preparation"],
-                    location: "dhaka",
-                    areas: ["Banani", "Uttara"],
-                    price: 1200,
-                    experience: "10 years",
-                    education: "MA in English, Oxford",
-                    bio: "Native English speaker with extensive experience in test preparation and literature.",
-                    contact: "john.english@example.com"
-                },
-                {
-                    id: 4,
-                    name: "Nusrat Jahan",
-                    subject: "history",
-                    subjects: ["World History", "Bangladesh History"],
-                    location: "sylhet",
-                    areas: ["Zindabazar", "Upashahar"],
-                    price: 500,
-                    experience: "3 years",
-                    education: "BA in History, SU",
-                    bio: "Makes history come alive with engaging stories and contextual learning.",
-                    contact: "nusrat.history@example.com"
-                },
-                {
-                    id: 5,
-                    name: "Arif Hossain",
-                    subject: "programming",
-                    subjects: ["Python", "JavaScript", "Web Development"],
-                    location: "dhaka",
-                    areas: ["Mohammadpur", "Farmgate"],
-                    price: 1500,
-                    experience: "6 years",
-                    education: "BSc in CSE, BUET",
-                    bio: "Professional developer who loves teaching programming fundamentals and practical skills.",
-                    contact: "arif.code@example.com"
-                }
-            ];
-            
-            // Current filter state
-            let currentSearch = '';
-            let currentSubject = 'all';
-            let currentLocation = 'all';
-            let currentPrice = 'all';
-            
-            // Initialize the page
-            loadTutors();
-            
-            // Event listeners
-            searchButton.addEventListener('click', handleSearch);
-            searchInput.addEventListener('keyup', function(e) {
-                if (e.key === 'Enter') {
-                    handleSearch();
-                }
-            });
-            
-            subjectFilter.addEventListener('change', function() {
-                currentSubject = this.value;
-                loadTutors();
-            });
-            
-            locationFilter.addEventListener('change', function() {
-                currentLocation = this.value;
-                loadTutors();
-            });
-            
-            priceFilter.addEventListener('change', function() {
-                currentPrice = this.value;
-                loadTutors();
-            });
-            
-            // Functions
-            function handleSearch() {
-                currentSearch = searchInput.value.trim().toLowerCase();
-                loadTutors();
-            }
-            
-            function loadTutors() {
-                // Show loading state
-                tutorListings.innerHTML = '';
-                loadingSpinner.classList.remove('d-none');
-                noResults.classList.add('d-none');
-                
-                // Simulate API delay
-                setTimeout(() => {
-                    // Filter tutors
-                    let filteredTutors = tutors.filter(tutor => {
-                        // Subject filter
-                        if (currentSubject !== 'all' && tutor.subject !== currentSubject) {
-                            return false;
-                        }
-                        
-                        // Location filter
-                        if (currentLocation !== 'all' && tutor.location !== currentLocation) {
-                            return false;
-                        }
-                        
-                        // Price filter
-                        if (currentPrice !== 'all') {
-                            const [min, max] = currentPrice.split('-');
-                            if (max) {
-                                if (tutor.price < parseInt(min) || tutor.price > parseInt(max)) {
-                                    return false;
-                                }
-                            } else if (currentPrice === '2000+') {
-                                if (tutor.price < 2000) {
-                                    return false;
-                                }
-                            }
-                        }
-                        
-                        // Search term
-                        if (currentSearch) {
-                            const searchFields = [
-                                tutor.name.toLowerCase(),
-                                tutor.subjects.join(' ').toLowerCase(),
-                                tutor.areas.join(' ').toLowerCase(),
-                                tutor.bio.toLowerCase()
-                            ];
-                            
-                            if (!searchFields.some(field => field.includes(currentSearch))) {
-                                return false;
-                            }
-                        }
-                        
-                        return true;
-                    });
-                    
-                    // Update result count
-                    resultCount.textContent = `${filteredTutors.length} ${filteredTutors.length === 1 ? 'tutor' : 'tutors'} found`;
-                    
-                    // Display results
-                    if (filteredTutors.length === 0) {
-                        noResults.classList.remove('d-none');
-                    } else {
-                        renderTutors(filteredTutors);
-                    }
-                    
-                    loadingSpinner.classList.add('d-none');
-                }, 800);
-            }
-            
-            function renderTutors(tutorsToRender) {
-                tutorListings.innerHTML = '';
-                
-                tutorsToRender.forEach(tutor => {
-                    const tutorCard = document.createElement('div');
-                    tutorCard.className = 'tutor-card card shadow-sm mb-4';
-                    
-                    // Get display names
-                    const subjectName = {
-                        'math': 'Mathematics',
-                        'science': 'Science',
-                        'english': 'English',
-                        'history': 'History',
-                        'programming': 'Programming'
-                    }[tutor.subject];
-                    
-                    const locationName = {
-                        'dhaka': 'Dhaka',
-                        'chittagong': 'Chittagong',
-                        'sylhet': 'Sylhet',
-                        'khulna': 'Khulna'
-                    }[tutor.location];
-                    
-                    tutorCard.innerHTML = `
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <div>
-                                    <h5 class="card-title fw-bold text-primary mb-2">${tutor.name}</h5>
-                                    <span class="badge badge-category text-white mb-3">${subjectName}</span>
-                                </div>
-                                <div class="fw-bold text-primary">৳${tutor.price}/hr</div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <p class="card-text small mb-1"><strong>Subjects:</strong> ${tutor.subjects.join(', ')}</p>
-                                <p class="card-text small mb-1"><strong>Location:</strong> ${locationName} (${tutor.areas.join(', ')})</p>
-                                <p class="card-text small mb-1"><strong>Experience:</strong> ${tutor.experience}</p>
-                                <p class="card-text small mb-2"><strong>Education:</strong> ${tutor.education}</p>
-                                <p class="card-text small text-muted">${tutor.bio}</p>
-                            </div>
-                            
-                            <button class="btn btn-primary" onclick="alert('Contact this tutor at: ${tutor.contact}')">
-                                <i class="fas fa-envelope me-1"></i> Contact Tutor
-                            </button>
-                        </div>
-                    `;
-                    
-                    tutorListings.appendChild(tutorCard);
-                });
-            }
-        });
-    </script>
+    <script src="js/tutors.js"></script>
     <script src="js/common.js"></script>
 </body>
 </html>

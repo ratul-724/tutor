@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             postEl.innerHTML = `
-                <div class="post-card card h-100 shadow-sm">
+                <div class="post-card card h-100 shadow-sm" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <div>

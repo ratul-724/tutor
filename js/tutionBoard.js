@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the modal
         modal.show();
     }
-    
+    window.showApplyModal = showApplyModal;
     function submitPost() {
         // In a real app, you would validate and send to server
         alert('Post created successfully!');
@@ -654,7 +654,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function submitApplication() {
         // In a real app, you would validate and send to server
-        alert('Application submitted successfully!');
+        // alert('Application submitted successfully!');
         const modal = bootstrap.Modal.getInstance(document.getElementById('applyModal'));
         modal.hide();
         

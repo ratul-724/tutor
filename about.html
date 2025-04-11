@@ -10,18 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
     <style>
-        /* Minimal custom CSS */
-        body {
-            background: linear-gradient(to bottom right, #a9e4a9, #f1f1f1);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         .hero-section {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
         .feature-icon {
             width: 60px;
             height: 60px;
@@ -30,10 +23,9 @@
             justify-content: center;
             border-radius: 12px;
             font-size: 24px;
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: linear-gradient(135deg, #27ae60, #34dc7a);
             color: white;
         }
-        
         .team-card {
             transition: all 0.3s ease;
             border: none;
@@ -41,56 +33,44 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
         .team-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
-        
         .team-img {
             height: 200px;
             object-fit: cover;
             border-bottom: 5px solid #27ae60;
         }
-        
         .partner-logo {
             height: 80px;
             object-fit: contain;
             filter: grayscale(100%);
             transition: all 0.3s ease;
             opacity: 0.7;
+            cursor: pointer;
         }
-        
         .partner-logo:hover {
             filter: grayscale(0%);
             opacity: 1;
         }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: #27ae60;
-        }
-        
         .btn-success {
             background: linear-gradient(135deg, #27ae60, #2ecc71);
             border: none;
             padding: 12px 30px;
         }
-        
         .section-title {
             position: relative;
             display: inline-block;
         }
-        
         .section-title:after {
             content: '';
             position: absolute;
-            width: 50%;
+            width: 140%;
             height: 4px;
             background: linear-gradient(to right, #27ae60, #2ecc71);
             bottom: -10px;
-            left: 25%;
+            left: -20%;
             border-radius: 2px;
         }
     </style>
@@ -115,45 +95,64 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="py-5 mb-5 text-center">
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-4 shadow-sm">
-                        <div class="stat-number">10,000+</div>
-                        <p class="mb-0 fw-bold">Students Helped</p>
+        <!-- counter section start here -->
+        <section class="py-5 my-5 w-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-6 mt-3">
+                        <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+                            <div class="card-body">
+                                <h2 class="text-primary-emphasis fw-bold counter">11</h2>
+                                <div class="card-text">
+                                    <p>Appointed Tuitions</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-4 shadow-sm">
-                        <div class="stat-number">2,500+</div>
-                        <p class="mb-0 fw-bold">Qualified Tutors</p>
+                    <div class="col-lg-3 col-6 mt-3">
+                        <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+                            <div class="card-body">
+                                <h2 class="text-primary-emphasis fw-bold counter">107</h2>
+                                <div class="card-text">
+                                    <p>Live Tuitions</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-4 shadow-sm">
-                        <div class="stat-number">98%</div>
-                        <p class="mb-0 fw-bold">Satisfaction Rate</p>
+                    <div class="col-lg-3 col-6 mt-3">
+                        <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+                            <div class="card-body">
+                                <h2 class="text-primary-emphasis fw-bold counter">309</h2>
+                                <div class="card-text">
+                                    <p>Total Tutors</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-4 shadow-sm">
-                        <div class="stat-number">15+</div>
-                        <p class="mb-0 fw-bold">Cities Covered</p>
+                    <div class="col-lg-3 col-6 mt-3">
+                        <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+                            <div class="card-body">
+                                <h2 class="text-primary-emphasis fw-bold counter">1015</h2>
+                                <div class="card-text">
+                                    <p>Pending Tuitions</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- counter section end here -->
 
         <!-- Our Story -->
-        <section class="py-5 mb-5" id="our-story">
+        <section class="pb-5 mb-5" id="our-story">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <img src="assets/images/aboutTutoring.png" alt="Our Story" class="img-fluid rounded-4 shadow">
+                    <img src="assets/images/aboutTutoring.png" alt="Our Story" class="img-fluid rounded-4 shadow-sm">
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <h2 class="section-title mb-4">Our Story</h2>
-                    <p class="lead">Founded in 2015 by a group of educators and technologists, Tutor.com began with a simple idea: to make quality education accessible to every student in Bangladesh.</p>
+                    <h2 class="section-title mb-4 ms-4">Our Story</h2>
+                    <p class="lead">Founded in 2025 by a group of educators and technologists, Tutor.com began with a simple idea: to make quality education accessible to every student in Bangladesh.</p>
                     <p>What started as a small platform with just 50 tutors has now grown into the country's leading tutoring network, serving thousands of students across all major cities.</p>
                     <p>Our journey has been guided by our core belief that every student deserves personalized attention and the right guidance to unlock their full potential.</p>
                 </div>
@@ -168,7 +167,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="feature-icon mb-3">
                             <i class="fas fa-user-graduate"></i>
                         </div>
@@ -177,7 +176,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="feature-icon mb-3">
                             <i class="fas fa-laptop-code"></i>
                         </div>
@@ -186,7 +185,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="feature-icon mb-3">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -302,8 +301,8 @@
         </section>
 
         <!-- CTA Section -->
-        <section id="contact" class="py-5 px-3 mt-5 bg-white rounded-4 shadow-sm">
-            <div class="row justify-content-center">
+        <section id="contact" class="py-5 px-3 mt-5 bg-white rounded-4 shadow-sm" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+            <div class="row justify-content-center" >
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4">Ready to transform your learning experience?</h2>
                     <p class="lead mb-4">Join thousands of students who have achieved academic success with Tutor.com</p>
@@ -315,59 +314,94 @@
             </div>
         </section>
 
-            <!-- Contact Form -->
-            <section class="py-5 mt-5 row">
-                <div class="p-4 bg-white rounded-4 shadow-sm col-lg-6">
-                    <h3 class="mb-4">Send Us a Message</h3>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control focusNone" id="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control focusNone" id="email" placeholder="Enter your email" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control focusNone" id="subject" placeholder="What's this about?">
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control focusNone" id="message" rows="5" placeholder="Type your message here..." required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-success btn-lg rounded-pill px-4">
-                                    <i class="fas fa-paper-plane me-2"></i> Send Message
-                                </button>
-                            </div>
+        <!-- Contact Form -->
+        <section class="py-5 mt-5 row" >
+            <div class="p-4 bg-white rounded-4 shadow-sm col-lg-6" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+                <h3 class="mb-4">Send Us a Message</h3>
+                <form >
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control focusNone" id="name" placeholder="Enter your name" required>
                         </div>
-                    </form>
-                </div>
-
-                <!-- Map -->
-                <div class="container col-lg-6">
-                    <div>
-                        <div class="p-0 bg-white rounded-4 shadow-sm overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7301.570961277553!2d90.3993250248696!3d23.790787338495756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70c15ea1de1%3A0x97856381e88fb311!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd" 
-                                    width="100%" 
-                                    height="500" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy"
-                                    class="rounded-4">
-                            </iframe>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control focusNone" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control focusNone" id="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control focusNone" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success btn-lg rounded-pill px-4">
+                                <i class="fas fa-paper-plane me-2"></i> Send Message
+                            </button>
                         </div>
                     </div>
+                </form>
+            </div>
+
+            <!-- Map -->
+            <div class="container col-lg-6">
+                <div>
+                    <div class="p-0 bg-white rounded-4 shadow-sm overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7301.570961277553!2d90.3993250248696!3d23.790787338495756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70c15ea1de1%3A0x97856381e88fb311!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd" 
+                                width="100%" 
+                                height="500" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                class="rounded-4">
+                        </iframe>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
     <footer id="footer"></footer>
 
     <script src="js/common.js"></script>
     <!-- Bootstrap JS -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function startCounter(element, target) {
+                let count = 0;
+                let speed = target / 100; // Adjust speed as needed
+
+                let counter = setInterval(() => {
+                    count += Math.ceil(speed);
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(counter);
+                    }
+                    element.innerText = count;
+                }, 20);
+            }
+
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let number = entry.target;
+                        let targetValue = parseInt(number.getAttribute("data-target"));
+                        startCounter(number, targetValue);
+                        observer.unobserve(number);
+                    }
+                });
+            }
+
+            let observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+            document.querySelectorAll(".counter").forEach(counter => {
+                counter.setAttribute("data-target", counter.innerText);
+                counter.innerText = "0"; 
+                observer.observe(counter);
+            });
+        });
+     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

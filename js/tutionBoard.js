@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.postForm.innerHTML = `
             <div class="mb-3">
                 <label class="form-label fw-bold">What subject do you need help with?</label>
-                <select class="form-select" id="postSubject" required>
+                <select class="form-select focusNone" id="postSubject" required>
                     <option value="" selected disabled>Select subject</option>
                     <option>Mathematics</option>
                     <option>Science</option>
@@ -442,14 +442,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="mb-3">
                 <label class="form-label fw-bold">Specific Topics (comma separated)</label>
-                <input type="text" class="form-control" id="postTopics" placeholder="e.g. Algebra, Geometry, Calculus" required>
+                <input type="text" class="form-control focusNone" id="postTopics" placeholder="e.g. Algebra, Geometry, Calculus" required>
             </div>
             
             <div class="mb-3">
                 <label class="form-label fw-bold">Location</label>
                 <div class="row g-2">
                     <div class="col-md-6">
-                        <select class="form-select" id="postDistrict" required>
+                        <select class="form-select focusNone" id="postDistrict" required>
                             <option value="" selected disabled>Select district</option>
                             <option>Dhaka</option>
                             <option>Chittagong</option>
@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="postArea" placeholder="Specific area (e.g. Mirpur, Gulshan)" required>
+                        <input type="text" class="form-control focusNone" id="postArea" placeholder="Specific area (e.g. Mirpur, Gulshan)" required>
                     </div>
                 </div>
             </div>
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label class="form-label fw-bold">Student Details</label>
                 <div class="row g-2">
                     <div class="col-md-6">
-                        <select class="form-select" id="postLevel" required>
+                        <select class="form-select focusNone" id="postLevel" required>
                             <option value="" selected disabled>Class/Level</option>
                             <option>Class 1-5</option>
                             <option>Class 6-8</option>
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <select class="form-select" id="postStudents" required>
+                        <select class="form-select focusNone" id="postStudents" required>
                             <option value="" selected disabled>Number of students</option>
                             <option>1</option>
                             <option>2</option>
@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label class="form-label fw-bold">Schedule & Budget</label>
                 <div class="row g-2">
                     <div class="col-md-6">
-                        <select class="form-select" id="postDays" required>
+                        <select class="form-select focusNone" id="postDays" required>
                             <option value="" selected disabled>Days per week</option>
                             <option>1 day</option>
                             <option>2 days</option>
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <select class="form-select" id="postTime" required>
+                        <select class="form-select focusNone" id="postTime" required>
                             <option value="" selected disabled>Preferred time</option>
                             <option>Morning</option>
                             <option>Afternoon</option>
@@ -517,9 +517,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-12 mt-2">
                         <div class="input-group">
                             <span class="input-group-text">৳</span>
-                            <input type="number" class="form-control" id="postMinBudget" placeholder="Minimum" required>
+                            <input type="number" class="focusNone form-control" id="postMinBudget" placeholder="Minimum" required>
                             <span class="input-group-text">to</span>
-                            <input type="number" class="form-control" id="postMaxBudget" placeholder="Maximum" required>
+                            <input type="number" class="form-control focusNone" id="postMaxBudget" placeholder="Maximum" required>
                             <span class="input-group-text">/month</span>
                         </div>
                     </div>
@@ -528,23 +528,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="mb-3">
                 <label class="form-label fw-bold">Additional Requirements</label>
-                <textarea class="form-control" id="postDescription" rows="3" required></textarea>
+                <textarea class="form-control focusNone" id="postDescription" rows="3" required></textarea>
             </div>
             
             <div class="mb-3">
                 <label class="form-label fw-bold">Contact Information</label>
                 <div class="row g-2">
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="postContactName" placeholder="Your name" required>
+                        <input type="text" class="form-control focusNone" id="postContactName" placeholder="Your name" required>
                     </div>
-                    <div class="col-md-6">
-                        <input type="tel" class="form-control" id="postContactPhone" placeholder="Phone number" required>
+                    <div class="col-md-6"> 
+                        <input type="tel" class="form-control focusNone" id="postContactPhone" placeholder="Phone number" required>
                     </div>
                 </div>
             </div>
             
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="postUrgent" value="">
+                <input class="form-check-input focusNone" type="checkbox" id="postUrgent" value="">
                 <label class="form-check-label" for="postUrgent">
                     Mark as Urgent
                 </label>
@@ -581,30 +581,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input type="hidden" id="applyPostId" value="${postId}">
                 <div class="mb-3">
                     <label class="form-label fw-bold">Your Qualifications</label>
-                    <textarea class="form-control" id="applyQualifications" rows="3" placeholder="Describe your education, experience and why you're suitable..." required></textarea>
+                    <textarea class="form-control focusNone" id="applyQualifications" rows="3" placeholder="Describe your education, experience and why you're suitable..." required></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Expected Salary</label>
                     <div class="input-group">
                         <span class="input-group-text">৳</span>
-                        <input type="number" class="form-control" id="applySalary" placeholder="Amount per month" required>
+                        <input type="number" class="form-control focusNone" id="applySalary" placeholder="Amount per month" required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Availability</label>
-                    <textarea class="form-control" id="applyAvailability" rows="2" placeholder="When are you available for this position?" required></textarea>
+                    <textarea class="form-control focusNone" id="applyAvailability" rows="2" placeholder="When are you available for this position?" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Contact Information</label>
                     <div class="row g-2">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="applyName" placeholder="Your name" required>
+                            <input type="text" class="form-control focusNone" id="applyName" placeholder="Your name" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="tel" class="form-control" id="applyPhone" placeholder="Phone number" required>
+                            <input type="tel" class="form-control focusNone" id="applyPhone" placeholder="Phone number" required>
                         </div>
                         <div class="col-12 mt-2">
-                            <input type="email" class="form-control" id="applyEmail" placeholder="Email address" required>
+                            <input type="email" class="form-control focusNone" id="applyEmail" placeholder="Email address" required>
                         </div>
                     </div>
                 </div>

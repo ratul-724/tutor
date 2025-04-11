@@ -48,17 +48,66 @@
             </div>
             
             <div class="search-container mx-auto bg-white rounded-pill p-1 position-relative">
-                <input type="text" class="form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
-                       placeholder="Search by subject, location or post..." id="searchInput">
+                <input type="text" class="focusNone form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
+                       placeholder="Search tution jobs...." id="searchInput">
                 <button class="btn btn-success position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1" 
                         id="searchButton">
                     <i class="fas fa-search me-1"></i> Search
                 </button>
             </div><hr>
+
+            
+        <!-- Filters -->
+        <div class="card shadow-sm mb-4 border-0 container" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+            <div class="card-body p-4 ">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-book"></i> Subject</label>
+                        <select class="form-select focusNone" id="subjectFilter">
+                            <option value="all">All Subjects</option>
+                            <option value="math">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="history">ICT</option>
+                            <option value="programming">Programming</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-location-dot"></i> Location</label>
+                        <select class="form-select focusNone" id="locationFilter">
+                            <option value="all">All Locations</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="rajshahi">Rajshahi</option>
+                            <option value="rangpur">Rangpur</option>
+                            <option value="khulna">Khulna</option>
+                            <option value="barisal">Barisal</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="mymenshingh">Mymenshingh</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                        <select class="form-select focusNone" id="genderFilter">
+                            <option value="both">Both</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
+                        <select class="form-select focusNone" id="priceFilter">
+                            <option value="all">Any Price</option>
+                            <option value="0-500">Under ৳500</option>
+                            <option value="500-1000">৳500 - ৳1000</option>
+                            <option value="1000-2000">৳1000 - ৳2000</option>
+                            <option value="2000+">Over ৳2000</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-        
+        </div>  
     </section>
 
     <!-- Main Content -->

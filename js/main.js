@@ -324,7 +324,7 @@ function displayTutors(page) {
     
     tutorsToShow.forEach(tutor => {
         const col = document.createElement('div');
-        col.className = 'g-3 col-6 col-md-4 col-lg-4';
+        col.className = 'g-2 col-6 col-md-4 col-lg-4';
         
         col.innerHTML = `
 

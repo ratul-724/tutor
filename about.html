@@ -73,6 +73,16 @@
             left: -20%;
             border-radius: 2px;
         }
+        @media (max-width: 768px) {
+            .hero-section-inside{
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-section-inside p{
+                font-size: 14px !important;
+            }
+            
+        }
     </style>
 </head>
 <body><br>
@@ -80,9 +90,9 @@
     <div class="container py-5">
         <!-- Hero Section -->
         <section class="hero-section p-5 mb-5" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-            <div class="row align-items-center">
+            <div class="row align-items-center hero-section-inside">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">About <span class="text-success">Tutor.com</span></h1>
+                    <h1 class="display-4 fw-bold mt-2">About <span class="text-success">Tutor.com</span></h1>
                     <p class="lead mb-4">Connecting students with exceptional tutors across Bangladesh since 2025. Our mission is to make quality education accessible to everyone.</p>
                     <div class="d-flex gap-3">
                         <a href="login.html" class="btn btn-success btn-lg rounded-pill">Get Started</a>
@@ -90,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/images/aboutTutoring.png" alt="Tutoring" class="img-fluid rounded-4 shadow">
+                    <img src="assets/images/aboutTutoring.png" alt="Tutoring" class="img-fluid rounded-4 shadow floating-image">
                 </div>
             </div>
         </section>
@@ -148,10 +158,10 @@
         <section class="pb-5 mb-5" id="our-story">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <img src="assets/images/aboutTutoring.png" alt="Our Story" class="img-fluid rounded-4 shadow-sm">
+                    <img src="assets/images/aboutTutoring.png" alt="Our Story" class="img-fluid rounded-4 shadow floating-image">
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <h2 class="section-title mb-4 ms-4">Our Story</h2>
+                    <h2 class="fw-semibold section-title ms-4">Our <span style="color: rgb(37, 109, 138);">Story</span></h2>
                     <p class="lead">Founded in 2025 by a group of educators and technologists, Tutor.com began with a simple idea: to make quality education accessible to every student in Bangladesh.</p>
                     <p>What started as a small platform with just 50 tutors has now grown into the country's leading tutoring network, serving thousands of students across all major cities.</p>
                     <p>Our journey has been guided by our core belief that every student deserves personalized attention and the right guidance to unlock their full potential.</p>
@@ -162,7 +172,8 @@
         <!-- Features Section -->
         <section id="features" class="py-5 mb-5">
             <div class="text-center mb-5">
-                <h2 class="section-title">Why Choose Tutor.com?</h2>
+                <h2 class="fw-semibold section-title">Why Choose <span style="color: rgb(37, 109, 138);">Tutor.com?</span></h2>
+                
                 <p class="lead">We're revolutionizing education through technology and personalized learning</p>
             </div>
             <div class="row g-4">
@@ -199,7 +210,7 @@
         <!-- Team Section -->
         <section class="py-5 mb-5">
             <div class="text-center mb-5">
-                <h2 class="section-title">Meet Our Leadership</h2>
+                <h2 class="fw-semibold section-title">Meet Our <span style="color: rgb(37, 109, 138);">Leadership</span></h2>
                 <p class="lead">The passionate team driving our mission forward</p>
             </div>
             <div class="row g-4">
@@ -278,7 +289,7 @@
         <!-- Partners Section -->
         <section class="py-5">
             <div class="text-center mb-5">
-                <h2 class="section-title">Our Trusted Partners</h2>
+                <h2 class="fw-semibold section-title">Our <span style="color: rgb(37, 109, 138);">Trusted Partners</span></h2>
                 <p class="lead">Collaborating with leading educational institutions and organizations</p>
             </div>
             <div class="row g-4 justify-content-center align-items-center">
@@ -317,7 +328,7 @@
         <!-- Contact Form -->
         <section class="py-5 mt-5 row" >
             <div class="p-4 bg-white rounded-4 shadow-sm col-lg-6" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-                <h3 class="mb-4">Send Us a Message</h3>
+                <h3 class="mb-4 text-center text-primary-emphasis">Send Us a Message</h3>
                 <form >
                     <div class="row g-3">
                         <div class="col-md-6">

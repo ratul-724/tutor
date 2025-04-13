@@ -51,6 +51,9 @@ button:hover {
     .carousel-img {
         height: 200px;
     }
+    .homeHeroInside{
+        flex-direction: column-reverse;
+    }
 }
 @media (max-width: 576px) {
     .carousel-img {
@@ -110,11 +113,7 @@ animation: shake 0.4s ease-in-out;
     background-color: #5b5a5a;
 }
 
-
 /* code for popular tutors start */
-.premium-section {
-    padding: 40px 0;
-}
 .flip-card {
     perspective: 1000px;
     height: 280px; 
@@ -204,7 +203,8 @@ animation: shake 0.4s ease-in-out;
     color: #1976d2;
 }
 /* Mobile specific adjustments */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+    
     .flip-card {
         height: 240px;
     }
@@ -374,19 +374,6 @@ animation: shake 0.4s ease-in-out;
 
 
 /* code for login section start */
-.floating-image {
-    animation: floatUpDown 2s ease-in-out infinite alternate;
-}
-
-@keyframes floatUpDown {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
-}
-
 /* Selected State */
 .selected {
     border-bottom: 3px solid #28a745 !important;

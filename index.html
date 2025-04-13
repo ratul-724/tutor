@@ -9,9 +9,7 @@
     <!-- bootstrap cdn  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-
-        
+    <link rel="stylesheet" href="css/style.css">        
     <title>Tutor</title>
 </head>
 <body>
@@ -23,7 +21,7 @@
             <!-- Hero Section -->
             <section class="hero rounded-4 mt-4 mx-3 py-5 bg-light">
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center homeHeroInside">
                         <!-- Left Content -->
                         <div class="col-lg-6 col-md-12 px-md-4 text-center text-lg-start">
                             <div class="heroTop">
@@ -47,7 +45,7 @@
                         </div>
             
                         <!-- Right Image/Slider -->
-                        <div class="col-lg-5 col-md-12 mt-4 mt-lg-0 d-flex justify-content-center">
+                        <div class="col-lg-5 col-md-12 d-flex justify-content-center " >
                             <div id="carouselExample" class="carousel slide rounded-4 w-100" data-bs-ride="carousel" data-bs-interval="3000">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -192,98 +190,104 @@
                     </div>
                 </div>
                 
-                <div class=" premium-section row">
-                    <div id="tutors-container" class="row col-lg-9">
-                        <!-- Tutors will be loaded here by JavaScript -->
-                    </div>
-                    
-                    <div class="mt-3 col-lg-3">
-                        <div class="search-box rounded-2 p-3 shadow-sm" style="background: linear-gradient(to bottom right,#f4f6f4, #e6f0f8);">
-                            <div class="row g-2" >
-                                <div class="col-12">
-                                    <label for="district" class="form-label">Select District</label>
-                                    <select class="form-select focusNone" id="district">
-                                        <option value="">Any District</option>
-                                        <option value="dhaka">Dhaka</option>
-                                        <option value="chittagong">Chittagong</option>
-                                        <option value="rajshahi">Rajshahi</option>
-                                        <option value="rangpur">Rangpur</option>
-                                        <option value="khulna">Khulna</option>
-                                        <option value="barishal">Barishal</option>
-                                        <option value="sylhet">Sylhet</option>
-                                        <option value="mymenshingh">Mymenshingh</option>
-                                    </select>
-                                </div>     
-                                <div class="col-12 position-relative">
-                                    <label for="area" class="form-label focusNone">Select Area</label>
-                                    <input type="text" class="form-control focusNone" id="area" placeholder="Any Area" disabled>
-                                    <div id="area-suggestions" class="suggestion-box"></div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="subject" class="form-label">Subject</label>
-                                    <select class="form-select focusNone" id="subject">
-                                        <option value="">Any Subject</option>
-                                        <option value="math">Mathematics</option>
-                                        <option value="physics">Physics</option>
-                                        <option value="chemistry">Chemistry</option>
-                                        <option value="english">English</option>
-                                        <option value="biology">Biology</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="gender" class="form-label">Gender Preference</label>
-                                    <select class="form-select focusNone" id="gender">
-                                        <option value="">Any Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="col-12 d-flex align-items-end">
-                                    <button class="btn btn-primary btn-search w-100">Search Tutors</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- serch my click start-->
-                        <div class="searchByCategory bg-light rounded-2 p-3 mt-3">
-                            <h4 class="text-center text-secondary">Search By Category</h4><hr>
-                            <div class="searchByCategoryAncors">
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET Tutor</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Lady Tutor</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English Medium</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Science Tutor</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Math</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Physics</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chemistry</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Biology</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Bangla</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">DU</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">male</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">public</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">JU</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Subjects</a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Medium</a>
+                <div class="container">
+                    <div class="row">
+                        <!-- premium Tutor Section -->
+                        <div class=" col-12 col-lg-9">
+                            <div class="row" id="tutors-container" >
+                                <!-- Tutor cards will be dynamically inserted here -->
 
                             </div>
                         </div>
-                        <!-- serch my click end -->
 
-                    </div>
+                        <!-- Search premium Tutor Section -->                        
+                        <div class="mt-2 col-lg-3 px-0">
+                            <div class="rounded-2 p-3 shadow" >
+                                <div class="row " >
+                                    <div class="col-12">
+                                        <label for="district" class="form-label">Select District</label>
+                                        <select class="form-select focusNone" id="district">
+                                            <option value="">Any District</option>
+                                            <option value="dhaka">Dhaka</option>
+                                            <option value="chittagong">Chittagong</option>
+                                            <option value="rajshahi">Rajshahi</option>
+                                            <option value="rangpur">Rangpur</option>
+                                            <option value="khulna">Khulna</option>
+                                            <option value="barishal">Barishal</option>
+                                            <option value="sylhet">Sylhet</option>
+                                            <option value="mymenshingh">Mymenshingh</option>
+                                        </select>
+                                    </div>     
+                                    <div class="col-12 position-relative">
+                                        <label for="area" class="form-label focusNone">Select Area</label>
+                                        <input type="text" class="form-control focusNone" id="area" placeholder="Any Area" disabled>
+                                        <div id="area-suggestions" class="suggestion-box"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <select class="form-select focusNone" id="subject">
+                                            <option value="">Any Subject</option>
+                                            <option value="math">Mathematics</option>
+                                            <option value="physics">Physics</option>
+                                            <option value="chemistry">Chemistry</option>
+                                            <option value="english">English</option>
+                                            <option value="biology">Biology</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <label for="gender" class="form-label">Gender Preference</label>
+                                        <select class="form-select focusNone" id="gender">
+                                            <option value="">Any Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-12 d-flex align-items-end">
+                                        <button class="btn btn-primary btn-search w-100">Search Tutors</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- serch my click start-->
+                            <div class="searchByCategory rounded-2 p-3 mt-3 shadow">
+                                <h4 class="text-center text-secondary">Search By Category</h4><hr>
+                                <div class="searchByCategoryAncors">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET Tutor</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Lady Tutor</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English Medium</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Science Tutor</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Math</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Physics</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chemistry</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Biology</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Bangla</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">DU</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">male</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">public</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">JU</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Subjects</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Medium</a>
 
-                    <nav aria-label="Page navigation">
-                        <ul id="pagination" class="pagination">
-                            <!-- Pagination will be loaded here by JavaScript -->
-                        </ul>
-                    </nav>
-                </div>
+                                </div>
+                            </div>
+                            <!-- serch my click end -->
+                        </div>
+
+                    </div> 
+                </div> 
+                <nav aria-label="Page navigation">
+                    <ul id="pagination" class="pagination">
+                        <!-- Pagination will be loaded here by JavaScript -->
+                    </ul>
+                </nav>  
             </section>
             <!-- premium Tutor section end here -->
 
             <!-- blog section start here -->
             <section class="container update-blog mt-5">
                 <div class="title text-center">
-                    <h2><span style="color: rgb(37, 109, 138);">UPDATE</span> BLOG</h2>
+                    <h2 class="fw-semibold">UPDATE <span style="color: rgb(37, 109, 138);">BLOG</span></h2>
                     <div class="title-paragraph-bg">
                         <p  class="title-paragraph ">Recent news for you</p>
                     </div>
@@ -296,7 +300,7 @@
                 </div>
                 <div class="blogs mt-4">
                     <div class="row">
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 mt-2">
                             <a href="blogPost.html?id=1" class="text-decoration-none">
                                 <div class="card">
                                     <img src="assets/blog/blogKlanto.png" class="card-img-top" alt="..." style="height: 220px;">
@@ -306,7 +310,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 mt-2">
                             <a href="blogPost.html?id=3" class="text-decoration-none">
                                 <div class="card">
                                     <img src="assets/blog/findTutor.jpg" class="card-img-top" alt="..." style="height: 220px;">
@@ -316,7 +320,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 mt-2">
                             <a href="blogPost.html?id=2" class="text-decoration-none">
                                 <div class="card">
                                     <img src="assets/blog/confidance.png" class="card-img-top" alt="..." style="height: 220px;">
@@ -335,10 +339,10 @@
             <section class="container clients-review mt-5">
                 <div class="text-center ">
                     <div class="title">
-                        <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);" >What some</span> awesome people</h2>
+                        <h2 class="fw-semibold">What some <span style="color: rgb(37, 109, 138);">awesome people</span></h2>
                     </div>
                     <div class="title">
-                        <h2 class="fw-semibold"><span  style="color: rgb(37, 109, 138);" >says</span> about us</h2>
+                        <h2 class="fw-semibold">says <span style="color: rgb(37, 109, 138);">about us</span></h2>
                     </div>
                     <div class="slogan mt-4">
                         <div class="title-paragraph-bg">
@@ -415,13 +419,13 @@
         </div>
 
     <!-- counter section start here -->
-    <section class="py-5 my-5 bg-secondary w-100">
+    <section class="py-5 my-5 w-100 bg-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card card-pending text-center rounded-4">
+                    <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="card-body">
-                            <h2 class="text-info counter">11</h2>
+                            <h2 class="text-primary-emphasis fw-bold counter">11</h2>
                             <div class="card-text">
                                 <p>Appointed Tuitions</p>
                             </div>
@@ -429,9 +433,9 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card card-pending text-center rounded-4">
+                    <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="card-body">
-                            <h2 class="text-info counter">107</h2>
+                            <h2 class="text-primary-emphasis fw-bold counter">107</h2>
                             <div class="card-text">
                                 <p>Live Tuitions</p>
                             </div>
@@ -439,9 +443,9 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card card-pending text-center rounded-4">
+                    <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="card-body">
-                            <h2 class="text-info counter">309</h2>
+                            <h2 class="text-primary-emphasis fw-bold counter">309</h2>
                             <div class="card-text">
                                 <p>Total Tutors</p>
                             </div>
@@ -449,9 +453,9 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card card-pending text-center rounded-4">
+                    <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                         <div class="card-body">
-                            <h2 class="text-info counter">1015</h2>
+                            <h2 class="text-primary-emphasis fw-bold counter">1015</h2>
                             <div class="card-text">
                                 <p>Pending Tuitions</p>
                             </div>
@@ -485,6 +489,5 @@
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="src/assets/js/iconify-icon.min.js"></script>
 </body>
 </html>

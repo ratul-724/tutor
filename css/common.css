@@ -153,6 +153,11 @@ body{
 }
 /* code for login registration end */
 
+/* FAQ section start here  */
+.accordion-button:not(.collapsed) {
+    color: #3eb334;
+}
+/* FAQ section end here  */
 
 /* code for some common function start */
 .focusNone:focus {

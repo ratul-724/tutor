@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Feature-Policy" content="geolocation 'self'; microphone 'none'; camera 'none'">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
     <!-- Font Awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,7 +14,7 @@
     <title>Tutor</title>
 </head>
 <body>
-    <div id="app">
+<div id="all"> 
         <div class="container">
             <br>    
             <div id="header"></div>
@@ -190,8 +191,8 @@
                     </div>
                 </div>
                 
-                <div class="container">
-                    <div class="row">
+                <div class="container mt-5">
+                    <div class="row premiumTutors">
                         <!-- premium Tutor Section -->
                         <div class=" col-12 col-lg-9">
                             <div class="row" id="tutors-container" >
@@ -201,7 +202,7 @@
                         </div>
 
                         <!-- Search premium Tutor Section -->                        
-                        <div class="mt-2 col-lg-3 px-0">
+                        <div class="my-2 col-lg-3 px-0">
                             <div class="rounded-2 p-3 shadow" >
                                 <div class="row " >
                                     <div class="col-12">
@@ -416,6 +417,7 @@
                 </div>  
             </section>
             <!-- clients-review section end here -->
+             
         </div>
 
     <!-- counter section start here -->
@@ -482,6 +484,65 @@
         </div>
     </section>
     <!-- why chose us section end here -->
+
+    <!-- FAQ Section code start here -->
+    <section class="container my-5 px-0">
+        <h2 class="text-center mb-4" style="color: rgb(37, 109, 138);">Frequently Asked Questions</h2>
+        
+        <div class="accordion container" id="faqAccordion">
+          <!-- FAQ Item 1 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button focusNone  collapsed bg-light" type="button" 
+                      data-bs-toggle="collapse" data-bs-target="#collapseOne" 
+                      aria-expanded="false" aria-controls="collapseOne">
+                How do I apply for a tution?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse" 
+                 aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Click on the "Apply" button, fill out the application form, and submit it. You'll receive a confirmation email once processed.
+              </div>
+            </div>
+          </div>
+      
+          <!-- FAQ Item 2 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button focusNone collapsed bg-light" type="button" 
+                      data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                      aria-expanded="false" aria-controls="collapseTwo">
+                What qualifications do your tutors have?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" 
+                 aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                All our tutors are thoroughly vetted and have at least a bachelor's degree in their teaching subject or equivalent professional experience.
+              </div>
+            </div>
+          </div>
+      
+          <!-- FAQ Item 3 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button focusNone collapsed bg-light" type="button" 
+                      data-bs-toggle="collapse" data-bs-target="#collapseThree" 
+                      aria-expanded="false" aria-controls="collapseThree">
+                Can I schedule a trial session?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" 
+                 aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, we offer a 30-minute trial session for first-time students. You can request this when applying or by contacting our support team.
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- FAQ Section code end here -->
 
    <div id="footer"></div>
 </div>

@@ -11,7 +11,6 @@ fetch('footer.html')
         document.getElementById('footer').outerHTML = data;
     });
 
-
 // code for search system start here 
 const districtAreas = {
     dhaka: [

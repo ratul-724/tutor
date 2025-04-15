@@ -3,144 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
-    
-    <!-- Font Awesome CDN (Replaces Kit) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Student & Tutor Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Tutor</title>
+    <style>
+        .option-card {
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .option-card.active {
+            border-bottom: 3px solid #198754;
+        }
+        .option-card.active .checkmark {
+            display: block !important;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .subject-column {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <div class="container">
-            <br>
-            <section id="header" class="frontend-navbar container sticky-top"></section>
 
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-6 p-4">
-                        <img src="assets/images/registration.png" alt="" class="floating-image w-100 m-auto mt-5 pt-5">
-                    </div>
-                    <div class="col-lg-6 mt-2 p-4">
-                        <div class="login-right">
-                            <div>
-                                <h3><span style="color: #06b706;">Create</span> an <span style="color: #06b706;">Account</span></h3>
-                                <h4 class="fw-normal text-secondary">Lets get started a new journey!!!</h4>
-                            </div>
+    <header id="header"></header>
 
-                            <form class="mt-2">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h2 class="text-center mb-4">
+                            <span class="text-success">Create</span> an 
+                            <span class="text-success">Account</span>
+                        </h2>
+                        <p class="text-center text-muted mb-5">Let's get started with your new journey!</p>
 
-                                <div class="mt-5">
-                                    <div class="d-flex justify-content-between">
-                                        <!-- Student Section -->
-                                        <div class="bg-white rounded-3 shadow-sm w-50 me-1 p-4 pb-1 pt-3 position-relative option" onclick="selectOption(this)" style="cursor: pointer; border-bottom: 3px solid white;">
-                                            <div class="text-center" style="margin-top: -50px;">
-                                                <span class="checkmark">
-                                                    <i class="fa-solid fa-circle-check bg-white rounded-5"></i>
-                                                </span>
-                                                <img class="rounded-circle border shadow-sm bg-white border-3" src="assets/images/student.png" alt="Student" height="60" width="60">
-                                            </div>
-                                            <p class="fw-semibold mb-0 text-center mt-1 one-line" style="font-size: 17px;">Student</p>
-                                            <p class="fw-light text-center text-secondary" style="font-size: 13px;">Are you looking for a tutor? Tap it!!!</p>
+                        <!-- User Type Selection -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div id="studentOption" class="card option-card h-100 active" onclick="selectUserType('student')">
+                                    <div class="card-body text-center py-4">
+                                        <div class="position-relative mb-3">
+                                            <img src="assets/icons/student.png" width="70px" class="rounded-circle border border-3 border-success" alt="Student">
+                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 7%; left: 56%">
+                                                <i class="fas fa-check-circle fa-2x fs-4"></i>
+                                            </span>
                                         </div>
-                                
-                                        <!-- Tutor Section -->
-                                        <div class="bg-white rounded-3 shadow-sm w-50 ms-1 p-4 pb-1 pt-3 position-relative option" onclick="selectOption(this)" style="cursor: pointer; border-bottom: 3px solid white;">
-                                            <div class="text-center" style="margin-top: -50px;">
-                                                <span class="checkmark">
-                                                    <i class="fa-solid fa-circle-check bg-white rounded-5"></i>
-                                                </span>
-                                                <img class="rounded-circle border shadow-sm bg-white border-3" src="assets/images/tutor.png" alt="Tutor" height="60" width="60">
+                                        <h5 class="card-title">Student</h5>
+                                        <p class="card-text text-muted">Looking for a tutor? Register as student.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="tutorOption" class="card option-card h-100" onclick="selectUserType('tutor')">
+                                    <div class="card-body text-center py-4">
+                                        <div class="position-relative mb-3">
+                                            <img src="assets/icons/teacher.png" width="70px" class="rounded-circle border border-3 border-success" alt="Tutor">
+                                            <span class="checkmark position-absolute  translate-middle text-success" style="display: none; top: 7%; left: 56%;">
+                                                <i class="fas fa-check-circle fa-2x fs-4"></i>
+                                            </span>
+                                        </div>
+                                        <h5 class="card-title">Tutor</h5>
+                                        <p class="card-text text-muted">Looking for tuition jobs? Register as tutor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="userType" name="userType" value="student">
+
+                        <!-- Progress Bar -->
+                        <div class="progress mb-4" style="height: 10px;">
+                            <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 33%;"></div>
+                        </div>
+
+                        <!-- Student Registration Form -->
+                        <div id="studentRegistration">
+                            <!-- Basic Info -->
+                            <div id="studentBasicInfo" class="form-section active">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Basic Information</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="studentName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="studentName" required>
                                             </div>
-                                            <p class="fw-semibold mb-0 text-center mt-1 one-line" style="font-size: 17px;">Tutor</p>
-                                            <p class="fw-light text-center text-secondary" style="font-size: 13px;">Are you looking for a tuition job? <br> Tap it!!!</p>
+                                            <div class="col-md-6">
+                                                <label for="studentPhone" class="form-label">Phone Number</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">+88</span>
+                                                    <input type="tel" class="form-control" id="studentPhone" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="studentEmail">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentGender" class="form-label">Gender</label>
+                                                <select class="form-select" id="studentGender" required>
+                                                    <option value="" selected disabled>Select Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentDob" class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" id="studentDob">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentBlood" class="form-label">Blood Group</label>
+                                                <select class="form-select" id="studentBlood">
+                                                    <option value="" selected disabled>Select Blood Group</option>
+                                                    <option value="A+">A+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="AB-">AB-</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="O-">O-</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentPassword" class="form-label">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="studentPassword" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentConfirmPassword" class="form-label">Confirm Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="studentConfirmPassword" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                            
-                                <div class="card login-right-card shadow p-2 mt-3" style="border-radius: 10px; box-shadow: rgb(153, 243, 126) 0px 2px 6px !important;">
+                                <div class="d-flex justify-content-between">
+                                    <div></div>
+                                    <button class="btn btn-success px-4" onclick="nextSection('studentBasicInfo', 'studentEducationInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Education Info -->
+                            <div id="studentEducationInfo" class="form-section">
+                                <div class="card border-0 mb-4">
                                     <div class="card-body">
-                                        <h2 style="color: rgb(53, 216, 16); text-align: center; font-weight: bold;">
-                                            Registration as a <span id="studentOrtutor">....</span>
-                                        </h2>
-                                        <div class="login-body mt-3 px-lg-5 py-2">
-
-                                            <div class="email mt-3">
-                                                <label for="phone">Full Name</label>
-                                                <div class="d-flex mt-2 align-items-center rounded-5 px-2" style="border: 1px solid black;">
-                                                    <input id="name"  class="form-control rounded-5 border-0 w-100" placeholder="Enter your name" type="text">
-                                                </div>
-                                            </div>
-
-                                            <div class="email mt-3">
-                                                <label for="phone">Mobile Number</label>
-                                                <div class="d-flex mt-2 align-items-center rounded-5 px-2" style="border: 1px solid black;">
-                                                    <span style="display: inline; font-size: 18px; padding-right: 5px;">+88</span>
-                                                    <input id="phone" autocomplete="username" autofocus="" class="form-control shadow-none rounded-5 border-0 w-100" placeholder="Enter your phone number" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-12 mt-4 rounded-5" style="border: 1px solid black;">
-                                                <select id="gender" name="gender" class="form-control border-0 rounded-5" style="display: inline; font-size: 14px;">
-                                                    <option disabled="" selected="" value="">Select Gender</option>
-                                                    <option value="MALE">Male</option>
-                                                    <option value="FEMALE">Female</option>
-                                                    <option value="OTHERS">Others</option>
+                                        <h4 class="card-title text-center text-success mb-4">Education Information</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="studentClass" class="form-label">Class/Grade</label>
+                                                <select class="form-select" id="studentClass" required>
+                                                    <option value="" selected disabled>Select Class</option>
+                                                    <option value="class-1">Class 1</option>
+                                                    <option value="class-2">Class 2</option>
+                                                    <option value="class-3">Class 3</option>
+                                                    <option value="class-4">Class 4</option>
+                                                    <option value="class-5">Class 5</option>
+                                                    <option value="class-6">Class 6</option>
+                                                    <option value="class-7">Class 7</option>
+                                                    <option value="class-8">Class 8</option>
+                                                    <option value="class-9">Class 9</option>
+                                                    <option value="class-10">Class 10</option>
+                                                    <option value="inter">Inter</option>
                                                 </select>
                                             </div>
-
-                                            <div class="password mt-3">
-                                                <label for="password1">Password</label>
-                                                <div class="d-flex mt-2 align-items-center rounded-5" style="border: 1px solid black;">
-                                                    <input id="password1" type="password" class="password-input rounded-5 form-control border-0" placeholder="Enter your password" style="width: 90%;">
-                                                    <button class="toggle-password btn" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <label for="studentSchool" class="form-label">School/College Name</label>
+                                                <input type="text" class="form-control" id="studentSchool" required>
                                             </div>
-                                            
-                                            <div class="password mt-3">
-                                                <label for="password2">Confirm Password</label>
-                                                <div class="d-flex mt-2 align-items-center rounded-5" style="border: 1px solid black;">
-                                                    <input id="password2" type="password" class="password-input rounded-5 form-control border-0" placeholder="Confirm your password" style="width: 90%;">
-                                                    <button class="toggle-password btn" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <label for="studentMedium" class="form-label">Medium</label>
+                                                <select class="form-select" id="studentMedium" required>
+                                                    <option value="" selected disabled>Select Medium</option>
+                                                    <option value="bangla">Bangla Medium</option>
+                                                    <option value="english">English Version</option>
+                                                    <option value="english-medium">English Medium</option>
+                                                </select>
                                             </div>
-             
-
-                                            <div class="login-footer">
-                                                <div class="row mt-3">
-                                                        <div class="login-buttons my-3">
-                                                            <div>
-                                                                <button class="w-100 form-control btn btn-success bg-success text-white fw-semibold opacity-100" disabled="" type="submit"> Registrater Now </button>
-                                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentGroup" class="form-label">Group (if applicable)</label>
+                                                <select class="form-select" id="studentGroup">
+                                                    <option value="" selected disabled>Select Group</option>
+                                                    <option value="science">Science</option>
+                                                    <option value="commerce">Commerce</option>
+                                                    <option value="arts">Arts</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Subjects Needed Help With</label>
+                                                <div class="row">
+                                                    <div class="col-md-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentMath">
+                                                            <label class="form-check-label" for="studentMath">Mathematics</label>
                                                         </div>
-                                                        <div class="col-12 login-footer-right"> If you have an account, 
-                                                            <a href="login.html" class="text-decoration-none fw-semibold" style="color: #06b706;"> Login </a>
-                                                            your account.
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentEnglish">
+                                                            <label class="form-check-label" for="studentEnglish">English</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentBangla">
+                                                            <label class="form-check-label" for="studentBangla">Bangla</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentPhysics">
+                                                            <label class="form-check-label" for="studentPhysics">Physics</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentChemistry">
+                                                            <label class="form-check-label" for="studentChemistry">Chemistry</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentBiology">
+                                                            <label class="form-check-label" for="studentBiology">Biology</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentICT">
+                                                            <label class="form-check-label" for="studentICT">ICT</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="studentAccounting">
+                                                            <label class="form-check-label" for="studentAccounting">Accounting</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
-                            </form>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentEducationInfo', 'studentBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button class="btn btn-success px-4" onclick="nextSection('studentEducationInfo', 'studentScheduleInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Schedule & Preferences -->
+                            <div id="studentScheduleInfo" class="form-section">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Schedule & Preferences</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="studentAddress" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="studentAddress" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentLocation" class="form-label">Preferred Tutoring Location</label>
+                                                <select class="form-select" id="studentLocation" required>
+                                                    <option value="" selected disabled>Select Location</option>
+                                                    <option value="home">At Home</option>
+                                                    <option value="tutor-home">At Tutor's Home</option>
+                                                    <option value="coaching">Coaching Center</option>
+                                                    <option value="online">Online</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentDays" class="form-label">Days per Week</label>
+                                                <select class="form-select" id="studentDays" required>
+                                                    <option value="" selected disabled>Select Days</option>
+                                                    <option value="1">1 day/week</option>
+                                                    <option value="2">2 days/week</option>
+                                                    <option value="3">3 days/week</option>
+                                                    <option value="4">4 days/week</option>
+                                                    <option value="5">5 days/week</option>
+                                                    <option value="6">6 days/week</option>
+                                                    <option value="7">7 days/week</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentTime" class="form-label">Preferred Time</label>
+                                                <select class="form-select" id="studentTime" required>
+                                                    <option value="" selected disabled>Select Time</option>
+                                                    <option value="morning">Morning</option>
+                                                    <option value="afternoon">Afternoon</option>
+                                                    <option value="evening">Evening</option>
+                                                    <option value="night">Night</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentBudget" class="form-label">Monthly Budget (BDT)</label>
+                                                <input type="number" class="form-control" id="studentBudget" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="studentTutorGender" class="form-label">Preferred Tutor Gender</label>
+                                                <select class="form-select" id="studentTutorGender">
+                                                    <option value="" selected disabled>No Preference</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="studentNotes" class="form-label">Additional Notes</label>
+                                                <textarea class="form-control" id="studentNotes" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentScheduleInfo', 'studentEducationInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button type="submit" class="btn btn-success px-4">Complete Registration</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tutor Registration Form -->
+                        <div id="tutorRegistration" style="display: none;">
+                            <!-- Basic Info -->
+                            <div id="tutorBasicInfo" class="form-section active">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Basic Information</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="tutorName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="tutorName" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorPhone" class="form-label">Phone Number</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">+88</span>
+                                                    <input type="tel" class="form-control" id="tutorPhone" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="tutorEmail">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorGender" class="form-label">Gender</label>
+                                                <select class="form-select" id="tutorGender" required>
+                                                    <option value="" selected disabled>Select Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorMarital" class="form-label">Marital Status</label>
+                                                <select class="form-select" id="tutorMarital">
+                                                    <option value="" selected disabled>Select Status</option>
+                                                    <option value="single">Single</option>
+                                                    <option value="married">Married</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorBlood" class="form-label">Blood Group</label>
+                                                <select class="form-select" id="tutorBlood">
+                                                    <option value="" selected disabled>Select Blood Group</option>
+                                                    <option value="A+">A+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="AB-">AB-</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="O-">O-</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorPassword" class="form-label">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="tutorPassword" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorConfirmPassword" class="form-label">Confirm Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="tutorConfirmPassword" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div></div>
+                                    <button class="btn btn-success px-4" onclick="nextSection('tutorBasicInfo', 'tutorEducationInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Education Info -->
+                            <div id="tutorEducationInfo" class="form-section">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Education Information</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="tutorDegree" class="form-label">Highest Degree</label>
+                                                <input type="text" class="form-control" id="tutorDegree" placeholder="e.g. MS in Psychology" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorUniversity" class="form-label">University</label>
+                                                <input type="text" class="form-control" id="tutorUniversity" placeholder="e.g. Dhaka University" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorSubject" class="form-label">Major Subject</label>
+                                                <input type="text" class="form-control" id="tutorSubject" placeholder="e.g. Psychology" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorResult" class="form-label">Result (GPA/CGPA)</label>
+                                                <input type="text" class="form-control" id="tutorResult" placeholder="e.g. 3.02">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorExperience" class="form-label">Teaching Experience</label>
+                                                <select class="form-select" id="tutorExperience" required>
+                                                    <option value="" selected disabled>Select Experience</option>
+                                                    <option value="1">1 year</option>
+                                                    <option value="2">2 years</option>
+                                                    <option value="3">3 years</option>
+                                                    <option value="4">More than 4 years</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorBackground" class="form-label">Educational Background</label>
+                                                <select class="form-select" id="tutorBackground" required>
+                                                    <option value="" selected disabled>Select Background</option>
+                                                    <option value="bangla">Bangla Medium</option>
+                                                    <option value="english">English Version</option>
+                                                    <option value="english-medium">English Medium</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="tutorBio" class="form-label">Bio/Teaching Philosophy</label>
+                                                <textarea class="form-control" id="tutorBio" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorEducationInfo', 'tutorBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button class="btn btn-success px-4" onclick="nextSection('tutorEducationInfo', 'tutorTeachingInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Teaching Info -->
+                            <div id="tutorTeachingInfo" class="form-section">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Teaching Information</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Preferred Classes</label>
+                                                <div class="row">
+                                                    <div class="col-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass1">
+                                                            <label class="form-check-label" for="tutorClass1">Class 1</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass2">
+                                                            <label class="form-check-label" for="tutorClass2">Class 2</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass3">
+                                                            <label class="form-check-label" for="tutorClass3">Class 3</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass4">
+                                                            <label class="form-check-label" for="tutorClass4">Class 4</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass5">
+                                                            <label class="form-check-label" for="tutorClass5">Class 5</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass6">
+                                                            <label class="form-check-label" for="tutorClass6">Class 6</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass7">
+                                                            <label class="form-check-label" for="tutorClass7">Class 7</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass8">
+                                                            <label class="form-check-label" for="tutorClass8">Class 8</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass9">
+                                                            <label class="form-check-label" for="tutorClass9">Class 9</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorClass10">
+                                                            <label class="form-check-label" for="tutorClass10">Class 10</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Subjects You Can Teach</label>
+                                                <div class="row">
+                                                    <div class="col-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorMath">
+                                                            <label class="form-check-label" for="tutorMath">Mathematics</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorEnglish">
+                                                            <label class="form-check-label" for="tutorEnglish">English</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorBangla">
+                                                            <label class="form-check-label" for="tutorBangla">Bangla</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorPhysics">
+                                                            <label class="form-check-label" for="tutorPhysics">Physics</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 subject-column">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorChemistry">
+                                                            <label class="form-check-label" for="tutorChemistry">Chemistry</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorBiology">
+                                                            <label class="form-check-label" for="tutorBiology">Biology</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorICT">
+                                                            <label class="form-check-label" for="tutorICT">ICT</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="tutorAccounting">
+                                                            <label class="form-check-label" for="tutorAccounting">Accounting</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorAreas" class="form-label">Areas You Can Teach In</label>
+                                                <textarea class="form-control" id="tutorAreas" rows="3" placeholder="e.g. Mirpur, Dhanmondi, Uttara"></textarea>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorSchedule" class="form-label">Preferred Teaching Schedule</label>
+                                                <select class="form-select" id="tutorSchedule" required>
+                                                    <option value="" selected disabled>Select Schedule</option>
+                                                    <option value="morning">Morning</option>
+                                                    <option value="afternoon">Afternoon</option>
+                                                    <option value="evening">Evening</option>
+                                                    <option value="night">Night</option>
+                                                    <option value="flexible">Flexible</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorPlatform" class="form-label">Preferred Platform</label>
+                                                <select class="form-select" id="tutorPlatform" required>
+                                                    <option value="" selected disabled>Select Platform</option>
+                                                    <option value="home">Home Tuition</option>
+                                                    <option value="coaching">Coaching Center</option>
+                                                    <option value="online">Online</option>
+                                                    <option value="any">Any</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tutorSalary" class="form-label">Expected Salary (BDT)</label>
+                                                <input type="number" class="form-control" id="tutorSalary" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="tutorNotes" class="form-label">Additional Notes</label>
+                                                <textarea class="form-control" id="tutorNotes" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorTeachingInfo', 'tutorEducationInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button type="submit" class="btn btn-success px-4">Complete Registration</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-            <section id="footer" class="footer mt-5"></section>
     </div>
-    <script src="js/loginRegistration.js"></script>
+
+    <footer id="footer"></footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // User Type Selection
+        function selectUserType(type) {
+            const studentOption = document.getElementById('studentOption');
+            const tutorOption = document.getElementById('tutorOption');
+            const studentRegistration = document.getElementById('studentRegistration');
+            const tutorRegistration = document.getElementById('tutorRegistration');
+            const userTypeInput = document.getElementById('userType');
+
+            if (type === 'student') {
+                studentOption.classList.add('active');
+                tutorOption.classList.remove('active');
+                studentRegistration.style.display = 'block';
+                tutorRegistration.style.display = 'none';
+                userTypeInput.value = 'student';
+            } else {
+                studentOption.classList.remove('active');
+                tutorOption.classList.add('active');
+                studentRegistration.style.display = 'none';
+                tutorRegistration.style.display = 'block';
+                userTypeInput.value = 'tutor';
+            }
+            
+            // Reset to first section
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(type + 'BasicInfo').classList.add('active');
+            updateProgressBar(33);
+        }
+
+        // Navigation Functions
+        function nextSection(currentId, nextId) {
+            document.getElementById(currentId).classList.remove('active');
+            document.getElementById(nextId).classList.add('active');
+            
+            if (nextId.includes('Education')) {
+                updateProgressBar(66);
+            } else if (nextId.includes('Schedule') || nextId.includes('Teaching')) {
+                updateProgressBar(100);
+            }
+        }
+
+        function prevSection(currentId, prevId) {
+            document.getElementById(currentId).classList.remove('active');
+            document.getElementById(prevId).classList.add('active');
+            
+            if (prevId.includes('Basic')) {
+                updateProgressBar(33);
+            } else if (prevId.includes('Education')) {
+                updateProgressBar(66);
+            }
+        }
+
+        function updateProgressBar(percentage) {
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = percentage + '%';
+            progressBar.setAttribute('aria-valuenow', percentage);
+        }
+
+        // Password Toggle
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentNode.querySelector('input');
+                const icon = this.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                }
+            });
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate passwords match
+            const userType = document.getElementById('userType').value;
+            const password = document.getElementById(userType + 'Password').value;
+            const confirmPassword = document.getElementById(userType + 'ConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Collect form data
+            const formData = {};
+            const userTypePrefix = userType;
+            
+            // Basic Info
+            formData.name = document.getElementById(userTypePrefix + 'Name').value;
+            formData.phone = document.getElementById(userTypePrefix + 'Phone').value;
+            formData.email = document.getElementById(userTypePrefix + 'Email').value;
+            formData.gender = document.getElementById(userTypePrefix + 'Gender').value;
+            
+            if (userType === 'student') {
+                // Student specific data
+                formData.class = document.getElementById('studentClass').value;
+                formData.school = document.getElementById('studentSchool').value;
+                formData.subjects = [];
+                document.querySelectorAll('#studentRegistration input[type="checkbox"]:checked').forEach(checkbox => {
+                    formData.subjects.push(checkbox.nextElementSibling.textContent);
+                });
+                formData.budget = document.getElementById('studentBudget').value;
+            } else {
+                // Tutor specific data
+                formData.degree = document.getElementById('tutorDegree').value;
+                formData.university = document.getElementById('tutorUniversity').value;
+                formData.experience = document.getElementById('tutorExperience').value;
+                formData.subjects = [];
+                document.querySelectorAll('#tutorRegistration input[type="checkbox"]:checked').forEach(checkbox => {
+                    formData.subjects.push(checkbox.nextElementSibling.textContent);
+                });
+                formData.salary = document.getElementById('tutorSalary').value;
+            }
+            
+            console.log('Form data:', formData);
+            alert('Registration successful!');
+            // Here you would typically send the data to your server
+        });
+    </script>
+
 </body>
 </html>

@@ -204,7 +204,9 @@ animation: shake 0.4s ease-in-out;
 }
 /* Mobile specific adjustments */
 @media (max-width: 768px) {
-    
+    .premiumTutors{
+        flex-direction: column-reverse;
+    }
     .flip-card {
         height: 240px;
     }

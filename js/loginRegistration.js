@@ -41,6 +41,8 @@ document.querySelectorAll(".toggle-password").forEach(button => {
 function selectUserType(type) {
     const studentOption = document.getElementById('studentOption');
     const tutorOption = document.getElementById('tutorOption');
+    const studentTypeImgBorder = document.getElementById('studentTypeImgBorder');
+    const tutorTypeImgBorder = document.getElementById('tutorTypeImgBorder');
     const studentRegistration = document.getElementById('studentRegistration');
     const tutorRegistration = document.getElementById('tutorRegistration');
     const userTypeInput = document.getElementById('userType');
@@ -48,14 +50,18 @@ function selectUserType(type) {
     if (type === 'student') {
         studentOption.classList.add('active');
         tutorOption.classList.remove('active');
+        studentTypeImgBorder.style.border = '3px solid  #0fc16e';
+        tutorTypeImgBorder.style.border = 'none';
         studentRegistration.style.display = 'block';
         tutorRegistration.style.display = 'none';
         userTypeInput.value = 'student';
         // Set progress to 50% when student is selected
         updateProgressBar(50);
     } else {
-        studentOption.classList.remove('active');
         tutorOption.classList.add('active');
+        studentOption.classList.remove('active');
+        studentTypeImgBorder.style.border = 'none';
+        tutorTypeImgBorder.style.border = '3px solid  #0fc16e';
         studentRegistration.style.display = 'none';
         tutorRegistration.style.display = 'block';
         userTypeInput.value = 'tutor';
@@ -70,18 +76,39 @@ function selectUserType(type) {
     document.getElementById(type + 'BasicInfo').classList.add('active');
 }
 
+// Validate Form Fields
+function validateSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const inputs = section.querySelectorAll('input, select, textarea');
+    let isValid = true;
+
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('is-invalid'); // Add Bootstrap's invalid class for styling
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    });
+    return isValid;
+}
+
 // Navigation Functions
 function nextSection(currentId, nextId) {
+    // Validate current section before proceeding
+    if (!validateSection(currentId)) {
+        submitForm(false, 'Please fill out all required fields before proceeding.');
+        return;
+    }
+
     document.getElementById(currentId).classList.remove('active');
     document.getElementById(nextId).classList.add('active');
-    
-    // Student flow
+
+    // Update progress bar based on the section
     if (currentId === 'studentBasicInfo' && nextId === 'studentPreview') {
         updateProgressBar(100);
         generateStudentPreview();
-    }
-    // Tutor flow
-    else if (nextId.includes('Education')) {
+    } else if (nextId.includes('Education')) {
         updateProgressBar(66);
     } else if (nextId.includes('Teaching')) {
         updateProgressBar(75);
@@ -94,13 +121,11 @@ function nextSection(currentId, nextId) {
 function prevSection(currentId, prevId) {
     document.getElementById(currentId).classList.remove('active');
     document.getElementById(prevId).classList.add('active');
-    
-    // Student flow
+
+    // Update progress bar based on the section
     if (currentId === 'studentPreview' && prevId === 'studentBasicInfo') {
         updateProgressBar(50);
-    }
-    // Tutor flow
-    else if (prevId.includes('Basic')) {
+    } else if (prevId.includes('Basic')) {
         updateProgressBar(33);
     } else if (prevId.includes('Education')) {
         updateProgressBar(66);
@@ -109,6 +134,7 @@ function prevSection(currentId, prevId) {
     }
 }
 
+// Update Progress Bar
 function updateProgressBar(percentage) {
     const progressBar = document.getElementById('progressBar');
     progressBar.style.width = percentage + '%';
@@ -145,79 +171,109 @@ function generateStudentPreview() {
 // Generate Tutor Preview
 function generateTutorPreview() {
     const previewContent = document.getElementById('tutorPreviewContent');
+    if (!previewContent) {
+        console.error('Element with ID "tutorPreviewContent" not found.');
+        return;
+    }
+
     let html = '<div class="list-group">';
-    
+    const tutorName = document.getElementById('tutorName').value || 'Not provided';
+    const tutorPhone = document.getElementById('tutorPhone').value || 'Not provided';
+    const tutorEmail = document.getElementById('tutorEmail').value || 'Not provided';
+    const tutorGender = document.getElementById('tutorGender').value || 'Not provided';
+    const tutorDOB = document.getElementById('tutorDOB').value || 'Not provided';
+    const tutorMarital = document.getElementById('tutorMarital').value || 'Not provided';
+    const tutorBlood = document.getElementById('tutorBlood').value || 'Not provided';
+    const tutorDegree = document.getElementById('tutorDegree').value || 'Not provided';
+    const tutorInstitute = document.getElementById('tutorInstitute').value || 'Not provided';
+    const tutorSubject = document.getElementById('tutorSubject').value || 'Not provided';
+    const tutorResult = document.getElementById('tutorResult').value || 'Not provided';
+    const tutorExperience = document.getElementById('tutorExperience').value || 'Not provided';
+    const tutorBackground = document.getElementById('tutorBackground').value || 'Not provided';
+    const tutorBio = document.getElementById('tutorBio').value || 'Not provided';
+    const tutorSchedule = document.getElementById('tutorSchedule').value || 'Not provided';
+    const tutorPlatform = document.getElementById('tutorPlatform').value || 'Not provided';
+    const tutorSalary = document.getElementById('tutorSalary').value || 'Not provided';
+
     html += `
         <div class="preview-item">
-            <strong>Name:</strong> ${document.getElementById('tutorName').value}
+            <strong>Name :</strong> ${tutorName}
         </div>
         <div class="preview-item">
-            <strong>Phone:</strong> ${document.getElementById('tutorPhone').value}
+            <strong>Phone :</strong> ${tutorPhone}
         </div>
         <div class="preview-item">
-            <strong>Degree:</strong> ${document.getElementById('tutorDegree').value || 'Not provided'}
+            <strong>Email :</strong> ${tutorEmail}
         </div>
         <div class="preview-item">
-            <strong>University:</strong> ${document.getElementById('tutorUniversity').value || 'Not provided'}
+            <strong>Gender :</strong> ${tutorGender}
         </div>
         <div class="preview-item">
-            <strong>Experience:</strong> ${document.getElementById('tutorExperience').options[document.getElementById('tutorExperience').selectedIndex].text || 'Not provided'}
+            <strong>Date of birth :</strong> ${tutorDOB}
+        </div>
+        <div class="preview-item">
+            <strong>Marital Status :</strong> ${tutorMarital}
+        </div>
+        <div class="preview-item">
+            <strong>Blood Group :</strong> ${tutorBlood}
+        </div>
+        <div class="preview-item">
+            <strong>Heighest Degree Name :</strong> ${tutorDegree}
+        </div>
+        <div class="preview-item">
+            <strong>Institute Name :</strong> ${tutorInstitute}
+        </div>
+        <div class="preview-item">
+            <strong>Mejor Subject :</strong> ${tutorSubject}
+        </div>
+        <div class="preview-item">
+            <strong>Result :</strong> ${tutorResult}
+        </div>
+        <div class="preview-item">
+            <strong>Experience :</strong> ${tutorExperience}
+        </div>
+        <div class="preview-item">
+            <strong>Tutor Background :</strong> ${tutorBackground}
+        </div>
+        <div class="preview-item">
+            <strong>Bio :</strong> ${tutorBio}
+        </div>
+        <div class="preview-item">
+            <strong>Teaching time :</strong> ${tutorSchedule}
+        </div>
+        <div class="preview-item">
+            <strong>Platform :</strong> ${tutorPlatform}
+        </div>
+        <div class="preview-item">
+            <strong>Salary :</strong> ${tutorSalary}
         </div>
     `;
-    
-    // Add selected classes
-    const selectedClasses = [];
-    for (let i = 1; i <= 10; i++) {
-        if (document.getElementById('tutorClass' + i).checked) {
-            selectedClasses.push('Class ' + i);
-        }
-    }
-    html += `<div class="preview-item"><strong>Preferred Classes:</strong> ${selectedClasses.join(', ') || 'None selected'}</div>`;
-    
-    // Add selected subjects
-    const selectedSubjects = [];
-    const subjectIds = ['Math', 'English', 'Bangla', 'Physics', 'Chemistry', 'Biology'];
-    subjectIds.forEach(subject => {
-        if (document.getElementById('tutor' + subject).checked) {
-            selectedSubjects.push(subject);
-        }
-    });
-    html += `<div class="preview-item"><strong>Subjects:</strong> ${selectedSubjects.join(', ') || 'None selected'}</div>`;
-    
     html += '</div>';
     previewContent.innerHTML = html;
 }
 
-// Password Toggle
-document.querySelectorAll('.toggle-password').forEach(button => {
-    button.addEventListener('click', function() {
-        const input = this.parentNode.querySelector('input');
-        const icon = this.querySelector('i');
-        
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.classList.replace('fa-eye-slash', 'fa-eye');
-        } else {
-            input.type = 'password';
-            icon.classList.replace('fa-eye', 'fa-eye-slash');
-        }
-    });
-});
-
 // Form Submission
-document.querySelector('form').addEventListener('submit', function(e) {
+document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
-    // Validate passwords match
+
+    // Validate the last section before submission
     const userType = document.getElementById('userType').value;
-    const password = document.getElementById(userType + 'Password').value;
-    const confirmPassword = document.getElementById(userType + 'ConfirmPassword').value;
-    
-    if (password !== confirmPassword) {
-        showResult(false, 'Passwords do not match!');
+    const lastSectionId = userType === 'student' ? 'studentPreview' : 'tutorPreview';
+
+    if (!validateSection(lastSectionId)) {
+        submitForm(false, 'Please fill out all required fields before submitting.');
         return;
     }
-    
+
+    // Validate passwords match
+    const password = document.getElementById(userType + 'Password').value;
+    const confirmPassword = document.getElementById(userType + 'ConfirmPassword').value;
+
+    if (password !== confirmPassword) {
+        submitForm(false, 'Passwords do not match!');
+        return;
+    }
+
     // Create user object
     const user = {
         userType,
@@ -226,7 +282,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
         password,
         registeredAt: new Date().toISOString()
     };
-    
+
     // Add additional fields
     if (userType === 'student') {
         user.email = document.getElementById('studentEmail').value;
@@ -237,13 +293,12 @@ document.querySelector('form').addEventListener('submit', function(e) {
         user.university = document.getElementById('tutorUniversity').value;
         user.experience = document.getElementById('tutorExperience').value;
         user.subjects = [];
-        // Add other tutor-specific fields
     }
-    
-    // In a real app, you would send this to your backend
+
+    // Simulate backend submission
     console.log('User data:', user);
-    showResult(true, 'Registration successful! Redirecting to login...');
-    
+    submitForm(true, 'Registration successful! Redirecting to login...');
+
     // Simulate redirect
     setTimeout(() => {
         window.location.href = 'login.html';
@@ -251,11 +306,11 @@ document.querySelector('form').addEventListener('submit', function(e) {
 });
 
 // Show Result Modal
-function showResult(isSuccess, message) {
+function submitForm(isSuccess, message) {
     const modalTitle = document.getElementById('resultModalTitle');
     const modalBody = document.getElementById('resultModalBody');
     const modal = new bootstrap.Modal(document.getElementById('resultModal'));
-    
+
     if (isSuccess) {
         modalTitle.innerHTML = '<i class="fas fa-check-circle text-success me-2"></i> Success';
         modalBody.innerHTML = `
@@ -273,7 +328,7 @@ function showResult(isSuccess, message) {
             </div>
         `;
     }
-    
+
     modal.show();
 }
 // registration section code end here

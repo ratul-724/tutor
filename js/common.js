@@ -52,7 +52,6 @@ districtSelect.addEventListener('change', function() {
         hideSuggestions();
     }
 });
-
 // Show area suggestions when typing
 areaInput.addEventListener('input', function() {
     const district = districtSelect.value;
@@ -69,7 +68,6 @@ areaInput.addEventListener('input', function() {
     
     showSuggestions(filteredAreas);
 });
-
 // Show suggestions dropdown
 function showSuggestions(areas) {
     if (areas.length === 0) {
@@ -91,12 +89,10 @@ function showSuggestions(areas) {
     
     areaSuggestions.style.display = 'block';
 }
-
 // Hide suggestions dropdown
 function hideSuggestions() {
     areaSuggestions.style.display = 'none';
 }
-
 // Hide suggestions when clicking outside
 document.addEventListener('click', function(e) {
     if (e.target.id !== 'area') {

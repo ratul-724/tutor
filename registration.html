@@ -18,6 +18,9 @@
         .option-card.active {
             border-bottom: 3px solid #198754;
         }
+        .accountTypeBorder.active {
+            border-bottom: 3px solid #198754;
+        }
         .option-card.active .checkmark {
             display: block !important;
         }
@@ -42,8 +45,8 @@
                 <img src="assets/images/registration.png" alt="" class="w-100 floating-image">
             </div>
 
-            <div class="col-lg-7">
-                <div class="card shadow">
+            <div class="col-lg-7 ">
+                <div class="card shadow-sm rounded-4">
                     <div class="card-body">
                         <h2 class="text-center mb-4">
                             <span class="text-success">Create</span> an 
@@ -57,9 +60,9 @@
                                 <div id="studentOption" class="card option-card active" style="height: 150px;" onclick="selectUserType('student')">
                                     <div class="card-body text-center">
                                         <div class="position-relative mb-2" style="margin-top: -50px;">
-                                            <img src="assets/icons/student.png" width="70px" class="rounded-circle border border-3 border-success" alt="Student">
-                                            <span class="checkmark position-absolute translate-middle text-success" style="display: block; top: 7%; left: 56%">
-                                                <i class="fas fa-check-circle fa-2x fs-4"></i>
+                                            <img src="assets/icons/student.png" style="border: 3px solid  #0fc16e;" width="70px" id="studentTypeImgBorder" class="rounded-circle" alt="Student">
+                                            <span class="checkmark position-absolute translate-middle text-success" style="top: 13%; left: 58%">
+                                                <i class="fas fa-check-circle fa-2x fs-4 bg-white rounded-circle"></i>
                                             </span>
                                         </div>
                                         <h5 class="card-title">Student/Guardian</h5>
@@ -71,9 +74,9 @@
                                 <div id="tutorOption" class="card option-card" style="height: 150px;" onclick="selectUserType('tutor')">
                                     <div class="card-body text-center py-4">
                                         <div class="position-relative mb-3" style="margin-top: -50px;">
-                                            <img src="assets/icons/teacher.png" width="70px" class="rounded-circle border border-3 border-success" alt="Tutor">
-                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 7%; left: 56%;">
-                                                <i class="fas fa-check-circle fa-2x fs-4"></i>
+                                            <img src="assets/icons/teacher.png" width="70px" id="tutorTypeImgBorder" class="rounded-circle" alt="Tutor">
+                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 13%; left: 58%;">
+                                                <i class="fas fa-check-circle fa-2x fs-4 bg-white rounded-circle"></i>
                                             </span>
                                         </div>
                                         <h5 class="card-title">Tutor</h5>
@@ -100,22 +103,22 @@
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <label for="studentName" class="form-label">Full Name</label>
-                                                <input type="text" class="form-control" id="studentName" required>
+                                                <input type="text" class="form-control focusNone" id="studentName" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="studentPhone" class="form-label">Phone Number</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text">+88</span>
-                                                    <input type="tel" class="form-control" id="studentPhone" required>
+                                                    <input type="tel" class="form-control focusNone" id="studentPhone" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="studentEmail" class="form-label">Email</label>
-                                                <input type="email" class="form-control" id="studentEmail">
+                                                <input type="email" class="form-control focusNone" id="studentEmail">
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="studentGender" class="form-label">Gender</label>
-                                                <select class="form-select" id="studentGender" required>
+                                                <select class="form-select focusNone" id="studentGender" required>
                                                     <option value="" selected disabled>Select Gender</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
@@ -124,11 +127,11 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="studentDob" class="form-label">Date of Birth</label>
-                                                <input type="date" class="form-control" id="studentDob">
+                                                <input type="date" class="form-control focusNone" id="studentDob">
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="studentBlood" class="form-label">Blood Group</label>
-                                                <select class="form-select" id="studentBlood">
+                                                <select class="form-select focusNone" id="studentBlood">
                                                     <option value="" selected disabled>Select Blood Group</option>
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>
@@ -143,7 +146,7 @@
                                             <div class="col-md-6">
                                                 <label for="studentPassword" class="form-label">Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="studentPassword" required>
+                                                    <input type="password" class="form-control focusNone" id="studentPassword" required>
                                                     <button class="btn btn-outline-secondary toggle-password" type="button">
                                                         <i class="fas fa-eye-slash"></i>
                                                     </button>
@@ -152,7 +155,7 @@
                                             <div class="col-md-6">
                                                 <label for="studentConfirmPassword" class="form-label">Confirm Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="studentConfirmPassword" required>
+                                                    <input type="password" class="form-control focusNone" id="studentConfirmPassword" required>
                                                     <button class="btn btn-outline-secondary toggle-password" type="button">
                                                         <i class="fas fa-eye-slash"></i>
                                                     </button>
@@ -192,39 +195,43 @@
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <label for="tutorName" class="form-label">Full Name</label>
-                                                <input type="text" class="form-control" id="tutorName" required>
+                                                <input type="text" class="form-control focusNone" id="tutorName" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorPhone" class="form-label">Phone Number</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text">+88</span>
-                                                    <input type="tel" class="form-control" id="tutorPhone" required>
+                                                    <input type="tel" class="form-control focusNone" id="tutorPhone" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorEmail" class="form-label">Email</label>
-                                                <input type="email" class="form-control" id="tutorEmail">
+                                                <input type="email" class="form-control focusNone" id="tutorEmail" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorGender" class="form-label">Gender</label>
-                                                <select class="form-select" id="tutorGender" required>
+                                                <select class="form-select focusNone" id="tutorGender" required>
                                                     <option value="" selected disabled>Select Gender</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                     <option value="other">Other</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
+                                                <label for="tutorDOB" class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control focusNone" id="tutorDOB" required>
+                                            </div>
+                                            <div class="col-md-4">
                                                 <label for="tutorMarital" class="form-label">Marital Status</label>
-                                                <select class="form-select" id="tutorMarital">
+                                                <select class="form-select focusNone" id="tutorMarital">
                                                     <option value="" selected disabled>Select Status</option>
                                                     <option value="single">Single</option>
                                                     <option value="married">Married</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <label for="tutorBlood" class="form-label">Blood Group</label>
-                                                <select class="form-select" id="tutorBlood">
+                                                <select class="form-select focusNone" id="tutorBlood">
                                                     <option value="" selected disabled>Select Blood Group</option>
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>
@@ -239,7 +246,7 @@
                                             <div class="col-md-6">
                                                 <label for="tutorPassword" class="form-label">Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="tutorPassword" required>
+                                                    <input type="password" class="form-control focusNone" id="tutorPassword" required>
                                                     <button class="btn btn-outline-secondary toggle-password" type="button">
                                                         <i class="fas fa-eye-slash"></i>
                                                     </button>
@@ -248,7 +255,7 @@
                                             <div class="col-md-6">
                                                 <label for="tutorConfirmPassword" class="form-label">Confirm Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" id="tutorConfirmPassword" required>
+                                                    <input type="password" class="form-control focusNone" id="tutorConfirmPassword" required>
                                                     <button class="btn btn-outline-secondary toggle-password" type="button">
                                                         <i class="fas fa-eye-slash"></i>
                                                     </button>
@@ -270,24 +277,24 @@
                                         <h4 class="card-title text-center text-success mb-4">Education Information</h4>
                                         <div class="row g-3">
                                             <div class="col-md-6">
-                                                <label for="tutorDegree" class="form-label">Highest Degree</label>
-                                                <input type="text" class="form-control" id="tutorDegree" placeholder="e.g. MS in Psychology" required>
+                                                <label for="tutorDegree" class="form-label">Highest Degree Name</label>
+                                                <input type="text" class="form-control focusNone" id="tutorDegree" placeholder="e.g. MS in Psychology" required>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="tutorUniversity" class="form-label">University</label>
-                                                <input type="text" class="form-control" id="tutorUniversity" placeholder="e.g. Dhaka University" required>
+                                                <label for="tutorInstitute" class="form-label">Institute</label>
+                                                <input type="text" class="form-control focusNone" id="tutorInstitute" placeholder="e.g. Dhaka University" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorSubject" class="form-label">Major Subject</label>
-                                                <input type="text" class="form-control" id="tutorSubject" placeholder="e.g. Psychology" required>
+                                                <input type="text" class="form-control focusNone" id="tutorSubject" placeholder="e.g. Psychology" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorResult" class="form-label">Result (GPA/CGPA)</label>
-                                                <input type="text" class="form-control" id="tutorResult" placeholder="e.g. 3.02">
+                                                <input type="text" class="form-control focusNone" id="tutorResult" placeholder="e.g. 3.02">
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorExperience" class="form-label">Teaching Experience</label>
-                                                <select class="form-select" id="tutorExperience" required>
+                                                <select class="form-select focusNone" id="tutorExperience" required>
                                                     <option value="" selected disabled>Select Experience</option>
                                                     <option value="1">1 year</option>
                                                     <option value="2">2 years</option>
@@ -297,7 +304,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorBackground" class="form-label">Educational Background</label>
-                                                <select class="form-select" id="tutorBackground" required>
+                                                <select class="form-select focusNone" id="tutorBackground" required>
                                                     <option value="" selected disabled>Select Background</option>
                                                     <option value="bangla">Bangla Medium</option>
                                                     <option value="english">English Version</option>
@@ -306,7 +313,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <label for="tutorBio" class="form-label">Bio/Teaching Philosophy</label>
-                                                <textarea class="form-control" id="tutorBio" rows="3"></textarea>
+                                                <textarea class="form-control focusNone" id="tutorBio" rows="3"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -415,22 +422,22 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorAreas" class="form-label">Areas You Can Teach In</label>
-                                                <textarea class="form-control" id="tutorAreas" rows="3" placeholder="e.g. Mirpur, Dhanmondi, Uttara"></textarea>
+                                                <textarea class="form-control focusNone" id="tutorAreas" rows="3" placeholder="e.g. Mirpur, Dhanmondi, Uttara"></textarea>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorSchedule" class="form-label">Preferred Teaching Schedule</label>
-                                                <select class="form-select" id="tutorSchedule" required>
+                                                <select class="form-select focusNone" id="tutorSchedule" required>
                                                     <option value="" selected disabled>Select Schedule</option>
                                                     <option value="morning">Morning</option>
                                                     <option value="afternoon">Afternoon</option>
                                                     <option value="evening">Evening</option>
                                                     <option value="night">Night</option>
-                                                    <option value="flexible">Flexible</option>
+                                                    <option value="negotiable">Negotiable</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorPlatform" class="form-label">Preferred Platform</label>
-                                                <select class="form-select" id="tutorPlatform" required>
+                                                <select class="form-select focusNone" id="tutorPlatform" required>
                                                     <option value="" selected disabled>Select Platform</option>
                                                     <option value="home">Home Tuition</option>
                                                     <option value="coaching">Coaching Center</option>
@@ -440,11 +447,11 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tutorSalary" class="form-label">Expected Salary (BDT)</label>
-                                                <input type="number" class="form-control" id="tutorSalary" required>
+                                                <input type="number" class="form-control focusNone" id="tutorSalary" required>
                                             </div>
                                             <div class="col-12">
                                                 <label for="tutorNotes" class="form-label">Additional Notes</label>
-                                                <textarea class="form-control" id="tutorNotes" rows="3"></textarea>
+                                                <textarea class="form-control focusNone" id="tutorNotes" rows="3"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -483,7 +490,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="resultModalTitle">Registration Result</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close focusNone" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="resultModalBody">
                     <!-- Content will be inserted here -->

@@ -352,18 +352,14 @@ function displayTutors(page) {
                 </div>
             </a>
         `;
-        
         container.appendChild(col);
     });
-    
     updatePagination();
 }
-
 // Update pagination
 function updatePagination() {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
-    
     const totalPages = Math.ceil(tutors.length / tutorsPerPage);
     
     // Previous button
@@ -390,16 +386,13 @@ function updatePagination() {
     </a>`;
     pagination.appendChild(nextLi);
 }
-
 // Change page
 function changePage(page) {
     if (page < 1 || page > Math.ceil(tutors.length / tutorsPerPage)) return;
     currentPage = page;
     displayTutors(currentPage);
+    // No code should exist here after the return statement above
 }
-
 // Initialize
 displayTutors(currentPage);
 // code fo premium tutor end here 
-
-

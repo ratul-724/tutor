@@ -34,14 +34,17 @@
     </style>
 </head>
 <body>
-
     <header id="header"></header>
 
     <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5">
+                <img src="assets/images/registration.png" alt="" class="w-100 floating-image">
+            </div>
+
+            <div class="col-lg-7">
                 <div class="card shadow">
-                    <div class="card-body p-5">
+                    <div class="card-body">
                         <h2 class="text-center mb-4">
                             <span class="text-success">Create</span> an 
                             <span class="text-success">Account</span>
@@ -49,27 +52,27 @@
                         <p class="text-center text-muted mb-5">Let's get started with your new journey!</p>
 
                         <!-- User Type Selection -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <div id="studentOption" class="card option-card h-100 active" onclick="selectUserType('student')">
-                                    <div class="card-body text-center py-4">
-                                        <div class="position-relative mb-3">
+                        <div class="row my-5">
+                            <div class="col-md-6 mt-4 mb-1">
+                                <div id="studentOption" class="card option-card active" style="height: 150px;" onclick="selectUserType('student')">
+                                    <div class="card-body text-center">
+                                        <div class="position-relative mb-2" style="margin-top: -50px;">
                                             <img src="assets/icons/student.png" width="70px" class="rounded-circle border border-3 border-success" alt="Student">
-                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 7%; left: 56%">
+                                            <span class="checkmark position-absolute translate-middle text-success" style="display: block; top: 7%; left: 56%">
                                                 <i class="fas fa-check-circle fa-2x fs-4"></i>
                                             </span>
                                         </div>
-                                        <h5 class="card-title">Student</h5>
-                                        <p class="card-text text-muted">Looking for a tutor? Register as student.</p>
+                                        <h5 class="card-title">Student/Guardian</h5>
+                                        <p class="card-text text-muted">Looking for a tutor? Register as student/guardian.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div id="tutorOption" class="card option-card h-100" onclick="selectUserType('tutor')">
+                            <div class="col-md-6 mt-4 mb-1">
+                                <div id="tutorOption" class="card option-card" style="height: 150px;" onclick="selectUserType('tutor')">
                                     <div class="card-body text-center py-4">
-                                        <div class="position-relative mb-3">
+                                        <div class="position-relative mb-3" style="margin-top: -50px;">
                                             <img src="assets/icons/teacher.png" width="70px" class="rounded-circle border border-3 border-success" alt="Tutor">
-                                            <span class="checkmark position-absolute  translate-middle text-success" style="display: none; top: 7%; left: 56%;">
+                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 7%; left: 56%;">
                                                 <i class="fas fa-check-circle fa-2x fs-4"></i>
                                             </span>
                                         </div>
@@ -84,7 +87,7 @@
 
                         <!-- Progress Bar -->
                         <div class="progress mb-4" style="height: 10px;">
-                            <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 33%;"></div>
+                            <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 50%;"></div>
                         </div>
 
                         <!-- Student Registration Form -->
@@ -160,170 +163,21 @@
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div></div>
-                                    <button class="btn btn-success px-4" onclick="nextSection('studentBasicInfo', 'studentEducationInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                                    <button class="btn btn-success px-4" onclick="nextSection('studentBasicInfo', 'studentPreview')">Preview <i class="fas fa-arrow-right ms-2"></i></button>
                                 </div>
                             </div>
 
-                            <!-- Education Info -->
-                            <div id="studentEducationInfo" class="form-section">
+                            <!-- Preview Section -->
+                            <div id="studentPreview" class="form-section">
                                 <div class="card border-0 mb-4">
                                     <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Education Information</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="studentClass" class="form-label">Class/Grade</label>
-                                                <select class="form-select" id="studentClass" required>
-                                                    <option value="" selected disabled>Select Class</option>
-                                                    <option value="class-1">Class 1</option>
-                                                    <option value="class-2">Class 2</option>
-                                                    <option value="class-3">Class 3</option>
-                                                    <option value="class-4">Class 4</option>
-                                                    <option value="class-5">Class 5</option>
-                                                    <option value="class-6">Class 6</option>
-                                                    <option value="class-7">Class 7</option>
-                                                    <option value="class-8">Class 8</option>
-                                                    <option value="class-9">Class 9</option>
-                                                    <option value="class-10">Class 10</option>
-                                                    <option value="inter">Inter</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentSchool" class="form-label">School/College Name</label>
-                                                <input type="text" class="form-control" id="studentSchool" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentMedium" class="form-label">Medium</label>
-                                                <select class="form-select" id="studentMedium" required>
-                                                    <option value="" selected disabled>Select Medium</option>
-                                                    <option value="bangla">Bangla Medium</option>
-                                                    <option value="english">English Version</option>
-                                                    <option value="english-medium">English Medium</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentGroup" class="form-label">Group (if applicable)</label>
-                                                <select class="form-select" id="studentGroup">
-                                                    <option value="" selected disabled>Select Group</option>
-                                                    <option value="science">Science</option>
-                                                    <option value="commerce">Commerce</option>
-                                                    <option value="arts">Arts</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Subjects Needed Help With</label>
-                                                <div class="row">
-                                                    <div class="col-md-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentMath">
-                                                            <label class="form-check-label" for="studentMath">Mathematics</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentEnglish">
-                                                            <label class="form-check-label" for="studentEnglish">English</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentBangla">
-                                                            <label class="form-check-label" for="studentBangla">Bangla</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentPhysics">
-                                                            <label class="form-check-label" for="studentPhysics">Physics</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentChemistry">
-                                                            <label class="form-check-label" for="studentChemistry">Chemistry</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentBiology">
-                                                            <label class="form-check-label" for="studentBiology">Biology</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentICT">
-                                                            <label class="form-check-label" for="studentICT">ICT</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="studentAccounting">
-                                                            <label class="form-check-label" for="studentAccounting">Accounting</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <h4 class="card-title text-center text-success mb-4">Review Your Information</h4>
+                                        <div id="studentPreviewContent" class="list-group"></div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentEducationInfo', 'studentBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button class="btn btn-success px-4" onclick="nextSection('studentEducationInfo', 'studentScheduleInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
-                                </div>
-                            </div>
-
-                            <!-- Schedule & Preferences -->
-                            <div id="studentScheduleInfo" class="form-section">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Schedule & Preferences</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="studentAddress" class="form-label">Address</label>
-                                                <input type="text" class="form-control" id="studentAddress" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentLocation" class="form-label">Preferred Tutoring Location</label>
-                                                <select class="form-select" id="studentLocation" required>
-                                                    <option value="" selected disabled>Select Location</option>
-                                                    <option value="home">At Home</option>
-                                                    <option value="tutor-home">At Tutor's Home</option>
-                                                    <option value="coaching">Coaching Center</option>
-                                                    <option value="online">Online</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentDays" class="form-label">Days per Week</label>
-                                                <select class="form-select" id="studentDays" required>
-                                                    <option value="" selected disabled>Select Days</option>
-                                                    <option value="1">1 day/week</option>
-                                                    <option value="2">2 days/week</option>
-                                                    <option value="3">3 days/week</option>
-                                                    <option value="4">4 days/week</option>
-                                                    <option value="5">5 days/week</option>
-                                                    <option value="6">6 days/week</option>
-                                                    <option value="7">7 days/week</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentTime" class="form-label">Preferred Time</label>
-                                                <select class="form-select" id="studentTime" required>
-                                                    <option value="" selected disabled>Select Time</option>
-                                                    <option value="morning">Morning</option>
-                                                    <option value="afternoon">Afternoon</option>
-                                                    <option value="evening">Evening</option>
-                                                    <option value="night">Night</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentBudget" class="form-label">Monthly Budget (BDT)</label>
-                                                <input type="number" class="form-control" id="studentBudget" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentTutorGender" class="form-label">Preferred Tutor Gender</label>
-                                                <select class="form-select" id="studentTutorGender">
-                                                    <option value="" selected disabled>No Preference</option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="studentNotes" class="form-label">Additional Notes</label>
-                                                <textarea class="form-control" id="studentNotes" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentScheduleInfo', 'studentEducationInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button type="submit" class="btn btn-success px-4">Complete Registration</button>
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentPreview', 'studentBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button type="button" class="btn btn-success px-4" onclick="submitForm()">Complete Registration</button>
                                 </div>
                             </div>
                         </div>
@@ -597,7 +451,21 @@
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorTeachingInfo', 'tutorEducationInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button type="submit" class="btn btn-success px-4">Complete Registration</button>
+                                    <button class="btn btn-success px-4" onclick="nextSection('tutorTeachingInfo', 'tutorPreview')">Preview <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Preview Section -->
+                            <div id="tutorPreview" class="form-section">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center text-success mb-4">Review Your Information</h4>
+                                        <div id="tutorPreviewContent" class="list-group"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorPreview', 'tutorTeachingInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
+                                    <button type="button" class="btn btn-success px-4" onclick="submitForm()">Complete Registration</button>
                                 </div>
                             </div>
                         </div>
@@ -609,135 +477,27 @@
 
     <footer id="footer"></footer>
 
+    <!-- Result Modal -->
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalTitle">Registration Result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="resultModalBody">
+                    <!-- Content will be inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/common.js"></script>
-    <script>
-        // User Type Selection
-        function selectUserType(type) {
-            const studentOption = document.getElementById('studentOption');
-            const tutorOption = document.getElementById('tutorOption');
-            const studentRegistration = document.getElementById('studentRegistration');
-            const tutorRegistration = document.getElementById('tutorRegistration');
-            const userTypeInput = document.getElementById('userType');
-
-            if (type === 'student') {
-                studentOption.classList.add('active');
-                tutorOption.classList.remove('active');
-                studentRegistration.style.display = 'block';
-                tutorRegistration.style.display = 'none';
-                userTypeInput.value = 'student';
-            } else {
-                studentOption.classList.remove('active');
-                tutorOption.classList.add('active');
-                studentRegistration.style.display = 'none';
-                tutorRegistration.style.display = 'block';
-                userTypeInput.value = 'tutor';
-            }
-            
-            // Reset to first section
-            document.querySelectorAll('.form-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(type + 'BasicInfo').classList.add('active');
-            updateProgressBar(33);
-        }
-
-        // Navigation Functions
-        function nextSection(currentId, nextId) {
-            document.getElementById(currentId).classList.remove('active');
-            document.getElementById(nextId).classList.add('active');
-            
-            if (nextId.includes('Education')) {
-                updateProgressBar(66);
-            } else if (nextId.includes('Schedule') || nextId.includes('Teaching')) {
-                updateProgressBar(100);
-            }
-        }
-
-        function prevSection(currentId, prevId) {
-            document.getElementById(currentId).classList.remove('active');
-            document.getElementById(prevId).classList.add('active');
-            
-            if (prevId.includes('Basic')) {
-                updateProgressBar(33);
-            } else if (prevId.includes('Education')) {
-                updateProgressBar(66);
-            }
-        }
-
-        function updateProgressBar(percentage) {
-            const progressBar = document.getElementById('progressBar');
-            progressBar.style.width = percentage + '%';
-            progressBar.setAttribute('aria-valuenow', percentage);
-        }
-
-        // Password Toggle
-        document.querySelectorAll('.toggle-password').forEach(button => {
-            button.addEventListener('click', function() {
-                const input = this.parentNode.querySelector('input');
-                const icon = this.querySelector('i');
-                
-                if (input.type === 'password') {
-                    input.type = 'text';
-                    icon.classList.replace('fa-eye-slash', 'fa-eye');
-                } else {
-                    input.type = 'password';
-                    icon.classList.replace('fa-eye', 'fa-eye-slash');
-                }
-            });
-        });
-
-        // Form Submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validate passwords match
-            const userType = document.getElementById('userType').value;
-            const password = document.getElementById(userType + 'Password').value;
-            const confirmPassword = document.getElementById(userType + 'ConfirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            // Collect form data
-            const formData = {};
-            const userTypePrefix = userType;
-            
-            // Basic Info
-            formData.name = document.getElementById(userTypePrefix + 'Name').value;
-            formData.phone = document.getElementById(userTypePrefix + 'Phone').value;
-            formData.email = document.getElementById(userTypePrefix + 'Email').value;
-            formData.gender = document.getElementById(userTypePrefix + 'Gender').value;
-            
-            if (userType === 'student') {
-                // Student specific data
-                formData.class = document.getElementById('studentClass').value;
-                formData.school = document.getElementById('studentSchool').value;
-                formData.subjects = [];
-                document.querySelectorAll('#studentRegistration input[type="checkbox"]:checked').forEach(checkbox => {
-                    formData.subjects.push(checkbox.nextElementSibling.textContent);
-                });
-                formData.budget = document.getElementById('studentBudget').value;
-            } else {
-                // Tutor specific data
-                formData.degree = document.getElementById('tutorDegree').value;
-                formData.university = document.getElementById('tutorUniversity').value;
-                formData.experience = document.getElementById('tutorExperience').value;
-                formData.subjects = [];
-                document.querySelectorAll('#tutorRegistration input[type="checkbox"]:checked').forEach(checkbox => {
-                    formData.subjects.push(checkbox.nextElementSibling.textContent);
-                });
-                formData.salary = document.getElementById('tutorSalary').value;
-            }
-            
-            console.log('Form data:', formData);
-            alert('Registration successful!');
-            // Here you would typically send the data to your server
-        });
-    </script>
-
+    <script src="js/loginRegistration.js"></script>
 </body>
 </html>

@@ -5,84 +5,13 @@ body {
     background-color: #f9f9f9;
 }
 /* code for home start*/
-.hero {
-    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
-    padding: 60px 20px;
-    border-radius: 20px;
-}
-.hero h1 {
-    font-size: 2.5rem;
-    color: #0077cc;
-}
-.hero p {
-    font-size: 1.1rem;
-    color: #555;
-}
-.hero .btn-primary {
-    background-color: #0077cc;
-    border: none;
-    transition: background-color 0.3s ease-in-out;
-}
-button:hover {
-    opacity: 0.8;
-}
-.modal-backdrop.show {
-    opacity: 0.85 !important;
-}
-.modal-content {
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-}
-.modal-header {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-.btn-close {
-    font-size: 0.75rem;
-}
-
-@media (max-width: 992px) {
-    .carousel-img {
-        height: 250px;
-    }
-}
-@media (max-width: 768px) {
-    .carousel-img {
-        height: 200px;
-    }
-    .homeHeroInside{
-        flex-direction: column-reverse;
-    }
-}
-@media (max-width: 576px) {
-    .carousel-img {
-        height: 150px;
-    }
-}
-
-.carousel-img {
-    width: 100%;
-    height: 300px; /* Default height on large screens */
-    object-fit: cover; /* Ensures images are cropped properly */
-}
-.glow-always {
+/* left code start  */
+.hire-category-item:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
+    transition: all ease 1s;
     cursor: pointer;
-    animation: glowing 1.5s infinite alternate;
-    border-radius: 50%;
-    text-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-    color: #0077cc;
 }
-
-@keyframes glowing {
-    0% {
-        box-shadow: 0 0 10px #4291f8;
-    }
-    100% {
-        box-shadow: 0 0 50px #74a0e3;
-    }
-}
-
+/* left code end  */
 @keyframes shake {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
@@ -97,7 +26,6 @@ button:hover {
     padding: 10px;
     border-radius: 10px;
     color: black;
-    /* transform: rotate(355deg); */
     background-color: #7cf786;
 } 
 .title-paragraph:hover {
@@ -109,182 +37,8 @@ animation: shake 0.4s ease-in-out;
     padding-top: 5px;
     border-radius: 10px;
     color: white;
-    /* transform: rotate(355deg); */
     background-color: #5b5a5a;
 }
-
-/* code for popular tutors start */
-.flip-card {
-    perspective: 1000px;
-    height: 280px; 
-}
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-.flip-card-front {
-    background-color: rgb(232, 246, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    text-align: center;
-}
-.flip-card-back {
-    background-color: rgb(207, 236, 194);
-    transform: rotateY(180deg);
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-}
-.tutor-avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #1976d2;
-    margin-bottom: 10px;
-}
-.tutor-name {
-    font-weight: 600;
-    color: #1976d2;
-    margin-bottom: 5px;
-    font-size: 1.3rem;
-}
-.tutor-university {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 5px;
-}
-.tutor-location {
-    font-size: 0.955rem;
-    color: #666;
-    margin-bottom: 8px;
-}
-.tutor-salary {
-    font-weight: 600;
-    color: #388e3c;
-    margin-top: auto;
-    font-size: 1rem;
-}
-.back-content {
-    flex-grow: 1;
-}
-.back-content p {
-    color: black;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-}
-.pagination {
-    justify-content: center;
-    margin-top: 30px;
-}
-.page-item.active .page-link {
-    background-color: #1976d2;
-    border-color: #1976d2;
-}
-.page-link {
-    color: #1976d2;
-}
-/* Mobile specific adjustments */
-@media (max-width: 768px) {
-    .premiumTutors{
-        flex-direction: column-reverse;
-    }
-    .flip-card {
-        height: 240px;
-    }
-    .tutor-avatar {
-        width: 60px;
-        height: 60px;
-    }
-    .tutor-name {
-        font-size: 0.85rem;
-    }
-    .tutor-university, .tutor-salary {
-        font-size: 0.75rem;
-    }
-    .tutor-location {
-        font-size: 0.7rem;
-    }
-}
-/* code for popular tutors end */
-
-/* code for .popular-category start */
-.popular-category .category .card {
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-.popular-category .category .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.popular-category .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0077cc;
-}
-.popular-category .text-danger {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-.popular-category .category .card{
-    border-radius: 20px;
-    /* opacity: 0.5px; */
-    transition: all ease 0.4s;
-}
-.popular-category .category .card:hover{
-    transform: translateY(-5px);
-    background: rgba(222, 222, 222, 0.8);
-    border: 1px solid rgb(3, 94, 14);
-}
-
-.category-card {
-    transition: all 0.3s ease;
-}
-.category-card:hover {
-    transform: translateY(-5px);
-}
-.category-img-wrapper {
-    display: block;
-    overflow: hidden;
-    height: 140px;
-    position: relative;
-}
-.category-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    transition: transform 0.5s ease;
-}
-.category-img-wrapper:hover img {
-    transform: scale(1.05);
-}
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
-}
-/* code for .popular-category end */
 
 /* Update Blog Section  start*/
 .update-blog .card {

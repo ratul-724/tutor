@@ -13,412 +13,775 @@
     <link rel="stylesheet" href="css/style.css">        
     <title>Tutor</title>
 </head>
-<body>
-<div id="all"> 
-        <div class="container">
-            <br>    
-            <div id="header"></div>
+<body><br>
+    <header id="header"></header>
 
-            <!-- Hero Section -->
-            <section class="hero rounded-4 mt-4 mx-3 py-5 bg-light">
-                <div class="container">
-                    <div class="row align-items-center homeHeroInside">
-                        <!-- Left Content -->
-                        <div class="col-lg-6 col-md-12 px-md-4 text-center text-lg-start">
-                            <div class="heroTop">
-                                <img src="assets/icons/hero.webp" alt="" height="50px">
-                            </div>
-                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-3">
-                                <a href="tutors.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Virtual or In-Person</a>
-                                <a href="tutors.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Special Education</a>
-                            </div>
-                            <h1 class="fw-bold mt-3">Find Your</h1>
-                            <h1 class="fw-bold text-info">Perfect Tutor</h1>
-                            <p>No one child learns the same. Connect with experienced classroom teachers for one-on-one academic support and help them excel their learning experience, all while boosting confidence!</p>
+    <div class="container">
+        <div class="row">
+            <div class="sideBar col-lg-2">
+                <a href="registration.html" class="btn bg rounded-4 w-100 my-4 px-0 fw-semibold text-secondary"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Account</a>
+                <div class="bg p-3 rounded-4">
+                    <!-- Hire Section -->
+                    <h3 class="fw-bold text-primary-emphasis m-3 text-center">Hire</h3>
+                    <div class="divider mb-3" style="border: 1px dashed rgb(2, 2, 102);"></div>
+                    
+                    <div class="hire-category-item d-flex align-items-center shadow-sm p-3 my-2 rounded-2" id="Teacher">
+                        <i class="fas fa-chalkboard-teacher mx-2"></i>
+                        <span>Teacher</span>
+                    </div>
+                    <div class="hire-category-item d-flex align-items-center shadow-sm p-3 my-2 rounded-2" id="Cocker">
+                        <i class="fa-solid fa-kitchen-set mx-2"></i>
+                        <span>Cooker</span>
+                    </div>
+                    <div class="hire-category-item d-flex align-items-center shadow-sm p-3 my-2 rounded-2" id="Electrician">
+                        <i class="fas fa-bolt mx-2"></i>
+                        <span>Electrician</span>
+                    </div>
+                    <div class="hire-category-item d-flex align-items-center shadow-sm p-3 my-2 rounded-2" id="Painter">
+                        <i class="fas fa-paint-roller mx-2"></i>
+                        <span>Painter</span>
+                    </div>
+                    <div class="hire-category-item d-flex align-items-center shadow-sm p-3 my-2 rounded-2" id="Farmer">
+                        <i class="fa-solid fa-tractor mx-2"></i>
+                        <span>Farmer</span>
+                    </div>
+                </div>
+            </div>
             
-                            <div class="homeBtns d-flex flex-column flex-sm-row align-items-center gap-3 mt-3">
-                                <a href="login.html" class="btn btn-primary text-white">Get Started</a>
-                                <div class="homeBtnsRight d-flex align-items-center" style="cursor: pointer;" onclick="openVideoModal()">
-                                    <i class="fa-solid fa-circle-play glow-always fs-3 mx-2"></i>
-                                    <a href="#" class="text-decoration-none text-dark">What is Connect Education?</a>
+            <div class="middleContainer col-lg-7">
+                <h5 class="bg rounded-4 w-100 my-4 ps-4 p-1 fw-semibold text-primary-emphasis">Available here now.....</h5>
+
+                
+                
+                <section id="tutorContainer">
+                    <div>
+                        <div class=" align-items-center rounded-4 p-4 bg homeHeroInside">
+                            <div class=" px-md-4 text-center text-lg-start">
+                                <div class="heroTop">
+                                    <img src="assets/icons/hero.webp" alt="" height="50px"><span class="text-primary-emphasis fs-4 fw-bold">FIND YOUR PERFACT TUTOR.</span>
                                 </div>
+                                <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-3">
+
+                                    <a href="tutors.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Special Education</a>
+                                    <a href="tutors.html" class="p-2 text-black btn btn-outline-primary px-3 rounded-5 text-decoration-none">Virtual or In-Person</a>
+                                </div>
+
+                                <p class="mt-3">No one child learns the same. Connect with experienced classroom teachers for one-on-one academic support and help them excel their learning experience, all while boosting confidence!</p>
                             </div>
                         </div>
-            
-                        <!-- Right Image/Slider -->
-                        <div class="col-lg-5 col-md-12 d-flex justify-content-center " >
-                            <div id="carouselExample" class="carousel slide rounded-4 w-100" data-bs-ride="carousel" data-bs-interval="3000">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/images/heroImg.png" class="d-block w-100 rounded-4 " alt="Slide 1">
+                        <div class="title mt-5 text-center">
+                            <h2 class="fw-semibold">Meet our <span class="text-info">Tutors</span></h2>
+                            <p>Expert tutors for all subjects and levels</p>
+                        </div>
+                        <div class="container py-3">
+                            <div class=" d-flex align-items-center justify-content-end mb-3" >
+                                <a href="#" class="text-decoration-none">
+                                    <button class="btnCode">View All <i class="fa-solid fa-arrow-right mx-1" style="color: green; transform: rotate(315deg);"></i></button>
+                                </a>
+                            </div>
+                            <div class="row" >
+                                <!-- Card 1 (Original with your EXACT structure) -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                  <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                          <i class="fas fa-star"></i> 4.9 <small class="text-muted">(18)</small>
+                                        </div>
+                                      </div>
+                                      <div class="mt-2"> <!-- Added mt-2 for slight top gap -->
+                                        <h6 class="fw-bold mb-1">Dr. Sarah Johnson</h6>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Mathematics</span>
+                                        <span class="badge bg-success-gradient text-white mb-2">Physics</span><br>
+                                        <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>Dhaka University</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1000/hour</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Mirpur-1</span><br> 
+                                      </div>
+                                      <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                          <i class="fas fa-calendar-check me-1"></i> Book Now
+                                        </a>
+                                        <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                          <i class="fas fa-user"></i> Profile
+                                        </a>
+                                      </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Card 2 -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                    <div class=" bg p-2 rounded-4 shadow-sm hover-effect">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                          <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.7 <small class="text-muted">(25)</small>
+                                          </div>
+                                        </div>
+                                        <div class="mt-2">
+                                          <h6 class="card-title fw-bold mb-1">Mr. Rafiq Islam</h6>
+                                          <span class="badge bg-primary-gradient text-white mb-2">Bangla</span>
+                                          <span class="badge bg-success-gradient text-white mb-2">Literature</span><br>
+                                          <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>BUBT University</span> <br>
+                                          <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳800/hour</span><br>
+                                          <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Farmgate</span><br> 
+                                        </div>
+                                        <div class="border-0 d-flex justify-content-between pt-2">
+                                          <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Book Now
+                                          </a>
+                                          <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                          </a>
+                                        </div>
+                                      </div>
+                                </div>
+                              
+                                <!-- Card 3 -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                    <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                            <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.2 <small class="text-muted">(42)</small>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <h6 class="card-title fw-bold mb-1">Ms. Anika Rahman</h6>
+                                            <span class="badge bg-primary-gradient text-white mb-2">Chemistry</span>
+                                            <span class="badge bg-success-gradient text-white mb-2">Biology</span><br>
+                                            <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>DU Pharmacy</span> <br>
+                                            <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1200/hour</span><br>
+                                            <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Dhanmondi</span><br> 
+                                        </div>
+                                        <div class="border-0 d-flex justify-content-between pt-2">
+                                            <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Book Now
+                                            </a>
+                                            <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                            </a>
+                                        </div>
+                                        </div>
+                                </div>
+
+                                <!-- Card 4 -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                  <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                          <i class="fas fa-star"></i> 4.9 <small class="text-muted">(18)</small>
+                                        </div>
+                                      </div>
+                                      <div class="mt-2"> <!-- Added mt-2 for slight top gap -->
+                                        <h6 class="fw-bold mb-1">Jhon Doe</h6>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Computer</span>
+                                        <span class="badge bg-success-gradient text-white mb-2">Physics</span><br>
+                                        <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>JU</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1100/hour</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Tejgaon</span><br> 
+                                      </div>
+                                      <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                          <i class="fas fa-calendar-check me-1"></i> Book Now
+                                        </a>
+                                        <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                          <i class="fas fa-user"></i> Profile
+                                        </a>
+                                      </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Card 5 -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                    <div class=" bg p-2 rounded-4 shadow-sm hover-effect">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                          <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.7 <small class="text-muted">(25)</small>
+                                          </div>
+                                        </div>
+                                        <div class="mt-2">
+                                          <h6 class="card-title fw-bold mb-1">Ratul Hasan</h6>
+                                          <span class="badge bg-primary-gradient text-white mb-2">Computer</span>
+                                          <span class="badge bg-success-gradient text-white mb-2">Mathematics</span><br>
+                                          <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>BUBT University</span> <br>
+                                          <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳800/hour</span><br>
+                                          <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Farmgate</span><br> 
+                                        </div>
+                                        <div class="border-0 d-flex justify-content-between pt-2">
+                                          <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Book Now
+                                          </a>
+                                          <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                          </a>
+                                        </div>
+                                      </div>
+                                </div>
+                              
+                                <!-- Card 6 -->
+                                <div class="col-lg-4 col-md-6 mt-2">
+                                    <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <img src="assets/icons/user.png" alt="" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                            <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.2 <small class="text-muted">(42)</small>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <h6 class="card-title fw-bold mb-1">Anika Rahman</h6>
+                                            <span class="badge bg-primary-gradient text-white mb-2">Chemistry</span>
+                                            <span class="badge bg-success-gradient text-white mb-2">Biology</span><br>
+                                            <span class="text-secondary"><i class="fas fa-graduation-cap text-primary-emphasis me-1"></i>IUBAT</span> <br>
+                                            <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1200/hour</span><br>
+                                            <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Dhanmondi</span><br> 
+                                        </div>
+                                        <div class="border-0 d-flex justify-content-between pt-2">
+                                            <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Book Now
+                                            </a>
+                                            <a href="tutorDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                            </a>
+                                        </div>
+                                        </div>
+                                </div>
+                              </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Cooker Section -->
+                <section id="cockerContainer" class="d-none">
+                    <div class="align-items-center rounded-4 p-4 bg homeHeroInside">
+                        <div class="px-md-4 text-center text-lg-start">
+                            <div class="heroTop">
+                                <img src="assets/icons/hero.webp" alt="Cooker" height="50px">
+                                <span class="text-primary-emphasis fs-4 fw-bold">FIND YOUR PERFACT COOKER.</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-3">
+                                <a href="cookers.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Home Cooking</a>
+                                <a href="cookers.html" class="p-2 text-black btn btn-outline-primary px-3 rounded-5 text-decoration-none">Event Catering</a>
+                            </div>
+                            <p class="mt-3">Find skilled cooks for your daily meals or special occasions. Our professional cooks specialize in various cuisines and can cater to your specific dietary needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="title mt-5 text-center">
+                        <h2 class="fw-semibold">Meet our <span class="text-info">Cooking Experts</span></h2>
+                        <p>Professional cooks for all your culinary needs</p>
+                    </div>
+                    
+                    <div class="container py-3">
+                        <div class="row">
+                            <!-- Cooker Card 1 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Cooker" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.8 <small class="text-muted">(32)</small>
+                                        </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/heroImg2.png" class="d-block w-100 rounded-4" alt="Slide 2">
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Chef Ayesha Rahman</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Bangladeshi</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Indian</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>10 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1500/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Gulshan</span><br> 
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/heroImg3.png" class="d-block w-100 rounded-4" alt="Slide 3">
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="cookerDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                            </div>
+                            
+                            <!-- Cooker Card 2 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Cooker" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.5 <small class="text-muted">(28)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Chef Mohammad Ali</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Chinese</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Thai</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>8 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳2000/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Banani</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="cookerDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cooker Card 3 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Cooker" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.9 <small class="text-muted">(45)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Chef Fatima Begum</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Traditional</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Desserts</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>15 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1200/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Dhanmondi</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="cookerDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- Video Modal -->
-            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="videoModalLabel"><img src="assets/images/logo.png" height="30px" alt=""></h5>
-                            <button type="button" class="btn-close focusNone" data-bs-dismiss="modal" aria-label="Close"></button>
+                </section>
+                
+                <!-- Electrician Section -->
+                <section id="electricianContainer" class="d-none">
+                    <div class="align-items-center rounded-4 p-4 bg homeHeroInside">
+                        <div class="px-md-4 text-center text-lg-start">
+                            <div class="heroTop">
+                                <img src="assets/icons/hero.webp" alt="Electrician" height="50px">
+                                <span class="text-primary-emphasis fs-4 fw-bold">FIND YOUR PERFACT ELECTRICIAN.</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-3">
+                                <a href="electricians.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Home Wiring</a>
+                                <a href="electricians.html" class="p-2 text-black btn btn-outline-primary px-3 rounded-5 text-decoration-none">Appliance Repair</a>
+                            </div>
+                            <p class="mt-3">Professional electricians for all your electrical needs. From simple bulb replacements to complete home wiring solutions, our certified electricians ensure safety and quality work.</p>
                         </div>
-                        <div class="modal-body p-0">
-                            <div class="ratio ratio-16x9">
-                                <iframe id="youtubeVideo" src="https://www.youtube.com/embed/kxlKhp2_EFI?enablejsapi=1&rel=0" 
-                                        frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="title mt-5 text-center">
+                        <h2 class="fw-semibold">Meet our <span class="text-info">Electricians</span></h2>
+                        <p>Certified professionals for all electrical works</p>
+                    </div>
+                    
+                    <div class="container py-3">
+                        <div class="row">
+                            <!-- Electrician Card 1 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Electrician" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.7 <small class="text-muted">(56)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Shahidul Islam</h6>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Home Wiring</span>
+                                        <span class="badge bg-success-gradient text-white mb-2">AC Repair</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>12 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳800/service</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Mirpur</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="electricianDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Electrician Card 2 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Electrician" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.9 <small class="text-muted">(72)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Rafiq Ahmed</h6>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Industrial</span>
+                                        <span class="badge bg-success-gradient text-white mb-2">Generator</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>18 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1200/service</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Uttara</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="electricianDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Electrician Card 3 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Electrician" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.5 <small class="text-muted">(38)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Karim Khan</h6>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Appliance</span>
+                                        <span class="badge bg-success-gradient text-white mb-2">TV Repair</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>9 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳600/service</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Mohammadpur</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="electricianDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Painter Section -->
+                <section id="painterContainer" class="d-none">
+                    <div class="align-items-center rounded-4 p-4 bg homeHeroInside">
+                        <div class="px-md-4 text-center text-lg-start">
+                            <div class="heroTop">
+                                <img src="assets/icons/hero.webp" alt="Painter" height="50px">
+                                <span class="text-primary-emphasis fs-4 fw-bold">FIND YOUR PERFACT PAINTER.</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-3">
+                                <a href="painters.html" class="p-2 bg-primary px-3 rounded-5 text-decoration-none text-white">Home Painting</a>
+                                <a href="painters.html" class="p-2 text-black btn btn-outline-primary px-3 rounded-5 text-decoration-none">Wall Design</a>
+                            </div>
+                            <p class="mt-3">Professional painters for your home or office. From simple wall painting to creative wall designs, our painters deliver quality work with attention to detail.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="title mt-5 text-center">
+                        <h2 class="fw-semibold">Meet our <span class="text-info">Painters</span></h2>
+                        <p>Creative professionals for all painting needs</p>
+                    </div>
+                    
+                    <div class="container py-3">
+                        <div class="row">
+                            <!-- Painter Card 1 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Painter" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.6 <small class="text-muted">(42)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Jamal Uddin</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Interior</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Exterior</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>8 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳2000/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Mirpur</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="painterDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Painter Card 2 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Painter" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.8 <small class="text-muted">(51)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Rahim Khan</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Wall Design</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Texture</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>12 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳2500/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Dhanmondi</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="painterDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Painter Card 3 -->
+                            <div class="col-lg-4 col-md-6 mt-2">
+                                <div class="bg p-2 rounded-4 shadow-sm hover-effect">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <img src="assets/icons/user.png" alt="Painter" class="img-fluid rounded-4 tutor-img-container" style="width: 80px;">
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i> 4.4 <small class="text-muted">(29)</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <h6 class="fw-bold mb-1">Salam Mia</h6>
+                                        <span class="badge bg-success-gradient text-white mb-2">Commercial</span>
+                                        <span class="badge bg-primary-gradient text-white mb-2">Residential</span><br>
+                                        <span class="text-secondary"><i class="fas fa-certificate text-primary-emphasis me-1"></i>6 years experience</span> <br>
+                                        <span class="text-secondary"><i class="fa-solid fa-money-bill-wave me-1 text-primary-emphasis"></i>৳1800/day</span><br>
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-1 text-primary-emphasis"></i> Uttara</span><br> 
+                                    </div>
+                                    <div class="border-0 d-flex justify-content-between pt-2">
+                                        <a href="#" class="btn btn-primary btn-sm rounded-pill flex-grow-1 p-1 me-2">
+                                            <i class="fas fa-calendar-check me-1"></i> Hire Now
+                                        </a>
+                                        <a href="painterDetails.html" class="btn btn-outline-secondary p-1 btn-sm rounded-pill">
+                                            <i class="fas fa-user"></i> Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            
+            <div class="rightHero mt-5 pt-4 col-lg-3">
+                <div class="marketAndVan bg rounded-4 p-3 mt-2 shadow-sm">
+                    <div class="market" >
+                        <div class="farmerMarket"><img src="assets/images/farmerMarket.png" alt="" class="w-100"></div>
+                    </div><hr>
+                    <div class="van row justify-content-center align-items-center">
+                        <h5 class="text-center pb-2" style="border-bottom: 2px dashed blue;">All Available Van</h5>
+                        <div class="text-center mt-3 col-6">
+                            <a href="#" class="text-decoration-none text-primary-emphasis">
+                                <i class="fa-solid fa-van-shuttle fs-1"></i><br>
+                                <span>Van 1</span>
+                            </a>
+                        </div>
+                        <div class="text-center mt-3 col-6">
+                            <a href="#" class="text-decoration-none text-primary-emphasis">
+                                <i class="fa-solid fa-van-shuttle fs-1"></i><br>
+                                <span>Van 2</span>
+                            </a>
+                        </div>
+                        <div class="text-center mt-3 col-6">
+                            <a href="#" class="text-decoration-none text-primary-emphasis">
+                                <i class="fa-solid fa-van-shuttle fs-1"></i><br>
+                                <span>Van 4</span>
+                            </a>
+                        </div>
+                        <div class="text-center mt-3 col-6">
+                            <a href="#" class="text-decoration-none text-primary-emphasis">
+                                <i class="fa-solid fa-van-shuttle fs-1"></i><br>
+                                <span>Van 4</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="farmer bg rounded-4 my-4 p-3 shadow-sm">
+                    <div class="farmerBanner"><img src="assets/images/farmerBanner.jpeg" alt="" class="w-100 rounded-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- services Banner section start here -->
+    <div class="servicesBanner py-4 my-5 bg-secondary text-white">
+        <div class="container">
+            <div class="container row">
+                <a href="#" class="text-decoration-none text-white col-lg-3 col-6 text-center py-4">
+                    <i class="fa-solid fa-user-gear fs-1 py-2"></i> 
+                    <br><span>Advanced Services</span>
+                </a>
+                <a href="about.html" class="text-decoration-none text-white col-lg-3 col-6 text-center py-4 ">
+                    <i class="fa-solid fa-building fs-1 py-2"></i><br>
+                    <span>About Company</span>
+                </a>
+                <a href="about.html" class="text-decoration-none text-white col-lg-3 col-6 text-center py-4">
+                    <i class="fa-solid fa-circle-question fs-1 py-2"></i> 
+                    <br><span>Why Choose Us?</span>
+                </a>
+                <a href="about.html" class="text-decoration-none text-white col-lg-3 col-6 text-center py-4">
+                    <i class="fa-solid fa-people-group fs-1 py-2"></i>
+                    <br><span>How We Work</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- services Banner section end here -->
+   
+    <!-- blog section start here -->
+    <section class="container update-blog mt-5">
+        <div class="title text-center">
+            <h2 class="fw-semibold">UPDATE <span style="color: rgb(37, 109, 138);">BLOG</span></h2>
+            <div class="title-paragraph-bg">
+                <p  class="title-paragraph ">Recent news for you</p>
+            </div>
+        </div>
+        <div class=" d-flex align-items-center justify-content-end mb-3" >
+            <a href="#" class="text-decoration-none">
+                <button class="btnCode">View All <i class="fa-solid fa-arrow-right mx-1" style="color: green; transform: rotate(315deg);"></i></button>
+            </a>
+        </div>
+        <div class="blogs mt-4">
+            <div class="row">
+                <div class="col-lg-4 col-6 mt-2">
+                    <a href="blogPost.html?id=1" class="text-decoration-none">
+                        <div class="card">
+                            <img src="assets/blog/blogKlanto.png" class="card-img-top" alt="..." style="height: 220px;">
+                            <div class="card-body">
+                                <p class="card-text">প্রতিদিন টিউশন পড়িয়ে ক্লান্ত থাকছেন ?</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-6 mt-2">
+                    <a href="blogPost.html?id=3" class="text-decoration-none">
+                        <div class="card">
+                            <img src="assets/blog/findTutor.jpg" class="card-img-top" alt="..." style="height: 220px;">
+                            <div class="card-body">
+                                <p class="card-text">কিভাবে এখানে টিচার খুজবেন.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-6 mt-2">
+                    <a href="blogPost.html?id=2" class="text-decoration-none">
+                        <div class="card">
+                            <img src="assets/blog/confidance.png" class="card-img-top" alt="..." style="height: 220px;">
+                            <div class="card-body">
+                                <p class="card-text">আত্মবিশ্বাস বাড়াতে টিউশনের ভূমিকা.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog section end here -->
+
+    <!-- clients-review section start here -->
+    <section class="container clients-review mt-5">
+        <div class="text-center ">
+            <div class="title">
+                <h2 class="fw-semibold">What some <span style="color: rgb(37, 109, 138);">awesome people</span></h2>
+            </div>
+            <div class="title">
+                <h2 class="fw-semibold">says <span style="color: rgb(37, 109, 138);">about us</span></h2>
+            </div>
+            <div class="slogan mt-4">
+                <div class="title-paragraph-bg">
+                    <p class="title-paragraph">TESTIMONIAL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-rev mt-3">
+            <div class="slider-items-rev row col-12 col-md-6 m-auto clients-review">
+                <div id="carouselExampleDark" class="carousel mt-5 carousel-dark slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" class="active" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+        
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <!-- First Slide -->
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <div class="card-body rounded-5 p-4" style="background-color: #fbb798;">
+                                <div class="row">
+                                    <div class="col-3 col-md-2">
+                                        <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <h5>Demo Guardian 1</h5>
+                                        <p>Mirpur, Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <div class="card-text my-3">I am happy by taking your service, thank you.</div>
+                            </div>
+                        </div>
+        
+                        <!-- Second Slide -->
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="card-body rounded-5 p-4" style="background-color: #57fa90;">
+                                <div class="row">
+                                    <div class="col-3 col-md-2">
+                                        <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <h5>Demo Guardian 2</h5>
+                                        <p>Banani, Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <div class="card-text my-3">Excellent service. Keep it up!</div>
+                            </div>
+                        </div>
+        
+                        <!-- Third Slide -->
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="card-body rounded-5 p-4" style="background-color: #d8a3fc;">
+                                <div class="row">
+                                    <div class="col-3 col-md-2">
+                                        <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <h5>Demo Guardian 3</h5>
+                                        <p>Dhanmondi, Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <div class="card-text my-3">The best tutoring service ever!</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- popular tutor category section strat here -->
-            <section class="popular-categories py-5">
-                <div class="container">
-                    <div class="popular-category-top text-center mb-5">
-                        <div class="title">
-                            <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);;">POPULAR</span> CATEGORY</h2>
-                        </div>
-                        <div class="slogan mt-4">
-                            <div class="title-paragraph-bg">
-                                <p class="title-paragraph">Select your categories</p>
-                            </div>
-                        </div>  
-                    </div>
-
-                    <div class="row g-4">
-                        <!-- Category 1 - Lady Tutor -->
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="category-card card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow">
-                                <div class="category-badge bg-danger-subtle text-danger text-center py-2 small fw-bold">
-                                    <i class="fas fa-female me-2"></i>Female Tutors
-                                </div>
-                                <a href="#" class="category-img-wrapper">
-                                    <img src="assets/images/ladyTeacher.jpg" class="card-img-top" alt="Lady Tutor">
-                                    <div class="img-overlay"></div>
-                                </a>
-                                <div class="card-footer bg-danger-subtle border-0 text-center">
-                                    <a href="#" class="btn w-100 btn-sm btn-dark ">
-                                        Find Tutors <i class="fas fa-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category 2 - BUET Tutor -->
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="category-card card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow">
-                                <div class="category-badge bg-primary-subtle text-primary text-center py-2 small fw-bold">
-                                    <i class="fas fa-graduation-cap me-2"></i>BUETian tutors
-                                </div>
-                                <a href="#" class="category-img-wrapper">
-                                    <img src="assets/images/buet.jpg" class="card-img-top" alt="BUET Tutor">
-                                    <div class="img-overlay"></div>
-                                </a>
-                                <div class="card-footer bg-primary-subtle border-0 text-center">
-                                    <a href="#" class="btn w-100 btn-sm btn-dark ">
-                                        Find Tutors <i class="fas fa-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category 3 - English Medium -->
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="category-card card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow">
-                                <div class="category-badge bg-secondary-subtle text-secondary text-center py-2 small fw-bold">
-                                    <i class="fas fa-language me-2"></i>English Medium
-                                </div>
-                                <a href="#" class="category-img-wrapper">
-                                    <img src="assets/images/englishMedium.jpg" class="card-img-top" alt="English Medium">
-                                    <div class="img-overlay"></div>
-                                </a>
-                                <div class="card-footer bg-secondary-subtle border-0 text-center">
-                                    <a href="#" class="btn w-100 btn-sm btn-dark ">
-                                        Find Tutors <i class="fas fa-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category 4 - Science Tutor -->
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="category-card card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow">
-                                <div class="category-badge bg-success-subtle text-success text-center py-2 small fw-bold">
-                                    <i class="fas fa-flask me-2"></i>Science Tutors
-                                </div>
-                                <a href="#" class="category-img-wrapper">
-                                    <img src="assets/images/scienceTeacher.jpg" class="card-img-top" alt="Science Tutor">
-                                    <div class="img-overlay"></div>
-                                </a>
-                                <div class="card-footer bg-success-subtle border-0 text-center">
-                                    <a href="#" class="btn w-100 btn-sm btn-dark ">
-                                        Find Tutors <i class="fas fa-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- popular tutor category section end here -->
-
-            <!-- premium Tutor section end here -->
-            <section class="mt-5 premiumTutor container" >
-                <div class="top text-center ">
-                    <h2 class="fw-semibold"><span style="color: rgb(37, 109, 138);">OUR PREMIUM</span> TUTORS</h2>
-                    <div class="title-paragraph-bg">
-                        <p class=" title-paragraph">Highly qualified tutors</p>
-                    </div>
-                </div>
-                
-                <div class="container mt-5">
-                    <div class="row premiumTutors">
-                        <!-- premium Tutor Section -->
-                        <div class=" col-12 col-lg-9">
-                            <div class="row" id="tutors-container" >
-                                <!-- Tutor cards will be dynamically inserted here -->
-
-                            </div>
-                        </div>
-
-                        <!-- Search premium Tutor Section -->                        
-                        <div class="my-2 col-lg-3 px-0">
-                            <div class="rounded-2 p-3 shadow" >
-                                <div class="row " >
-                                    <div class="col-12">
-                                        <label for="district" class="form-label">Select District</label>
-                                        <select class="form-select focusNone" id="district">
-                                            <option value="">Any District</option>
-                                            <option value="dhaka">Dhaka</option>
-                                            <option value="chittagong">Chittagong</option>
-                                            <option value="rajshahi">Rajshahi</option>
-                                            <option value="rangpur">Rangpur</option>
-                                            <option value="khulna">Khulna</option>
-                                            <option value="barishal">Barishal</option>
-                                            <option value="sylhet">Sylhet</option>
-                                            <option value="mymenshingh">Mymenshingh</option>
-                                        </select>
-                                    </div>     
-                                    <div class="col-12 position-relative">
-                                        <label for="area" class="form-label focusNone">Select Area</label>
-                                        <input type="text" class="form-control focusNone" id="area" placeholder="Any Area" disabled>
-                                        <div id="area-suggestions" class="suggestion-box"></div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="subject" class="form-label">Subject</label>
-                                        <select class="form-select focusNone" id="subject">
-                                            <option value="">Any Subject</option>
-                                            <option value="math">Mathematics</option>
-                                            <option value="physics">Physics</option>
-                                            <option value="chemistry">Chemistry</option>
-                                            <option value="english">English</option>
-                                            <option value="biology">Biology</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 mb-2">
-                                        <label for="gender" class="form-label">Gender Preference</label>
-                                        <select class="form-select focusNone" id="gender">
-                                            <option value="">Any Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-12 d-flex align-items-end">
-                                        <button class="btn btn-primary btn-search w-100">Search Tutors</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- serch my click start-->
-                            <div class="searchByCategory rounded-2 p-3 mt-3 shadow">
-                                <h4 class="text-center text-secondary">Search By Category</h4><hr>
-                                <div class="searchByCategoryAncors">
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET Tutor</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Lady Tutor</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English Medium</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Science Tutor</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Math</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Physics</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chemistry</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Biology</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Bangla</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">DU</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">male</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">public</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">JU</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Subjects</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Medium</a>
-
-                                </div>
-                            </div>
-                            <!-- serch my click end -->
-                        </div>
-
-                    </div> 
-                </div> 
-                <nav aria-label="Page navigation">
-                    <ul id="pagination" class="pagination">
-                        <!-- Pagination will be loaded here by JavaScript -->
-                    </ul>
-                </nav>  
-            </section>
-            <!-- premium Tutor section end here -->
-
-            <!-- blog section start here -->
-            <section class="container update-blog mt-5">
-                <div class="title text-center">
-                    <h2 class="fw-semibold">UPDATE <span style="color: rgb(37, 109, 138);">BLOG</span></h2>
-                    <div class="title-paragraph-bg">
-                        <p  class="title-paragraph ">Recent news for you</p>
-                    </div>
-                </div>
-                <div class="btn-view-all mt-4" >
-                    <a href="blogPost.html" class="d-flex justify-content-end text-decoration-none">
-                        <button class="login">View All <i class="fa-solid fa-arrow-right" style="color: green; transform: rotate(315deg);"></i>
-                        </button>
-                    </a>
-                </div>
-                <div class="blogs mt-4">
-                    <div class="row">
-                        <div class="col-lg-4 col-6 mt-2">
-                            <a href="blogPost.html?id=1" class="text-decoration-none">
-                                <div class="card">
-                                    <img src="assets/blog/blogKlanto.png" class="card-img-top" alt="..." style="height: 220px;">
-                                    <div class="card-body">
-                                        <p class="card-text">প্রতিদিন টিউশন পড়িয়ে ক্লান্ত থাকছেন ?</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-6 mt-2">
-                            <a href="blogPost.html?id=3" class="text-decoration-none">
-                                <div class="card">
-                                    <img src="assets/blog/findTutor.jpg" class="card-img-top" alt="..." style="height: 220px;">
-                                    <div class="card-body">
-                                        <p class="card-text">কিভাবে এখানে টিচার খুজবেন.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-6 mt-2">
-                            <a href="blogPost.html?id=2" class="text-decoration-none">
-                                <div class="card">
-                                    <img src="assets/blog/confidance.png" class="card-img-top" alt="..." style="height: 220px;">
-                                    <div class="card-body">
-                                        <p class="card-text">আত্মবিশ্বাস বাড়াতে টিউশনের ভূমিকা.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- blog section end here -->
-    
-            <!-- clients-review section start here -->
-            <section class="container clients-review mt-5">
-                <div class="text-center ">
-                    <div class="title">
-                        <h2 class="fw-semibold">What some <span style="color: rgb(37, 109, 138);">awesome people</span></h2>
-                    </div>
-                    <div class="title">
-                        <h2 class="fw-semibold">says <span style="color: rgb(37, 109, 138);">about us</span></h2>
-                    </div>
-                    <div class="slogan mt-4">
-                        <div class="title-paragraph-bg">
-                            <p class="title-paragraph">TESTIMONIAL</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slider-rev mt-3">
-                    <div class="slider-items-rev row col-12 col-md-6 m-auto clients-review">
-                        <div id="carouselExampleDark" class="carousel mt-5 carousel-dark slide" data-bs-ride="carousel">
-                            <!-- Indicators -->
-                            <div class="carousel-indicators">
-                                <button type="button" class="active" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                
-                            <!-- Slides -->
-                            <div class="carousel-inner">
-                                <!-- First Slide -->
-                                <div class="carousel-item active" data-bs-interval="2000">
-                                    <div class="card-body rounded-5 p-4" style="background-color: #fbb798;">
-                                        <div class="row">
-                                            <div class="col-3 col-md-2">
-                                                <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
-                                            </div>
-                                            <div class="col-7 col-md-8">
-                                                <h5>Demo Guardian 1</h5>
-                                                <p>Mirpur, Dhaka, Bangladesh</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-text my-3">I am happy by taking your service, thank you.</div>
-                                    </div>
-                                </div>
-                
-                                <!-- Second Slide -->
-                                <div class="carousel-item" data-bs-interval="2000">
-                                    <div class="card-body rounded-5 p-4" style="background-color: #57fa90;">
-                                        <div class="row">
-                                            <div class="col-3 col-md-2">
-                                                <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
-                                            </div>
-                                            <div class="col-7 col-md-8">
-                                                <h5>Demo Guardian 2</h5>
-                                                <p>Banani, Dhaka, Bangladesh</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-text my-3">Excellent service. Keep it up!</div>
-                                    </div>
-                                </div>
-                
-                                <!-- Third Slide -->
-                                <div class="carousel-item" data-bs-interval="2000">
-                                    <div class="card-body rounded-5 p-4" style="background-color: #d8a3fc;">
-                                        <div class="row">
-                                            <div class="col-3 col-md-2">
-                                                <img src="assets/icons/user.png" alt="client-review" class="img-fluid">
-                                            </div>
-                                            <div class="col-7 col-md-8">
-                                                <h5>Demo Guardian 3</h5>
-                                                <p>Dhanmondi, Dhaka, Bangladesh</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-text my-3">The best tutoring service ever!</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-            </section>
-            <!-- clients-review section end here -->
-             
-        </div>
+        </div>  
+    </section>
+    <!-- clients-review section end here --> 
 
     <!-- counter section start here -->
     <section class="py-5 my-5 w-100 bg-secondary">
@@ -468,22 +831,6 @@
         </div>
     </section>
     <!-- counter section end here -->
-
-    <!-- why chose us section start here -->
-    <section class="container why-choose-us pt-5 mt-5">
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <iframe src="https://www.youtube.com/embed/kxlKhp2_EFI" frameborder="0" allowfullscreen="" width="100%" height="100%" class="rounded-4"></iframe>
-            </div>
-            <div class="col-lg-6 p-5">
-                <div class="title">
-                    <h2 >WHY <span style="color: rgb(37, 109, 138);">CHOOSE US !</span></h2>
-                </div>
-                <p class="why-choose-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to It is a long established fact that a reader will be distracted by the readable content of a page when</p>
-            </div>
-        </div>
-    </section>
-    <!-- why chose us section end here -->
 
     <!-- FAQ Section code start here -->
     <section class="container my-5 px-0">
@@ -544,11 +891,10 @@
     </section>
     <!-- FAQ Section code end here -->
 
-   <div id="footer"></div>
-</div>
 
-    <script src="js/main.js"></script>
-    <script src="js/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer id="footer"></footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
 </html>

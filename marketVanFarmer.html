@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect | Fresh Farm to Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .section-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+        
+        .section-container.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="container py-4">
+        <div class="d-flex justify-content-between pb-3 align-items-center">
+            <button id="backBtn" class="btn btn-success rounded-pill px-4">
+                <i class="fas fa-arrow-left me-2"></i> Back
+            </button>
+
+            <form class="d-flex align-items-center">
+                <div class="input-group">
+                    <input type="text" class="form-control focusNone" placeholder="Quick search...">
+                    <button class="btn btn-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Content will be dynamically loaded here -->
+        <div id="contentArea"></div>
+    </div>
+    <footer id="footer"></footer>
+
+    <script src="js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Application state
+        const state = {
+            currentSection: null,
+            sections: ['market', 'van', 'farmer'],
+            data: {
+                market: [],
+                van: [],
+                farmer: []
+            }
+        };
+        // DOM Elements
+        const elements = {
+            backBtn: document.getElementById('backBtn'),
+            contentArea: document.getElementById('contentArea')
+        };
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMockData();
+            // Set up back button
+            elements.backBtn.addEventListener('click', () => {
+                window.history.back();
+            });
+            
+            // Check URL for initial section to load
+            checkUrlAndLoadSection();
+            
+            // Set up popstate listener for browser back/forward
+            window.addEventListener('popstate', checkUrlAndLoadSection);
+        });
+
+        // Main function to check URL and load appropriate section
+        function checkUrlAndLoadSection() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get('section') || 'market';
+            
+            if (state.sections.includes(section) && section !== state.currentSection) {
+                loadSection(section);
+                state.currentSection = section;
+            }
+        }
+
+        // Section loader
+        function loadSection(section) {
+            // Clear previous content
+            elements.contentArea.innerHTML = '';
+            
+            // Create and append the new section
+            const sectionElement = createSection(section);
+            elements.contentArea.appendChild(sectionElement);
+            
+            // Trigger the animation
+            setTimeout(() => {
+                sectionElement.classList.add('active');
+            }, 10);
+            
+            // Update browser history without reload
+            const newUrl = window.location.pathname + '?section=' + section;
+            window.history.pushState({ section }, '', newUrl);
+        }
+
+        // Section factory
+        function createSection(section) {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.id = `${section}-section`;
+            sectionDiv.className = 'section-container card mb-4 border-0 shadow-sm';
+            
+            // Create section header
+            const header = document.createElement('div');
+            header.className = 'card-header bg-success text-white rounded-top-3';
+            
+            const title = document.createElement('h2');
+            title.className = 'h4 mb-0';
+            
+            // Set icon and title based on section
+            switch(section) {
+                case 'market':
+                    title.innerHTML = '<i class="fas fa-store me-2"></i> Local Markets';
+                    break;
+                case 'van':
+                    title.innerHTML = '<i class="fas fa-truck me-2"></i> Available Delivery Vans';
+                    break;
+                case 'farmer':
+                    title.innerHTML = '<i class="fas fa-user-tie me-2"></i> Our Local Farmers';
+                    break;
+            }
+            
+            header.appendChild(title);
+            sectionDiv.appendChild(header);
+            
+            // Create section body
+            const body = document.createElement('div');
+            body.className = 'card-body';
+            
+            // Add content based on section
+            switch(section) {
+                case 'market':
+                    body.appendChild(createMarketContent());
+                    break;
+                case 'van':
+                    body.appendChild(createVanContent());
+                    break;
+                case 'farmer':
+                    body.appendChild(createFarmerContent());
+                    break;
+            }
+            
+            sectionDiv.appendChild(body);
+            return sectionDiv;
+        }
+
+        // Content creators for each section
+        function createMarketContent() {
+            const fragment = document.createDocumentFragment();
+            
+            const row = document.createElement('div');
+            row.className = 'row g-4';
+            
+            // Add market items
+            state.data.market.forEach(market => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-4';
+                
+                col.innerHTML = `
+                    <a href="market-details.html" class="card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
+                        <img src="${market.image}" class="card-img-top" alt="${market.name}" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">${market.name}</h5>
+                            <p class="card-text text-muted small">
+                                <i class="fas fa-map-marker-alt text-success me-1"></i> ${market.location}
+                            </p>
+                            <div class="d-flex justify-content-between small">
+                                <span><i class="fas fa-calendar-day text-success me-1"></i> ${market.days}</span>
+                                <span><i class="fas fa-clock text-success me-1"></i> ${market.hours}</span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                
+                row.appendChild(col);
+            });
+            
+            fragment.appendChild(row);
+            
+            // Add view all button
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'text-center mt-4';
+            buttonDiv.innerHTML = `
+                <button class="btn btn-success px-4 py-2 rounded-pill">
+                    <i class="fas fa-plus-circle me-2"></i> View All Markets
+                </button>
+            `;
+            
+            fragment.appendChild(buttonDiv);
+            return fragment;
+        }
+
+        function createVanContent() {
+            const fragment = document.createDocumentFragment();
+            
+            const row = document.createElement('div');
+            row.className = 'row g-4';
+            
+            // Add van items
+            state.data.van.forEach(van => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-3';
+                
+                col.innerHTML = `
+                    <a href="van-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
+                        <div class="card-body">
+                            <div class="text-success mb-3">
+                                <i class="fas fa-truck fa-3x"></i>
+                            </div>
+                            <h5 class="card-title">${van.id}</h5>
+                            <div class="card-text small">
+                                <div>Capacity: ${van.capacity}</div>
+                                <div>Refrigerated: ${van.refrigerated ? 'Yes' : 'No'}</div>
+                                <div class="mt-2">
+                                    <span class="badge ${van.available ? 'bg-success bg-opacity-10 text-success' : 'bg-warning bg-opacity-10 text-warning'}">
+                                        ${van.available ? 'Available' : 'Booked Until ' + van.bookedUntil}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                
+                row.appendChild(col);
+            });
+            
+            fragment.appendChild(row);
+            
+            // Add action buttons
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'text-center mt-4';
+            buttonDiv.innerHTML = `
+                <button class="btn btn-success px-4 py-2 rounded-pill me-2">
+                    <i class="fas fa-calendar-alt me-2"></i> Schedule Pickup
+                </button>
+                <button class="btn btn-outline-success px-4 py-2 rounded-pill">
+                    <i class="fas fa-question-circle me-2"></i> How It Works
+                </button>
+            `;
+            
+            fragment.appendChild(buttonDiv);
+            return fragment;
+        }
+
+        function createFarmerContent() {
+            const fragment = document.createDocumentFragment();
+            
+            // Add farmer cards
+            state.data.farmer.forEach(farmer => {
+                const card = document.createElement('div');
+                card.className = 'card mb-3 border-0 shadow-sm card-hover-effect';
+                
+                card.innerHTML = `
+                    <a href="farmer-details.html" class="row g-0 text-decoration-none">
+                        <div class="col-md-3">
+                            <img src="${farmer.image}" 
+                                 class="img-fluid rounded-start h-100" 
+                                 alt="${farmer.name}"
+                                 style="object-fit: cover; min-height: 150px;">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">${farmer.name}</h5>
+                                <p class="card-text text-success small">
+                                    <i class="${farmer.icon} me-1"></i> ${farmer.specialty}
+                                </p>
+                                <p class="card-text small text-muted">
+                                    Produces: ${farmer.products.join(', ')}
+                                </p>
+                                <div class="mt-2">
+                                    ${farmer.tags.map(tag => 
+                                        `<span class="badge ${tag.class} me-1">${tag.text}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                
+                fragment.appendChild(card);
+            });
+            
+            // Add view more button
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'text-center mt-4';
+            buttonDiv.innerHTML = `
+                <button class="btn btn-success px-4 py-2 rounded-pill">
+                    <i class="fas fa-users me-2"></i> Meet More Farmers
+                </button>
+            `;
+            
+            fragment.appendChild(buttonDiv);
+            return fragment;
+        }
+
+        // Mock data loader
+        function loadMockData() {
+            state.data = {
+                market: [
+                    {
+                        name: "Fresh Produce Market",
+                        location: "Downtown District",
+                        days: "Open Daily",
+                        hours: "6AM - 6PM",
+                        image: "assets/icons/user.png"
+                    },
+                    {
+                        name: "Organic Farmers Market",
+                        location: "Green Valley",
+                        days: "Wed & Sat",
+                        hours: "7AM - 2PM",
+                        image: "assets/icons/user.png"
+                    },
+                    {
+                        name: "Fish & Seafood Market",
+                        location: "Harbor Front",
+                        days: "Tue-Sun",
+                        hours: "5AM - 3PM",
+                        image: "assets/icons/user.png"
+                    }
+                ],
+                van: [
+                    {
+                        id: "Van #FD-2541",
+                        capacity: "800 kg",
+                        refrigerated: true,
+                        available: true,
+                        bookedUntil: ""
+                    },
+                    {
+                        id: "Van #KG-7823",
+                        capacity: "1,000 kg",
+                        refrigerated: false,
+                        available: true,
+                        bookedUntil: ""
+                    },
+                    {
+                        id: "Van #PL-9012",
+                        capacity: "1,200 kg",
+                        refrigerated: true,
+                        available: false,
+                        bookedUntil: "Friday"
+                    },
+                    {
+                        id: "Van #RT-3467",
+                        capacity: "600 kg",
+                        refrigerated: false,
+                        available: true,
+                        bookedUntil: ""
+                    }
+                ],
+                farmer: [
+                    {
+                        name: "John Peterson",
+                        specialty: "Organic Vegetables",
+                        icon: "fas fa-seedling",
+                        products: ["Tomatoes", "Cucumbers", "Bell Peppers", "Lettuce"],
+                        image: "assets/icons/user.png",
+                        tags: [
+                            { class: "bg-success bg-opacity-10 text-success", text: "Certified Organic" },
+                            { class: "bg-info bg-opacity-10 text-info", text: "5+ Years Experience" }
+                        ]
+                    },
+                    {
+                        name: "Maria Gonzalez",
+                        specialty: "Fruit Orchard",
+                        icon: "fas fa-apple-alt",
+                        products: ["Apples", "Pears", "Peaches", "Berries"],
+                        image: "assets/icons/user.png",
+                        tags: [
+                            { class: "bg-primary bg-opacity-10 text-primary", text: "Family Farm" },
+                            { class: "bg-success bg-opacity-10 text-success", text: "Sustainable" }
+                        ]
+                    },
+                    {
+                        name: "Ahmed Khan",
+                        specialty: "Grains & Pulses",
+                        icon: "fas fa-wheat",
+                        products: ["Wheat", "Rice", "Lentils", "Chickpeas"],
+                        image: "assets/icons/user.png",
+                        tags: [
+                            { class: "bg-warning bg-opacity-10 text-warning", text: "Large Scale" },
+                            { class: "bg-success bg-opacity-10 text-success", text: "Export Quality" }
+                        ]
+                    }
+                ]
+            };
+        }
+    </script>
+</body>
+</html>

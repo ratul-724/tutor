@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Details | AgriConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .farmer-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            border-radius: 20px;
+        }
+        .product-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .farm-gallery img {
+            height: 120px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .farm-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .badge-organic {
+            background-color: #e8f5e9;
+            color: #2c8a4f;
+        }
+        .badge-sustainable {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .badge-family {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+
+         /* Floating Chat Widget Styles */
+         .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        .chat-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #2c8a4f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-icon:hover {
+            background-color: #237442;
+            transform: scale(1.1);
+        }
+        
+        .chat-icon i {
+            font-size: 24px;
+        }
+        
+        .chat-container {
+            width: 350px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-container.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chat-header {
+            background-color: #2c8a4f;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .received {
+            background-color: white;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sent {
+            background-color: #2c8a4f;
+            color: white;
+            border-top-right-radius: 5px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: #2c8a4f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .chat-input button:hover {
+            background-color: #237442;
+        }
+        
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            width: fit-content;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #6c757d;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .chat-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-container {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+
+    <!-- Farmer Header -->
+    <div class="container text-center mb-5">
+        <div class="farmer-header">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">John Peterson</h1>
+                    <p class="lead mb-4">Organic Vegetable Farmer | 12 Years Experience</p>
+                    <div class="d-flex justify-content-center gap-2 mb-4">
+                        <span class="badge badge-organic py-2 px-3 text-secondary">
+                            <i class="fas fa-leaf me-1"></i> Certified Organic
+                        </span>
+                        <span class="badge badge-sustainable py-2 px-3 text-secondary">
+                            <i class="fas fa-recycle me-1"></i> Sustainable
+                        </span>
+                        <span class="badge badge-family py-2 px-3 text-secondary">
+                            <i class="fas fa-home me-1"></i> Family Farm
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-light rounded-pill px-4">
+                            <i class="fas fa-share-alt me-2"></i> Share
+                        </button>
+                        <button class="btn btn-success rounded-pill px-4">
+                            <i class="fas fa-heart me-2"></i> Follow
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <!-- About Farm -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-tractor text-success me-2"></i> About Peterson Family Farm</h3>
+                        <p class="card-text">Our family has been farming this land for three generations, committed to sustainable and organic practices that respect the earth while producing the highest quality vegetables. Located in the fertile Green Valley, we grow over 30 varieties of seasonal produce using only natural methods.</p>
+                        
+                        <h4 class="mt-4 mb-3">Our Practices</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> 100% Organic Certified since 2010
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> No synthetic pesticides or fertilizers
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Regenerative farming techniques
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Compost and natural soil amendments
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Bee-friendly farming practices
+                            </li>
+                        </ul>
+                        
+                        <h4 class="mt-4 mb-3">Farm Gallery</h4>
+                        <div class="row g-3 farm-gallery">
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     class="img-fluid rounded" 
+                                     alt="Farm Field">
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     class="img-fluid rounded" 
+                                     alt="Greenhouse">
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     class="img-fluid rounded" 
+                                     alt="Farmer Working">
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     class="img-fluid rounded" 
+                                     alt="Harvest">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Farm Story -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-book-open text-success me-2"></i> Our Story</h3>
+                        <p>Founded in 1952 by William Peterson, our farm began as a small 10-acre plot growing conventional crops. In the 1980s, under the leadership of John Peterson Sr., we transitioned to organic methods after seeing the environmental impact of conventional farming.</p>
+                        <p>Today, John Peterson Jr. continues the family legacy with innovative sustainable practices, expanding to 50 acres while maintaining our commitment to soil health and biodiversity. We're proud to supply fresh, organic produce to our local community and restaurants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4 z-n1">
+                <!-- Contact & Order Info -->
+                <div class="card mb-4 border-0 shadow-sm sticky-top" style="top: 20px;">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4"><i class="fas fa-info-circle text-success me-2"></i> Farm Details</h4>
+                        
+                        <h5 class="mt-3 mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i> Location</h5>
+                        <p class="mb-3">456 Farm Road, Green Valley, HV 12345</p>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.9878449242391!3d40.7484409713896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1690834234473!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-2"><i class="fas fa-truck text-success me-2"></i> Delivery Options</h5>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Farm Stand Pickup (Tue-Sat)
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Local Delivery ($5 fee)
+                            </li>
+                            <li class="list-group-item border-0 ps-0">
+                                <i class="fas fa-check-circle text-success me-2"></i> Farmers Market Booth
+                            </li>
+                        </ul>
+                        
+                        <h5 class="mt-4 mb-2"><i class="fas fa-phone-alt text-success me-2"></i> Contact</h5>
+                        <p class="mb-1"><i class="fas fa-phone me-2 text-success"></i> (555) 987-6543</p>
+                        <p class="mb-3"><i class="fas fa-envelope me-2 text-success"></i> john@petersonfarm.com</p>
+                        
+                        <button class="btn btn-success w-100 rounded-pill mb-2">
+                            <i class="fas fa-calendar-alt me-2"></i> Schedule Farm Visit
+                        </button>
+                        <button class="btn btn-outline-success w-100 rounded-pill">
+                            <i class="fas fa-question-circle me-2"></i> Ask a Question
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CSA Membership -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <h4 class="card-title mb-3"><i class="fas fa-box-open text-success me-2"></i> CSA Membership</h4>
+                        <p>Join our Community Supported Agriculture program and receive fresh produce every week!</p>
+                        <div class="card bg-success bg-opacity-10 text-success border-success mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Seasonal Share</h5>
+                                <p class="card-text">$350 for 12 weeks</p>
+                                <p class="card-text small">6-8 items weekly</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100 rounded-pill">
+                            <i class="fas fa-sign-in-alt me-2"></i> Sign Up Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+              <!-- Floating Chat Widget -->
+        <div class="chat-widget">
+            <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h5>Van #FD-2541</h5>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Messages will appear here -->
+                <div class="d-flex flex-column">
+                    <div class="message received">
+                        Hello! How can I help you today?
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+                    
+                    <!-- Typing indicator (shown when agent is typing) -->
+                    <!-- <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-icon" id="chatIcon">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Chat Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatIcon = document.getElementById('chatIcon');
+            const chatContainer = document.getElementById('chatContainer');
+            const chatClose = document.getElementById('chatClose');
+            const chatBody = document.getElementById('chatBody');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            let isChatOpen = false;
+            // Toggle chat window
+            function toggleChat() {
+                isChatOpen = !isChatOpen;
+                if (isChatOpen) {
+                    chatContainer.classList.add('active');
+                    messageInput.focus();
+                    chatIcon.classList.add('d-none');
+                } else {
+                    chatContainer.classList.remove('active');
+                    chatIcon.classList.remove('d-none');
+                }
+            }
+            // Send message
+            function sendMessage() {
+                const messageText = messageInput.value.trim();
+                if (messageText === '') return;
+                // Add user message to chat
+                addMessage(messageText, 'sent');
+                messageInput.value = '';
+                // Simulate reply after 1-2 seconds
+                setTimeout(() => {
+                    // Show typing indicator
+                    const typingIndicator = document.createElement('div');
+                    typingIndicator.className = 'typing-indicator';
+                    typingIndicator.innerHTML = `
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    `;
+                    chatBody.querySelector('.d-flex').appendChild(typingIndicator);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    // Remove typing indicator and add reply after delay
+                    setTimeout(() => {
+                        typingIndicator.remove();
+                        const replies = [
+                            "Thanks for your message! How can I assist you further?",
+                            "I'll check that for you right away.",
+                            "Our team will get back to you shortly.",
+                            "Is there anything else you'd like to know?",
+                            "I'm here to help with any questions you have."
+                        ];
+                        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                        addMessage(randomReply, 'received');
+                    }, 1500);
+                }, 1000 + Math.random() * 1000);
+            }
+            // Add message to chat
+            function addMessage(text, type) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                messageDiv.innerHTML = `
+                    ${text}
+                    <div class="message-time">${timeString}</div>
+                `;
+                chatBody.querySelector('.d-flex').appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            // Event listeners
+            chatIcon.addEventListener('click', toggleChat);
+            chatClose.addEventListener('click', toggleChat);
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            // Auto-open chat if there are unread messages (you would implement this logic)
+            // For example, check localStorage or a server endpoint
+            const hasUnreadMessages = false; // Change based on your logic
+            if (hasUnreadMessages) {
+                toggleChat();
+            }
+        });
+    
+    </script>
+</body>
+</html>

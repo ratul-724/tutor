@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Details | AgriConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .van-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            border-radius: 20px;
+        }
+        .specs-icon {
+            font-size: 1.75rem;
+            color: #2c8a4f;
+            margin-bottom: 0.5rem;
+        }
+        .booking-card {
+            position: sticky;
+            top: 20px;
+        }
+        .feature-badge {
+            background-color: #e8f5e9;
+            color: #2c8a4f;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #dee2e6;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2c8a4f;
+            border: 3px solid white;
+        }
+
+
+        /* Floating Chat Widget Styles */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        .chat-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #2c8a4f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-icon:hover {
+            background-color: #237442;
+            transform: scale(1.1);
+        }
+        
+        .chat-icon i {
+            font-size: 24px;
+        }
+        
+        .chat-container {
+            width: 350px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-container.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chat-header {
+            background-color: #2c8a4f;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .received {
+            background-color: white;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sent {
+            background-color: #2c8a4f;
+            color: white;
+            border-top-right-radius: 5px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: #2c8a4f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .chat-input button:hover {
+            background-color: #237442;
+        }
+        
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            width: fit-content;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #6c757d;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .chat-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-container {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Van Header -->
+    <div class=" container text-center mb-5">
+        <div class="container van-header">
+            <h1 class="display-4 fw-bold">Van #FD-2541</h1>
+            <p class="lead mb-4">Refrigerated Delivery Van - 800 kg Capacity</p>
+            <div class="d-flex justify-content-center gap-3">
+                <span class="badge bg-success bg-opacity-25 text-success fs-6 py-2 px-3">
+                    <i class="fas fa-check-circle me-1"></i> Available Today
+                </span>
+                <span class="badge bg-info bg-opacity-25 text-info fs-6 py-2 px-3">
+                    <i class="fas fa-bolt me-1"></i> Fast Delivery
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <!-- Van Details -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-truck text-success me-2"></i> Van Specifications</h3>
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="specs-icon">
+                                    <i class="fas fa-weight-hanging"></i>
+                                </div>
+                                <h5>800 kg</h5>
+                                <p class="text-muted small">Capacity</p>
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="specs-icon">
+                                    <i class="fas fa-snowflake"></i>
+                                </div>
+                                <h5>Refrigerated</h5>
+                                <p class="text-muted small">Temperature</p>
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="specs-icon">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <h5>4.2 x 2.1 x 2.1m</h5>
+                                <p class="text-muted small">Dimensions</p>
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="specs-icon">
+                                    <i class="fas fa-gas-pump"></i>
+                                </div>
+                                <h5>Diesel</h5>
+                                <p class="text-muted small">Fuel Type</p>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4 mb-3">Features</h4>
+                        <div class="mb-4">
+                            <span class="feature-badge"><i class="fas fa-check me-1"></i> Refrigeration</span>
+                            <span class="feature-badge"><i class="fas fa-check me-1"></i> GPS Tracking</span>
+                            <span class="feature-badge"><i class="fas fa-check me-1"></i> Lift Gate</span>
+                            <span class="feature-badge"><i class="fas fa-check me-1"></i> 24/7 Support</span>
+                            <span class="feature-badge"><i class="fas fa-check me-1"></i> Insurance</span>
+                        </div>
+
+                        <h4 class="mt-4 mb-3">Description</h4>
+                        <p>This refrigerated van is perfect for transporting perishable goods with temperature control between -20°C to +20°C. Ideal for farmers, food distributors, and catering businesses. The van is equipped with a GPS tracking system and is maintained regularly for optimal performance.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- Availability Calendar -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-calendar-alt text-success me-2"></i> Availability</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="bg-light text-muted">29</td>
+                                        <td class="bg-light text-muted">30</td>
+                                        <td class="bg-light text-muted">31</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td class="bg-danger bg-opacity-10"><del>14</del></td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td>17</td>
+                                        <td>18</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                        <td>24</td>
+                                        <td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <span class="badge bg-success bg-opacity-10 text-success">Available</span>
+                            <span class="badge bg-danger bg-opacity-10 text-danger">Booked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Process -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-shipping-fast text-success me-2"></i> Delivery Process</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>1. Booking Confirmation</h5>
+                                <p class="text-muted">After payment, you'll receive a confirmation with driver details.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>2. Van Preparation</h5>
+                                <p class="text-muted">Our team prepares the van according to your temperature requirements.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>3. Pickup</h5>
+                                <p class="text-muted">Driver arrives at your specified location at scheduled time.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>4. Real-time Tracking</h5>
+                                <p class="text-muted">Track your shipment through our app with live updates.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>5. Delivery Completion</h5>
+                                <p class="text-muted">Driver assists with unloading and confirms delivery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Sidebar -->
+            <div class="col-lg-4">
+                <div class="card booking-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4"><i class="fas fa-calendar-check text-success me-2"></i> Book This Van</h3>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Select Date</label>
+                            <input type="date" class="form-control" min="2023-08-01">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Time Slot</label>
+                            <select class="form-select">
+                                <option>Morning (8AM - 12PM)</option>
+                                <option>Afternoon (12PM - 4PM)</option>
+                                <option>Evening (4PM - 8PM)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Pickup Location</label>
+                            <input type="text" class="form-control" placeholder="Enter address">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Delivery Location</label>
+                            <input type="text" class="form-control" placeholder="Enter address">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Temperature Setting (°C)</label>
+                            <input type="range" class="form-range" min="-20" max="20" value="4" step="1">
+                            <div class="d-flex justify-content-between">
+                                <span>-20°C</span>
+                                <span class="fw-bold">4°C</span>
+                                <span>20°C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Base Price:</span>
+                            <span class="fw-bold">$89.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Refrigeration Fee:</span>
+                            <span class="fw-bold">$15.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Service Fee:</span>
+                            <span class="fw-bold">$5.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="fw-bold">Total:</span>
+                            <span class="fw-bold text-success">$109.00</span>
+                        </div>
+                        
+                        <button class="btn btn-success w-100 py-3 fw-bold rounded-pill">
+                            <i class="fas fa-lock me-2"></i> Book Now
+                        </button>
+                        
+                        <div class="text-center mt-3 small text-muted">
+                            <i class="fas fa-shield-alt me-1"></i> Secure payment
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Floating Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h5>Van #FD-2541</h5>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Messages will appear here -->
+                <div class="d-flex flex-column">
+                    <div class="message received">
+                        Hello! How can I help you today?
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+                    
+                    <!-- Typing indicator (shown when agent is typing) -->
+                    <!-- <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-icon" id="chatIcon">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+     <footer id="footer"></footer>
+
+    <script src="js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Chat Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatIcon = document.getElementById('chatIcon');
+            const chatContainer = document.getElementById('chatContainer');
+            const chatClose = document.getElementById('chatClose');
+            const chatBody = document.getElementById('chatBody');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            let isChatOpen = false;
+            // Toggle chat window
+            function toggleChat() {
+                isChatOpen = !isChatOpen;
+                if (isChatOpen) {
+                    chatContainer.classList.add('active');
+                    messageInput.focus();
+                    chatIcon.classList.add('d-none');
+                } else {
+                    chatContainer.classList.remove('active');
+                    chatIcon.classList.remove('d-none');
+                }
+            }
+            // Send message
+            function sendMessage() {
+                const messageText = messageInput.value.trim();
+                if (messageText === '') return;
+                // Add user message to chat
+                addMessage(messageText, 'sent');
+                messageInput.value = '';
+                // Simulate reply after 1-2 seconds
+                setTimeout(() => {
+                    // Show typing indicator
+                    const typingIndicator = document.createElement('div');
+                    typingIndicator.className = 'typing-indicator';
+                    typingIndicator.innerHTML = `
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    `;
+                    chatBody.querySelector('.d-flex').appendChild(typingIndicator);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    // Remove typing indicator and add reply after delay
+                    setTimeout(() => {
+                        typingIndicator.remove();
+                        const replies = [
+                            "Thanks for your message! How can I assist you further?",
+                            "I'll check that for you right away.",
+                            "Our team will get back to you shortly.",
+                            "Is there anything else you'd like to know?",
+                            "I'm here to help with any questions you have."
+                        ];
+                        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                        addMessage(randomReply, 'received');
+                    }, 1500);
+                }, 1000 + Math.random() * 1000);
+            }
+            // Add message to chat
+            function addMessage(text, type) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                messageDiv.innerHTML = `
+                    ${text}
+                    <div class="message-time">${timeString}</div>
+                `;
+                chatBody.querySelector('.d-flex').appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            // Event listeners
+            chatIcon.addEventListener('click', toggleChat);
+            chatClose.addEventListener('click', toggleChat);
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            // Auto-open chat if there are unread messages (you would implement this logic)
+            // For example, check localStorage or a server endpoint
+            const hasUnreadMessages = false; // Change based on your logic
+            if (hasUnreadMessages) {
+                toggleChat();
+            }
+        });
+    
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to bottom right, #a9e4a9, #f1f1f1);
+    background: linear-gradient(to bottom right, #83bce5, #f1f1f1);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -13,9 +13,6 @@ body{
     background-repeat: no-repeat; 
 }
 /* some common code start*/
-.bg{
-    background: linear-gradient(to bottom right, #d1e5f4, #ffffff);
-}
 .btnCode{
     text-align: center;
     text-decoration: none;

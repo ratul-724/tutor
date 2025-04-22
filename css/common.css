@@ -46,9 +46,6 @@ body{
 .font-color{
     color: #7ab97a;
 }
-.navbar-brand img{
-    width: 130px;
-}
 .navbar {
     transition: all 0.3s ease-in-out;
 }
@@ -120,7 +117,8 @@ body{
         z-index: 1000;
     }
     .navbar-brand img{
-        width: 100px;
+
+        height: 50px;
         padding: 0;
     }
     .small-toggler {

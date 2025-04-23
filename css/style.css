@@ -8,47 +8,20 @@ body {
 /* left code start  */
 .hire-category-item:hover{
     box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
-    transition: all ease 1s;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: translateX(5px);
     cursor: pointer;
+    color: #0285a9;
 }
 /* left code end  */
-@keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-    
-}  
-.title-paragraph{
-    width: 250px;
-    margin: auto;
-    padding: 10px;
-    border-radius: 10px;
-    color: black;
-    background-color: #7cf786;
-} 
-.title-paragraph:hover {
-animation: shake 0.4s ease-in-out;
-}
-.title-paragraph-bg{
-    width: 250px;
-    margin: auto;
-    padding-top: 5px;
-    border-radius: 10px;
-    color: white;
-    background-color: #5b5a5a;
-}
 
 /* Update Blog Section  start*/
 .update-blog .card {
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-.update-blog .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 .update-blog .card-text {
     font-size: 1rem;
@@ -96,20 +69,8 @@ animation: shake 0.4s ease-in-out;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 .team-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.slider-ivestor {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-}
-.slide-track {
-    display: flex;
-    animation: scroll 20s linear infinite;
-    width: calc(180px * 8); 
 }
 @keyframes scroll {
     0% {

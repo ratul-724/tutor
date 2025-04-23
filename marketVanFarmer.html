@@ -79,23 +79,26 @@
     <div class="container py-4">
         <div class="d-flex justify-content-between pb-3 align-items-center">
             <!-- Breadcrumb Navigation -->
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item active" id="current-section-breadcrumb">Market</li>
-                </ol>
-            </nav>
-        
-            <form class="d-flex align-items-center">
-                <div class="input-group">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item active" id="current-section-breadcrumb">Market</li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- Search Bar -->
+            <div>
+                <div class="input-group d-flex align-items-center">
                     <input type="text" class="form-control focusNone" placeholder="Quick search..." style="max-width: fit-content;">
                     <button class="btn btn-light" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
         
+        <!-- Content will be dynamically shown here -->
         <div id="contentArea">
             <!-- Market Section -->
             <div id="market-section" class="section-container card mb-4 border-0 shadow-sm">
@@ -595,10 +598,10 @@
             
             // Map section names to display names
             const sectionNames = {
-                'market': 'Local Markets',
+                'market': 'Markets',
                 'transport': 'Delivery Vans',
                 'farmer': 'Our Farmers',
-                'vanMarket': 'Van Market'
+                'vanMarket': 'Local Van Market'
             };
             
             // Update breadcrumb

@@ -31,13 +31,11 @@
             overflow: hidden;
             border: 1px solid #e9ecef;
         }
-        
         .van-product-img {
             height: 180px;
             object-fit: cover;
             width: 100%;
         }
-        
         .van-product-badge {
             position: absolute;
             top: 10px;
@@ -48,13 +46,11 @@
             border-radius: 20px;
             font-size: 0.8rem;
         }
-        
         .van-seller-info {
             display: flex;
             align-items: center;
             margin-top: 10px;
         }
-        
         .van-seller-avatar {
             width: 30px;
             height: 30px;
@@ -62,13 +58,11 @@
             margin-right: 10px;
             object-fit: cover;
         }
-        
         .van-product-price {
             font-weight: 600;
             color: #198754;
             font-size: 1.1rem;
         }
-        
         .van-location-badge {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
@@ -84,10 +78,14 @@
     <header id="header"></header>
     <div class="container py-4">
         <div class="d-flex justify-content-between pb-3 align-items-center">
-            <button id="backBtn" class="btn btn-success rounded-pill px-3">
-                <i class="fas fa-arrow-left me-1"></i> Back
-            </button>
-
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active" id="current-section-breadcrumb">Market</li>
+                </ol>
+            </nav>
+        
             <form class="d-flex align-items-center">
                 <div class="input-group">
                     <input type="text" class="form-control focusNone" placeholder="Quick search..." style="max-width: fit-content;">
@@ -98,72 +96,63 @@
             </form>
         </div>
         
-         <!-- Breadcrumb Navigation -->
-         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item active" id="current-section-breadcrumb">Market</li>
-            </ol>
-        </nav>
-        
-        <!-- Content will be dynamically shown here -->
         <div id="contentArea">
             <!-- Market Section -->
             <div id="market-section" class="section-container card mb-4 border-0 shadow-sm">
                 <div class="card-header bg text-primary-emphasis rounded-top-3">
                     <h4 class="mb-0 fw-semibold"><i class="fas fa-store me-2"></i> Local Markets</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <a href="market-details.html" class="card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
-                                <img src="assets/icons/user.png" class="card-img-top" alt="Fresh Produce Market" style="height: 180px; object-fit: cover;">
+                            <a href="market-details.html" class="bg-primary-subtle rounded-4 card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
+                                <img src="assets/images/freshFruitMarket.jpeg" class="card-img-top rounded-4" alt="Fresh Produce Market" style="height: 180px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Fresh Produce Market</h5>
+                                    <h5 class="card-title text-dark">Fresh Fruit Market</h5>
                                     <p class="card-text text-muted small">
-                                        <i class="fas fa-map-marker-alt text-success me-1"></i> Downtown District
+                                        <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> Dhaka, Bangladesh
                                     </p>
                                     <div class="d-flex justify-content-between small">
-                                        <span><i class="fas fa-calendar-day text-success me-1"></i> Open Daily</span>
-                                        <span><i class="fas fa-clock text-success me-1"></i> 6AM - 6PM</span>
+                                        <span><i class="fas fa-calendar-day text-primary-emphasis me-1"></i> Open Daily</span>
+                                        <span><i class="fas fa-clock text-primary-emphasis me-1"></i> 6AM - 6PM</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <a href="market-details.html" class="card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
-                                <img src="assets/icons/user.png" class="card-img-top" alt="Organic Farmers Market" style="height: 180px; object-fit: cover;">
+                            <a href="market-details.html" class="bg-primary-subtle rounded-4 card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
+                                <img src="assets/images/vegetablesMarket.jpeg" class="card-img-top rounded-4" alt="Fresh Produce Market" style="height: 180px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Organic Farmers Market</h5>
+                                    <h5 class="card-title text-dark">Fresh Vegetables Market</h5>
                                     <p class="card-text text-muted small">
-                                        <i class="fas fa-map-marker-alt text-success me-1"></i> Green Valley
+                                        <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> Mymenshingh, Bangladesh
                                     </p>
                                     <div class="d-flex justify-content-between small">
-                                        <span><i class="fas fa-calendar-day text-success me-1"></i> Wed & Sat</span>
-                                        <span><i class="fas fa-clock text-success me-1"></i> 7AM - 2PM</span>
+                                        <span><i class="fas fa-calendar-day text-primary-emphasis me-1"></i> Open Daily</span>
+                                        <span><i class="fas fa-clock text-primary-emphasis me-1"></i> 6AM - 8PM</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <a href="market-details.html" class="card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
-                                <img src="assets/icons/user.png" class="card-img-top" alt="Fish & Seafood Market" style="height: 180px; object-fit: cover;">
+                            <a href="market-details.html" class="bg-primary-subtle rounded-4 card h-100 border-0 shadow-sm card-hover-effect text-decoration-none">
+                                <img src="assets/images/seafoodMarket.jpeg" class="card-img-top rounded-4" alt="Fresh Produce Market" style="height: 180px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Fish & Seafood Market</h5>
+                                    <h5 class="card-title text-dark">Seafood Market</h5>
                                     <p class="card-text text-muted small">
-                                        <i class="fas fa-map-marker-alt text-success me-1"></i> Harbor Front
+                                        <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> Chittagong, Bangladesh
                                     </p>
                                     <div class="d-flex justify-content-between small">
-                                        <span><i class="fas fa-calendar-day text-success me-1"></i> Tue-Sun</span>
-                                        <span><i class="fas fa-clock text-success me-1"></i> 5AM - 3PM</span>
+                                        <span><i class="fas fa-calendar-day text-primary-emphasis me-1"></i> Sat - Thu</span>
+                                        <span><i class="fas fa-clock text-primary-emphasis me-1"></i> 8AM - 10PM</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <button class="btn btn-success px-4 py-2 rounded-pill">
-                            <i class="fas fa-plus-circle me-2"></i> View All Markets
+                        <button class="btn bg-warning-subtle px-3 py-2 rounded-pill">
+                            <i class="fas fa-plus-circle"></i> See more Markets
                         </button>
                     </div>
                 </div>
@@ -171,23 +160,23 @@
             
             <!-- Transport Section -->
             <div id="transport-section" class="section-container card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-success text-white rounded-top-3">
-                    <h4 class="mb-0"><i class="fas fa-truck me-2"></i> Available Delivery Vans</h4>
+                <div class="card-header bg text-primary-emphasis rounded-top-3">
+                    <h4 class="mb-0 fw-semibold"><i class="fas fa-truck me-1"></i> Available Delivery Trucks</h4>
                 </div>
                 <div class="card-body">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
-                            <a href="transport-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
+                            <a href="transport-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect bg rounded-4">
                                 <div class="card-body">
-                                    <div class="text-success mb-3">
+                                    <div class="text-primary-emphasis mb-3">
                                         <i class="fas fa-truck fa-3x"></i>
                                     </div>
-                                    <h5 class="card-title">Van #FD-2541</h5>
+                                    <h5 class="card-title fw-semibold text-primary-emphasis">Truck #FD-2541</h5>
                                     <div class="card-text small">
                                         <div>Capacity: 800 kg</div>
                                         <div>Refrigerated: Yes</div>
                                         <div class="mt-2">
-                                            <span class="badge bg-success bg-opacity-10 text-success">
+                                            <span class="badge bg-success bg-opacity-10 text-primary-emphasis">
                                                 Available
                                             </span>
                                         </div>
@@ -196,17 +185,17 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <a href="transport-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
+                            <a href="transport-details.html" class=" bg rounded-4 text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
                                 <div class="card-body">
-                                    <div class="text-success mb-3">
+                                    <div class="text-primary-emphasis mb-3">
                                         <i class="fas fa-truck fa-3x"></i>
                                     </div>
-                                    <h5 class="card-title">Van #KG-7823</h5>
+                                    <h5 class="card-title fw-semibold text-primary-emphasis">Truck #FS-7241</h5>
                                     <div class="card-text small">
-                                        <div>Capacity: 1,000 kg</div>
+                                        <div>Capacity: 800 kg</div>
                                         <div>Refrigerated: No</div>
                                         <div class="mt-2">
-                                            <span class="badge bg-success bg-opacity-10 text-success">
+                                            <span class="badge bg-opacity-10 text-primary-emphasis">
                                                 Available
                                             </span>
                                         </div>
@@ -215,18 +204,18 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <a href="transport-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
-                                <div class="card-body">
-                                    <div class="text-success mb-3">
+                            <a href="transport-details.html" class="bg rounded-4 text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
+                                <div class="card-body ">
+                                    <div class="text-primary-emphasis mb-3">
                                         <i class="fas fa-truck fa-3x"></i>
                                     </div>
-                                    <h5 class="card-title">Van #PL-9012</h5>
+                                    <h5 class="card-title fw-semibold text-primary-emphasis">Truck #SS-2541</h5>
                                     <div class="card-text small">
-                                        <div>Capacity: 1,200 kg</div>
+                                        <div>Capacity: 1000 kg</div>
                                         <div>Refrigerated: Yes</div>
                                         <div class="mt-2">
                                             <span class="badge bg-warning bg-opacity-10 text-warning">
-                                                Booked Until Friday
+                                                Booked until Friday
                                             </span>
                                         </div>
                                     </div>
@@ -234,30 +223,158 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <a href="transport-details.html" class="text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
-                                <div class="card-body">
-                                    <div class="text-success mb-3">
+                            <a href="transport-details.html" class="bg rounded-4 text-decoration-none card h-100 text-center border-0 shadow-sm card-hover-effect">
+                                <div class="card-body ">
+                                    <div class="text-primary-emphasis mb-3">
                                         <i class="fas fa-truck fa-3x"></i>
                                     </div>
-                                    <h5 class="card-title">Van #RT-3467</h5>
+                                    <h5 class="card-title fw-semibold text-primary-emphasis">Truck #RS-7240</h5>
                                     <div class="card-text small">
-                                        <div>Capacity: 600 kg</div>
-                                        <div>Refrigerated: No</div>
+                                        <div>Capacity: 800 kg</div>
+                                        <div>Refrigerated: Yes</div>
                                         <div class="mt-2">
-                                            <span class="badge bg-success bg-opacity-10 text-success">
+                                            <span class="badge bg-success bg-opacity-10 text-primary-emphasis">
                                                 Available
                                             </span>
                                         </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn bg-warning-subtle text-primary-emphasis px-4 py-2 rounded-pill me-2">
+                            <i class="fas fa-calendar-alt me-2"></i> Schedule Pickup
+                        </button>
+                        <button class="btn btn-outline-warning px-4 py-2 rounded-pill">
+                            <i class="fas fa-question-circle me-2"></i> How It Works
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Local Van Market Section -->
+            <div id="vanMarket-section" class="section-container card mb-4 border-0 shadow-sm">
+                <div class="card-header bg text-white rounded-top-3">
+                    <h4 class="mb-0 text-primary-emphasis fw-semibold"><i class="fas fa-truck-moving me-2"></i> Local Market (Van)</h4>
+                </div>
+                <div class="card-body bg">
+                    <div class="row g-4">
+                        <!-- Van Product 1 -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <a href="vanMarketDetails.html" class="bg rounded-4 text-decoration-none card van-product-card h-100 card-hover-effect">
+                                <div class="position-relative">
+                                    <img src="assets/images/tomato.jpeg" class="van-product-img" alt="Fresh Tomatoes">
+                                    <span class="van-product-badge">In Stock</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fresh Tomatoes</h5>
+                                    <p class="card-text text-muted small mb-2">Harvested today, perfect for salads</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fs-5 fw-semibold text-primary-emphasis">৳40/kg</span>
+                                        <span class="van-location-badge">
+                                            <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> 2km away
+                                        </span>
+                                    </div>
+                                    <div class="van-seller-info">
+                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
+                                        <span class="small">John's Farm Van</span>
+                                    </div>
+                                    <div class="d-grid mt-3">
+                                        <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Van Product 2 -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <a href="vanMarketDetails.html" class="bg rounded-4 text-decoration-none card van-product-card h-100 card-hover-effect">
+                                <div class="position-relative">
+                                    <img src="assets/images/potato.jpeg" class="van-product-img" alt="Fresh Apples">
+                                    <span class="van-product-badge">Limited Stock</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fresh Potato</h5>
+                                    <p class="card-text text-muted small mb-2">Fresh and Organic.</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-primary-emphasis fs-5 fw-semibold">৳30/kg</span>
+                                        <span class="van-location-badge">
+                                            <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> 1.5km away
+                                        </span>
+                                    </div>
+                                    <div class="van-seller-info">
+                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
+                                        <span class="small">Maria Van</span>
+                                    </div>
+                                    <div class="d-grid mt-3">
+                                        <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Van Product 3 -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <a href="vanMarketDetails.html" class=" bg rounded-4 text-decoration-none card van-product-card h-100 card-hover-effect">
+                                <div class="position-relative">
+                                    <img src="assets/images/apple.jpeg" class="van-product-img" alt="Fresh Bread">
+                                    <span class="van-product-badge">New Arrival</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sweet Red Apples</h5>
+                                    <p class="card-text text-muted small mb-2">Freshly collect today morning</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-primary-emphasis fs-5 fw-semibold">৳130/kg</span>
+                                        <span class="van-location-badge">
+                                            <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> 3km away
+                                        </span>
+                                    </div>
+                                    <div class="van-seller-info">
+                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
+                                        <span class="small">Maria's Fruit Van</span>
+                                    </div>
+                                    <div class="d-grid mt-3">
+                                        <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Van Product 4 -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <a href="vanMarketDetails.html" class="bg rounded-4 text-decoration-none card van-product-card h-100 card-hover-effect">
+                                <div class="position-relative">
+                                    <img src="assets/images/egg.jpeg" class="van-product-img" alt="Organic Eggs">
+                                    <span class="van-product-badge">Popular</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Organic Eggs</h5>
+                                    <p class="card-text text-muted small mb-2">Free-range, 12 pieces</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-primary-emphasis fs-5 fw-semibold">৳140/kg</span>
+                                        <span class="van-location-badge">
+                                            <i class="fas fa-map-marker-alt text-primary-emphasis me-1"></i> 0.5km away
+                                        </span>
+                                    </div>
+                                    <div class="van-seller-info">
+                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
+                                        <span class="small">Farm Fresh Van</span>
+                                    </div>
+                                    <div class="d-grid mt-3">
+                                        <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
+                    
                     <div class="text-center mt-4">
-                        <button class="btn btn-success px-4 py-2 rounded-pill me-2">
-                            <i class="fas fa-calendar-alt me-2"></i> Schedule Pickup
+                        <button class="btn bg-warning-subtle text-primary-emphasis px-4 py-2 rounded-pill me-2">
+                            <i class="fas fa-map-marked-alt me-2"></i> View All Nearby Vans
                         </button>
-                        <button class="btn btn-outline-success px-4 py-2 rounded-pill">
+                        <button class="btn btn-outline-warning px-4 py-2 rounded-pill">
                             <i class="fas fa-question-circle me-2"></i> How It Works
                         </button>
                     </div>
@@ -266,218 +383,173 @@
             
             <!-- Farmer Section -->
             <div id="farmer-section" class="section-container card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-success text-white rounded-top-3">
-                    <h4 class="mb-0"><i class="fas fa-user-tie me-2"></i> Our Local Farmers</h4>
+                <div class="card-header bg-white rounded-top-3 border-bottom bg">
+                    <h4 class="mb-0 text-primary-emphasis fw-semibold"><i class="fas fa-user-tie me-2"></i> Our Local Farmers</h4>
+                    <p class="mt-2 mb-0 text-muted small">Meet the hardworking individuals behind your fresh produce</p>
                 </div>
-                <div class="card-body">
-                    <div class="card mb-3 border-0 shadow-sm card-hover-effect">
-                        <a href="farmer-details.html" class="row g-0 text-decoration-none">
-                            <div class="col-md-3">
-                                <img src="assets/icons/user.png" 
-                                     class="img-fluid rounded-start h-100" 
-                                     alt="John Peterson"
-                                     style="object-fit: cover; min-height: 150px;">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">John Peterson</h5>
-                                    <p class="card-text text-success small">
-                                        <i class="fas fa-seedling me-1"></i> Organic Vegetables
-                                    </p>
-                                    <p class="card-text small text-muted">
-                                        Produces: Tomatoes, Cucumbers, Bell Peppers, Lettuce
-                                    </p>
-                                    <div class="mt-2">
-                                        <span class="badge bg-success bg-opacity-10 text-success me-1">Certified Organic</span>
-                                        <span class="badge bg-info bg-opacity-10 text-info me-1">5+ Years Experience</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="card mb-3 border-0 shadow-sm card-hover-effect">
-                        <a href="farmer-details.html" class="row g-0 text-decoration-none">
-                            <div class="col-md-3">
-                                <img src="assets/icons/user.png" 
-                                     class="img-fluid rounded-start h-100" 
-                                     alt="Maria Gonzalez"
-                                     style="object-fit: cover; min-height: 150px;">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Maria Gonzalez</h5>
-                                    <p class="card-text text-success small">
-                                        <i class="fas fa-apple-alt me-1"></i> Fruit Orchard
-                                    </p>
-                                    <p class="card-text small text-muted">
-                                        Produces: Apples, Pears, Peaches, Berries
-                                    </p>
-                                    <div class="mt-2">
-                                        <span class="badge bg-primary bg-opacity-10 text-primary me-1">Family Farm</span>
-                                        <span class="badge bg-success bg-opacity-10 text-success me-1">Sustainable</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="card mb-3 border-0 shadow-sm card-hover-effect">
-                        <a href="farmer-details.html" class="row g-0 text-decoration-none">
-                            <div class="col-md-3">
-                                <img src="assets/icons/user.png" 
-                                     class="img-fluid rounded-start h-100" 
-                                     alt="Ahmed Khan"
-                                     style="object-fit: cover; min-height: 150px;">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ahmed Khan</h5>
-                                    <p class="card-text text-success small">
-                                        <i class="fas fa-wheat me-1"></i> Grains & Pulses
-                                    </p>
-                                    <p class="card-text small text-muted">
-                                        Produces: Wheat, Rice, Lentils, Chickpeas
-                                    </p>
-                                    <div class="mt-2">
-                                        <span class="badge bg-warning bg-opacity-10 text-warning me-1">Large Scale</span>
-                                        <span class="badge bg-success bg-opacity-10 text-success me-1">Export Quality</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="text-center mt-4">
-                        <button class="btn btn-success px-4 py-2 rounded-pill">
-                            <i class="fas fa-users me-2"></i> Meet More Farmers
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- New Van Market Section -->
-            <div id="van-market-section" class="section-container card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-success text-white rounded-top-3">
-                    <h4 class="mb-0"><i class="fas fa-truck-moving me-2"></i> Local Market (Van)</h4>
-                </div>
-                <div class="card-body">
+                <div class="card-body bg">
                     <div class="row g-4">
-                        <!-- Van Product 1 -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <a href="vanMarketDetails.html" class="text-decoration-none card van-product-card h-100 card-hover-effect">
-                                <div class="position-relative">
-                                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4" class="van-product-img" alt="Fresh Tomatoes">
-                                    <span class="van-product-badge">In Stock</span>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Fresh Organic Tomatoes</h5>
-                                    <p class="card-text text-muted small mb-2">Harvested today, perfect for salads</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span class="van-product-price">$2.99/kg</span>
-                                        <span class="van-location-badge">
-                                            <i class="fas fa-map-marker-alt text-success me-1"></i> 2km away
-                                        </span>
+                        <!-- Farmer 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">John Peterson</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-seedling me-1"></i> Organic Vegetables
+                                        </p>
                                     </div>
-                                    <div class="van-seller-info">
-                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
-                                        <span class="small">John's Farm Van</span>
+                                    <div class="card-body border-top border-secondary pt-2">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Tomatoes, Cucumbers, Bell Peppers, Lettuce
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Certified Organic</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">5+ Years Experience</span>
+                                        </div>
                                     </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-sm btn-outline-success">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                        
-                        <!-- Van Product 2 -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <a href="vanMarketDetails.html" class="text-decoration-none card van-product-card h-100 card-hover-effect">
-                                <div class="position-relative">
-                                    <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716" class="van-product-img" alt="Fresh Apples">
-                                    <span class="van-product-badge">Limited Stock</span>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Sweet Red Apples</h5>
-                                    <p class="card-text text-muted small mb-2">Crispy and juicy, perfect for snacks</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span class="van-product-price">$3.49/kg</span>
-                                        <span class="van-location-badge">
-                                            <i class="fas fa-map-marker-alt text-success me-1"></i> 1.5km away
-                                        </span>
+                        <!-- Farmer 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">Maria Gonzalez</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-apple-alt me-1"></i> Fruit Orchard
+                                        </p>
                                     </div>
-                                    <div class="van-seller-info">
-                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
-                                        <span class="small">Maria's Fruit Van</span>
+                                    <div class="card-body pt-2 border-top border-secondary">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Apples, Pears, Peaches, Berries
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Family Farm</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">Sustainable</span>
+                                        </div>
                                     </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-sm btn-outline-success">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                        
-                        <!-- Van Product 3 -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <a href="vanMarketDetails.html" class="text-decoration-none card van-product-card h-100 card-hover-effect">
-                                <div class="position-relative">
-                                    <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a" class="van-product-img" alt="Fresh Bread">
-                                    <span class="van-product-badge">New Arrival</span>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Artisan Bread</h5>
-                                    <p class="card-text text-muted small mb-2">Freshly baked this morning</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span class="van-product-price">$4.50/loaf</span>
-                                        <span class="van-location-badge">
-                                            <i class="fas fa-map-marker-alt text-success me-1"></i> 3km away
-                                        </span>
+                        <!-- Farmer 3 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">Ahmed Khan</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-wheat me-1"></i> Grains & Pulses
+                                        </p>
                                     </div>
-                                    <div class="van-seller-info">
-                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
-                                        <span class="small">Bakery Van #42</span>
+                                    <div class="card-body pt-2 border-top border-secondary">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Wheat, Rice, Lentils, Chickpeas
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Large Scale</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">Export Quality</span>
+                                        </div>
                                     </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-sm btn-outline-success">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                        
-                        <!-- Van Product 4 -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <a href="vanMarketDetails.html" class="text-decoration-none card van-product-card h-100 card-hover-effect">
-                                <div class="position-relative">
-                                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655" class="van-product-img" alt="Organic Eggs">
-                                    <span class="van-product-badge">Popular</span>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Organic Eggs</h5>
-                                    <p class="card-text text-muted small mb-2">Free-range, 12 pieces</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span class="van-product-price">$5.99/dozen</span>
-                                        <span class="van-location-badge">
-                                            <i class="fas fa-map-marker-alt text-success me-1"></i> 0.5km away
-                                        </span>
+                        <!-- Farmer 4 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">Sarah Johnson</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-egg me-1"></i> Poultry & Dairy
+                                        </p>
                                     </div>
-                                    <div class="van-seller-info">
-                                        <img src="assets/icons/user.png" class="van-seller-avatar" alt="Seller">
-                                        <span class="small">Farm Fresh Van</span>
+                                    <div class="card-body pt-2 border-top border-secondary">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Eggs, Milk, Cheese, Yogurt
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Free Range</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">Animal Welfare</span>
+                                        </div>
                                     </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Farmer 5 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">Robert Chen</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-leaf me-1"></i> Herbs & Spices
+                                        </p>
                                     </div>
-                                </div>
-                            </a>
+                                    <div class="card-body pt-2 border-top border-secondary">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Basil, Mint, Cilantro, Chili Peppers
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Organic</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">Urban Farm</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Farmer 6 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm card-hover-effect h-100 bg-primary-subtle">
+                                <a href="farmer-details.html" class="text-decoration-none text-reset">
+                                    <div class="p-3 text-center border-bottom">
+                                        <img src="assets/icons/user.png" 
+                                             class="img-fluid rounded-circle mb-3 border border-2 border-secondary-subtle" 
+                                             alt="John Peterson"
+                                             style="width: 120px; height: 120px; object-fit: cover;">
+                                        <h5 class="card-title mb-1">Emma Wilson</h5>
+                                        <p class="card-text text-primary-emphasis small mb-2">
+                                            <i class="fas fa-honeycomb me-1"></i> Beekeeping
+                                        </p>
+                                    </div>
+                                    <div class="card-body pt-2 border-top border-secondary">
+                                        <p class="card-text small text-muted mb-3">
+                                            <strong>Produces:</strong> Honey, Beeswax, Pollen, Propolis
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary bg-opacity-10 text-primary-emphasis">Natural</span>
+                                            <span class="badge bg-primary bg-opacity-10 text-primary">Pollinator Friendly</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="text-center mt-4">
-                        <button class="btn btn-success px-4 py-2 rounded-pill me-2">
-                            <i class="fas fa-map-marked-alt me-2"></i> View All Nearby Vans
-                        </button>
-                        <button class="btn btn-outline-success px-4 py-2 rounded-pill">
-                            <i class="fas fa-question-circle me-2"></i> How It Works
+                    <div class="text-center mt-5">
+                        <button class="btn btn-outline-primary px-4 py-2 rounded-pill">
+                            <i class="fas fa-users me-2"></i> View All Farmers
                         </button>
                     </div>
                 </div>
@@ -525,7 +597,8 @@
             const sectionNames = {
                 'market': 'Local Markets',
                 'transport': 'Delivery Vans',
-                'farmer': 'Our Farmers'
+                'farmer': 'Our Farmers',
+                'vanMarket': 'Van Market'
             };
             
             // Update breadcrumb

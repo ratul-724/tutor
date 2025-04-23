@@ -32,7 +32,7 @@ body{
     background: linear-gradient(135deg, #3d93cd 0%, #98b4f1 100%) !important;
 }
 .bg {
-    background: linear-gradient(45deg,  #d1e5f1, #8bcaf4);
+    background: linear-gradient(45deg,  #d1e5f1, #a4d6f8);
 }
 /* Hover effect for cards */
 .hover-effect:hover {

@@ -14,7 +14,6 @@
             background-position: center;
             position: relative;
         }
-        
         .van-hero-overlay {
             background: rgba(0,0,0,0.4);
             position: absolute;
@@ -25,7 +24,6 @@
             display: flex;
             align-items: flex-end;
         }
-        
         .van-avatar {
             width: 80px;
             height: 80px;
@@ -36,28 +34,23 @@
             left: 20px;
             object-fit: cover;
         }
-        
         .product-card {
             transition: transform 0.3s ease;
             border-radius: 10px;
             overflow: hidden;
         }
-        
         .product-card:hover {
             transform: translateY(-5px);
         }
-        
         .product-img {
             height: 160px;
             object-fit: cover;
         }
-        
         .availability-badge {
             position: absolute;
             top: 10px;
             right: 10px;
         }
-        
         .schedule-btn {
             position: fixed;
             bottom: 20px;
@@ -65,7 +58,6 @@
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
         }
-        
         .van-feature-icon {
             width: 40px;
             height: 40px;
@@ -74,10 +66,8 @@
             justify-content: center;
             background: #e8f7ef;
             border-radius: 50%;
-            color: #198754;
             margin-right: 15px;
         }
-        
         .rating-badge {
             background: #ffc107;
             color: #000;
@@ -93,11 +83,11 @@
     
     <!-- Van Hero Section -->
     <div class="container">
-        <div class="van-hero rounded-4" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7')">
+        <div class="van-hero rounded-4" style="background-image: url('assets/images/tomato.jpeg')">
             <div class="van-hero-overlay rounded-4 p-3 text-white">
                 <div>
-                    <h2 class="mb-1">Fresh Harvest Van #42</h2>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt me-1"></i> Currently in: Downtown Market Area</p>
+                    <h2 class="mb-1"> Seller John's Farm Van</h2>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-1"></i> Currently in: Dhaka University Area</p>
                     <div class="d-flex align-items-center">
                         <span class="rating-badge me-2">
                             <i class="fas fa-star me-1"></i> 4.8 (127)
@@ -114,16 +104,16 @@
             <!-- Main Content -->
             <div class="col-lg-8">
                 <!-- About This Van -->
-                <div class="card mb-4 border-0 shadow-sm">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3"><i class="fas fa-info-circle text-success me-2"></i> About This Van</h4>
+                        <h4 class="card-title mb-3 text-primary-emphasis"><i class="fas fa-info-circle  me-2"></i> About This Van</h4>
                         <p class="card-text">Our mobile market van brings farm-fresh produce directly to your neighborhood. We source directly from local organic farms and deliver the freshest fruits, vegetables, and dairy products daily.</p>
                         
                         <div class="row mt-4">
                             <div class="col-md-6 mb-3">
                                 <div class="d-flex align-items-center">
                                     <div class="van-feature-icon">
-                                        <i class="fas fa-clock"></i>
+                                        <i class="fas fa-clock text-primary"></i>
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Opening Hours</h6>
@@ -134,7 +124,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="d-flex align-items-center">
                                     <div class="van-feature-icon">
-                                        <i class="fas fa-phone-alt"></i>
+                                        <i class="fas fa-phone-alt text-primary"></i>
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Contact</h6>
@@ -145,7 +135,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="d-flex align-items-center">
                                     <div class="van-feature-icon">
-                                        <i class="fas fa-truck"></i>
+                                        <i class="fas fa-truck text-primary"></i>
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Van Type</h6>
@@ -156,7 +146,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="d-flex align-items-center">
                                     <div class="van-feature-icon">
-                                        <i class="fas fa-map-marked-alt"></i>
+                                        <i class="fas fa-map-marked-alt text-primary"></i>
                                     </div>
                                     <div>
                                         <h6 class="mb-0">Current Route</h6>
@@ -169,27 +159,27 @@
                 </div>
                 
                 <!-- Products Available -->
-                <div class="card mb-4 border-0 shadow-sm">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="card-title mb-0"><i class="fas fa-shopping-basket text-success me-2"></i> Products Available</h4>
-                            <span class="badge bg-success bg-opacity-10 text-success">32 items</span>
+                            <h4 class="card-title mb-0 text-primary-emphasis"><i class="fas fa-shopping-basket  me-2"></i> Products Available</h4>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">32 items</span>
                         </div>
                         
                         <div class="row g-3">
                             <!-- Product 1 -->
                             <div class="col-md-6">
-                                <div class="card product-card h-100">
+                                <div class="card rounded-4 bg product-card h-100">
                                     <div class="position-relative">
-                                        <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4" class="product-img w-100" alt="Organic Tomatoes">
-                                        <span class="availability-badge badge bg-success">In Stock</span>
+                                        <img src="assets/images/potato.jpeg" class="product-img w-100" alt="Organic Tomatoes">
+                                        <span class="availability-badge badge bg-success bg-opacity-50 text-white ">In Stock</span>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Organic Tomatoes</h5>
+                                        <h5 class="card-title">Fresh Potatos</h5>
                                         <p class="card-text text-muted small">Freshly picked, perfect for salads and sauces</p>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-success fw-bold">$2.99/kg</span>
-                                            <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+                                            <span class="text-primary-emphasis fs-5 fw-semibold">৳30/kg</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -197,17 +187,17 @@
                             
                             <!-- Product 2 -->
                             <div class="col-md-6">
-                                <div class="card product-card h-100">
+                                <div class="card bg rounded-4 product-card h-100">
                                     <div class="position-relative">
-                                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a" class="product-img w-100" alt="Fresh Bread">
+                                        <img src="assets/images/apple.jpeg" class="product-img w-100" alt="Fresh Bread">
                                         <span class="availability-badge badge bg-warning text-dark">Low Stock</span>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Artisan Bread</h5>
-                                        <p class="card-text text-muted small">Baked this morning, crusty sourdough</p>
+                                        <h5 class="card-title">Sweet Red Apple</h5>
+                                        <p class="card-text text-muted small">Sweet and crispy, perfect for snacks</p>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-success fw-bold">$4.50/loaf</span>
-                                            <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+                                            <span class="text-primary-emphasis fs-5 fw-semibold">৳130/kg</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -215,17 +205,17 @@
                             
                             <!-- Product 3 -->
                             <div class="col-md-6">
-                                <div class="card product-card h-100">
+                                <div class="card bg rounded-4 product-card h-100">
                                     <div class="position-relative">
-                                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655" class="product-img w-100" alt="Organic Eggs">
-                                        <span class="availability-badge badge bg-success">In Stock</span>
+                                        <img src="assets/images/egg.jpeg" class="product-img w-100" alt="Organic Eggs">
+                                        <span class="availability-badge badge bg-success bg-opacity-50 text-white ">In Stock</span>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">Free-Range Eggs</h5>
                                         <p class="card-text text-muted small">12 large eggs, pasture-raised</p>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-success fw-bold">$5.99/dozen</span>
-                                            <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+                                            <span class="text-primary-emphasis fs-5 fw-semibold">৳140/kg</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -233,17 +223,17 @@
                             
                             <!-- Product 4 -->
                             <div class="col-md-6">
-                                <div class="card product-card h-100">
+                                <div class="card bg rounded-4 product-card h-100">
                                     <div class="position-relative">
-                                        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716" class="product-img w-100" alt="Fresh Apples">
-                                        <span class="availability-badge badge bg-success">In Stock</span>
+                                        <img src="assets/images/tomato.jpeg" class="product-img w-100" alt="Fresh Apples">
+                                        <span class="availability-badge badge bg-success bg-opacity-50 text-white ">In Stock</span>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Red Apples</h5>
-                                        <p class="card-text text-muted small">Sweet and crispy, perfect for snacks</p>
+                                        <h5 class="card-title">Fresh Tomatoes</h5>
+                                        <p class="card-text text-muted small">Fresh and organic. collect today morning</p>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-success fw-bold">$3.49/kg</span>
-                                            <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+                                            <span class="text-primary-emphasis fs-5 fw-semibold">৳40/kg</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-4">Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -251,15 +241,15 @@
                         </div>
                         
                         <div class="text-center mt-4">
-                            <button class="btn btn-outline-success px-4">View All Products</button>
+                            <button class="btn btn-outline-primary rounded-5 px-4">View All Products</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Reviews Section -->
-                <div class="card mb-4 border-0 shadow-sm">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3"><i class="fas fa-star text-success me-2"></i> Customer Reviews</h4>
+                        <h4 class="card-title mb-3 text-primary-emphasis"><i class="fas fa-star  me-2"></i> Customer Reviews</h4>
                         
                         <!-- Review 1 -->
                         <div class="mb-3 pb-3 border-bottom">
@@ -303,7 +293,7 @@
                             <p class="mb-0">Great selection of organic products. The bread is always fresh and the eggs are top quality. Highly recommend!</p>
                         </div>
                         
-                        <button class="btn btn-outline-success">See All Reviews</button>
+                        <button class="btn btn-outline-primary rounded-5">See All Reviews</button>
                     </div>
                 </div>
             </div>
@@ -311,9 +301,9 @@
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <!-- Location Map -->
-                <div class="card mb-4 border-0 shadow-sm">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3"><i class="fas fa-map-marker-alt text-success me-2"></i> Current Location</h4>
+                        <h4 class="card-title mb-3 text-primary-emphasis"><i class="fas fa-map-marker-alt  me-2"></i> Current Location</h4>
                         <div style="height: 200px; background-color: #eee; border-radius: 8px; overflow: hidden;">
                             <!-- Map placeholder - replace with actual map integration -->
                             <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: #e9ecef;">
@@ -321,9 +311,9 @@
                             </div>
                         </div>
                         <div class="mt-3">
-                            <p class="mb-1"><strong>Address:</strong> 123 Market St, Downtown</p>
-                            <p class="mb-2"><strong>Next Stop:</strong> Central Park (3:30PM - 5:00PM)</p>
-                            <button class="btn btn-sm btn-outline-success w-100">
+                            <p class="mb-1"><strong>Address:</strong> 123 Dhaka, Bangladesh</p>
+                            <p class="mb-2"><strong>Next Stop:</strong>Dhaka University Area (3:30PM - 5:00PM)</p>
+                            <button class="btn btn-sm btn-outline-primary  w-100">
                                 <i class="fas fa-bell me-1"></i> Notify When Nearby
                             </button>
                         </div>
@@ -331,46 +321,46 @@
                 </div>
                 
                 <!-- Schedule -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <h4 class="card-title mb-3"><i class="fas fa-calendar-alt text-success me-2"></i> Weekly Schedule</h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
+                    <div class="card-body ">
+                        <h4 class="card-title mb-3"><i class="fas fa-calendar-alt text-primary-emphasis me-2"></i> Weekly Schedule</h4>
+                        <ul class="list-group list-group-flush rounded-4">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Monday
-                                <span class="badge bg-success bg-opacity-10 text-success">8AM - 6PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">8AM - 6PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Tuesday
-                                <span class="badge bg-success bg-opacity-10 text-success">8AM - 6PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">8AM - 6PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Wednesday
-                                <span class="badge bg-success bg-opacity-10 text-success">8AM - 6PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">8AM - 6PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Thursday
-                                <span class="badge bg-success bg-opacity-10 text-success">8AM - 6PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">8AM - 6PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between  text-primary-emphasis align-items-center">
                                 Friday
-                                <span class="badge bg-success bg-opacity-10 text-success">8AM - 6PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">8AM - 6PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Saturday
-                                <span class="badge bg-success bg-opacity-10 text-success">9AM - 4PM</span>
+                                <span class="badge bg-primary text-primary-emphasis bg-opacity-10 ">9AM - 4PM</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between text-primary-emphasis align-items-center">
                                 Sunday
-                                <span class="badge bg-success bg-opacity-10 text-success">9AM - 4PM</span>
+                                <span class="badge bg-primary text-primary-emphasis  bg-opacity-10 ">9AM - 4PM</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- About the Seller -->
-                <div class="card mb-4 border-0 shadow-sm">
+                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3"><i class="fas fa-user-tie text-success me-2"></i> About the Seller</h4>
+                        <h4 class="card-title text-primary-emphasis mb-3"><i class="fas fa-user-tie  me-2"></i> About the Seller</h4>
                         <div class="d-flex mb-3">
                             <img src="assets/icons/user.png" width="60" height="60" class="rounded-circle me-3" alt="Seller">
                             <div>
@@ -381,8 +371,8 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="small">Fifth-generation farmer bringing fresh produce directly to urban neighborhoods. Committed to sustainable farming and fair prices.</p>
-                        <button class="btn btn-sm btn-outline-success w-100">
+                        <p class="small">Fifth-generation farmer bringing fresh produce directly to urban neighborhoods. Committed to sustainable farming and fair mbtn-outline-primary ces.</p>
+                        <button class="btn btn-sm btn-outline-primary rounded-4 w-100">
                             <i class="fas fa-store me-1"></i> Visit Farm Profile
                         </button>
                     </div>

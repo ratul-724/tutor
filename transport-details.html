@@ -10,7 +10,7 @@
     <style>
         .van-header {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                        url('assets/images/truck.jpeg') no-repeat center center;
             background-size: cover;
             background-position: center;
             color: white;
@@ -265,7 +265,7 @@
             <h1 class="display-4 fw-bold">Truck #FD-2541</h1>
             <p class="lead mb-4">Refrigerated Delivery Truck - 800 kg Capacity</p>
             <div class="d-flex justify-content-center gap-3">
-                <span class="badge bg-success bg-opacity-25 text-success fs-6 py-2 px-3">
+                <span class="badge bg-success bg-opacity-50 text-success fs-6 py-2 px-3">
                     <i class="fas fa-check-circle me-1"></i> Available Today
                 </span>
                 <span class="badge bg-info bg-opacity-25 text-info fs-6 py-2 px-3">
@@ -282,32 +282,32 @@
                 <!-- Truck Details -->
                 <div class="card mb-4 border-0 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title mb-4"><i class="fas fa-truck text-success me-2"></i> Truck Specifications</h3>
+                        <h3 class="card-title mb-4"><i class="fas fa-truck text-primary-emphasis me-2"></i> Truck Specifications</h3>
                         <div class="row text-center">
                             <div class="col-6 col-md-3 mb-4">
                                 <div class="specs-icon">
-                                    <i class="fas fa-weight-hanging"></i>
+                                    <i class="fas fa-weight-hanging text-primary"></i>
                                 </div>
                                 <h5>800 kg</h5>
                                 <p class="text-muted small">Capacity</p>
                             </div>
                             <div class="col-6 col-md-3 mb-4">
                                 <div class="specs-icon">
-                                    <i class="fas fa-snowflake"></i>
+                                    <i class="fas fa-snowflake text-primary"></i>
                                 </div>
                                 <h5>Refrigerated</h5>
                                 <p class="text-muted small">Temperature</p>
                             </div>
                             <div class="col-6 col-md-3 mb-4">
                                 <div class="specs-icon">
-                                    <i class="fas fa-ruler-combined"></i>
+                                    <i class="fas fa-ruler-combined text-primary"></i>
                                 </div>
                                 <h5>4.2 x 2.1 x 2.1m</h5>
                                 <p class="text-muted small">Dimensions</p>
                             </div>
                             <div class="col-6 col-md-3 mb-4">
                                 <div class="specs-icon">
-                                    <i class="fas fa-gas-pump"></i>
+                                    <i class="fas fa-gas-pump text-primary"></i>
                                 </div>
                                 <h5>Diesel</h5>
                                 <p class="text-muted small">Fuel Type</p>
@@ -332,7 +332,7 @@
                 <!-- Availability Calendar -->
                 <div class="card mb-4 border-0 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title mb-4"><i class="fas fa-calendar-alt text-success me-2"></i> Availability</h3>
+                        <h3 class="card-title mb-4"><i class="fas fa-calendar-alt text-primary-emphasis me-2"></i> Availability</h3>
                         <div class="table-responsive">
                             <table class="table table-bordered text-center">
                                 <thead>
@@ -387,7 +387,7 @@
                             </table>
                         </div>
                         <div class="d-flex gap-2 mt-3">
-                            <span class="badge bg-success bg-opacity-10 text-success">Available</span>
+                            <span class="badge bg-success bg-opacity-10 text-primary-emphasis">Available</span>
                             <span class="badge bg-danger bg-opacity-10 text-danger">Booked</span>
                         </div>
                     </div>
@@ -396,7 +396,7 @@
                 <!-- Delivery Process -->
                 <div class="card mb-4 border-0 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title mb-4"><i class="fas fa-shipping-fast text-success me-2"></i> Delivery Process</h3>
+                        <h3 class="card-title mb-4"><i class="fas fa-shipping-fast text-primary-emphasis me-2"></i> Delivery Process</h3>
                         <div class="timeline">
                             <div class="timeline-item">
                                 <h5>1. Booking Confirmation</h5>
@@ -427,16 +427,16 @@
             <div class="col-lg-4">
                 <div class="card booking-card border-0 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title mb-4"><i class="fas fa-calendar-check text-success me-2"></i> Book This Truck</h3>
+                        <h3 class="card-title mb-4"><i class="fas fa-calendar-check text-primary-emphasis me-2"></i> Book This Truck</h3>
                         
                         <div class="mb-4">
                             <label class="form-label">Select Date</label>
-                            <input type="date" class="form-control" min="2023-08-01">
+                            <input type="date" class="form-control focusNone" min="2023-08-01">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label">Time Slot</label>
-                            <select class="form-select">
+                            <select class="form-select focusNone">
                                 <option>Morning (8AM - 12PM)</option>
                                 <option>Afternoon (12PM - 4PM)</option>
                                 <option>Evening (4PM - 8PM)</option>
@@ -445,17 +445,17 @@
                         
                         <div class="mb-4">
                             <label class="form-label">Pickup Location</label>
-                            <input type="text" class="form-control" placeholder="Enter address">
+                            <input type="text" class="form-control focusNone" placeholder="Enter address">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label">Delivery Location</label>
-                            <input type="text" class="form-control" placeholder="Enter address">
+                            <input type="text" class="form-control focusNone" placeholder="Enter address">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label">Temperature Setting (°C)</label>
-                            <input type="range" class="form-range" min="-20" max="20" value="4" step="1">
+                            <input type="range" class="form-range focusNone" min="-20" max="20" value="4" step="1">
                             <div class="d-flex justify-content-between">
                                 <span>-20°C</span>
                                 <span class="fw-bold">4°C</span>
@@ -478,7 +478,7 @@
                         <hr>
                         <div class="d-flex justify-content-between mb-4">
                             <span class="fw-bold">Total:</span>
-                            <span class="fw-bold text-success">$109.00</span>
+                            <span class="fw-bold text-primary-emphasis">$109.00</span>
                         </div>
                         
                         <button class="btn btn-success w-100 py-3 fw-bold rounded-pill">
@@ -494,42 +494,42 @@
         </div>
 
          <!-- Floating Chat Widget -->
-    <div class="chat-widget">
-        <div class="chat-container" id="chatContainer">
-            <div class="chat-header">
-                <h5>Truck #FD-2541</h5>
-                <button class="chat-close" id="chatClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chat-body" id="chatBody">
-                <!-- Messages will appear here -->
-                <div class="d-flex flex-column">
-                    <div class="message received">
-                        Hello! How can I help you today?
-                        <div class="message-time">10:30 AM</div>
+        <div class="chat-widget">
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-header">
+                    <h5>Truck #FD-2541</h5>
+                    <button class="chat-close" id="chatClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <!-- Messages will appear here -->
+                    <div class="d-flex flex-column">
+                        <div class="message received">
+                            Hello! How can I help you today?
+                            <div class="message-time">10:30 AM</div>
+                        </div>
+                        
+                        <!-- Typing indicator (shown when agent is typing) -->
+                        <!-- <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div> -->
                     </div>
-                    
-                    <!-- Typing indicator (shown when agent is typing) -->
-                    <!-- <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    </div> -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="Type your message...">
+                    <button id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
             </div>
-            <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Type your message...">
-                <button id="sendButton">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+            
+            <div class="chat-icon" id="chatIcon">
+                <i class="fas fa-comment-dots"></i>
             </div>
         </div>
-        
-        <div class="chat-icon" id="chatIcon">
-            <i class="fas fa-comment-dots"></i>
-        </div>
-    </div>
 
     </div>
 

@@ -41,6 +41,7 @@ body{
 .profileCardHover{
     transition: transform 0.5s, box-shadow 0.5s;
     transform-style: preserve-3d;
+    cursor: pointer;
 }
 .profileCardHover:hover{
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.194) !important;

@@ -28,7 +28,7 @@ body{
     color: rgb(1, 25, 61);
     border: 1px solid  #11998e;
     padding: 8px 15px;
-    border-radius: 100px;
+    border-radius: 120px;
     transition: all 0.5s ease;
 }
 .btnOutlineCode:hover{
@@ -38,11 +38,11 @@ body{
     background: linear-gradient(135deg, #11998e 0%, #38caef 100%) !important;
     border-radius: 100px;
 }
-.cardHover{
+.profileCardHover{
     transition: transform 0.5s, box-shadow 0.5s;
     transform-style: preserve-3d;
 }
-.cardHover:hover{
+.profileCardHover:hover{
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.194) !important;
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.03);
 }
@@ -74,6 +74,21 @@ body{
 .for-icon-pop:hover .icon-pop {
     transform: scale(1.2);
     color: #0285a9;
+}
+
+.cardImgPop{
+    transition: all 0.7s ease;
+}
+.cardPop{
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardPop:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+.cardPop:hover .cardImgPop {
+    transform: scale(1.1);
 }
 /* some common code end */
 

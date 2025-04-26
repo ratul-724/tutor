@@ -1,9 +1,3 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
 /* code for home start*/
 /* left code start  */
 .hire-category-item {
@@ -11,13 +5,14 @@ body {
     overflow: hidden;
     background: linear-gradient(90deg, #7fdbf4, #7ec5d1);
     cursor: pointer;
+    
 }
 .hire-category-item:hover {
     transform: translateX(7px) scale(1.05);
     background: rgba(255, 255, 255, 0.3) !important;
+    color: #0285a9;
 }
 /* left code end  */
-
 /* Update Blog Section  start*/
 .update-blog .card {
     border-radius: 15px;
@@ -43,6 +38,38 @@ body {
     padding-bottom: 60px;
   }
 /* code for home end*/
+
+/* code for marketVanFarmer.html */
+.section-container {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.section-container.active {
+    display: block;
+    opacity: 1;
+}
+/* Van Market specific styles */
+.van-product-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+.van-product-img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+.van-location-badge {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+}
+/* code for marketVanFarmer.html */
 
 /* code for about start*/
 @media (max-width: 992px) {
@@ -89,7 +116,6 @@ body {
     transition: all ease 0.5s;
 }
 /* code for about end*/
-
 
 /* code for login section start */
 /* Selected State */

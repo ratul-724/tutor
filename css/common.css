@@ -76,6 +76,61 @@ body{
     transform: scaleX(1); /* Slide in on hover */
 }
 /* Shared base styles for both buttons */
+/* glowing button  */
+.glow-on-hover {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #0285a9;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #621a1a, #f28e3c, #f4f148, #a4fd81, #3ec6af, #465ed4, #8645cd, #b14c9b, #da4f4f);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #19738e, #07cbed);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:hover::after{
+    background:  #97d4df;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* glowing button  */
 .profileCardHover{
     transition: transform 0.5s, box-shadow 0.5s;
     transform-style: preserve-3d;

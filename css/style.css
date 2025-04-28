@@ -3,13 +3,9 @@
 .hire-category-item {
     transition: all 0.6s ease;
     overflow: hidden;
-    background: linear-gradient(90deg, #7fdbf4, #7ec5d1);
-    cursor: pointer;
-    
 }
-.hire-category-item:hover {
-    transform: translateX(7px) scale(1.05);
-    background: rgba(255, 255, 255, 0.3) !important;
+.glow-on-hover:hover .hire-category-item{
+    transform: translateX(4px) scale(1.03);
     color: #0285a9;
 }
 /* left code end  */

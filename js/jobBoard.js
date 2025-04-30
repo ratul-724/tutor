@@ -302,8 +302,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             postEl.innerHTML = `
-                <div class="post-card card h-100 shadow-sm" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
-                    <div class="card-body d-flex flex-column">
+                <div class="post-card card h-100">
+                    <div class="card-body d-flex flex-column bg  p-4 shadow-sm">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <div>
                                 ${statusBadge}
@@ -339,80 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
             elements.postsContainer.appendChild(postEl);
         });
     }
-    
-    function renderPagination() {
-        const pageCount = Math.ceil(state.filteredPosts.length / state.postsPerPage);
-        
-        if (pageCount <= 1) {
-            // elements.paginationContainer.classList.add('d-none');
-            return;
-        }
-        
-        // elements.paginationContainer.classList.remove('d-none');
-        const paginationEl = elements.paginationContainer.querySelector('.pagination');
-        paginationEl.innerHTML = '';
-        
-        // Previous button
-        const prevLi = document.createElement('li');
-        prevLi.className = `page-item ${state.currentPage === 1 ? 'disabled' : ''}`;
-        prevLi.innerHTML = '<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>';
-        prevLi.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (state.currentPage > 1) {
-                state.currentPage--;
-                renderPosts();
-                updatePaginationUI();
-            }
-        });
-        paginationEl.appendChild(prevLi);
-        
-        // Page buttons
-        for (let i = 1; i <= pageCount; i++) {
-            const pageLi = document.createElement('li');
-            pageLi.className = `page-item ${state.currentPage === i ? 'active' : ''}`;
-            pageLi.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-            
-            pageLi.addEventListener('click', (e) => {
-                e.preventDefault();
-                state.currentPage = i;
-                renderPosts();
-                updatePaginationUI();
-            });
-            
-            paginationEl.appendChild(pageLi);
-        }
-        
-        // Next button
-        const nextLi = document.createElement('li');
-        nextLi.className = `page-item ${state.currentPage === pageCount ? 'disabled' : ''}`;
-        nextLi.innerHTML = '<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>';
-        nextLi.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (state.currentPage < pageCount) {
-                state.currentPage++;
-                renderPosts();
-                updatePaginationUI();
-            }
-        });
-        paginationEl.appendChild(nextLi);
-    }
-    
-    function updatePaginationUI() {
-        const pageItems = elements.paginationContainer.querySelectorAll('.page-item');
-        pageItems.forEach((item, index) => {
-            if (index === 0) {
-                // Previous button
-                item.classList.toggle('disabled', state.currentPage === 1);
-            } else if (index === pageItems.length - 1) {
-                // Next button
-                item.classList.toggle('disabled', state.currentPage === pageItems.length - 2);
-            } else {
-                // Page buttons
-                item.classList.toggle('active', index === state.currentPage);
-            }
-        });
-    }
-    
+
     function handleSearch() {
         state.searchQuery = elements.searchInput.value.trim();
         applyFilters();

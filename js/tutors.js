@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         tutorsToRender.forEach(tutor => {
             const tutorCard = document.createElement('div');
-            tutorCard.className = 'tutor-card card shadow-sm mb-4';
+            tutorCard.className = 'tutor-card overflow-hidden rounded-4 card shadow-sm mb-4';
             
             // Get display names
             const subjectName = {
@@ -229,18 +229,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 'sylhet': 'Sylhet',
                 'mymensingh': 'Mymensingh',
             }[tutor.location];
-
+ 
             tutorCard.innerHTML = `
-                <div class="card-body" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+                <div class="card-body  bg">
                     <div class="d-flex justify-content-between align-items-start mb-2"> 
                         <div class="d-flex align-items-center">
                             <img src="${tutor.imgSrc}" alt="" width="60" height="60" class="rounded-circle me-3">
                             <div class="">
-                                <h5 class="card-title fw-bold text-primary mb-1">${tutor.name}</h5>
-                                <span class="badge badge-category text-white mb-1">${subjectName}</span>
+                                <h5 class="card-title fw-bold color mb-1">${tutor.name}</h5>
+                                <span class="badge bg-primary-gradient text-white mb-1">${subjectName}</span>
                             </div>
                         </div>
-                        <div class="fw-bold text-primary">৳${tutor.price}/hr</div>
+                        <div class="fw-bold color">৳${tutor.price}/hr</div>
                     </div>
                     
                     <div class="mb-3">
@@ -252,9 +252,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p class="card-text text-muted">${tutor.bio}</p>
                     </div>
                     
-                    <button class="btn btn-primary" onclick="window.location.href='tutordetails.html?id=${tutor.id}'">
+                    <a href="#" class="btnCode" onclick="window.location.href='tutordetails.html?id=${tutor.id}'">
                         <i class="fas fa-envelope me-1"></i> Contact Tutor
-                    </button>
+                    </a>
                 </div>
             `;
             

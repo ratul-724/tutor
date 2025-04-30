@@ -42,27 +42,26 @@
     <!-- Header -->
     <section class="hero-gradient text-dark py-4 mb-4">
         <div class="container">
-            <div class="text-center mb-4">
-                <h1 class="fw-bold mb-3 display-5 text-primary-emphasis">Tuition Job Board</h1>
-                <p class="lead fs-5 text-primary-emphasis">Connect students with the perfect teachers</p>
+            <div class="text-center forTitleUnderline mb-4">
+                <h1 class="fw-bold mb-2 titleUnderline display-5 color">Find Available Jobs</h1>
+                <p class="lead fs-5 text-secondary">Search here what type of skill you have</p>
             </div>
             
             <div class="search-container mx-auto bg-white rounded-pill p-1 position-relative">
                 <input type="text" class="focusNone form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
-                       placeholder="Search tution jobs...." id="searchInput">
-                <button class="btn btn-success position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1" 
-                        id="searchButton">
+                       placeholder="Search here......" id="searchInput">
+                <button class="btn position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1 text-white" id="searchButton" style="background-color:  #0285a9;">
                     <i class="fas fa-search me-1"></i> Search
                 </button>
-            </div><hr>
+            </div><hr class="text-secondary border-1 ">
 
             
         <!-- Filters -->
-        <div class="card shadow-sm mb-4 border-0 container" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+        <div class="card shadow-sm mb-4 border-0 bg">
             <div class="card-body p-4 ">
                 <div class="row">
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-book"></i> Subject</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-book"></i> Subject</label>
                         <select class="form-select focusNone" id="subjectFilter">
                             <option value="all">All Subjects</option>
                             <option value="math">Mathematics</option>
@@ -73,7 +72,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-location-dot"></i> Location</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-location-dot"></i> Location</label>
                         <select class="form-select focusNone" id="locationFilter">
                             <option value="all">All Locations</option>
                             <option value="dhaka">Dhaka</option>
@@ -87,7 +86,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-venus-mars"></i> Gender</label>
                         <select class="form-select focusNone" id="genderFilter">
                             <option value="both">Both</option>
                             <option value="male">Male</option>
@@ -95,7 +94,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
                         <select class="form-select focusNone" id="priceFilter">
                             <option value="all">Any Price</option>
                             <option value="0-500">Under ৳500</option>

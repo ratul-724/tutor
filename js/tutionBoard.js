@@ -323,10 +323,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         
                         <div class="d-flex justify-content-between align-items-center mt-auto">
-                            <span class="badge bg-primary text-white">
+                            <span class="badge bg-success-gradient text-white">
                                 <i class="fas fa-users me-1"></i> ${post.applications} applied
                             </span>
-                            <button class="btn btn-success btn-sm ${post.status === 'filled' ? 'disabled' : ''}" 
+                            <button class="btn btnCode btn-sm ${post.status === 'filled' ? 'disabled' : ''}" 
                                     data-post-id="${post.id}" 
                                     onclick="showApplyModal(${post.id}, '${post.title}')">
                                 <i class="fas fa-paper-plane me-1"></i> Apply

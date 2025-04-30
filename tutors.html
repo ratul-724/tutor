@@ -30,16 +30,15 @@
     <!-- Header with Search -->
     <header class="hero-gradient text-white py-4 mb-2">
         <div class="container">
-            <div class="text-center mb-4">
-                <h1 class="fw-bold mb-3 text-primary-emphasis">Find Your Perfect Tutor</h1>
-                <p class="lead text-primary-emphasis">Connect with qualified teachers for all subjects</p>
+            <div class="text-center forTitleUnderline mb-4">
+                <h1 class="fw-bold m-2 color titleUnderline">Find Your Service Provider</h1>
+                <p class="lead text-secondary">Connect with all Qualified / Skilled service provider</p>
             </div>
             
             <div class="search-container mx-auto bg-white rounded-pill p-1 position-relative">
                 <input type="text" class="focusNone form-control border-0 py-2 py-lg-3 px-4 rounded-pill" 
-                       placeholder="Search your teacher......" id="searchInput">
-                <button class="btn btn-success position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1" 
-                        id="searchButton">
+                       placeholder="Search here......" id="searchInput">
+                <button class="btn position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4 py-2 py-lg-3 me-1 text-white" id="searchButton" style="background-color:  #0285a9;">
                     <i class="fas fa-search me-1"></i> Search
                 </button>
             </div><hr class="text-secondary border-1 ">
@@ -48,11 +47,11 @@
     <!-- Main Content -->
     <div class="container">
         <!-- Filters -->
-        <div class="card shadow-sm mb-4 border-0" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
+        <div class="card shadow-sm mb-4 border-0 bg">
             <div class="card-body p-4 ">
                 <div class="row">
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-book"></i> Subject</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-book"></i> Subject</label>
                         <select class="form-select focusNone" id="subjectFilter">
                             <option value="all">All Subjects</option>
                             <option value="math">Mathematics</option>
@@ -63,7 +62,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-location-dot"></i> Location</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-location-dot"></i> Location</label>
                         <select class="form-select focusNone" id="locationFilter">
                             <option value="all">All Locations</option>
                             <option value="dhaka">Dhaka</option>
@@ -77,7 +76,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-venus-mars"></i> Gender</label>
                         <select class="form-select focusNone" id="genderFilter">
                             <option value="both">Both</option>
                             <option value="male">Male</option>
@@ -85,7 +84,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold text-primary-emphasis"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
                         <select class="form-select focusNone" id="priceFilter">
                             <option value="all">Any Price</option>
                             <option value="0-500">Under ৳500</option>
@@ -97,36 +96,36 @@
                 </div>
             </div>
         </div>
-        
+    
         <div class="row">
             <div class="col-lg-9 ">
                 <!-- Tutor Listings -->
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold mb-0">Available Tutors</h4>
-                    <div class="text-muted" id="resultCount">Loading tutors...</div>
+                <div class="d-flex justify-content-between align-items-center mb-4 forTitleUnderline">
+                    <h4 class="fw-bold mb-0 titleUnderline color">Available Service Provider</h4>
+                    <div class="text-muted" id="resultCount">Loading Provider...</div>
                 </div>
                 
                 <div class="text-center py-5" id="loadingSpinner">
                     <div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <p class="mt-2 text-muted">Finding tutors...</p>
+                    <p class="mt-2 text-muted">Finding Provider...</p>
                 </div>
                 
                 <div class="text-center py-5 d-none" id="noResults">
                     <i class="fas fa-user-graduate fa-3x text-muted mb-3"></i>
-                    <h5 class="fw-bold">No tutors found</h5>
+                    <h5 class="fw-bold">No Service Provider Found</h5>
                     <p class="text-muted">Try adjusting your search filters</p>
                 </div>
                 
                 <div id="tutorListings">
-                    <!-- Tutor cards will be loaded dynamically here -->
+                    <!-- Service Provider cards will be loaded dynamically here -->
                 </div>
             </div>
             <div class="col-lg-3 mt-4 pt-2">
                 <!-- serch my click start-->
-                <div class="searchByCategory rounded-2 p-3 mt-3" style="background: linear-gradient(to bottom right,#e8f0e8, #d8e8f4);">
-                    <h4 class="text-center text-secondary">Search By Category</h4><hr>
+                <div class="searchByCategory rounded-2 p-3 mt-3 bg">
+                    <h4 class="text-center mb-0 pb-0 color">Search By Category</h4><hr class="border-2 mt-2">
                     <div class="searchByCategoryAncors">
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">female</a>

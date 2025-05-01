@@ -15,64 +15,6 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            font-size: 24px;
-            background: linear-gradient(135deg, #27ae60, #34dc7a);
-            color: white;
-        }
-        .team-card {
-            transition: all 0.3s ease;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        .team-img {
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 5px solid #27ae60;
-        }
-        .partner-logo {
-            height: 80px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-            opacity: 0.7;
-            cursor: pointer;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        .btn-success {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            border: none;
-            padding: 12px 30px;
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 140%;
-            height: 4px;
-            background: linear-gradient(to right, #27ae60, #2ecc71);
-            bottom: -10px;
-            left: -20%;
-            border-radius: 2px;
-        }
         @media (max-width: 768px) {
             .hero-section-inside{
                 flex-direction: column-reverse;
@@ -87,16 +29,16 @@
 </head>
 <body><br>
     <header id="header"></header>
-    <div class="container py-5">
+    <div class="container py-3">
         <!-- Hero Section -->
         <section class="hero-section p-5 mb-5" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
             <div class="row align-items-center hero-section-inside">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mt-2">About <span class="text-success">Tutor.com</span></h1>
-                    <p class="lead mb-4">Connecting students with exceptional tutors across Bangladesh since 2025. Our mission is to make quality education accessible to everyone.</p>
-                    <div class="d-flex gap-3">
-                        <a href="login.html" class="btn btn-success btn-lg rounded-pill">Get Started</a>
-                        <a href="#our-story" class="btn btn-outline-success btn-lg rounded-pill">Learn More</a>
+                    <h1 class="display-4 fw-bold mt-2">About <span class="color">Media.com</span></h1>
+                    <p class="lead mb-4">Connecting clients with exceptional service provider across Bangladesh since 2025. Our mission is to quality connect clients to service providers.</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="login.html" class="btnCode">Get Started</a>
+                        <a href="#our-story" class="btnOutlineCode">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -106,13 +48,13 @@
         </section>
 
         <!-- counter section start here -->
-        <section class="py-5 my-5 w-100">
+        <section class="py-3 my-5 w-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                             <div class="card-body">
-                                <h2 class="text-primary-emphasis fw-bold counter">11</h2>
+                                <h2 class="color fw-bold counter">11</h2>
                                 <div class="card-text">
                                     <p>Appointed Tuitions</p>
                                 </div>
@@ -122,7 +64,7 @@
                     <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                             <div class="card-body">
-                                <h2 class="text-primary-emphasis fw-bold counter">107</h2>
+                                <h2 class="color fw-bold counter">107</h2>
                                 <div class="card-text">
                                     <p>Live Tuitions</p>
                                 </div>
@@ -132,7 +74,7 @@
                     <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                             <div class="card-body">
-                                <h2 class="text-primary-emphasis fw-bold counter">309</h2>
+                                <h2 class="color fw-bold counter">309</h2>
                                 <div class="card-text">
                                     <p>Total Tutors</p>
                                 </div>
@@ -142,7 +84,7 @@
                     <div class="col-lg-3 col-6 mt-3">
                         <div class="card card-pending text-center rounded-4" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
                             <div class="card-body">
-                                <h2 class="text-primary-emphasis fw-bold counter">1015</h2>
+                                <h2 class="color fw-bold counter">1015</h2>
                                 <div class="card-text">
                                     <p>Pending Tuitions</p>
                                 </div>
@@ -155,71 +97,104 @@
         <!-- counter section end here -->
 
         <!-- Our Story -->
-        <section class="pb-5 mb-5" id="our-story">
+        <section class="mb-4" id="our-story">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <img src="assets/images/aboutTutoring.png" alt="Our Story" class="img-fluid rounded-4 shadow floating-image">
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <h2 class="fw-semibold section-title ms-4">Our <span style="color: rgb(37, 109, 138);">Story</span></h2>
-                    <p class="lead">Founded in 2025 by a group of educators and technologists, Tutor.com began with a simple idea: to make quality education accessible to every student in Bangladesh.</p>
+                <div class="col-lg-6 order-lg-1 forTitleUnderline">
+                    <h2 class="fw-semibold section-title ms-4 titleUnderline">Our <span class="color">Story</span></h2>
+                    <p class="lead mt-2">Connecting clients with exceptional service provider across Bangladesh since 2025. Our mission is to quality connect clients to service providers.</p>
                     <p>What started as a small platform with just 50 tutors has now grown into the country's leading tutoring network, serving thousands of students across all major cities.</p>
                     <p>Our journey has been guided by our core belief that every student deserves personalized attention and the right guidance to unlock their full potential.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="py-5 mb-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-semibold section-title">Why Choose <span style="color: rgb(37, 109, 138);">Tutor.com?</span></h2>
-                
-                <p class="lead">We're revolutionizing education through technology and personalized learning</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h3>Expert Tutors</h3>
-                        <p>Our tutors are rigorously vetted and include university professors, subject matter experts, and experienced educators.</p>
-                    </div>
+        <!-- Why Choose Us -->
+        <section id="whyChooseUs">
+            <div class="container">
+                <div class="forTitleUnderline my-5 text-center">
+                    <h2 class="fw-semibold titleUnderline">Why Choose  <span class="color">Us?</span></h2>
+                    <p class="m-0">The better way to book home services</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-laptop-code"></i>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fas fa-shield-alt text-white p-4 fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">Verified Professionals</h4>
+                                <p class="text-muted mb-0">All service providers are background-checked and licensed for your safety.</p>
+                            </div>
                         </div>
-                        <h3>Smart Matching</h3>
-                        <p>Our advanced algorithm matches students with the perfect tutor based on learning style, personality, and academic needs.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-chart-line"></i>
+                        
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fa-solid fa-sack-dollar p-4 fs-3 text-white"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">Transparent Pricing</h4>
+                                <p class="text-muted mb-0">No hidden fees. See upfront costs before you book.</p>
+                            </div>
                         </div>
-                        <h3>Progress Tracking</h3>
-                        <p>Detailed progress reports and regular assessments ensure students are on track to achieve their academic goals.</p>
+                        
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fas fa-thumbs-up text-white p-4 fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">Satisfaction Guarantee</h4>
+                                <p class="text-muted mb-0">We stand behind every service booked through our platform.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fas fa-clock text-white p-4 fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">On-Time Service</h4>
+                                <p class="text-muted mb-0">Providers arrive when promised or your service is free.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fas fa-headset text-white p-4 fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">24/7 Support</h4>
+                                <p class="text-muted mb-0">Our customer service team is always here to help.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 cardPop">
+                            <div class="card border-0 text-center px-4 py-5 h-100 smoothUnderlineEffect rounded-4 overflow-hidden">
+                                <div class="icon-wrapper rounded-circle mx-auto mb-2" style="background: linear-gradient(135deg,  #0285a9 0%, #02a9c0 100%);">
+                                    <i class="fas fa-calendar-check text-white p-4 fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold mb-2">Easy Booking</h4>
+                                <p class="text-muted mb-0">Book, manage, and pay for services all in one place.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
             </div>
         </section>
 
         <!-- Team Section -->
-        <section class="py-5 mb-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-semibold section-title">Meet Our <span style="color: rgb(37, 109, 138);">Leadership</span></h2>
+        <section class="pt-5" id="ourTeam">
+            <div class="text-center forTitleUnderline mb-5">
+                <h2 class="fw-semibold titleUnderline">Meet Our <span class="color">Leadership</span></h2>
                 <p class="lead">The passionate team driving our mission forward</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="team-card p-0">
-                        <img src="assets/icons/user.png" class="team-img w-100" alt="CEO">
+                <div class="col-md-4 cardPop">
+                    <div class="bg rounded-4 p-0">
+                        <img src="assets/icons/user.png" class="object-fit-cover w-100 border-bottom border-success border-3" height="200" alt="CEO">
                         <div class="p-4">
                             <h3>Ratul Hasan</h3>
-                            <p class="text-success fw-bold">CEO & Founder</p>
+                            <p class="color fw-bold">CEO & Founder</p>
                             <p>Education visionary with 10+ years experience in the tutoring industry.</p>
                             
                             <!-- social-button -->
@@ -237,12 +212,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-card p-0">
-                        <img src="assets/icons/user.png" class="team-img w-100" alt="CTO">
+                <div class="col-md-4 cardPop">
+                    <div class="bg rounded-4 p-0">
+                        <img src="assets/icons/user.png" class="object-fit-cover w-100 border-bottom border-success border-3" height="200" alt="CEO">
                         <div class="p-4">
                             <h3>Sarah Johnson</h3>
-                            <p class="text-success fw-bold">Chief Education Officer</p>
+                            <p class="color fw-bold">Chief Education Officer</p>
                             <p>Former university professor specializing in curriculum development.</p>
                             
                             <!-- social-button -->
@@ -260,12 +235,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-card p-0">
-                        <img src="assets/icons/user.png" class="team-img w-100" alt="CTO">
+                <div class="col-md-4 cardPop">
+                    <div class="bg rounded-4 p-0">
+                        <img src="assets/icons/user.png" class="object-fit-cover w-100 border-bottom border-success border-3" height="200" alt="CEO">
                         <div class="p-4">
                             <h3>Michael Chen</h3>
-                            <p class="text-success fw-bold">Chief Technology Officer</p>
+                            <p class="color fw-bold">Chief Technology Officer</p>
                             <p>Tech innovator focused on building transformative educational platforms.</p>
 
                             <!-- social-button -->
@@ -288,38 +263,38 @@
 
         <!-- Partners Section -->
         <section class="py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-semibold section-title">Our <span style="color: rgb(37, 109, 138);">Trusted Partners</span></h2>
+            <div class="text-center forTitleUnderline">
+                <h2 class="fw-semibold titleUnderline">Our <span class="color">Trusted Partners</span></h2>
                 <p class="lead">Collaborating with leading educational institutions and organizations</p>
             </div>
-            <div class="row g-4 justify-content-center align-items-center">
+            <div class="row g-4 justify-content-center mb-4 align-items-center">
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="assets/images/logo.png" class="partner-logo img-fluid" alt="Partner 1">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Partner 1" style="cursor: pointer;">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="assets/images/logo.png" class="partner-logo img-fluid" alt="Partner 2">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Partner 2" style="cursor: pointer;">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="assets/images/logo.png" class="partner-logo img-fluid" alt="Partner 3">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Partner 3" style="cursor: pointer;">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="assets/images/logo.png" class="partner-logo img-fluid" alt="Partner 4">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Partner 4" style="cursor: pointer;">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="assets/images/logo.png" class="partner-logo img-fluid" alt="Partner 5">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Partner 5" style="cursor: pointer;">
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section id="contact" class="py-5 px-3 mt-5 bg-white rounded-4 shadow-sm" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
+        <section id="contact" class="py-5 px-3 bg-white rounded-4 shadow-sm bg">
             <div class="row justify-content-center" >
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4">Ready to transform your learning experience?</h2>
                     <p class="lead mb-4">Join thousands of students who have achieved academic success with Media.com</p>
                     <div class="d-flex gap-3 justify-content-center">
-                        <a href="findJobs.html" class="btn btn-success btn-lg rounded-pill px-4">Find a Job</a>
-                        <a href="jobBoards.html" class="btn btn-outline-success btn-lg rounded-pill px-4"> Service Provider</a>
+                        <a href="serviceProvider.html" class="btnCode">Find a Job</a>
+                        <a href="jobBoards.html" class="btnOutlineCode"> Service Provider</a>
                     </div>
                 </div>
             </div>
@@ -385,9 +360,11 @@
         <!-- FAQ Section code end here -->
 
         <!-- Contact Form -->
-        <section class="py-5 mt-5 row" >
-            <div class="p-4 bg-white rounded-4 shadow-sm col-lg-6" style="background: linear-gradient(to bottom right, #c9dff4, #f1f1f1);">
-                <h3 class="mb-4 text-center text-primary-emphasis">Send Us a Message</h3>
+        <section class="mt-5 row">
+            <div class="p-4 rounded-4 shadow-sm col-lg-6 bg  ">
+                <div class="text-center forTitleUnderline">
+                    <h3 class="mb-4 text-center titleUnderline color ">Send Us a Message</h3>
+                </div>
                 <form >
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -407,7 +384,7 @@
                             <textarea class="form-control focusNone" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-success btn-lg rounded-pill px-4">
+                            <button type="submit" class="btnCode">
                                 <i class="fas fa-paper-plane me-2"></i> Send Message
                             </button>
                         </div>
@@ -416,13 +393,12 @@
             </div>
 
             <!-- Map -->
-            <div class="container col-lg-6">
+            <div class=" col-lg-6">
                 <div>
-                    <div class="p-0 bg-white rounded-4 shadow-sm overflow-hidden">
+                    <div class="p-0 rounded-4 overflow-hidden">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7497574.012195112!2d85.04303519319038!3d23.427083123371247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2z4Kas4Ka-4KaC4Kay4Ka-4Kam4KeH4Ka2!5e0!3m2!1sbn!2sbd!4v1744543920296!5m2!1sbn!2sbd" 
                                 width="100%" 
-                                height="500" 
-                                style="border:0;" 
+                                height="500"
                                 allowfullscreen="" 
                                 loading="lazy"
                                 class="rounded-4">

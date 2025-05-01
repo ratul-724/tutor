@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }[tutor.location];
  
             tutorCard.innerHTML = `
-                <div class="card-body  bg">
+                <div class="card-body bg rounded-4" style="border-left: 5px solid rgb(87, 145, 207);">
                     <div class="d-flex justify-content-between align-items-start mb-2"> 
                         <div class="d-flex align-items-center">
                             <img src="${tutor.imgSrc}" alt="" width="60" height="60" class="rounded-circle me-3">

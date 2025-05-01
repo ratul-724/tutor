@@ -302,24 +302,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             postEl.innerHTML = `
-                <div class="post-card card h-100">
-                    <div class="card-body d-flex flex-column bg  p-4 shadow-sm">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="post-card card rounded-4 h-100">
+                    <div class="card-body d-flex flex-column rounded-4 bg p-4 shadow-sm" style="border-left: 5px solid rgb(87, 145, 207);">
+                        <div class="d-flex justify-content-between mb-1">
                             <div>
                                 ${statusBadge}
-                                <h5 class="card-title fw-bold mt-2">${post.title}</h5>
+                                <h5 class="card-title fw-bold mt-2 color">${post.title}</h5>
                             </div>
                             <small class="text-muted">${post.posted}</small>
                         </div>
                         
                         <div class="mb-3 flex-grow-1">
-                            <p class="card-text mb-2"><i class="fas fa-map-marker-alt icon-feature me-2"></i> ${post.location}</p>
-                            <p class="card-text mb-2"><i class="fas fa-book icon-feature me-2"></i> ${post.subject}: ${post.topics.join(', ')}</p>
-                            <p class="card-text mb-2"><i class="fas fa-user-graduate icon-feature me-2"></i> ${post.level} (${post.students} student${post.students > 1 ? 's' : ''})</p>
-                            <p class="card-text mb-2"><i class="fas fa-money-bill-wave icon-feature me-2"></i> ৳${post.budget}/month</p>
-                            <p class="card-text mb-3"><i class="fas fa-clock icon-feature me-2"></i> ${post.schedule}</p>
+                            <p class="card-text mb-2"><i class="fas fa-map-marker-alt icon-feature me-2 color"></i> ${post.location}</p>
+                            <p class="card-text mb-2"><i class="fas fa-book icon-feature me-2 color"></i> ${post.subject}: ${post.topics.join(', ')}</p>
+                            <p class="card-text mb-2"><i class="fas fa-user-graduate icon-feature me-2 color"></i> ${post.level} (${post.students} student${post.students > 1 ? 's' : ''})</p>
+                            <p class="card-text mb-2"><i class="fas fa-money-bill-wave icon-feature me-2 color"></i> ৳${post.budget}/month</p>
+                            <p class="card-text mb-3"><i class="fas fa-clock icon-feature me-2 color"></i> ${post.schedule}</p>
                             
-                            <p class="card-text">${post.description}</p>
+                            <p class="text-secondary">${post.description}</p>
                         </div>
                         
                         <div class="d-flex justify-content-between align-items-center mt-auto">

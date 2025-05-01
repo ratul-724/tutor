@@ -28,11 +28,11 @@
     background-size: cover;
     padding: 140px 20px 60px;
    
-  }
-  .hero{
-    padding-top: 40px;
-    padding-bottom: 60px;
-  }
+}
+.hero{
+padding-top: 40px;
+padding-bottom: 60px;
+}
 /* code for home end*/
 
 /* code for marketVanFarmer.html */
@@ -114,12 +114,14 @@
 /* code for about end*/
 
 /* code for login section start */
+
 /* Selected State */
 .selected {
     border-bottom: 3px solid #28a745 !important;
     background: rgba(33, 90, 46, 0.1);
 }
 /* Selected Image */
+
 .selected img {
     border: 2px solid #28a745 !important;
 }

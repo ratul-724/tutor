@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="css/common.css">
     <style>
         .profile-pic {
-            width: 120px;
-            height: 120px;
-            border: 3px solid #3498db;
+            width: 150px;
+            height: 150px;
+            border: 4px solid #3498db;
         }
         .change-pic-btn {
             position: absolute;
-            bottom: 5px;
+            bottom: 15px;
             right: 5px;
             width: 30px;
             height: 30px;
@@ -43,7 +43,7 @@
     <div class="container my-4">
         <div class="profile-container mx-auto">
             <!-- Profile Header -->
-            <section id="profile-header" class="bg p-3 p-md-4 rounded-4 mb-4">
+            <section id="profile-header" class="bg p-3 p-md-4 rounded-4 mb-4" style="background: linear-gradient(105deg, #7bc9fd, #c686e1);">
                 <div class="text-center mb-3 mb-md-4">
                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 gap-md-0 mb-3 mb-md-4">
                         <div class="profileHeaderLeft d-flex flex-column flex-sm-row align-items-center text-center text-sm-start">
@@ -55,16 +55,23 @@
                                 <input type="file" id="profile-pic-upload" accept="image/*" class="d-none">
                             </div>
                             <div class="profile-info">
-                                <h2 class="mb-1" id="teacher-name">John Doe</h2>
-                                <p class="text-muted mb-1"><i class="fa-solid fa-location-dot"></i> <span id="location">123 Mirpur, Dhaka</span></p>
+                                <h2 class="mb-1 color fw-semibold" id="teacher-name">John Doe</h2>
+                                <p class="text-white mb-1"><i class="fa-solid fa-location-dot"></i> <span id="location">123 Mirpur, Dhaka, Bangladesh</span></p>
                                 <p class="text-white rounded-4 mb-0 bg-success-gradient d-inline-block px-3 py-1" id="professionName">Teacher</p>
+                                <div class="d-flex justify-content-center justify-content-md-start mt-2">
+                                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                </div>
                             </div>
                         </div>
                         <div class="profileHeaderright text-center text-md-end mt-3 mt-md-0">
                             <div>
-                                <h4 class="mb-1 color" id="teacher-id">Teacher ID: 123456</h4>
+                                <h4 class="mb-1 color fw-semibold" id="teacher-id">ID: 123456</h4>
                                 <p class="text-muted mb-0 small">Joined: January 1, 2020</p>
                                 <p class="text-muted mb-0 small">Last Updated: September 15, 2023</p>
+                                <a href="accountDetails.html" class="btnCode mt-2 py-1">View Profile</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +106,7 @@
                         </div>
                     </div>
                     
-                    <div class="mb-3 row">
+                    <div class="mb-1 row">
                         <div class="col-md-6 mb-3">
                             <label for="address" class="form-label">Address</label>
                             <textarea class="form-control focusNone borderColor" id="address" rows="3">123 Mirpur, Dhaka</textarea>
@@ -109,9 +116,31 @@
                             <textarea class="form-control focusNone borderColor" id="address" rows="3">Mirpur-1, Mirpur-2</textarea>
                         </div>
                     </div>
+                    <div class="mb-1">
+                        <label for="address" class="form-label">About Me</label>
+                        <textarea class="form-control focusNone borderColor" id="address" rows="3" placeholder="Write about you..."></textarea>
+                    </div>
+
+                    <div class="socialMediaLink mt-4 mb-4">
+                        <h3 class="section-title color"><i class="fas fa-link me-2"></i> Social Media Links</h3>
+                        <div class="row mb-3">
+                            <div class="col-md-3 mb-3 mb-md-0">
+                                <input type="url" class="form-control focusNone borderColor" id="facebook" placeholder="Facebook">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="url" class="form-control focusNone borderColor" id="twitter" placeholder="Twitter">
+                            </div>
+                            <div class="col-md-3 mb-3 mb-md-0">
+                                <input type="url" class="form-control focusNone borderColor" id="linkedin" placeholder="LinkedIn">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="url" class="form-control focusNone borderColor" id="instagram" placeholder="Instagram">
+                            </div>
+                        </div>
+                    </div>
 
                       <!-- Documents Section -->
-                    <div>
+                    <div class="documentsSection mb-4">
                         <h3 class="section-title color"><i class="fas fa-file-alt me-2"></i> CV/Resume <span class="fs-6 text-secondary">(if you have)</span></h3>
                         <form id="documents-form">
                             <div class="mb-3">

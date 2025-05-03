@@ -27,90 +27,37 @@
                             <img src="assets/images/loginVector.png" alt="" class="floating-image" width="100%">
                         </div>
                     </div>
-                    <div class="col-lg-6 mt-5">
-                        <div class="login-right ">
+                    <div class="col-lg-6 mt-5 ">
+                        <div class="login-right bg-white shadow-sm rounded-4 p-5">
                             <div >
-                                <h3><span style="color: #06b706;">Welcome</span> Back</h3>
-                                <h4 class="fw-normal text-secondary">Sign in to Continue your Journey.</h4>
+                                <h3><span class="color">Welcome</span> Back</h3>
+                                <h5 class="fw-normal text-secondary">Sign in to Continue your Journey.</h5>
+                                <hr class="mb-4">
                             </div>
 
-                            <form class="mt-2">
-                                <div class="mt-5">
-                                    <div class="d-flex justify-content-between">
-                                        <!-- Student Section -->
-                                        <div class="bg-white rounded-3 shadow-sm w-50 me-1 p-4 pb-1 pt-3 position-relative option" onclick="selectOption(this)" style="cursor: pointer; border-bottom: 3px solid white;">
-                                            <div class="text-center" style="margin-top: -50px;">
-                                                <span class="checkmark">
-                                                    <i class="fa-solid fa-circle-check bg-white rounded-5"></i>
-                                                </span>
-                                                <img class="rounded-circle shadow-sm bg-white border-3" src="assets/icons/student.png" alt="Student" height="60" width="60">
-                                            </div>
-                                            <p class="fw-semibold mb-0 text-center mt-1 one-line" style="font-size: 17px;">Student</p>
-                                            <p class="fw-light text-center text-secondary" style="font-size: 13px;">Are you looking for a tutor? Tap it!!!</p>
+                            <form action="">
+                                <div>
+                                    <input type="text" class="form-control mb-3 focusNone borderColor" id="phone" placeholder="Phone Number" required>
+                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="password" placeholder="Password" required>
+
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input borderColor focusNone" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Remember Me</label>
                                         </div>
-                                
-                                        <!-- Tutor Section -->
-                                        <div class="bg-white rounded-3 shadow-sm w-50 ms-1 p-4 pb-1 pt-3 position-relative option" onclick="selectOption(this)" style="cursor: pointer; border-bottom: 3px solid white;">
-                                            <div class="text-center" style="margin-top: -50px;">
-                                                <span class="checkmark">
-                                                    <i class="fa-solid fa-circle-check bg-white rounded-5"></i>
-                                                </span>
-                                                <img class="rounded-circle shadow-sm bg-white border-3" src="assets/icons/teacher.png" alt="Tutor" height="60" width="60">
-                                            </div>
-                                            <p class="fw-semibold mb-0 text-center mt-1 one-line" style="font-size: 17px;">Tutor</p>
-                                            <p class="fw-light text-center text-secondary" style="font-size: 13px;">Are you looking for a tuition job? <br> Tap it!!!</p>
+                                        <div class="text-end">
+                                            <a href="#" style="color: #0285a9;">Forgot Password?</a>
                                         </div>
+                                    </div>
+
+                                    <input type="submit" value="Login" class="btn text-white bg-success-gradient fw-semibold w-100 mb-3 focusNone" id="loginBtn">
+    
+                                    <div class="text-center mt-3">
+                                        <p>Create account? <a href="registration.html" style="color: #0285a9;">Register here</a></p>
                                     </div>
                                 </div>
-                            
-                                <div class="card login-right-card shadow p-2 mt-3" style="border-radius: 30px; box-shadow: rgb(246, 192, 157) 0px 2px 6px !important;">
-                                    <div class="card-body">
-                                        <h1 style="color: rgb(53, 216, 16); text-align: center; font-weight: bold;">
-                                            Login as a <span id="studentOrtutor">....</span>
-                                        </h1>
-                                        <div class="login-body mt-3 px-lg-5 py-2">
-                                            <div class="email mt-3">
-                                                <label for="phone">Mobile Number</label> 
-                                                <div class="d-flex mt-2 align-items-center rounded-5 px-2" style="border: 1px solid black;">
-                                                    <span style="display: inline; font-size: 18px; padding-right: 5px;">+880</span>
-                                                    <input id="phone" autocomplete="username" autofocus="" class="form-control  rounded-5 border-0 shadow-none opacity-100" placeholder="Enter your phone number" type="text" style="width: 90%;">
-                                                </div>
-                                            </div>
-                                            <div class="password mt-3">
-                                                <label for="password2">Confirm Password</label>
-                                                <div class="d-flex mt-2 align-items-center rounded-5" style="border: 1px solid black;">
-                                                    <input id="password2" type="password" class="password-input rounded-5 form-control border-0" placeholder="Confirm your password" style="width: 90%;">
-                                                    <button class="toggle-password btn" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="login-footer">
-                                                <div class="row mt-3">
-                                                    <div class="col-6 login-footer-left">
-                                                        <input id="flexCheckIndeterminate" type="checkbox">
-                                                        <span>Remember me </span>
-                                                    </div>
-                                                        <div class="col-6 text-center login-footer-left">
-                                                            <a href="/forgot-password" class="text-decoration-none" style="color: #22e710;"><strong class="mt-3">Forget password?</strong>
-                                                            </a>
-                                                        </div>
-                                                        <div class="login-buttons my-3">
-                                                            <div>
-                                                                <button class="w-100 form-control btn btn-success bg-success text-white fw-semibold opacity-100" disabled="" type="submit"> Login </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 login-footer-right"> If You are not registered please  <a href="registration.html" class="text-decoration-none fw-semibold" style="color: #06b706;"> Register </a> first.
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            </form>
+                        </div>
                     </div>
                     </div>
             </div>

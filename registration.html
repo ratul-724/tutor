@@ -41,441 +41,52 @@
 
     <div class="container py-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                 <img src="assets/images/registration.png" alt="" class="w-100 floating-image">
             </div>
 
-            <div class="col-lg-7 ">
-                <div class="card shadow-sm rounded-4">
+            <div class="col-lg-6">
+                <div class="card shadow-sm rounded-4 p-3">
                     <div class="card-body">
-                        <h2 class="text-center mb-4">
-                            <span class="text-success">Create</span> an 
-                            <span class="text-success">Account</span>
+                        <h2 class="text-center mb-2">
+                            Create an <span class="color">Account</span>
                         </h2>
-                        <p class="text-center text-muted mb-5">Let's get started with your new journey!</p>
+                        <p class="text-center text-muted ">Let's get started with your new journey!</p>
+                        <hr class="mb-4">
+                        <form action="">
+                            <div>
+                                <input type="text" class="form-control mb-3 focusNone borderColor" id="name" placeholder="Full Name" required>
+                                <input type="email" class="form-control mb-3 focusNone borderColor" id="email" placeholder="Email Address" required>
+                                <input type="text" class="form-control mb-3 focusNone borderColor" id="phone" placeholder="Phone Number" required>
+                                <div class="d-flex gap-2">
+                                    <select name="" id="userType" class="form-select mb-3 focusNone borderColor" required>
+                                        <option value="" disabled selected>Select Account Type</option>
+                                        <option value="tutor">Teacher</option>
+                                        <option value="student">Student</option>
+                                        <option value="farmer">Farmer</option>
+                                        <option value="painter">Painter</option>
+                                        <option value="electrician">Electrician</option>
+                                        <option value="cooker">Cooker</option>
+                                    </select>
+                                    <select name="" id="gender" class="form-select mb-3 focusNone borderColor" required>
+                                        <option value="" disabled selected>Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="password" placeholder="Password" required>
+                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="confirmPassword" placeholder="Confirm Password" required>
+                                </div>
 
-                        <!-- User Type Selection -->
-                        <div class="row my-5">
-                            <div class="col-md-6 mt-4 mb-1">
-                                <div id="studentOption" class="card option-card active" style="height: 150px;" onclick="selectUserType('student')">
-                                    <div class="card-body text-center">
-                                        <div class="position-relative mb-2" style="margin-top: -50px;">
-                                            <img src="assets/icons/student.png" style="border: 3px solid  #0fc16e;" width="70px" id="studentTypeImgBorder" class="rounded-circle" alt="Student">
-                                            <span class="checkmark position-absolute translate-middle text-success" style="top: 13%; left: 58%">
-                                                <i class="fas fa-check-circle fa-2x fs-4 bg-white rounded-circle"></i>
-                                            </span>
-                                        </div>
-                                        <h5 class="card-title">Student/Guardian</h5>
-                                        <p class="card-text text-muted">Looking for a tutor? Register as student/guardian.</p>
-                                    </div>
+                                <input type="submit" value="Register" class="btn text-white bg-success-gradient fw-semibold w-100 mb-3 focusNone" id="registerBtn">
+
+                                <div class="text-center mt-3">
+                                    <p>Already have an account? <a href="login.html" style="color: #0285a9;">Login here</a></p>
                                 </div>
                             </div>
-                            <div class="col-md-6 mt-4 mb-1">
-                                <div id="tutorOption" class="card option-card" style="height: 150px;" onclick="selectUserType('tutor')">
-                                    <div class="card-body text-center py-4">
-                                        <div class="position-relative mb-3" style="margin-top: -50px;">
-                                            <img src="assets/icons/teacher.png" width="70px" id="tutorTypeImgBorder" class="rounded-circle" alt="Tutor">
-                                            <span class="checkmark position-absolute translate-middle text-success" style="display: none; top: 13%; left: 58%;">
-                                                <i class="fas fa-check-circle fa-2x fs-4 bg-white rounded-circle"></i>
-                                            </span>
-                                        </div>
-                                        <h5 class="card-title">Tutor</h5>
-                                        <p class="card-text text-muted">Looking for tuition jobs? Register as tutor.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <input type="hidden" id="userType" name="userType" value="student">
-
-                        <!-- Progress Bar -->
-                        <div class="progress mb-4" style="height: 10px;">
-                            <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 50%;"></div>
-                        </div>
-
-                        <!-- Student Registration Form -->
-                        <div id="studentRegistration">
-                            <!-- Basic Info -->
-                            <div id="studentBasicInfo" class="form-section active">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Basic Information</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="studentName" class="form-label">Full Name</label>
-                                                <input type="text" class="form-control focusNone" id="studentName" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentPhone" class="form-label">Phone Number</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-text">+88</span>
-                                                    <input type="tel" class="form-control focusNone" id="studentPhone" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentEmail" class="form-label">Email</label>
-                                                <input type="email" class="form-control focusNone" id="studentEmail">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentGender" class="form-label">Gender</label>
-                                                <select class="form-select focusNone" id="studentGender" required>
-                                                    <option value="" selected disabled>Select Gender</option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                    <option value="other">Other</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentDob" class="form-label">Date of Birth</label>
-                                                <input type="date" class="form-control focusNone" id="studentDob">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentBlood" class="form-label">Blood Group</label>
-                                                <select class="form-select focusNone" id="studentBlood">
-                                                    <option value="" selected disabled>Select Blood Group</option>
-                                                    <option value="A+">A+</option>
-                                                    <option value="A-">A-</option>
-                                                    <option value="B+">B+</option>
-                                                    <option value="B-">B-</option>
-                                                    <option value="AB+">AB+</option>
-                                                    <option value="AB-">AB-</option>
-                                                    <option value="O+">O+</option>
-                                                    <option value="O-">O-</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentPassword" class="form-label">Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control focusNone" id="studentPassword" required>
-                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="studentConfirmPassword" class="form-label">Confirm Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control focusNone" id="studentConfirmPassword" required>
-                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div></div>
-                                    <button class="btn btn-success px-4" onclick="nextSection('studentBasicInfo', 'studentPreview')">Preview <i class="fas fa-arrow-right ms-2"></i></button>
-                                </div>
-                            </div>
-
-                            <!-- Preview Section -->
-                            <div id="studentPreview" class="form-section">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Review Your Information</h4>
-                                        <div id="studentPreviewContent" class="list-group"></div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('studentPreview', 'studentBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button type="button" class="btn btn-success px-4" onclick="submitForm()">Complete Registration</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tutor Registration Form -->
-                        <div id="tutorRegistration" style="display: none;">
-                            <!-- Basic Info -->
-                            <div id="tutorBasicInfo" class="form-section active">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Basic Information</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="tutorName" class="form-label">Full Name</label>
-                                                <input type="text" class="form-control focusNone" id="tutorName" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorPhone" class="form-label">Phone Number</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-text">+88</span>
-                                                    <input type="tel" class="form-control focusNone" id="tutorPhone" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorEmail" class="form-label">Email</label>
-                                                <input type="email" class="form-control focusNone" id="tutorEmail" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorGender" class="form-label">Gender</label>
-                                                <select class="form-select focusNone" id="tutorGender" required>
-                                                    <option value="" selected disabled>Select Gender</option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                    <option value="other">Other</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="tutorDOB" class="form-label">Date of Birth</label>
-                                                <input type="date" class="form-control focusNone" id="tutorDOB" required>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="tutorMarital" class="form-label">Marital Status</label>
-                                                <select class="form-select focusNone" id="tutorMarital">
-                                                    <option value="" selected disabled>Select Status</option>
-                                                    <option value="single">Single</option>
-                                                    <option value="married">Married</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="tutorBlood" class="form-label">Blood Group</label>
-                                                <select class="form-select focusNone" id="tutorBlood">
-                                                    <option value="" selected disabled>Select Blood Group</option>
-                                                    <option value="A+">A+</option>
-                                                    <option value="A-">A-</option>
-                                                    <option value="B+">B+</option>
-                                                    <option value="B-">B-</option>
-                                                    <option value="AB+">AB+</option>
-                                                    <option value="AB-">AB-</option>
-                                                    <option value="O+">O+</option>
-                                                    <option value="O-">O-</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorPassword" class="form-label">Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control focusNone" id="tutorPassword" required>
-                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorConfirmPassword" class="form-label">Confirm Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control focusNone" id="tutorConfirmPassword" required>
-                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
-                                                        <i class="fas fa-eye-slash"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div></div>
-                                    <button class="btn btn-success px-4" onclick="nextSection('tutorBasicInfo', 'tutorEducationInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
-                                </div>
-                            </div>
-
-                            <!-- Education Info -->
-                            <div id="tutorEducationInfo" class="form-section">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Education Information</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="tutorDegree" class="form-label">Highest Degree Name</label>
-                                                <input type="text" class="form-control focusNone" id="tutorDegree" placeholder="e.g. MS in Psychology" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorInstitute" class="form-label">Institute</label>
-                                                <input type="text" class="form-control focusNone" id="tutorInstitute" placeholder="e.g. Dhaka University" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorSubject" class="form-label">Major Subject</label>
-                                                <input type="text" class="form-control focusNone" id="tutorSubject" placeholder="e.g. Psychology" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorResult" class="form-label">Result (GPA/CGPA)</label>
-                                                <input type="text" class="form-control focusNone" id="tutorResult" placeholder="e.g. 3.02">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorExperience" class="form-label">Teaching Experience</label>
-                                                <select class="form-select focusNone" id="tutorExperience" required>
-                                                    <option value="" selected disabled>Select Experience</option>
-                                                    <option value="1">1 year</option>
-                                                    <option value="2">2 years</option>
-                                                    <option value="3">3 years</option>
-                                                    <option value="4">More than 4 years</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorBackground" class="form-label">Educational Background</label>
-                                                <select class="form-select focusNone" id="tutorBackground" required>
-                                                    <option value="" selected disabled>Select Background</option>
-                                                    <option value="bangla">Bangla Medium</option>
-                                                    <option value="english">English Version</option>
-                                                    <option value="english-medium">English Medium</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="tutorBio" class="form-label">Bio/Teaching Philosophy</label>
-                                                <textarea class="form-control focusNone" id="tutorBio" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorEducationInfo', 'tutorBasicInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button class="btn btn-success px-4" onclick="nextSection('tutorEducationInfo', 'tutorTeachingInfo')">Next <i class="fas fa-arrow-right ms-2"></i></button>
-                                </div>
-                            </div>
-
-                            <!-- Teaching Info -->
-                            <div id="tutorTeachingInfo" class="form-section">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Teaching Information</h4>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label class="form-label">Preferred Classes</label>
-                                                <div class="row">
-                                                    <div class="col-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass1">
-                                                            <label class="form-check-label" for="tutorClass1">Class 1</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass2">
-                                                            <label class="form-check-label" for="tutorClass2">Class 2</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass3">
-                                                            <label class="form-check-label" for="tutorClass3">Class 3</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass4">
-                                                            <label class="form-check-label" for="tutorClass4">Class 4</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass5">
-                                                            <label class="form-check-label" for="tutorClass5">Class 5</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass6">
-                                                            <label class="form-check-label" for="tutorClass6">Class 6</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass7">
-                                                            <label class="form-check-label" for="tutorClass7">Class 7</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass8">
-                                                            <label class="form-check-label" for="tutorClass8">Class 8</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass9">
-                                                            <label class="form-check-label" for="tutorClass9">Class 9</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorClass10">
-                                                            <label class="form-check-label" for="tutorClass10">Class 10</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label class="form-label">Subjects You Can Teach</label>
-                                                <div class="row">
-                                                    <div class="col-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorMath">
-                                                            <label class="form-check-label" for="tutorMath">Mathematics</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorEnglish">
-                                                            <label class="form-check-label" for="tutorEnglish">English</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorBangla">
-                                                            <label class="form-check-label" for="tutorBangla">Bangla</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorPhysics">
-                                                            <label class="form-check-label" for="tutorPhysics">Physics</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 subject-column">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorChemistry">
-                                                            <label class="form-check-label" for="tutorChemistry">Chemistry</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorBiology">
-                                                            <label class="form-check-label" for="tutorBiology">Biology</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorICT">
-                                                            <label class="form-check-label" for="tutorICT">ICT</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="tutorAccounting">
-                                                            <label class="form-check-label" for="tutorAccounting">Accounting</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorAreas" class="form-label">Areas You Can Teach In</label>
-                                                <textarea class="form-control focusNone" id="tutorAreas" rows="3" placeholder="e.g. Mirpur, Dhanmondi, Uttara"></textarea>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorSchedule" class="form-label">Preferred Teaching Schedule</label>
-                                                <select class="form-select focusNone" id="tutorSchedule" required>
-                                                    <option value="" selected disabled>Select Schedule</option>
-                                                    <option value="morning">Morning</option>
-                                                    <option value="afternoon">Afternoon</option>
-                                                    <option value="evening">Evening</option>
-                                                    <option value="night">Night</option>
-                                                    <option value="negotiable">Negotiable</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorPlatform" class="form-label">Preferred Platform</label>
-                                                <select class="form-select focusNone" id="tutorPlatform" required>
-                                                    <option value="" selected disabled>Select Platform</option>
-                                                    <option value="home">Home Tuition</option>
-                                                    <option value="coaching">Coaching Center</option>
-                                                    <option value="online">Online</option>
-                                                    <option value="any">Any</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tutorSalary" class="form-label">Expected Salary (BDT)</label>
-                                                <input type="number" class="form-control focusNone" id="tutorSalary" required>
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="tutorNotes" class="form-label">Additional Notes</label>
-                                                <textarea class="form-control focusNone" id="tutorNotes" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorTeachingInfo', 'tutorEducationInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button class="btn btn-success px-4" onclick="nextSection('tutorTeachingInfo', 'tutorPreview')">Preview <i class="fas fa-arrow-right ms-2"></i></button>
-                                </div>
-                            </div>
-
-                            <!-- Preview Section -->
-                            <div id="tutorPreview" class="form-section">
-                                <div class="card border-0 mb-4">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center text-success mb-4">Review Your Information</h4>
-                                        <div id="tutorPreviewContent" class="list-group"></div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary px-4" onclick="prevSection('tutorPreview', 'tutorTeachingInfo')"><i class="fas fa-arrow-left me-2"></i> Back</button>
-                                    <button type="button" class="btn btn-success px-4" onclick="submitForm()">Complete Registration</button>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
+                        
                     </div>
                 </div>
             </div>

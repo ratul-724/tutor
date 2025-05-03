@@ -16,6 +16,25 @@ body{
 .color{
     color: #0285a9 !important;
 }
+
+.bg-card {
+    background: linear-gradient(135deg, #3d93cd 0%, #98b4f1 100%) !important;
+}
+.bg {
+    background: linear-gradient(45deg,  #d1e5f1, #a4d6f8);
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%) !important;
+}
+.bg-success-gradient {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+}
+
+.borderColor {
+    border: 1px solid #0285a9 !important;
+}
+
 /* Shared base styles for both buttons */
 .btnCode, .btnOutlineCode {
     display: inline-block;
@@ -147,20 +166,6 @@ body{
 }
 .forviewAllArrowIcon:hover .viewAllArrowIcon{
     transform: rotate(360deg);
-}
-
-.bg-primary-gradient {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%) !important;
-}
-.bg-success-gradient {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
-}
-
-.bg-card {
-    background: linear-gradient(135deg, #3d93cd 0%, #98b4f1 100%) !important;
-}
-.bg {
-    background: linear-gradient(45deg,  #d1e5f1, #a4d6f8);
 }
 
 .btnHover:hover{

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border: 3px solid #3498db;
+        }
+        .change-pic-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .file-upload-label {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+        @media (max-width: 576px) {
+            .profile-header {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body><br>
+    <header id="header"></header>
+    
+    <div class="container my-4">
+        <div class="profile-container mx-auto">
+            <!-- Profile Header -->
+            <section id="profile-header" class="bg p-3 p-md-4 rounded-4 mb-4">
+                <div class="text-center mb-3 mb-md-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 gap-md-0 mb-3 mb-md-4">
+                        <div class="profileHeaderLeft d-flex flex-column flex-sm-row align-items-center text-center text-sm-start">
+                            <div class="profile-pic-container position-relative me-sm-3 mb-3 mb-sm-0">
+                                <img src="assets/icons/user.png" alt="Profile Picture" class="profile-pic rounded-circle object-fit-cover" id="profile-pic">
+                                <button class="change-pic-btn btn btn-primary rounded-circle p-0" id="change-pic-btn">
+                                    <i class="fas fa-camera text-white"></i>
+                                </button>
+                                <input type="file" id="profile-pic-upload" accept="image/*" class="d-none">
+                            </div>
+                            <div class="profile-info">
+                                <h2 class="mb-1" id="teacher-name">John Doe</h2>
+                                <p class="text-muted mb-1"><i class="fa-solid fa-location-dot"></i> <span id="location">123 Mirpur, Dhaka</span></p>
+                                <p class="text-white rounded-4 mb-0 bg-success-gradient d-inline-block px-3 py-1" id="professionName">Teacher</p>
+                            </div>
+                        </div>
+                        <div class="profileHeaderright text-center text-md-end mt-3 mt-md-0">
+                            <div>
+                                <h4 class="mb-1 color" id="teacher-id">Teacher ID: 123456</h4>
+                                <p class="text-muted mb-0 small">Joined: January 1, 2020</p>
+                                <p class="text-muted mb-0 small">Last Updated: September 15, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-primary-gradient" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+            </section>
+            <!-- Basic Information Section -->
+            <section class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-user me-2 mt-4"></i> Basic Information</h3>
+                <form id="basic-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="full-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control focusNone borderColor" id="full-name" value="John Doe" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control focusNone borderColor" id="email" value="john.doe@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control focusNone borderColor" id="phone" value="+1234567890" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control focusNone borderColor" id="dob">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-md-6 mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control focusNone borderColor" id="address" rows="3">123 Mirpur, Dhaka</textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="address" class="form-label">Area Coverage</label>
+                            <textarea class="form-control focusNone borderColor" id="address" rows="3">Mirpur-1, Mirpur-2</textarea>
+                        </div>
+                    </div>
+
+                      <!-- Documents Section -->
+                    <div>
+                        <h3 class="section-title color"><i class="fas fa-file-alt me-2"></i> CV/Resume <span class="fs-6 text-secondary">(if you have)</span></h3>
+                        <form id="documents-form">
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center mt-2">
+                                    <label for="cv-upload" class="file-upload-label bg-light p-2 rounded me-2">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i> Choose CV
+                                    </label>
+                                    <span class="file-name small" id="cv-name">No file chosen</span>
+                                    <input type="file" id="cv-upload" accept=".pdf,.doc,.docx" class="d-none">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                            
+                    <button type="submit" class="btnCode">Update Basic Information</button>
+                </form>
+            </section>
+            
+            <!-- Professional Information Section for teacher-->
+            <section id="Teacher" class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-chalkboard-teacher me-2"></i> Professional Information</h3>
+                <form id="professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="subject" class="form-label">Subject Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="subject" placeholder="e.g. Mathematics, Science" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="qualification" class="form-label">Highest Qualification</label>
+                            <input type="text" class="form-control focusNone borderColor" id="qualification" placeholder="e.g. M.Sc, B.Ed" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="institution" class="form-label">Current Institution</label>
+                            <input type="text" class="form-control focusNone borderColor" id="institution" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="philosophy" class="form-label">Teaching Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="philosophy" rows="3" placeholder="Describe your teaching approach"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+            
+            <!-- Professional Information Section for Farmer -->
+            <section id="Farmer" class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-tractor me-2"></i> Professional Information</h3>
+                <form id="farmer-professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="farm-type" class="form-label">Farm Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="farm-type" placeholder="e.g. Dairy, Crops, Poultry" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="farm-experience" class="form-label">Years of Farming Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="farm-experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="farm-size" class="form-label">Farm Size (Acres/Hectares)</label>
+                            <input type="text" class="form-control focusNone borderColor" id="farm-size" placeholder="e.g. 50 acres" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="farming-methods" class="form-label">Farming Methods</label>
+                            <input type="text" class="form-control focusNone borderColor" id="farming-methods" placeholder="e.g. Organic, Conventional" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="farm-philosophy" class="form-label">Farming Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="farm-philosophy" rows="3" placeholder="Describe your farming approach"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+
+            <!-- Professional Information Section for Painter -->
+            <section id="Painter" class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-paint-roller me-2"></i> Professional Information</h3>
+                <form id="painter-professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="painting-specialization" class="form-label">Painting Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="painting-specialization" placeholder="e.g. House, Murals, Portraits" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="painting-experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="painting-experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="painting-medium" class="form-label">Preferred Medium</label>
+                            <input type="text" class="form-control focusNone borderColor" id="painting-medium" placeholder="e.g. Oil, Acrylic, Watercolor" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="painting-style" class="form-label">Painting Style</label>
+                            <input type="text" class="form-control focusNone borderColor" id="painting-style" placeholder="e.g. Realism, Abstract" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="painting-philosophy" class="form-label">Artistic Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="painting-philosophy" rows="3" placeholder="Describe your artistic approach"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+
+            <!-- Professional Information Section for Cooker (Chef) -->
+            <section id="Cooker" class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-utensils me-2"></i> Professional Information</h3>
+                <form id="cooker-professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="cuisine-specialization" class="form-label">Cuisine Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="cuisine-specialization" placeholder="e.g. Italian, Indian, Pastry" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cooking-experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="cooking-experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="cooking-qualification" class="form-label">Culinary Qualification</label>
+                            <input type="text" class="form-control focusNone borderColor" id="cooking-qualification" placeholder="e.g. Professional Chef Diploma" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="current-kitchen" class="form-label">Current Kitchen/Restaurant</label>
+                            <input type="text" class="form-control focusNone borderColor" id="current-kitchen" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="cooking-philosophy" class="form-label">Cooking Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="cooking-philosophy" rows="3" placeholder="Describe your culinary approach"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+
+            <!-- Professional Information Section for Electrician -->
+            <section id="Electrician" class="bg p-4 rounded-4 mb-4">
+                <h3 class="section-title color"><i class="fas fa-bolt me-2"></i> Professional Information</h3>
+                <form id="electrician-professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="electrical-specialization" class="form-label">Electrical Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="electrical-specialization" placeholder="e.g. Residential, Industrial, Commercial" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="electrical-experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="electrical-experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="electrical-qualification" class="form-label">Certifications/Licenses</label>
+                            <input type="text" class="form-control focusNone borderColor" id="electrical-qualification" placeholder="e.g. Master Electrician License" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="electrical-services" class="form-label">Services Offered</label>
+                            <input type="text" class="form-control focusNone borderColor" id="electrical-services" placeholder="e.g. Wiring, Repairs, Installations" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="electrical-philosophy" class="form-label">Work Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="electrical-philosophy" rows="3" placeholder="Describe your work approach and standards"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    
+    <footer id="footer"></footer>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

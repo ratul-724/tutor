@@ -108,7 +108,7 @@
                                         <a href="#" class="btn btnCode btn-sm rounded-pill flex-grow-1 p-1 me-2">
                                           <i class="fas fa-calendar-check me-1"></i> Book Now
                                         </a>
-                                        <a href="accountDetails.html" class="z-2 btn btnOutlineCode p-1 btn-sm rounded-pill">
+                                        <a href="accountDetails.html" class="z-2 btn btnOutlineCode p-1 btn-sm">
                                           <i class="fas fa-user"></i> Profile
                                         </a>
                                       </div>
@@ -716,12 +716,13 @@
             </div>
     
             <div class="rightHero col-lg-3">
-                <div class="market bg rounded-4 p-3 mt-2 shadow-sm">
+                <!-- Wholesale Market -->
+                <div class="WholesaleMarket bg rounded-4 p-3 mt-2 shadow-sm">
                     <a href="marketVanFarmer.html?section=market" class="text-decoration-none" title="Click for show all farmers market">
                         <h5 class="text-center pb-2 fw-semibold color" style="border-bottom: 2px dashed  #0285a9;">Wholesale Market</h5>
                         <div class="farmerMarket"><img src="assets/images/market.jpeg" alt="" class="w-100 shadow-sm rounded-4"></div>
                     </a>
-                    
+                    <!-- transport -->
                     <div class="transport mt-2">
                         <h5 class="text-center pb-2 fw-semibold color" style="border-bottom: 2px dashed  #0285a9">Transport Truck</h5> 
                         <div class="text-center justify-content-evenly row mt-3 ">
@@ -746,14 +747,14 @@
 
                     </div>
                 </div>   
-            
+                <!-- local Van Market  -->
                 <div class="localMarketVan bg rounded-4 my-3 p-3 shadow-sm">
                     <a href="marketVanFarmer.html?section=vanMarket" class="text-decoration-none" title="Click for show all Local market van">
                         <h5 class="text-center pb-2 fw-semibold color" style="border-bottom: 2px dashed  #0285a9">Local Market Van</h5>
                         <div class="farmerMarket"><img src="assets/images/farmerLocalMarket.png" alt="" class="w-100"></div>
                     </a>
                 </div>
-                
+                <!-- farmer -->
                 <div class="farmer bg rounded-4 my-3 p-3 shadow-sm">
                     <a href="marketVanFarmer.html?section=farmer" class="text-decoration-none" title="Click for show all farmers">
                         <h5 class="text-center pb-2 fw-semibold color" style="border-bottom: 2px dashed  #0285a9">Farmers</h5>
@@ -1228,6 +1229,56 @@
     </section>
     <!-- FAQ Section code end here -->
 
+     <!-- Contact Form -->
+    <div class="container">
+        <section class="mt-5 row">
+            <div class="p-4 rounded-4 shadow-sm col-lg-6 bg forTitleUnderline">
+                <div class="text-center ">
+                    <h3 class="mb-4 text-center titleUnderline color ">Send Us a Message</h3>
+                </div>
+                <form >
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control focusNone borderColor" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control focusNone borderColor" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control focusNone borderColor" id="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control focusNone borderColor" id="message" rows="3" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btnCode">
+                                <i class="fas fa-paper-plane me-2"></i> Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Map -->
+            <div class=" col-lg-6">
+                <div>
+                    <div class="p-0 rounded-4 overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7497574.012195112!2d85.04303519319038!3d23.427083123371247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2z4Kas4Ka-4KaC4Kay4Ka-4Kam4KeH4Ka2!5e0!3m2!1sbn!2sbd!4v1744543920296!5m2!1sbn!2sbd" 
+                                width="100%" 
+                                height="500"
+                                allowfullscreen="" 
+                                loading="lazy"
+                                class="rounded-4">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <footer id="footer"></footer>
 </body>

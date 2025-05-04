@@ -25,6 +25,11 @@
             align-items: center;
             justify-content: center;
         }
+        .section-title {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
         .file-upload-label {
             cursor: pointer;
             display: inline-flex;
@@ -180,8 +185,19 @@
                             <input type="text" class="form-control focusNone borderColor" id="qualification" placeholder="e.g. M.Sc, B.Ed" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="institution" class="form-label">Current Institution</label>
+                            <label for="institution" class="form-label">Institution</label>
                             <input type="text" class="form-control focusNone borderColor" id="institution" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="passingYear" class="form-label">Passing Year</label>
+                            <input type="text" class="form-control focusNone borderColor" id="passingYear" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="result" class="form-label">Result <span class="fs-6 text-muted">(GPA/CGPA)</span></label>
+                            <input type="text" class="form-control focusNone borderColor" id="result" required>
                         </div>
                     </div>
                     
@@ -267,7 +283,7 @@
                 <form id="cooker-professional-info-form">
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <label for="cuisine-specialization" class="form-label">Cuisine Specialization</label>
+                            <label for="cuisine-specialization" class="form-label">Cooking Specialization</label>
                             <input type="text" class="form-control focusNone borderColor" id="cuisine-specialization" placeholder="e.g. Italian, Indian, Pastry" required>
                         </div>
                         <div class="col-md-6">
@@ -278,7 +294,7 @@
                     
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <label for="cooking-qualification" class="form-label">Culinary Qualification</label>
+                            <label for="cooking-qualification" class="form-label">Cooking Qualification</label>
                             <input type="text" class="form-control focusNone borderColor" id="cooking-qualification" placeholder="e.g. Professional Chef Diploma" required>
                         </div>
                         <div class="col-md-6">

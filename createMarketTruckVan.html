@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-section h3 {
+            border-bottom: 2px solid #6c757d;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .hours-table td {
+            vertical-align: middle;
+        }
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .star-rating {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+        }
+        .star-rating .active {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4"><i class="fas fa-store me-2"></i> Market Management</h1>
+        
+        <form id="marketForm">
+            <!-- Basic Information Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-info-circle me-2"></i> Basic Information</h3>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="marketName" class="form-label">Market Name</label>
+                        <input type="text" class="form-control" id="marketName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="marketLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="marketLocation" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="marketDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="marketDescription" rows="3" required></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="marketImage" class="form-label">Featured Image</label>
+                    <input type="file" class="form-control" id="marketImage" accept="image/*">
+                    <div id="imagePreviewContainer" class="d-none">
+                        <img id="imagePreview" src="#" alt="Preview" class="image-preview">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Specialties & Certifications Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-tags me-2"></i> Specialties & Certifications</h3>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="marketSpecialties" class="form-label">Specialties</label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="specialtyInput" placeholder="Add specialty">
+                            <button class="btn btn-outline-secondary" type="button" id="addSpecialtyBtn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div id="specialtiesContainer" class="d-flex flex-wrap gap-2">
+                            <!-- Specialties will be added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="marketCertifications" class="form-label">Certifications</label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="certificationInput" placeholder="Add certification">
+                            <button class="btn btn-outline-secondary" type="button" id="addCertificationBtn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div id="certificationsContainer" class="d-flex flex-wrap gap-2">
+                            <!-- Certifications will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-address-card me-2"></i> Contact Information</h3>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="marketPhone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="marketPhone">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="marketEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="marketEmail">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="marketMap" class="form-label">Map Location</label>
+                    <div class="ratio ratio-16x9 mb-3">
+                        <iframe id="marketMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.9878449242391!3d40.7484409713896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1690834234473!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" id="updateMapBtn">
+                        <i class="fas fa-map-marker-alt me-2"></i>Update Map Location
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Opening Hours Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-clock me-2"></i> Opening Hours</h3>
+                
+                <table class="table hours-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Open</th>
+                            <th>Opening Time</th>
+                            <th>Closing Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="mondayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="mondayOpenTime" value="06:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="mondayCloseTime" value="18:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="tuesdayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="tuesdayOpenTime" value="06:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="tuesdayCloseTime" value="18:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="wednesdayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="wednesdayOpenTime" value="06:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="wednesdayCloseTime" value="18:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="thursdayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="thursdayOpenTime" value="06:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="thursdayCloseTime" value="18:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="fridayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="fridayOpenTime" value="06:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="fridayCloseTime" value="18:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="saturdayOpen" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="saturdayOpenTime" value="07:00">
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="saturdayCloseTime" value="17:00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="sundayOpen">
+                                </div>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="sundayOpenTime" value="09:00" disabled>
+                            </td>
+                            <td>
+                                <input type="time" class="form-control" id="sundayCloseTime" value="17:00" disabled>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Reviews Section (Optional) -->
+            <div class="form-section">
+                <h3><i class="fas fa-star me-2"></i> Reviews</h3>
+                
+                <div class="mb-3">
+                    <button type="button" class="btn btn-outline-primary" id="addReviewBtn">
+                        <i class="fas fa-plus me-2"></i>Add Sample Review
+                    </button>
+                </div>
+                
+                <div id="reviewsContainer">
+                    <!-- Reviews will be added here -->
+                </div>
+            </div>
+            
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-danger">
+                    <i class="fas fa-trash-alt me-2"></i>Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Save Market
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Review Item Template (Hidden) -->
+    <div id="reviewTemplate" class="d-none">
+        <div class="card mb-3 review-item">
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <div>
+                        <input type="text" class="form-control mb-2 review-author" placeholder="Reviewer Name">
+                        <div class="star-rating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                            <input type="hidden" class="review-rating" value="0">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-danger delete-review">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <textarea class="form-control mb-2 review-content" rows="2" placeholder="Review content"></textarea>
+                <input type="text" class="form-control review-date" placeholder="Date (e.g., 2 weeks ago)">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Image preview functionality
+        document.getElementById('marketImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = event.target.result;
+                    document.getElementById('imagePreviewContainer').classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Add specialty functionality
+        document.getElementById('addSpecialtyBtn').addEventListener('click', function() {
+            const input = document.getElementById('specialtyInput');
+            if (input.value.trim()) {
+                const specialty = input.value.trim();
+                const badge = document.createElement('span');
+                badge.className = 'badge bg-primary bg-opacity-10 text-primary';
+                badge.innerHTML = specialty + 
+                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
+                
+                badge.querySelector('button').addEventListener('click', function() {
+                    badge.remove();
+                });
+                
+                document.getElementById('specialtiesContainer').appendChild(badge);
+                input.value = '';
+            }
+        });
+        
+        // Add certification functionality
+        document.getElementById('addCertificationBtn').addEventListener('click', function() {
+            const input = document.getElementById('certificationInput');
+            if (input.value.trim()) {
+                const certification = input.value.trim();
+                const badge = document.createElement('span');
+                badge.className = 'badge bg-success bg-opacity-10 text-success';
+                badge.innerHTML = certification + 
+                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
+                
+                badge.querySelector('button').addEventListener('click', function() {
+                    badge.remove();
+                });
+                
+                document.getElementById('certificationsContainer').appendChild(badge);
+                input.value = '';
+            }
+        });
+        
+        // Add review functionality
+        document.getElementById('addReviewBtn').addEventListener('click', function() {
+            const template = document.getElementById('reviewTemplate').cloneNode(true);
+            template.classList.remove('d-none');
+            template.removeAttribute('id');
+            
+            // Set up star rating
+            const stars = template.querySelectorAll('.star-rating i');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                    template.querySelector('.review-rating').value = rating;
+                });
+            });
+            
+            // Set up delete button
+            template.querySelector('.delete-review').addEventListener('click', function() {
+                template.remove();
+            });
+            
+            document.getElementById('reviewsContainer').appendChild(template);
+        });
+        
+        // Enable/disable time inputs based on open/close switch
+        const dayControls = [
+            'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
+        ];
+        
+        dayControls.forEach(day => {
+            const checkbox = document.getElementById(`${day}Open`);
+            const openTime = document.getElementById(`${day}OpenTime`);
+            const closeTime = document.getElementById(`${day}CloseTime`);
+            
+            checkbox.addEventListener('change', function() {
+                openTime.disabled = !this.checked;
+                closeTime.disabled = !this.checked;
+            });
+        });
+        
+        // Form submission
+        document.getElementById('marketForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Market data would be saved here in a real application');
+            // You would collect all the form data here and send it to your backend
+        });
+    </script>
+</body>
+</html>

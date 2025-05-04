@@ -6,81 +6,58 @@
     <title>Market Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .form-section {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .form-section h3 {
-            border-bottom: 2px solid #6c757d;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .hours-table td {
-            vertical-align: middle;
-        }
-        .image-preview {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-        .star-rating {
-            font-size: 24px;
-            color: #ddd;
-            cursor: pointer;
-        }
-        .star-rating .active {
-            color: #ffc107;
-        }
-    </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
-<body>
-    <div class="container py-5">
-        <h1 class="mb-4"><i class="fas fa-store me-2"></i> Market Management</h1>
-        
+<body><br>
+    <header id="header"></header>
+    <!-- code for wholesale market start here -->
+    <div class="container py-4 forTitleUnderline">
+        <div class="text-center">
+            <h2 class="mb-3 color titleUnderline"><i class="fas fa-store me-1"></i>Wholesale Market</h2>
+        </div>
         <form id="marketForm">
             <!-- Basic Information Section -->
-            <div class="form-section">
-                <h3><i class="fas fa-info-circle me-2"></i> Basic Information</h3>
+            <div class="p-4 rounded-4 bg">
+                <h3 class="color section-title"><i class="fas fa-info-circle me-2"></i> Basic Information</h3>
                 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="marketName" class="form-label">Market Name</label>
-                        <input type="text" class="form-control" id="marketName" required>
+                        <label for="marketName" class="form-label color">Market Name</label>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketName" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="marketLocation" class="form-label">Location</label>
-                        <input type="text" class="form-control" id="marketLocation" required>
+                        <label for="marketLocation" class="form-label color">Location</label>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketLocation" required>
                     </div>
                 </div>
                 
-                <div class="mb-3">
-                    <label for="marketDescription" class="form-label">Description</label>
-                    <textarea class="form-control" id="marketDescription" rows="3" required></textarea>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="marketImage" class="form-label">Featured Image</label>
-                    <input type="file" class="form-control" id="marketImage" accept="image/*">
-                    <div id="imagePreviewContainer" class="d-none">
-                        <img id="imagePreview" src="#" alt="Preview" class="image-preview">
+                <div class="mb-3 row">
+                    <div class="col-md-6 mb-3">
+                        <label for="marketDescription" class="form-label color">About this market</label>
+                        <textarea class="form-control focusNone borderColor bg-light-subtle" id="marketDescription" rows="2" required></textarea>
+                    </div>
+                    
+                    <div  class="col-md-6 mb-3">
+                        <label for="marketImage" class="form-label color">Featured Image</label>
+                        <input type="file" class="form-control focusNone borderColor bg-light-subtle py-3" id="marketImage" accept="image/*">
+                        <div id="imagePreviewContainer" class="d-none">
+                            <img id="imagePreview" src="#" alt="Preview" class="image-preview">
+                        </div>
                     </div>
                 </div>
+                
             </div>
             
             <!-- Specialties & Certifications Section -->
-            <div class="form-section">
-                <h3><i class="fas fa-tags me-2"></i> Specialties & Certifications</h3>
+            <div class="bg my-3 rounded-4 p-4">
+                <h3 class="color section-title"><i class="fas fa-tags me-2"></i> Specialties & Certifications</h3>
                 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="marketSpecialties" class="form-label">Specialties</label>
+                        <label for="marketSpecialties" class="form-label color">Specialties</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control" id="specialtyInput" placeholder="Add specialty">
-                            <button class="btn btn-outline-secondary" type="button" id="addSpecialtyBtn">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="specialtyInput" placeholder="Add specialty">
+                            <button class="btn btn-outline-secondary" type="button" id="addSpecialtyBtn" title=" click here after write specialty">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -90,9 +67,9 @@
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label for="marketCertifications" class="form-label">Certifications</label>
+                        <label for="marketCertifications" class="form-label color">Certifications</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control" id="certificationInput" placeholder="Add certification">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="certificationInput" placeholder="Add certification">
                             <button class="btn btn-outline-secondary" type="button" id="addCertificationBtn">
                                 <i class="fas fa-plus"></i>
                             </button>
@@ -105,34 +82,24 @@
             </div>
             
             <!-- Contact Information Section -->
-            <div class="form-section">
-                <h3><i class="fas fa-address-card me-2"></i> Contact Information</h3>
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-address-card me-2"></i> Contact Information</h3>
                 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="marketPhone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="marketPhone">
+                        <label for="marketPhone" class="form-label color">Phone Number</label>
+                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="marketPhone">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="marketEmail" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="marketEmail">
+                        <label for="marketEmail" class="form-label color">Email Address</label>
+                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="marketEmail">
                     </div>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="marketMap" class="form-label">Map Location</label>
-                    <div class="ratio ratio-16x9 mb-3">
-                        <iframe id="marketMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.9878449242391!3d40.7484409713896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1690834234473!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary" id="updateMapBtn">
-                        <i class="fas fa-map-marker-alt me-2"></i>Update Map Location
-                    </button>
                 </div>
             </div>
             
             <!-- Opening Hours Section -->
-            <div class="form-section">
-                <h3><i class="fas fa-clock me-2"></i> Opening Hours</h3>
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-clock me-2"></i> Opening Hours</h3>
                 
                 <table class="table hours-table">
                     <thead>
@@ -148,158 +115,725 @@
                             <td>Monday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="mondayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="mondayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="mondayOpenTime" value="06:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayOpenTime" value="06:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="mondayCloseTime" value="18:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayCloseTime" value="18:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="tuesdayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="tuesdayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="tuesdayOpenTime" value="06:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayOpenTime" value="06:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="tuesdayCloseTime" value="18:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayCloseTime" value="18:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Wednesday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="wednesdayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="wednesdayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="wednesdayOpenTime" value="06:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayOpenTime" value="06:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="wednesdayCloseTime" value="18:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayCloseTime" value="18:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="thursdayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="thursdayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="thursdayOpenTime" value="06:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayOpenTime" value="06:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="thursdayCloseTime" value="18:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayCloseTime" value="18:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Friday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="fridayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="fridayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="fridayOpenTime" value="06:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayOpenTime" value="06:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="fridayCloseTime" value="18:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayCloseTime" value="18:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="saturdayOpen" checked>
+                                    <input class="form-check-input focusNone" type="checkbox" id="saturdayOpen" checked>
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="saturdayOpenTime" value="07:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayOpenTime" value="07:00">
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="saturdayCloseTime" value="17:00">
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayCloseTime" value="17:00">
                             </td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
                             <td>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="sundayOpen">
+                                    <input class="form-check-input focusNone" type="checkbox" id="sundayOpen">
                                 </div>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="sundayOpenTime" value="09:00" disabled>
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayOpenTime" value="09:00" disabled>
                             </td>
                             <td>
-                                <input type="time" class="form-control" id="sundayCloseTime" value="17:00" disabled>
+                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayCloseTime" value="17:00" disabled>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             
-            <!-- Reviews Section (Optional) -->
-            <div class="form-section">
-                <h3><i class="fas fa-star me-2"></i> Reviews</h3>
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-danger rounded-5 py-1">
+                    <i class="fas fa-trash-alt me-2"></i>Cancel
+                </button>
+                <button type="submit" class="btnCode">
+                    <i class="fas fa-save me-2"></i>Save Market
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- code for wholesale market end here -->
+
+    <!-- code for transport start here -->
+    <div class="container py-4 forTitleUnderline">
+        <div class="text-center">
+            <h1 class="mb-4 titleUnderline color"><i class="fas fa-truck me-2"></i> Truck Management</h1>
+        </div>
+        <form id="truckForm">
+            <!-- Header Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="section-title color"><i class="fas fa-header me-2"></i> Truck Header</h3>
                 
-                <div class="mb-3">
-                    <button type="button" class="btn btn-outline-primary" id="addReviewBtn">
-                        <i class="fas fa-plus me-2"></i>Add Sample Review
-                    </button>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="truckId" class="form-label color">Truck ID</label>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="truckId" placeholder="e.g. FD-2541" required>
+                    </div>
+                    
+                    <div class="mb-3 col-md-6">
+                        <label for="truckTitle" class="form-label color">Truck Title</label>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="truckTitle" placeholder="e.g. Refrigerated Delivery Truck - 800 kg Capacity" required>
+                    </div>
                 </div>
                 
-                <div id="reviewsContainer">
-                    <!-- Reviews will be added here -->
+                <div class="mb-3">
+                    <label for="truckImage" class="form-label color">Header Background Image</label>
+                    <input type="file" class="form-control focusNone borderColor bg-light-subtle" id="truckImage" accept="image/*">
+                    <div id="headerPreviewContainer" class="d-none mt-3">
+                        <div class="van-header-preview p-4 rounded-4">
+                            <h2 id="previewTitle" class="text-white">Truck #ID</h2>
+                            <p id="previewSubtitle" class="text-white">Truck Title</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label color">Status Badges</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        <div class="form-check">
+                            <input class="form-check-input focusNone" type="checkbox" id="availableBadge" checked>
+                            <label class="form-check-label" for="availableBadge">
+                                Available Today
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input focusNone" type="checkbox" id="fastDeliveryBadge" checked>
+                            <label class="form-check-label" for="fastDeliveryBadge">
+                                Fast Delivery
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Specifications Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-list-alt me-2"></i> Specifications</h3>
+                
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="capacity" class="form-label color">Capacity (kg)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="capacity" value="800">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="temperature" class="form-label color">Temperature Control</label>
+                        <select class="form-select focusNone borderColor" id="temperature">
+                            <option value="Refrigerated">Refrigerated</option>
+                            <option value="Non-Refrigerated">Non-Refrigerated</option>
+                            <option value="Freezer">Freezer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="dimensions" class="form-label color">Dimensions</label>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="dimensions" placeholder="4.2 x 2.1 x 2.1m">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fuelType" class="form-label color">Fuel Type</label>
+                        <select class="form-select focusNone borderColor" id="fuelType">
+                            <option value="Diesel">Diesel</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="truckDescription" class="form-label color">Description</label>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="truckDescription" rows="3">This refrigerated van is perfect for transporting perishable goods with temperature control between -20°C to +20°C. Ideal for farmers, food distributors, and catering businesses. The van is equipped with a GPS tracking system and is maintained regularly for optimal performance.</textarea>
+                </div>
+            </div>
+            
+            <!-- Features Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-cogs me-2"></i> Features</h3>
+                
+                <div class="mb-3">
+                    <label class="form-label color">Available Features</label>
+                    <div class="d-flex flex-wrap gap-2 mb-3" id="featuresContainer">
+                        <!-- Features will be added here -->
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="featureInput" placeholder="Add feature">
+                        <button class="btn btn-outline-secondary" type="button" id="addFeatureBtn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Delivery Process Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-shipping-fast me-2"></i> Delivery Process</h3>
+                
+                <div id="processSteps">
+                    <div class="timeline-item mb-3">
+                        <div class="row g-2">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control focusNone borderColor bg-light-subtle" value="1. Booking Confirmation" placeholder="Step title">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-danger w-100" type="button">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description">After payment, you'll receive a confirmation with driver details.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-3">
+                        <div class="row g-2">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control focusNone borderColor bg-light-subtle" value="2. Truck Preparation" placeholder="Step title">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-danger w-100" type="button">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description">Our team prepares the van according to your temperature requirements.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-outline-primary mt-2" id="addProcessStepBtn">
+                    <i class="fas fa-plus me-1"></i> Add Process Step
+                </button>
+            </div>
+            
+            <!-- Availability Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-calendar-alt me-2"></i> Availability</h3>
+                
+                <div class="mb-3">
+                    <label class="form-label color">Mark Unavailable Dates</label>
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle mb-3" id="unavailableDates" placeholder="Enter dates separated by commas (e.g., 2023-08-14, 2023-08-21)">
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody id="availabilityCalendar">
+                                <!-- Calendar will be generated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Booking Options Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-calendar-check me-2"></i> Booking Options</h3>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="basePrice" class="form-label color">Base Price ($)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="basePrice" value="89.00" step="0.01">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="refrigerationFee" class="form-label color">Refrigeration Fee ($)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="refrigerationFee" value="15.00" step="0.01">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="timeSlots" class="form-label color">Time Slots</label>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="timeSlots" rows="3" placeholder="Enter one time slot per line">Morning (8AM - 12PM)
+Afternoon (12PM - 4PM)
+Evening (4PM - 8PM)</textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="tempRange" class="form-label color">Temperature Range</label>
+                    <div class="row align-items-center">
+                        <div class="col-2">
+                            <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="minTemp" value="-20" min="-50" max="0">
+                        </div>
+                        <div class="col-8">
+                            <input type="range" class="form-range" id="tempRange" min="-20" max="20" value="4">
+                        </div>
+                        <div class="col-2">
+                            <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="maxTemp" value="20" min="0" max="50">
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Form Actions -->
             <div class="d-flex justify-content-between mt-4">
                 <button type="button" class="btn btn-outline-danger">
-                    <i class="fas fa-trash-alt me-2"></i>Cancel
+                    <i class="fas fa-trash-alt me-2"></i> Cancel
                 </button>
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save me-2"></i>Save Market
+                    <i class="fas fa-save me-2"></i> Save Truck
                 </button>
             </div>
         </form>
     </div>
 
-    <!-- Review Item Template (Hidden) -->
-    <div id="reviewTemplate" class="d-none">
-        <div class="card mb-3 review-item">
-            <div class="card-body">
-                <div class="d-flex justify-content-between mb-2">
-                    <div>
-                        <input type="text" class="form-control mb-2 review-author" placeholder="Reviewer Name">
-                        <div class="star-rating">
-                            <i class="fas fa-star" data-rating="1"></i>
-                            <i class="fas fa-star" data-rating="2"></i>
-                            <i class="fas fa-star" data-rating="3"></i>
-                            <i class="fas fa-star" data-rating="4"></i>
-                            <i class="fas fa-star" data-rating="5"></i>
-                            <input type="hidden" class="review-rating" value="0">
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-danger delete-review">
-                        <i class="fas fa-times"></i>
+    <!-- Process Step Template (Hidden) -->
+    <div id="processStepTemplate" class="d-none">
+        <div class="timeline-item mb-3">
+            <div class="row g-2">
+                <div class="col-md-8">
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" placeholder="Step title">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-danger w-100" type="button">
+                        <i class="fas fa-trash"></i> Remove
                     </button>
                 </div>
-                <textarea class="form-control mb-2 review-content" rows="2" placeholder="Review content"></textarea>
-                <input type="text" class="form-control review-date" placeholder="Date (e.g., 2 weeks ago)">
+                <div class="col-12">
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description"></textarea>
+                </div>
             </div>
         </div>
     </div>
+    <!-- code for transport end here -->
+
+    
+    <!-- code for van market start here  -->
+    <div class="container py-5">
+        <h1 class="mb-4"><i class="fas fa-van-shuttle me-2"></i> Van Management</h1>
+        
+        <form id="vanForm">
+            <!-- Hero Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-image me-2"></i> Van Header</h3>
+                
+                <div class="mb-3">
+                    <label for="vanTitle" class="form-label color">Van Title</label>
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="vanTitle" placeholder="e.g. John's Farm Van" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="vanLocation" class="form-label color">Current Location</label>
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="vanLocation" placeholder="e.g. Dhaka University Area" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="vanImage" class="form-label color">Header Background Image</label>
+                    <input type="file" class="form-control focusNone borderColor bg-light-subtle" id="vanImage" accept="image/*">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="sellerAvatar" class="form-label color">Seller Avatar</label>
+                    <input type="file" class="form-control focusNone borderColor bg-light-subtle" id="sellerAvatar" accept="image/*">
+                </div>
+                
+                <div id="headerPreview" class="van-hero-preview d-none">
+                    <div class="van-hero-overlay">
+                        <div>
+                            <h4 id="previewVanTitle" class="mb-1">Van Title</h4>
+                            <p id="previewVanLocation" class="mb-2"><i class="fas fa-map-marker-alt me-1"></i> Current Location</p>
+                            <div class="d-flex align-items-center">
+                                <span class="rating-badge me-2">
+                                    <i class="fas fa-star me-1"></i> 4.8 (127)
+                                </span>
+                                <span class="badge bg-success bg-opacity-25 text-success">OPEN NOW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="previewSellerAvatar" src="#" alt="Seller" class="van-avatar d-none">
+                </div>
+            </div>
+            
+            <!-- About Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-info-circle me-2"></i> About This Van</h3>
+                
+                <div class="mb-3">
+                    <label for="vanDescription" class="form-label color">Description</label>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="vanDescription" rows="3">Our mobile market van brings farm-fresh produce directly to your neighborhood. We source directly from local organic farms and deliver the freshest fruits, vegetables, and dairy products daily.</textarea>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="vanType" class="form-label color">Van Type</label>
+                        <select class="form-select focusNone borderColor" id="vanType">
+                            <option value="Refrigerated">Refrigerated</option>
+                            <option value="Non-Refrigerated">Non-Refrigerated</option>
+                            <option value="Freezer">Freezer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="vanCapacity" class="form-label color">Capacity (kg)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="vanCapacity" value="800">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label color">Status</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input focusNone" type="checkbox" id="vanStatus" checked>
+                        <label class="form-check-label" for="vanStatus">Currently Open</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-address-card me-2"></i> Contact Information</h3>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="contactPhone" class="form-label color">Phone Number</label>
+                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="contactPhone" placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="contactEmail" class="form-label color">Email Address</label>
+                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="contactEmail" placeholder="contact@example.com">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Weekly Schedule -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-calendar-alt me-2"></i> Weekly Schedule</h3>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Open</th>
+                                <th>Opening Time</th>
+                                <th>Closing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="mondayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayOpenTime" value="08:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="tuesdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayOpenTime" value="08:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="wednesdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayOpenTime" value="08:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="thursdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayOpenTime" value="08:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="fridayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayOpenTime" value="08:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="saturdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayOpenTime" value="09:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayCloseTime" value="16:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="sundayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayOpenTime" value="09:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayCloseTime" value="16:00">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Seller Information -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-user-tie me-2"></i> Seller Information</h3>
+                
+                <div class="mb-3">
+                    <label for="sellerName" class="form-label color">Seller Name</label>
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="sellerName" value="John Peterson">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="sellerTitle" class="form-label color">Seller Title</label>
+                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="sellerTitle" value="Farmer & Van Operator">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="sellerRating" class="form-label color">Rating</label>
+                    <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="sellerRating" min="0" max="5" step="0.1" value="4.8">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="sellerReviewCount" class="form-label color">Review Count</label>
+                    <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="sellerReviewCount" value="127">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="sellerBio" class="form-label color">Bio</label>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="sellerBio" rows="2">Fifth-generation farmer bringing fresh produce directly to urban neighborhoods. Committed to sustainable farming and community engagement.</textarea>
+                </div>
+            </div>
+            
+            <!-- Products Section -->
+            <div class="bg rounded-4 p-4 my-3">
+                <h3 class="color section-title"><i class="fas fa-shopping-basket me-2"></i> Products</h3>
+                
+                <div id="productsContainer">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/images/potato.jpeg" class="rounded-4" alt="Product" height="80%" width="100%">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="mb-1">Fresh Potatoes</h5>
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                    </div>
+                                    <p class="small text-muted mb-2">Freshly picked, perfect for salads and sauces</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" value="৳30/kg">
+                                        <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
+                                            <option>In Stock</option>
+                                            <option>Low Stock</option>
+                                            <option>Out of Stock</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/images/apple.jpeg" class="rounded-4" alt="Product" height="80%" width="100%">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="mb-1">Sweet Red Apple</h5>
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                    </div>
+                                    <p class="small text-muted mb-2">Sweet and crispy, perfect for snacks</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" value="৳130/kg">
+                                        <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
+                                            <option>In Stock</option>
+                                            <option selected>Low Stock</option>
+                                            <option>Out of Stock</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <button type="button" class="btn btn-outline-primary" id="addProductBtn">
+                        <i class="fas fa-plus me-1"></i> Add Product
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-danger">
+                    <i class="fas fa-trash-alt me-2"></i> Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i> Save Van
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Product Template (Hidden) -->
+    <div id="productTemplate" class="d-none">
+        <div class="product-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="#" class="product-img" alt="Product">
+                </div>
+                <div class="col-md-8">
+                    <div class="p-3">
+                        <div class="d-flex justify-content-between">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm mb-1" placeholder="Product Name">
+                            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                        </div>
+                        <textarea class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm mb-2" rows="2" placeholder="Product Description"></textarea>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" placeholder="Price">
+                            <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
+                                <option>In Stock</option>
+                                <option>Low Stock</option>
+                                <option>Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="mt-2">
+                            <label class="small">Product Image</label>
+                            <input type="file" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- code for van market end here  -->
+
+
+    <footer id="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
     <script>
         // Image preview functionality
         document.getElementById('marketImage').addEventListener('change', function(e) {
@@ -353,36 +887,6 @@
             }
         });
         
-        // Add review functionality
-        document.getElementById('addReviewBtn').addEventListener('click', function() {
-            const template = document.getElementById('reviewTemplate').cloneNode(true);
-            template.classList.remove('d-none');
-            template.removeAttribute('id');
-            
-            // Set up star rating
-            const stars = template.querySelectorAll('.star-rating i');
-            stars.forEach(star => {
-                star.addEventListener('click', function() {
-                    const rating = parseInt(this.getAttribute('data-rating'));
-                    stars.forEach((s, index) => {
-                        if (index < rating) {
-                            s.classList.add('active');
-                        } else {
-                            s.classList.remove('active');
-                        }
-                    });
-                    template.querySelector('.review-rating').value = rating;
-                });
-            });
-            
-            // Set up delete button
-            template.querySelector('.delete-review').addEventListener('click', function() {
-                template.remove();
-            });
-            
-            document.getElementById('reviewsContainer').appendChild(template);
-        });
-        
         // Enable/disable time inputs based on open/close switch
         const dayControls = [
             'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
@@ -406,5 +910,215 @@
             // You would collect all the form data here and send it to your backend
         });
     </script>
+
+    <!-- code for transport start here  -->
+    <script>
+        // Header image preview
+        document.getElementById('truckImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const previewContainer = document.getElementById('headerPreviewContainer');
+                    previewContainer.classList.remove('d-none');
+                    previewContainer.querySelector('.van-header-preview').style.backgroundImage = 
+                        `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${event.target.result}')`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Update header preview text
+        document.getElementById('truckId').addEventListener('input', function() {
+            document.getElementById('previewTitle').textContent = `Truck #${this.value}`;
+        });
+        
+        document.getElementById('truckTitle').addEventListener('input', function() {
+            document.getElementById('previewSubtitle').textContent = this.value;
+        });
+
+        // Add feature functionality
+        document.getElementById('addFeatureBtn').addEventListener('click', function() {
+            const input = document.getElementById('featureInput');
+            if (input.value.trim()) {
+                const feature = input.value.trim();
+                const badge = document.createElement('span');
+                badge.className = 'feature-badge';
+                badge.innerHTML = `<i class="fas fa-check me-1"></i> ${feature}` + 
+                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
+                
+                badge.querySelector('button').addEventListener('click', function() {
+                    badge.remove();
+                });
+                
+                document.getElementById('featuresContainer').appendChild(badge);
+                input.value = '';
+            }
+        });
+
+        // Add default features
+        const defaultFeatures = ['Refrigeration', 'GPS Tracking', 'Lift Gate', '24/7 Support', 'Insurance'];
+        defaultFeatures.forEach(feature => {
+            const badge = document.createElement('span');
+            badge.className = 'feature-badge';
+            badge.innerHTML = `<i class="fas fa-check me-1"></i> ${feature}` + 
+                            '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
+            
+            badge.querySelector('button').addEventListener('click', function() {
+                badge.remove();
+            });
+            
+            document.getElementById('featuresContainer').appendChild(badge);
+        });
+
+        // Add process step
+        document.getElementById('addProcessStepBtn').addEventListener('click', function() {
+            const template = document.getElementById('processStepTemplate').cloneNode(true);
+            template.classList.remove('d-none');
+            template.removeAttribute('id');
+            
+            // Set up remove button
+            template.querySelector('button').addEventListener('click', function() {
+                template.remove();
+            });
+            
+            document.getElementById('processSteps').appendChild(template);
+        });
+
+        // Temperature range sync
+        document.getElementById('tempRange').addEventListener('input', function() {
+            document.getElementById('minTemp').value = this.min;
+            document.getElementById('maxTemp').value = this.max;
+        });
+        
+        document.getElementById('minTemp').addEventListener('change', function() {
+            document.getElementById('tempRange').min = this.value;
+        });
+        
+        document.getElementById('maxTemp').addEventListener('change', function() {
+            document.getElementById('tempRange').max = this.value;
+        });
+
+        // Generate calendar
+        function generateCalendar() {
+            const calendarBody = document.getElementById('availabilityCalendar');
+            calendarBody.innerHTML = '';
+            
+            // Example calendar generation (you would replace this with dynamic dates)
+            const weeks = [
+                [29, 30, 31, 1, 2, 3, 4],
+                [5, 6, 7, 8, 9, 10, 11],
+                [12, 13, 14, 15, 16, 17, 18],
+                [19, 20, 21, 22, 23, 24, 25]
+            ];
+            
+            weeks.forEach(week => {
+                const row = document.createElement('tr');
+                week.forEach(day => {
+                    const cell = document.createElement('td');
+                    cell.className = 'availability-day';
+                    cell.textContent = day;
+                    
+                    // Mark day 14 as booked for example
+                    if (day === 14) {
+                        cell.classList.add('booked');
+                    }
+                    
+                    cell.addEventListener('click', function() {
+                        this.classList.toggle('booked');
+                    });
+                    
+                    row.appendChild(cell);
+                });
+                calendarBody.appendChild(row);
+            });
+        }
+        
+        generateCalendar();
+
+        // Form submission
+        document.getElementById('truckForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Truck data would be saved here in a real application');
+            // You would collect all the form data here and send it to your backend
+        });
+    </script>
+    <!-- code for transport end here  -->
+    
+    <!-- code for van market start here  -->
+    <script>
+        // Header image preview
+        document.getElementById('vanImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('headerPreview');
+                    preview.style.backgroundImage = `url('${event.target.result}')`;
+                    preview.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Seller avatar preview
+        document.getElementById('sellerAvatar').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('previewSellerAvatar');
+                    preview.src = event.target.result;
+                    preview.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Update header preview text
+        document.getElementById('vanTitle').addEventListener('input', function() {
+            document.getElementById('previewVanTitle').textContent = this.value;
+        });
+        
+        document.getElementById('vanLocation').addEventListener('input', function() {
+            document.getElementById('previewVanLocation').innerHTML = 
+                `<i class="fas fa-map-marker-alt me-1"></i> ${this.value}`;
+        });
+
+        // Add product functionality
+        document.getElementById('addProductBtn').addEventListener('click', function() {
+            const template = document.getElementById('productTemplate').cloneNode(true);
+            template.classList.remove('d-none');
+            template.removeAttribute('id');
+            
+            // Set up remove button
+            template.querySelector('button').addEventListener('click', function() {
+                template.remove();
+            });
+            
+            // Set up image preview
+            template.querySelector('input[type="file"]').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        template.querySelector('img').src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            document.getElementById('productsContainer').appendChild(template);
+        });
+
+        // Form submission
+        document.getElementById('vanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Van data would be saved here in a real application');
+            // You would collect all the form data here and send it to your backend
+        });
+    </script>
+    <!-- code for van market end here  -->
+
 </body>
 </html>

@@ -11,27 +11,29 @@
 <body>
     <header id="header"></header>
     <div class="container py-4">
-        <div class="row justify-content-between pb-3 align-items-center">
+        <div class="row justify-content-between align-items-center">
             <!-- Breadcrumb Navigation -->
-            <div class="col-6 ">
+            <div class="col-md-6">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb text-nowrap">
                         <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
                         <li class="breadcrumb-item active" id="current-section-breadcrumb">Market</li>
                     </ol>
                 </nav>
             </div>
             <!-- Search Bar -->
-            <div class="col-6">
-                <div class="input-group d-flex align-items-center w-100">
-                    <input type="text" class="form-control focusNone" placeholder="Quick search..." style="max-width: fit-content;">
-                    <button class="btn btn-light" type="submit">
-                        <i class="fas fa-search"></i>
+            <div class="col-md-6 ">
+                <div class="search-container bg-white rounded-pill p-1 position-relative">
+                    <input type="text" class="focusNone form-control border-0 px-4 rounded-pill " 
+                           placeholder="Search here......" id="searchInput">
+                    <button class="btn position-absolute top-50 end-0 translate-middle-y rounded-pill px-3 px-lg-4  me-1 text-white" id="searchButton" style="background-color:  #0285a9;">
+                        <i class="fas fa-search me-1"></i> Search
                     </button>
                 </div>
             </div>
         </div>
-        
+        <hr class=" pb-4">
+
         <section class="row">
             <!-- location side bar -->
             <div class="sideBar col-lg-2">
@@ -85,7 +87,7 @@
                 <div id="market-section" class="section-container wholesalearket card mb-4 border-0 shadow-sm">
                     <div class="card-header bg color d-flex justify-content-between align-items-center rounded-top-3">
                         <h4 class="mb-0 fw-semibold"><i class="fas fa-store me-2"></i> Wholesale Markets</h4>
-                        <a href="#" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Market</a>
+                        <a href="createMarketTruckVan.html" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Market</a>
                     </div>
                     <div class="card-body bg" id="wholesaleMarketBody">
                         <div class="row g-4">
@@ -147,7 +149,7 @@
                 <div id="transport-section" class="bg-primary-subtle section-container card mb-4 border-0 shadow-sm">
                     <div class="card-header bg color d-flex justify-content-between align-items-center rounded-top-3">
                         <h4 class="mb-0 fw-semibold"><i class="fas fa-truck me-1"></i> Available Delivery Trucks</h4>
-                        <a href="#" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Truck</a>
+                        <a href="createMarketTruckVan.html" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Truck</a>
                     </div>
                     <div class="card-body" id="transportBody">
                         <div class="row g-4">
@@ -244,7 +246,7 @@
                 <div id="vanMarket-section" class="section-container card mb-4 border-0 shadow-sm">
                     <div class="card-header bg text-white rounded-top-3 d-flex justify-content-between align-items-center">
                         <h4 class="mb-0 color fw-semibold"><i class="fas fa-truck-moving me-2"></i> Local Market (Van)</h4>
-                        <a href="#" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Van</a>
+                        <a href="createMarketTruckVan.html" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Van</a>
                     </div>
                     <div class="card-body bg" id="vanMarketBody">
                         <div class="row g-4">

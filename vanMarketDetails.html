@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Van Details | Media</title>
+    <title>Van Market Details | Media</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
@@ -66,9 +66,9 @@
         }
     </style>
 </head>
-<body>
+<body><br>
     <header id="header"></header>
-    
+    <br>
     <!-- Van Hero Section -->
     <div class="container">
         <div class="van-hero rounded-4" style="background-image: url('assets/images/vanMarketBanner.jpeg')">
@@ -80,7 +80,7 @@
                         <span class="rating-badge me-2">
                             <i class="fas fa-star me-1"></i> 4.8 (127)
                         </span>
-                        <span class="badge bg-success bg-opacity-25 text-success">OPEN NOW</span>
+                        <span class="badge bg-success bg-opacity-25 text-white">OPEN NOW</span>
                     </div>
                 </div>
             </div>
@@ -94,18 +94,18 @@
                 <!-- About This Van -->
                 <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3 color pb-2 border-bottom border-2 border-secondary"><i class="fas fa-info-circle  me-2"></i> About This Van</h4>
+                        <h4 class="mb-3 color pb-2 section-title"><i class="fas fa-info-circle  me-2"></i> About This Van</h4>
                         <p class="card-text">Our mobile market van brings farm-fresh produce directly to your neighborhood. We source directly from local organic farms and deliver the freshest fruits, vegetables, and dairy products daily.</p>
                         
                         <div class="row mt-4">
                             <div class="col-md-6 mb-3">
                                 <div class="d-flex align-items-center">
                                     <div class="van-feature-icon">
-                                        <i class="fas fa-clock text-primary"></i>
+                                        <i class="fas fa-map-marked-alt text-primary"></i>
                                     </div>
                                     <div>
-                                        <h6 class="mb-0">Opening Hours</h6>
-                                        <p class="text-muted small mb-0">Mon-Fri: 8AM - 6PM<br>Sat-Sun: 9AM - 4PM</p>
+                                        <h6 class="mb-0">Current Route</h6>
+                                        <p class="text-muted small mb-0">Downtown Area<br>See live location below</p>
                                     </div>
                                 </div>
                             </div>
@@ -120,28 +120,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="van-feature-icon">
-                                        <i class="fas fa-truck text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">Van Type</h6>
-                                        <p class="text-muted small mb-0">Refrigerated<br>Capacity: 800kg</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="van-feature-icon">
-                                        <i class="fas fa-map-marked-alt text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0">Current Route</h6>
-                                        <p class="text-muted small mb-0">Downtown Area<br>See live location below</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +127,7 @@
                 <!-- Products Available -->
                 <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-2 border-secondary">
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 section-title">
                             <h4 class="card-title mb-0 color"><i class="fas fa-shopping-basket  me-2"></i> Products Available</h4>
                             <span class="badge bg-primary bg-opacity-10 text-primary">32 items</span>
                         </div>
@@ -234,54 +212,81 @@
                     </div>
                 </div>
                 
-                <!-- Reviews Section -->
-                <div class="card mb-4 border-0 shadow-sm  bg rounded-4">
+                <!-- Customer Reviews -->
+                <div class="card info-card mb-4 bg rounded-4">
                     <div class="card-body">
-                        <h4 class="card-title mb-3 color pb-2 border-bottom border-2 border-secondary"><i class="fas fa-star  me-2"></i> Customer Reviews</h4>
-                        
-                        <!-- Review 1 -->
-                        <div class="mb-3 pb-3 border-bottom">
-                            <div class="d-flex justify-content-between mb-2">
-                                <div class="d-flex align-items-center">
-                                    <img src="assets/icons/user.png" width="40" height="40" class="rounded-circle me-2" alt="User">
-                                    <div>
-                                        <h6 class="mb-0">Sarah Johnson</h6>
-                                        <div class="small text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                        <h3 class="section-title color"><i class="fas fa-star me-2"></i>Customer Reviews</h3>
+
+                        <div class="giveRating row mb-3">
+                        <div class="col-md-3 mb-2">
+                                <select name="rating" id="rating" class=" form-select focusNone borderColor" aria-label="Give a Rating"  style="height: 40px;">
+                                    <option value="" disabled selected>Give a Rating</option>
+                                    <option value="1">5 Star</option>
+                                    <option value="2">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="4">2 Stars</option>
+                                    <option value="5">1 Stars</option>
+                                </select>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                                <textarea class="form-control focusNone borderColor" name="ratingText" id="ratingText" placeholder="Write somthing...." style="height: 40px;"></textarea>
+                        </div>
+
+                            <div class="col-md-3 mb-2">
+                                <button class="btnCode border-0">Submit Rating</button>
+                            </div>
+                        </div><hr>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/icons/user.png" width="40" height="40" class="rounded-circle me-2" alt="User">
+                                                <div>
+                                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                                    <div class="small text-warning">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="text-muted small">2 days ago</span>
                                         </div>
+                                        <p class="mb-0">The freshest produce I've found in the city! Love that they come to my neighborhood twice a week. The tomatoes are amazing.</p>
                                     </div>
                                 </div>
-                                <span class="text-muted small">2 days ago</span>
                             </div>
-                            <p class="mb-0">The freshest produce I've found in the city! Love that they come to my neighborhood twice a week. The tomatoes are amazing.</p>
-                        </div>
-                        
-                        <!-- Review 2 -->
-                        <div class="mb-3 pb-3 border-bottom">
-                            <div class="d-flex justify-content-between mb-2">
-                                <div class="d-flex align-items-center">
-                                    <img src="assets/icons/user.png" width="40" height="40" class="rounded-circle me-2" alt="User">
-                                    <div>
-                                        <h6 class="mb-0">Michael Chen</h6>
-                                        <div class="small text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/icons/user.png" width="40" height="40" class="rounded-circle me-2" alt="User">
+                                                <div>
+                                                    <h6 class="mb-0">Michael Chen</h6>
+                                                    <div class="small text-warning">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="text-muted small">1 week ago</span>
                                         </div>
+                                        <p class="mb-0">Great selection of organic products. The bread is always fresh and the eggs are top quality. Highly recommend!</p>
                                     </div>
                                 </div>
-                                <span class="text-muted small">1 week ago</span>
                             </div>
-                            <p class="mb-0">Great selection of organic products. The bread is always fresh and the eggs are top quality. Highly recommend!</p>
                         </div>
-                        
-                        <button class="btn btnOutlineCode">See All Reviews</button>
+                        <button class="btnOutlineCode mt-2">View All Testimonials</button>
                     </div>
                 </div>
             </div>

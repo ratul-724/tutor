@@ -41,7 +41,7 @@
                         <label for="marketImage" class="form-label color">Featured Image</label>
                         <input type="file" class="form-control focusNone borderColor bg-light-subtle py-3" id="marketImage" accept="image/*">
                         <div id="imagePreviewContainer" class="d-none">
-                            <img id="imagePreview" src="#" alt="Preview" class="image-preview">
+                            <img id="imagePreview" src="#" alt="Preview" class="image-preview mt-2" height="200px" width="100%">
                         </div>
                     </div>
                 </div>
@@ -336,14 +336,23 @@
                 </div>
             </div>
             
-            <!-- Availability Section -->
-            <div class="bg rounded-4 p-4 my-3">
-                <h3 class="color section-title"><i class="fas fa-calendar-alt me-2"></i> Availability</h3>
-                
-                <div class="mb-3">
-                    <label class="form-label color">Mark Unavailable Dates</label>
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-center">
+            <!-- Availability Calendar -->
+            <div class="card mb-4 border-0 shadow-sm bg rounded-4">
+                <div class="card-body">
+                    <div class="section-title d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="color mb-0"><i class="fas fa-calendar-alt color me-2"></i> Availability</h3>
+                        <div class="month-navigator d-flex align-items-center gap-3">
+                            <button class="btn btn-sm btn-outline-secondary" onclick="changeMonth(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h4 class="mb-0" id="currentMonthYear">May 2023</h4>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="changeMonth(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive rounded-4">
+                        <table class="table table-bordered text-center" id="bookingCalendar">
                             <thead>
                                 <tr>
                                     <th>Sun</th>
@@ -355,14 +364,18 @@
                                     <th>Sat</th>
                                 </tr>
                             </thead>
-                            <tbody id="availabilityCalendar">
+                            <tbody id="calendarBody">
                                 <!-- Calendar will be generated here -->
                             </tbody>
                         </table>
                     </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <span class="badge bg-success bg-opacity-10 color">Available</span>
+                        <span class="badge bg-danger bg-opacity-10 text-danger">Booked</span>
+                    </div>
                 </div>
             </div>
-            
+
             <!-- Booking Options Section -->
             <div class="bg rounded-4 p-4 my-3">
                 <h3 class="color section-title"><i class="fas fa-calendar-check me-2"></i> Booking Options</h3>
@@ -643,277 +656,8 @@
     <footer id="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/createMarketTruckVan.js"></script>
     <script src="js/common.js"></script>
-    <script>
-        // Image preview functionality
-        document.getElementById('marketImage').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const preview = document.getElementById('imagePreview');
-                    preview.src = event.target.result;
-                    document.getElementById('imagePreviewContainer').classList.remove('d-none');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        // Add specialty functionality
-        document.getElementById('addSpecialtyBtn').addEventListener('click', function() {
-            const input = document.getElementById('specialtyInput');
-            if (input.value.trim()) {
-                const specialty = input.value.trim();
-                const badge = document.createElement('span');
-                badge.className = 'badge bg-primary bg-opacity-10 text-primary';
-                badge.innerHTML = specialty + 
-                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
-                
-                badge.querySelector('button').addEventListener('click', function() {
-                    badge.remove();
-                });
-                
-                document.getElementById('specialtiesContainer').appendChild(badge);
-                input.value = '';
-            }
-        });
-        
-        // Add certification functionality
-        document.getElementById('addCertificationBtn').addEventListener('click', function() {
-            const input = document.getElementById('certificationInput');
-            if (input.value.trim()) {
-                const certification = input.value.trim();
-                const badge = document.createElement('span');
-                badge.className = 'badge bg-success bg-opacity-10 text-success';
-                badge.innerHTML = certification + 
-                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
-                
-                badge.querySelector('button').addEventListener('click', function() {
-                    badge.remove();
-                });
-                
-                document.getElementById('certificationsContainer').appendChild(badge);
-                input.value = '';
-            }
-        });
-        
-        // Enable/disable time inputs based on open/close switch
-        const dayControls = [
-            'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
-        ];
-        
-        dayControls.forEach(day => {
-            const checkbox = document.getElementById(`${day}Open`);
-            const openTime = document.getElementById(`${day}OpenTime`);
-            const closeTime = document.getElementById(`${day}CloseTime`);
-            
-            checkbox.addEventListener('change', function() {
-                openTime.disabled = !this.checked;
-                closeTime.disabled = !this.checked;
-            });
-        });
-        
-        // Form submission
-        document.getElementById('marketForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Market data would be saved here in a real application');
-            // You would collect all the form data here and send it to your backend
-        });
-    </script>
-
-    <!-- code for transport start here  -->
-    <script>
-        // Header image preview
-        document.getElementById('truckImage').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const previewContainer = document.getElementById('headerPreviewContainer');
-                    previewContainer.classList.remove('d-none');
-                    previewContainer.querySelector('.van-header-preview').style.backgroundImage = 
-                        `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${event.target.result}')`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Update header preview text
-        document.getElementById('truckId').addEventListener('input', function() {
-            document.getElementById('previewTitle').textContent = `Truck #${this.value}`;
-        });
-        
-        document.getElementById('truckTitle').addEventListener('input', function() {
-            document.getElementById('previewSubtitle').textContent = this.value;
-        });
-
-        // Add feature functionality
-        document.getElementById('addFeatureBtn').addEventListener('click', function() {
-            const input = document.getElementById('featureInput');
-            if (input.value.trim()) {
-                const feature = input.value.trim();
-                const badge = document.createElement('span');
-                badge.className = 'bg-success-gradient text-white rounded-5 d-flex align-items-center px-2 py-1 m-1';
-                badge.innerHTML = `<i class="fas fa-check me-1"></i> ${feature}` + 
-                                '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
-                
-                badge.querySelector('button').addEventListener('click', function() {
-                    badge.remove();
-                });
-                
-                document.getElementById('featuresContainer').appendChild(badge);
-                input.value = '';
-            }
-        });
-
-        // Add process step
-        document.getElementById('addProcessStepBtn').addEventListener('click', function() {
-            const template = document.getElementById('processStepTemplate').cloneNode(true);
-            template.classList.remove('d-none');
-            template.removeAttribute('id');
-            
-            // Set up remove button
-            template.querySelector('button').addEventListener('click', function() {
-                template.remove();
-            });
-            
-            document.getElementById('processSteps').appendChild(template);
-        });
-
-        // Temperature range sync
-        document.getElementById('tempRange').addEventListener('input', function() {
-            document.getElementById('minTemp').value = this.min;
-            document.getElementById('maxTemp').value = this.max;
-        });
-        
-        document.getElementById('minTemp').addEventListener('change', function() {
-            document.getElementById('tempRange').min = this.value;
-        });
-        
-        document.getElementById('maxTemp').addEventListener('change', function() {
-            document.getElementById('tempRange').max = this.value;
-        });
-
-        // Generate calendar
-        function generateCalendar() {
-            const calendarBody = document.getElementById('availabilityCalendar');
-            calendarBody.innerHTML = '';
-            
-            // Example calendar generation (you would replace this with dynamic dates)
-            const weeks = [
-                [29, 30, 31, 1, 2, 3, 4],
-                [5, 6, 7, 8, 9, 10, 11],
-                [12, 13, 14, 15, 16, 17, 18],
-                [19, 20, 21, 22, 23, 24, 25]
-            ];
-            
-            weeks.forEach(week => {
-                const row = document.createElement('tr');
-                week.forEach(day => {
-                    const cell = document.createElement('td');
-                    cell.className = 'availability-day';
-                    cell.textContent = day;
-                    
-                    // Mark day 14 as booked for example
-                    if (day === 14) {
-                        cell.classList.add('booked');
-                    }
-                    
-                    cell.addEventListener('click', function() {
-                        this.classList.toggle('booked');
-                    });
-                    
-                    row.appendChild(cell);
-                });
-                calendarBody.appendChild(row);
-            });
-        }
-        
-        generateCalendar();
-
-        // Form submission
-        document.getElementById('truckForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Truck data would be saved here in a real application');
-            // You would collect all the form data here and send it to your backend
-        });
-    </script>
-    <!-- code for transport end here  -->
-    
-    <!-- code for van market start here  -->
-    <script>
-        // Header image preview
-        document.getElementById('vanImage').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const preview = document.getElementById('headerPreview');
-                    preview.style.backgroundImage = `url('${event.target.result}')`;
-                    preview.classList.remove('d-none');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Seller avatar preview
-        document.getElementById('sellerAvatar').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const preview = document.getElementById('previewSellerAvatar');
-                    preview.src = event.target.result;
-                    preview.classList.remove('d-none');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Update header preview text
-        document.getElementById('vanTitle').addEventListener('input', function() {
-            document.getElementById('previewVanTitle').textContent = this.value;
-        });
-        
-        document.getElementById('vanLocation').addEventListener('input', function() {
-            document.getElementById('previewVanLocation').innerHTML = 
-                `<i class="fas fa-map-marker-alt me-1"></i> ${this.value}`;
-        });
-
-        // Add product functionality
-        document.getElementById('addProductBtn').addEventListener('click', function() {
-            const template = document.getElementById('productTemplate').cloneNode(true);
-            template.classList.remove('d-none');
-            template.removeAttribute('id');
-            
-            // Set up remove button
-            template.querySelector('button').addEventListener('click', function() {
-                template.remove();
-            });
-            
-            // Set up image preview
-            template.querySelector('input[type="file"]').addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        template.querySelector('img').src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-            
-            document.getElementById('productsContainer').appendChild(template);
-        });
-
-        // Form submission
-        document.getElementById('vanForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Van data would be saved here in a real application');
-            // You would collect all the form data here and send it to your backend
-        });
-    </script>
-    <!-- code for van market end here  -->
 
 </body>
 </html>

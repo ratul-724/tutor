@@ -84,7 +84,7 @@
                 <!-- Truck Details -->
                 <div class="card mb-4 border-0 shadow-sm bg rounded-4">
                     <div class="card-body">
-                        <h3 class="card-title mb-4 pb-2 border-bottom border-2 border-secondary"><i class="fas fa-truck color me-2"></i> Truck Specifications</h3>
+                        <h3 class="section-title color mb-4 pb-2"><i class="fas fa-truck color me-2"></i> Truck Specifications</h3>
                         <div class="row text-center">
                             <div class="col-6 col-md-3 mb-4">
                                 <div class="specs-icon">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
 
-                        <h4 class="mt-4 mb-3 w-25 pb-2 border-bottom border-2 border-secondary">Features</h4>
+                        <h4 class="mt-4 mb-3 section-title color pb-2">Features</h4>
                         <div class="mb-4">
                             <span class="feature-badge"><i class="fas fa-check me-1"></i> Refrigeration</span>
                             <span class="feature-badge"><i class="fas fa-check me-1"></i> GPS Tracking</span>
@@ -125,16 +125,19 @@
                             <span class="feature-badge"><i class="fas fa-check me-1"></i> Insurance</span>
                         </div>
 
-                        <h4 class="mt-4 mb-3 w-25 pb-2 border-bottom border-2 border-secondary">Description</h4>
+                        <h4 class="mt-4 mb-3 section-title color pb-2">Description</h4>
                         <p>This refrigerated van is perfect for transporting perishable goods with temperature control between -20°C to +20°C. Ideal for farmers, food distributors, and catering businesses. The van is equipped with a GPS tracking system and is maintained regularly for optimal performance.</p>
                         
                     </div>
                 </div>
 
-                <!-- Availability Calendar -->
+               <!-- Static Calendar - Current Month Only -->
                 <div class="card mb-4 border-0 shadow-sm bg rounded-4">
                     <div class="card-body">
-                        <h3 class="card-title mb-4 pb-2 border-bottom border-2 border-secondary"><i class="fas fa-calendar-alt color me-2"></i> Availability</h3>
+                        <div class="section-title d-flex justify-content-between align-items-center mb-4">
+                            <h3 class=" color mb-0"><i class="fas fa-calendar-alt color me-2"></i> Availability</h3>
+                            <h4 class="mb-0">May 2025</h4>
+                        </div>
                         <div class="table-responsive rounded-4">
                             <table class="table table-bordered text-center">
                                 <thead>
@@ -150,40 +153,49 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="bg-light text-muted">29</td>
                                         <td class="bg-light text-muted">30</td>
-                                        <td class="bg-light text-muted">31</td>
                                         <td>1</td>
                                         <td>2</td>
                                         <td>3</td>
                                         <td>4</td>
-                                    </tr>
-                                    <tr>
                                         <td>5</td>
                                         <td>6</td>
+                                    </tr>
+                                    <tr>
                                         <td>7</td>
                                         <td>8</td>
                                         <td>9</td>
                                         <td>10</td>
                                         <td>11</td>
-                                    </tr>
-                                    <tr>
                                         <td>12</td>
                                         <td>13</td>
-                                        <td class="bg-danger bg-opacity-10"><del>14</del></td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
                                         <td>15</td>
                                         <td>16</td>
                                         <td>17</td>
                                         <td>18</td>
-                                    </tr>
-                                    <tr>
                                         <td>19</td>
                                         <td>20</td>
+                                    </tr>
+                                    <tr>
                                         <td>21</td>
                                         <td>22</td>
                                         <td>23</td>
                                         <td>24</td>
                                         <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                        <td>31</td>
+                                        <td class="bg-light text-muted">1</td>
+                                        <td class="bg-light text-muted">2</td>
+                                        <td class="bg-light text-muted">3</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -278,30 +290,34 @@
             <div class="col-lg-4">
                 <div class="card bg rounded-4 border-0 shadow-sm">
                     <div class="card-body">
-                        <h3 class="card-title mb-4 pb-2 border-bottom border-2 border-secondary"><i class="fas fa-calendar-check color me-2"></i> Book This Truck</h3>
+                        <h3 class="section-title color mb-4 pb-2"><i class="fas fa-calendar-check color me-2"></i> Book This Truck</h3>
                         
                         <div class="mb-4">
                             <label class="form-label">Select Date</label>
-                            <input type="date" class="form-control focusNone" min="2023-08-01">
+                            <input type="date" class="form-control borderColor focusNone" min="2023-08-01">
                         </div>
                         
                         <div class="mb-4">
-                            <label class="form-label">Time Slot</label>
-                            <select class="form-select focusNone">
-                                <option>Morning (8AM - 12PM)</option>
-                                <option>Afternoon (12PM - 4PM)</option>
-                                <option>Evening (4PM - 8PM)</option>
-                            </select>
+                            <div class="row custom-time-container">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="form-label">Start Time</label>
+                                    <input type="time" class="form-control borderColor" placeholder="Start Time">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">End Time</label>
+                                    <input type="time" class="form-control borderColor" placeholder="End Time">
+                                </div>
+                            </div>
                         </div>
-                        
+
                         <div class="mb-4">
                             <label class="form-label">Pickup Location</label>
-                            <input type="text" class="form-control focusNone" placeholder="Enter address">
+                            <input type="text" class="form-control borderColor focusNone" placeholder="Enter address">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label">Delivery Location</label>
-                            <input type="text" class="form-control focusNone" placeholder="Enter address">
+                            <input type="text" class="form-control borderColor focusNone" placeholder="Enter address">
                         </div>
                         
                         <div class="mb-4">
@@ -316,20 +332,20 @@
                         
                         <div class="d-flex justify-content-between mb-3">
                             <span>Base Price:</span>
-                            <span class="fw-bold">$89.00</span>
+                            <span class="fw-bold"><span id="basePrice">2000</span>Tk</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <span>Refrigeration Fee:</span>
-                            <span class="fw-bold">$15.00</span>
+                            <span class="fw-bold"><span id="refrigerationFee">500</span>Tk</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <span>Service Fee:</span>
-                            <span class="fw-bold">$5.00</span>
+                            <span class="fw-bold"><span id="serviceFee">200</span>Tk</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between mb-4">
                             <span class="fw-bold">Total:</span>
-                            <span class="fw-bold color">$109.00</span>
+                            <span class="fw-bold color"><span id="">2700</span>Tk</span>
                         </div>
                         
                         <button class="btnCode w-100 py-3 fw-bold rounded-pill">

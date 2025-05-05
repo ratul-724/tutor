@@ -13,7 +13,7 @@
     <!-- code for wholesale market start here -->
     <div class="container py-4 forTitleUnderline">
         <div class="text-center">
-            <h2 class="mb-3 color titleUnderline"><i class="fas fa-store me-1"></i>Wholesale Market</h2>
+            <h2 class="mb-3 color titleUnderline"><i class="fa-solid fa-shop me-1"></i>Wholesale Market</h2>
         </div>
         <form id="marketForm">
             <!-- Basic Information Section -->
@@ -23,18 +23,18 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="marketName" class="form-label color">Market Name</label>
-                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketName" required>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketName" required placeholder="Market Name">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="marketLocation" class="form-label color">Location</label>
-                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketLocation" required>
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="marketLocation" required placeholder="e.g. Mirpur-1, Dhaka, Bangladesh">
                     </div>
                 </div>
                 
                 <div class="mb-3 row">
                     <div class="col-md-6 mb-3">
-                        <label for="marketDescription" class="form-label color">About this market</label>
-                        <textarea class="form-control focusNone borderColor bg-light-subtle" id="marketDescription" rows="2" required></textarea>
+                        <label for="marketDescription" class="form-label color">About</label>
+                        <textarea class="form-control focusNone borderColor bg-light-subtle" id="marketDescription" rows="2" required placeholder="About this market"></textarea>
                     </div>
                     
                     <div  class="col-md-6 mb-3">
@@ -56,7 +56,7 @@
                     <div class="col-md-6 mb-3">
                         <label for="marketSpecialties" class="form-label color">Specialties</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="specialtyInput" placeholder="Add specialty">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="specialtyInput" placeholder="Click plus icon after write Specialty">
                             <button class="btn btn-outline-secondary" type="button" id="addSpecialtyBtn" title=" click here after write specialty">
                                 <i class="fas fa-plus"></i>
                             </button>
@@ -69,7 +69,7 @@
                     <div class="col-md-6 mb-3">
                         <label for="marketCertifications" class="form-label color">Certifications</label>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="certificationInput" placeholder="Add certification">
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="certificationInput" placeholder="Click plus icon after write Certifications">
                             <button class="btn btn-outline-secondary" type="button" id="addCertificationBtn">
                                 <i class="fas fa-plus"></i>
                             </button>
@@ -88,129 +88,131 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="marketPhone" class="form-label color">Phone Number</label>
-                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="marketPhone">
+                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="marketPhone" placeholder="+88 01*** ******">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="marketEmail" class="form-label color">Email Address</label>
-                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="marketEmail">
+                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="marketEmail" placeholder="example@gmail.com">
                     </div>
                 </div>
             </div>
             
             <!-- Opening Hours Section -->
-            <div class="bg rounded-4 p-4 my-3">
+            <div class="bg rounded-4 p-4 my-3 ">
                 <h3 class="color section-title"><i class="fas fa-clock me-2"></i> Opening Hours</h3>
                 
-                <table class="table hours-table">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Open</th>
-                            <th>Opening Time</th>
-                            <th>Closing Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="mondayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayOpenTime" value="06:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayCloseTime" value="18:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="tuesdayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayOpenTime" value="06:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayCloseTime" value="18:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="wednesdayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayOpenTime" value="06:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayCloseTime" value="18:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="thursdayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayOpenTime" value="06:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayCloseTime" value="18:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="fridayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayOpenTime" value="06:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayCloseTime" value="18:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="saturdayOpen" checked>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayOpenTime" value="07:00">
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayCloseTime" value="17:00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input focusNone" type="checkbox" id="sundayOpen">
-                                </div>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayOpenTime" value="09:00" disabled>
-                            </td>
-                            <td>
-                                <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayCloseTime" value="17:00" disabled>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-x-auto">
+                    <table class="table hours-table ">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Open</th>
+                                <th>Opening Time</th>
+                                <th>Closing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="mondayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayOpenTime" value="06:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="mondayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="tuesdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayOpenTime" value="06:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="tuesdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="wednesdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayOpenTime" value="06:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="wednesdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="thursdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayOpenTime" value="06:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="thursdayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="fridayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayOpenTime" value="06:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="fridayCloseTime" value="18:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="saturdayOpen" checked>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayOpenTime" value="07:00">
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="saturdayCloseTime" value="17:00">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input focusNone" type="checkbox" id="sundayOpen">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayOpenTime" value="09:00" disabled>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control focusNone borderColor bg-light-subtle" id="sundayCloseTime" value="17:00" disabled>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             
             <!-- Form Actions -->
@@ -229,12 +231,12 @@
     <!-- code for transport start here -->
     <div class="container py-4 forTitleUnderline">
         <div class="text-center">
-            <h1 class="mb-4 titleUnderline color"><i class="fas fa-truck me-2"></i> Truck Management</h1>
+            <h1 class="mb-4 titleUnderline color"><i class="fas fa-truck me-1"></i> Truck Management</h1>
         </div>
         <form id="truckForm">
             <!-- Header Section -->
             <div class="bg rounded-4 p-4 my-3">
-                <h3 class="section-title color"><i class="fas fa-header me-2"></i> Truck Header</h3>
+                <h3 class="section-title color"><i class="fa-solid fa-truck me-1"></i>Truck Header</h3>
                 
                 <div class="row">
                     <div class="mb-3 col-md-6">
@@ -285,19 +287,19 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="capacity" class="form-label color">Capacity (kg)</label>
-                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="capacity" value="800">
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="capacity" placeholder="e.g. 800">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="temperature" class="form-label color">Temperature Control</label>
                         <select class="form-select focusNone borderColor" id="temperature">
-                            <option value="Refrigerated">Refrigerated</option>
                             <option value="Non-Refrigerated">Non-Refrigerated</option>
+                            <option value="Refrigerated">Refrigerated</option>
                             <option value="Freezer">Freezer</option>
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="dimensions" class="form-label color">Dimensions</label>
-                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="dimensions" placeholder="4.2 x 2.1 x 2.1m">
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="dimensions" placeholder="height x width x length (m)">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="fuelType" class="form-label color">Fuel Type</label>
@@ -312,7 +314,7 @@
                 
                 <div class="mb-3">
                     <label for="truckDescription" class="form-label color">Description</label>
-                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="truckDescription" rows="3">This refrigerated van is perfect for transporting perishable goods with temperature control between -20°C to +20°C. Ideal for farmers, food distributors, and catering businesses. The van is equipped with a GPS tracking system and is maintained regularly for optimal performance.</textarea>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="truckDescription" rows="3" placeholder="This refrigerated van is perfect for transporting perishable goods with temperature control between -20°C to +20°C. Ideal for farmers, food distributors, and catering businesses. The van is equipped with a GPS tracking system and is maintained regularly for optimal performance."></textarea>
                 </div>
             </div>
             
@@ -322,58 +324,16 @@
                 
                 <div class="mb-3">
                     <label class="form-label color">Available Features</label>
-                    <div class="d-flex flex-wrap gap-2 mb-3" id="featuresContainer">
-                        <!-- Features will be added here -->
-                    </div>
                     <div class="input-group">
-                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="featureInput" placeholder="Add feature">
+                        <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="featureInput" placeholder="'Refrigeration', 'GPS Tracking', 'Lift Gate', '24/7 Support', 'Insurance'">
                         <button class="btn btn-outline-secondary" type="button" id="addFeatureBtn">
                             <i class="fas fa-plus"></i> Add
                         </button>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Delivery Process Section -->
-            <div class="bg rounded-4 p-4 my-3">
-                <h3 class="color section-title"><i class="fas fa-shipping-fast me-2"></i> Delivery Process</h3>
-                
-                <div id="processSteps">
-                    <div class="timeline-item mb-3">
-                        <div class="row g-2">
-                            <div class="col-md-8">
-                                <input type="text" class="form-control focusNone borderColor bg-light-subtle" value="1. Booking Confirmation" placeholder="Step title">
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-outline-danger w-100" type="button">
-                                    <i class="fas fa-trash"></i> Remove
-                                </button>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description">After payment, you'll receive a confirmation with driver details.</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item mb-3">
-                        <div class="row g-2">
-                            <div class="col-md-8">
-                                <input type="text" class="form-control focusNone borderColor bg-light-subtle" value="2. Truck Preparation" placeholder="Step title">
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-outline-danger w-100" type="button">
-                                    <i class="fas fa-trash"></i> Remove
-                                </button>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description">Our team prepares the van according to your temperature requirements.</textarea>
-                            </div>
-                        </div>
+                    <div class="d-flex flex-wrap gap-2 mb-3" id="featuresContainer">
+                        <!-- Features will be added here -->
                     </div>
                 </div>
-                
-                <button type="button" class="btn btn-outline-primary mt-2" id="addProcessStepBtn">
-                    <i class="fas fa-plus me-1"></i> Add Process Step
-                </button>
             </div>
             
             <!-- Availability Section -->
@@ -382,8 +342,6 @@
                 
                 <div class="mb-3">
                     <label class="form-label color">Mark Unavailable Dates</label>
-                    <input type="text" class="form-control focusNone borderColor bg-light-subtle mb-3" id="unavailableDates" placeholder="Enter dates separated by commas (e.g., 2023-08-14, 2023-08-21)">
-                    
                     <div class="table-responsive">
                         <table class="table table-bordered text-center">
                             <thead>
@@ -411,75 +369,35 @@
                 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="basePrice" class="form-label color">Base Price ($)</label>
-                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="basePrice" value="89.00" step="0.01">
+                        <label for="basePrice" class="form-label color">Base Price (TAKA)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="basePrice" placeholder="2000.00" step="10">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="refrigerationFee" class="form-label color">Refrigeration Fee ($)</label>
-                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="refrigerationFee" value="15.00" step="0.01">
-                    </div>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="timeSlots" class="form-label color">Time Slots</label>
-                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="timeSlots" rows="3" placeholder="Enter one time slot per line">Morning (8AM - 12PM)
-Afternoon (12PM - 4PM)
-Evening (4PM - 8PM)</textarea>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="tempRange" class="form-label color">Temperature Range</label>
-                    <div class="row align-items-center">
-                        <div class="col-2">
-                            <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="minTemp" value="-20" min="-50" max="0">
-                        </div>
-                        <div class="col-8">
-                            <input type="range" class="form-range" id="tempRange" min="-20" max="20" value="4">
-                        </div>
-                        <div class="col-2">
-                            <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="maxTemp" value="20" min="0" max="50">
-                        </div>
+                        <label for="refrigerationFee" class="form-label color">Refrigeration Fee (TAKA)</label>
+                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="refrigerationFee" placeholder="500.00" step="10">
                     </div>
                 </div>
             </div>
             
             <!-- Form Actions -->
             <div class="d-flex justify-content-between mt-4">
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-outline-danger rounded-5 py-1" id="cancelTruckBtn">
                     <i class="fas fa-trash-alt me-2"></i> Cancel
                 </button>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btnCode">
                     <i class="fas fa-save me-2"></i> Save Truck
                 </button>
             </div>
         </form>
     </div>
-
-    <!-- Process Step Template (Hidden) -->
-    <div id="processStepTemplate" class="d-none">
-        <div class="timeline-item mb-3">
-            <div class="row g-2">
-                <div class="col-md-8">
-                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" placeholder="Step title">
-                </div>
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger w-100" type="button">
-                        <i class="fas fa-trash"></i> Remove
-                    </button>
-                </div>
-                <div class="col-12">
-                    <textarea class="form-control focusNone borderColor bg-light-subtle" rows="2" placeholder="Step description"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- code for transport end here -->
 
     
     <!-- code for van market start here  -->
-    <div class="container py-5">
-        <h1 class="mb-4"><i class="fas fa-van-shuttle me-2"></i> Van Management</h1>
-        
+    <div class="container py-3 forTitleUnderline">
+        <div class="text-center">
+            <h1 class="mb-4 titleUnderline color"><i class="fa-solid fa-store"></i></i> Create Van Market</h1>
+        </div>
         <form id="vanForm">
             <!-- Hero Section -->
             <div class="bg rounded-4 p-4 my-3">
@@ -499,27 +417,6 @@ Evening (4PM - 8PM)</textarea>
                     <label for="vanImage" class="form-label color">Header Background Image</label>
                     <input type="file" class="form-control focusNone borderColor bg-light-subtle" id="vanImage" accept="image/*">
                 </div>
-                
-                <div class="mb-3">
-                    <label for="sellerAvatar" class="form-label color">Seller Avatar</label>
-                    <input type="file" class="form-control focusNone borderColor bg-light-subtle" id="sellerAvatar" accept="image/*">
-                </div>
-                
-                <div id="headerPreview" class="van-hero-preview d-none">
-                    <div class="van-hero-overlay">
-                        <div>
-                            <h4 id="previewVanTitle" class="mb-1">Van Title</h4>
-                            <p id="previewVanLocation" class="mb-2"><i class="fas fa-map-marker-alt me-1"></i> Current Location</p>
-                            <div class="d-flex align-items-center">
-                                <span class="rating-badge me-2">
-                                    <i class="fas fa-star me-1"></i> 4.8 (127)
-                                </span>
-                                <span class="badge bg-success bg-opacity-25 text-success">OPEN NOW</span>
-                            </div>
-                        </div>
-                    </div>
-                    <img id="previewSellerAvatar" src="#" alt="Seller" class="van-avatar d-none">
-                </div>
             </div>
             
             <!-- About Section -->
@@ -528,24 +425,9 @@ Evening (4PM - 8PM)</textarea>
                 
                 <div class="mb-3">
                     <label for="vanDescription" class="form-label color">Description</label>
-                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="vanDescription" rows="3">Our mobile market van brings farm-fresh produce directly to your neighborhood. We source directly from local organic farms and deliver the freshest fruits, vegetables, and dairy products daily.</textarea>
+                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="vanDescription" rows="3" placeholder="Our mobile market van brings farm-fresh produce directly to your neighborhood. We source directly from local organic farms and deliver the freshest fruits, vegetables, and dairy products daily."></textarea>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="vanType" class="form-label color">Van Type</label>
-                        <select class="form-select focusNone borderColor" id="vanType">
-                            <option value="Refrigerated">Refrigerated</option>
-                            <option value="Non-Refrigerated">Non-Refrigerated</option>
-                            <option value="Freezer">Freezer</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="vanCapacity" class="form-label color">Capacity (kg)</label>
-                        <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="vanCapacity" value="800">
-                    </div>
-                </div>
-                
+
                 <div class="mb-3">
                     <label class="form-label color">Status</label>
                     <div class="form-check form-switch">
@@ -562,11 +444,11 @@ Evening (4PM - 8PM)</textarea>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="contactPhone" class="form-label color">Phone Number</label>
-                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="contactPhone" placeholder="+1 (555) 123-4567">
+                        <input type="tel" class="form-control focusNone borderColor bg-light-subtle" id="contactPhone" placeholder="+88 01*** ******">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="contactEmail" class="form-label color">Email Address</label>
-                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="contactEmail" placeholder="contact@example.com">
+                        <input type="email" class="form-control focusNone borderColor bg-light-subtle" id="contactEmail" placeholder="example@gmail.com">
                     </div>
                 </div>
             </div>
@@ -689,96 +571,16 @@ Evening (4PM - 8PM)</textarea>
                 </div>
             </div>
             
-            <!-- Seller Information -->
-            <div class="bg rounded-4 p-4 my-3">
-                <h3 class="color section-title"><i class="fas fa-user-tie me-2"></i> Seller Information</h3>
-                
-                <div class="mb-3">
-                    <label for="sellerName" class="form-label color">Seller Name</label>
-                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="sellerName" value="John Peterson">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="sellerTitle" class="form-label color">Seller Title</label>
-                    <input type="text" class="form-control focusNone borderColor bg-light-subtle" id="sellerTitle" value="Farmer & Van Operator">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="sellerRating" class="form-label color">Rating</label>
-                    <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="sellerRating" min="0" max="5" step="0.1" value="4.8">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="sellerReviewCount" class="form-label color">Review Count</label>
-                    <input type="number" class="form-control focusNone borderColor bg-light-subtle" id="sellerReviewCount" value="127">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="sellerBio" class="form-label color">Bio</label>
-                    <textarea class="form-control focusNone borderColor bg-light-subtle" id="sellerBio" rows="2">Fifth-generation farmer bringing fresh produce directly to urban neighborhoods. Committed to sustainable farming and community engagement.</textarea>
-                </div>
-            </div>
-            
             <!-- Products Section -->
             <div class="bg rounded-4 p-4 my-3">
                 <h3 class="color section-title"><i class="fas fa-shopping-basket me-2"></i> Products</h3>
                 
                 <div id="productsContainer">
-                    <!-- Product 1 -->
-                    <div class="product-card">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="assets/images/potato.jpeg" class="rounded-4" alt="Product" height="80%" width="100%">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="mb-1">Fresh Potatoes</h5>
-                                        <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
-                                    </div>
-                                    <p class="small text-muted mb-2">Freshly picked, perfect for salads and sauces</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" value="৳30/kg">
-                                        <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
-                                            <option>In Stock</option>
-                                            <option>Low Stock</option>
-                                            <option>Out of Stock</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 2 -->
-                    <div class="product-card">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="assets/images/apple.jpeg" class="rounded-4" alt="Product" height="80%" width="100%">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="mb-1">Sweet Red Apple</h5>
-                                        <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
-                                    </div>
-                                    <p class="small text-muted mb-2">Sweet and crispy, perfect for snacks</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" value="৳130/kg">
-                                        <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
-                                            <option>In Stock</option>
-                                            <option selected>Low Stock</option>
-                                            <option>Out of Stock</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <div class="mt-3">
-                    <button type="button" class="btn btn-outline-primary" id="addProductBtn">
+                    <button type="button" class="btn btn-outline-primary rounded-5" id="addProductBtn">
                         <i class="fas fa-plus me-1"></i> Add Product
                     </button>
                 </div>
@@ -786,10 +588,10 @@ Evening (4PM - 8PM)</textarea>
             
             <!-- Form Actions -->
             <div class="d-flex justify-content-between mt-4">
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-outline-danger rounded-5">
                     <i class="fas fa-trash-alt me-2"></i> Cancel
                 </button>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btnCode">
                     <i class="fas fa-save me-2"></i> Save Van
                 </button>
             </div>
@@ -801,26 +603,34 @@ Evening (4PM - 8PM)</textarea>
         <div class="product-card">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="#" class="product-img" alt="Product">
+                    <img src="#" class="product-img" alt="Product" style="height: 200px; width: 300px;">
                 </div>
                 <div class="col-md-8">
                     <div class="p-3">
                         <div class="d-flex justify-content-between">
-                            <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm mb-1" placeholder="Product Name">
-                            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                            <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle mb-1" placeholder="Product Name">
+                            <button type="button" class="btn btn-sm btn-outline-danger mb-2 rounded-5 mx-2">Remove</button>
                         </div>
-                        <textarea class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm mb-2" rows="2" placeholder="Product Description"></textarea>
+                        <textarea class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle mb-2" rows="2" placeholder="Product Description"></textarea>
                         <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm w-50" placeholder="Price">
-                            <select class="form-select focusNone borderColor form-select focusNone borderColor-sm w-25">
+                            <div class="d-flex gap-2">
+                                <input type="text" class="form-control focusNone borderColor bg-light-subtle w-50" placeholder="Price">
+                                <select class="form-select focusNone borderColor form-select w-50">
+                                    <option>kg</option>
+                                    <option>gm</option>
+                                    <option>litre</option>
+                                    <option>ml</option>
+                                </select>
+                            </div>
+                            <select class="form-select focusNone borderColor form-select focusNone borderColor w-25">
                                 <option>In Stock</option>
                                 <option>Low Stock</option>
                                 <option>Out of Stock</option>
                             </select>
                         </div>
                         <div class="mt-2">
-                            <label class="small">Product Image</label>
-                            <input type="file" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle-sm">
+                            <label class="color">Product Image</label>
+                            <input type="file" class="form-control focusNone borderColor bg-light-subtle form-control focusNone borderColor bg-light-subtle">
                         </div>
                     </div>
                 </div>
@@ -943,7 +753,7 @@ Evening (4PM - 8PM)</textarea>
             if (input.value.trim()) {
                 const feature = input.value.trim();
                 const badge = document.createElement('span');
-                badge.className = 'feature-badge';
+                badge.className = 'bg-success-gradient text-white rounded-5 d-flex align-items-center px-2 py-1 m-1';
                 badge.innerHTML = `<i class="fas fa-check me-1"></i> ${feature}` + 
                                 '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
                 
@@ -954,21 +764,6 @@ Evening (4PM - 8PM)</textarea>
                 document.getElementById('featuresContainer').appendChild(badge);
                 input.value = '';
             }
-        });
-
-        // Add default features
-        const defaultFeatures = ['Refrigeration', 'GPS Tracking', 'Lift Gate', '24/7 Support', 'Insurance'];
-        defaultFeatures.forEach(feature => {
-            const badge = document.createElement('span');
-            badge.className = 'feature-badge';
-            badge.innerHTML = `<i class="fas fa-check me-1"></i> ${feature}` + 
-                            '<button type="button" class="ms-2 btn-close btn-close-white btn-sm" aria-label="Close"></button>';
-            
-            badge.querySelector('button').addEventListener('click', function() {
-                badge.remove();
-            });
-            
-            document.getElementById('featuresContainer').appendChild(badge);
         });
 
         // Add process step

@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label class="form-label fw-bold color"><i class="fa-solid fa-book"></i> Subject</label>
-                        <select class="form-select focusNone" id="subjectFilter">
+                        <select class="form-select borderColor focusNone" id="subjectFilter">
                             <option value="all">All Subjects</option>
                             <option value="math">Mathematics</option>
                             <option value="science">Science</option>
@@ -44,9 +44,10 @@
                             <option value="programming">Programming</option>
                         </select>
                     </div>
+
                     <div class="col-md-3 mb-3">
                         <label class="form-label fw-bold color"><i class="fa-solid fa-location-dot"></i> Location</label>
-                        <select class="form-select focusNone" id="locationFilter">
+                        <select class="form-select borderColor focusNone" id="locationFilter">
                             <option value="all">All Locations</option>
                             <option value="dhaka">Dhaka</option>
                             <option value="chittagong">Chittagong</option>
@@ -58,17 +59,23 @@
                             <option value="mymenshingh">Mymenshingh</option>
                         </select>
                     </div>
+
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold color"><i class="fa-solid fa-venus-mars"></i> Gender</label>
-                        <select class="form-select focusNone" id="genderFilter">
-                            <option value="both">Both</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                        <label class="form-label fw-bold color"><i class="fas fa-user me-2"></i>Profesion</label>
+                        <select class="form-select borderColor focusNone" id="genderFilter">
+                            <option value="AnyProfesion">Any Profesion</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Cooker">Cooker</option>
+                            <option value="Electrician">Electrician</option>
+                            <option value="Painter">Painter</option>
+                            <option value="Farmer">Farmer</option>
+                            <option value="Driver">Driver</option>
                         </select>
                     </div>
+
                     <div class="col-md-3 mb-3">
                         <label class="form-label fw-bold color"><i class="fa-solid fa-money-check-dollar"></i> Price Range</label>
-                        <select class="form-select focusNone" id="priceFilter">
+                        <select class="form-select borderColor focusNone" id="priceFilter">
                             <option value="all">Any Price</option>
                             <option value="0-500">Under ৳500</option>
                             <option value="500-1000">৳500 - ৳1000</option>
@@ -82,14 +89,14 @@
     
         <div class="row">
             <div class="col-lg-9 ">
-                <!-- Tutor Listings -->
-                <div class="d-flex justify-content-between align-items-center mb-4 forTitleUnderline">
-                    <h4 class="fw-bold mb-0 titleUnderline color">Available Service Provider</h4>
-                    <div class="text-muted" id="resultCount">Loading Provider...</div>
+                <!-- Service Provider Listings -->
+                <div class="d-flex justify-content-between align-items-center mb-4 section-title">
+                    <h4 class="fw-bold mb-0 color">Available Service Provider</h4>
+                    <p class="text-muted mb-0">3 provider found</p>
                 </div>
                 
-                <div class="text-center py-5" id="loadingSpinner">
-                    <div class="spinner-border text-primary" role="status">
+                <div class="text-center py-5 d-none" id="loadingSpinner">
+                    <div class="spinner-border color" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                     <p class="mt-2 text-muted">Finding Provider...</p>
@@ -100,15 +107,118 @@
                     <h5 class="fw-bold">No Service Provider Found</h5>
                     <p class="text-muted">Try adjusting your search filters</p>
                 </div>
+
                 
-                <div id="tutorListings">
-                    <!-- Service Provider cards will be loaded dynamically here -->
+                <div id="serviceProviderList">
+                    <!-- Service Provider Card 1 -->
+                    <div class="bg card border-0 rounded-4 mb-4 overflow-hidden">
+                        <!-- Card Body -->
+                        <div class="card-body rounded-4 position-relative" style="border-left: 4px solid  #0285a9;">
+                            <!-- Tutor Profile Section -->
+                            <div class="d-flex justify-content-between align-items-start mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <img src="assets/icons/user.png" alt="Tutor John Smith" width="80" height="80" 
+                                            class="rounded-circle border border-3 border-primary">
+                                        <span class="position-absolute bottom-0  end-0 bg-success rounded-circle p-1 border border-2 border-white"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="card-title fw-bold mb-1 text-dark">John Smith</h4>
+                                        <p class="m-0 text-muted small">
+                                            <i class="fas fa-envelope me-1"></i> jhonsmith@gmail.com
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between mt-2">
+                                            <div class="badge bg-primary-gradient"> Teacher</div>
+                                            <div class="badge bg-success-gradient">ID : <span>123456</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <h3 class="fw-bold color mb-1">৳2000<small class="fs-6 fw-normal">/month</small></h3>
+                                    <span class="badge bg-success bg-opacity-10 text-success">
+                                        <i class="fas fa-circle-check me-1"></i> Available
+                                    </span>
+                                    <div class="d-flex justify-content-end align-items-center color mt-2">
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="ms-2">(128)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Divider -->
+                            <hr class="my-3 bg-opacity-10">
+                            
+                            <!-- Tutor Details -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-book color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Subjects</h6>
+                                            <p class="mb-0 fw-bold">Algebra, Calculus, Geometry</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-map-marker-alt color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Location</h6>
+                                            <p class="mb-0 fw-bold">Dhaka (Dhanmondi, Mirpur)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-briefcase color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Experience</h6>
+                                            <p class="mb-0 fw-bold">5 years</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-graduation-cap color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Education</h6>
+                                            <p class="mb-0 fw-bold">Dhaka University <span>(MSc in Mathematics)</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bio Section -->
+                            <div class="bg-light bg-opacity-25 p-3 rounded-3 mb-4">
+                                <h6 class="color mb-2"><i class="fas fa-quote-left me-2"></i>About Me</h6>
+                                <p class="mb-0 fst-italic">"Experienced mathematics tutor with a passion for helping students understand complex concepts through practical examples and real-world applications."</p>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btnOutlineCode">
+                                    <i class="far fa-heart me-2"></i> Save
+                                </a>
+                                <a href="accountDetails.html" class="btnCode">
+                                    <i class="fas fa-envelope me-2"></i> Contact Tutor
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 mt-4 pt-3">
                 <!-- serch my click start-->
                 <div class="searchByCategory rounded-2 p-3 mt-3 bg">
-                    <h4 class="text-center mb-0 pb-0 color">Search By Category</h4><hr class="border-2 mt-2">
+                    <h4 class="text-center color section-title">Search By Category</h4>
                     <div class="searchByCategoryAncors">
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">female</a>
@@ -134,7 +244,6 @@
     <footer id="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/serviceProvider.js"></script>
     <script src="js/common.js"></script>
 </body>
 </html>

@@ -82,23 +82,23 @@
             </section>
             <!-- Basic Information Section -->
             <section class="bg p-4 rounded-4 mb-4">
-                <h3 class="section-title color"><i class="fas fa-user me-2 mt-4"></i> Basic Information</h3>
+                <h3 class="section-title color"><i class="fas fa-user me-2"></i> Basic Information</h3>
                 <form id="basic-info-form">
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <label for="full-name" class="form-label">Full Name</label>
-                            <input type="text" class="form-control focusNone borderColor" id="full-name" value="John Doe" required>
+                            <input type="text" class="form-control focusNone borderColor" id="full-name" placeholder="John Doe" required>
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control focusNone borderColor" id="email" value="john.doe@example.com" required>
+                            <input type="email" class="form-control focusNone borderColor" id="email" placeholder="john.doe@example.com" required>
                         </div>
                     </div>
                     
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control focusNone borderColor" id="phone" value="+1234567890" required>
+                            <input type="tel" class="form-control focusNone borderColor" id="phone" placeholder="+8801***-******" required>
                         </div>
                         <div class="col-md-6">
                             <label for="dob" class="form-label">Date of Birth</label>
@@ -107,18 +107,45 @@
                     </div>
                     
                     <div class="mb-1 row">
-                        <div class="col-md-6 mb-3">
-                            <label for="address" class="form-label">Address</label>
-                            <textarea class="form-control focusNone borderColor" id="address" rows="3">123 Mirpur, Dhaka</textarea>
+                        <div class="col-md-3 mb-3">
+                            <label for="address" class="form-label">Division</label>
+                            <select class="form-select borderColor focusNone" id="subjectFilter">
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Barishal">Barishal</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Mymenshingh">Mymenshingh</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label for="address" class="form-label">City</label>
+                            <input type="text" class="form-control focusNone borderColor" id="address" placeholder="Dhaka" required>
                         </div>
                         <div class="col-md-6">
                             <label for="address" class="form-label">Area Coverage</label>
-                            <textarea class="form-control focusNone borderColor" id="address" rows="3">Mirpur-1, Mirpur-2</textarea>
+                            <input class="form-control focusNone borderColor" id="address" rows="3" placeholder="Mirpur-1, Mirpur-2"></input>
                         </div>
                     </div>
-                    <div class="mb-1">
-                        <label for="address" class="form-label">About Me</label>
-                        <textarea class="form-control focusNone borderColor" id="address" rows="3" placeholder="Write about you..."></textarea>
+                    <div class="row">
+                        <div class="mb-1 col-md-6">
+                            <label for="address" class="form-label">About Me</label>
+                            <textarea class="form-control focusNone borderColor" id="address" rows="2" placeholder="Write about you..."></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="priceRange" class="form-label">Price Range</label>
+                            <input type="number" class="form-control focusNone borderColor" id="priceRange" placeholder="2000" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="address" class="form-label">Contract Time</label>
+                            <select class="form-select borderColor focusNone" id="subjectFilter">
+                                <option value="hour">hour</option>
+                                <option value="month">month</option>
+                                <option value="year">year</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="socialMediaLink mt-4 mb-4">

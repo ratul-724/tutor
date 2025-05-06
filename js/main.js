@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Cocker': 'cockerContainer',
         'Electrician': 'electricianContainer',
         'Painter': 'painterContainer',
-        'Farmer': 'farmerContainer'
+        'Farmer': 'farmerContainer',
+        'Driver': 'driverContainer'
     };
     
     Object.keys(sections).forEach(id => {

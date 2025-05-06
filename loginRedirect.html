@@ -206,7 +206,13 @@
             
             <!-- Professional Information Section for Farmer -->
             <section id="Farmer" class="bg p-4 rounded-4 mb-4">
-                <h3 class="section-title color"><i class="fas fa-tractor me-2"></i> Professional Information</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3 section-title">
+                    <h3 class="color"><i class="fas fa-tractor me-2"></i> Professional Information</h3>
+                    <div>
+                        <a href="createMarketTruckVan.html" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Wholesale</a>
+                        <a href="createMarketTruckVan.html" class="btnOutlineCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Van Market</a>
+                    </div>
+                </div>
                 <form id="farmer-professional-info-form">
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
@@ -335,6 +341,60 @@
                     <div class="mb-3">
                         <label for="electrical-philosophy" class="form-label">Work Philosophy</label>
                         <textarea class="form-control focusNone borderColor" id="electrical-philosophy" rows="3" placeholder="Describe your work approach and standards"></textarea>
+                    </div>
+                    <button type="submit" class="btnCode">Update Professional Information</button>
+                </form>
+            </section>
+
+            <!-- Professional Information Section for Driver -->
+            <section id="Driver" class="bg p-4 rounded-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3 section-title">
+                    <h3 class=" color"><i class="fa-solid fa-car me-1"></i> Professional Information</h3>
+                    <a href="createMarketTruckVan.html" class="btnCode"> <i class="fa-solid fa-square-plus rounded-5 mx-1"></i>Create Truck Post</a>
+                </div>
+                <form id="driver-professional-info-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="driver-specialization" class="form-label">Driving Specialization</label>
+                            <input type="text" class="form-control focusNone borderColor" id="driver-specialization" placeholder="e.g. Commercial, Chauffeur, Delivery" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="driver-experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control focusNone borderColor" id="driver-experience" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="driver-licenses" class="form-label">Licenses/Certifications</label>
+                            <input type="text" class="form-control focusNone borderColor" id="driver-licenses" placeholder="e.g. CDL, Defensive Driving Certified" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="vehicle-types" class="form-label">Vehicle Types Operated</label>
+                            <input type="text" class="form-control focusNone borderColor" id="vehicle-types" placeholder="e.g. Trucks, Sedans, Buses" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="driver-availability" class="form-label">Availability</label>
+                            <select class="form-control focusNone borderColor" id="driver-availability" required>
+                                <option value="">Select availability</option>
+                                <option value="Full-time">Full-time</option>
+                                <option value="Part-time">Part-time</option>
+                                <option value="On-call">On-call</option>
+                                <option value="Weekends">Weekends only</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="driver-languages" class="form-label">Languages Spoken</label>
+                            <input type="text" class="form-control focusNone borderColor" id="driver-languages" placeholder="e.g. English, Spanish, French">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="driver-philosophy" class="form-label">Service Philosophy</label>
+                        <textarea class="form-control focusNone borderColor" id="driver-philosophy" rows="3" placeholder="Describe your approach to customer service and safe driving"></textarea>
                     </div>
                     <button type="submit" class="btnCode">Update Professional Information</button>
                 </form>

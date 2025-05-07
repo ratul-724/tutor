@@ -57,7 +57,8 @@
                             <div class="profile-info">
                                 <h2 class="mb-1 color fw-semibold" id="teacher-name">John Doe</h2>
                                 <p class="text-white mb-1"><i class="fa-solid fa-location-dot"></i> <span id="location">123 Mirpur, Dhaka, Bangladesh</span></p>
-                                <p class="text-white rounded-4 mb-0 bg-success-gradient d-inline-block px-3 py-1" id="professionName">Teacher</p>
+                                <p class="text-white rounded-4 mb-0 bg-primary-gradient d-inline-block px-2 fw-semibold" id="professionName">Teacher</p>
+                                <p class="text-white rounded-4 mb-0 bg-success-gradient d-inline-block fw-semibold px-2">ID : <span>123456</span></p>
                                 <div class="d-flex justify-content-center justify-content-md-start mt-2">
                                     <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
@@ -66,12 +67,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profileHeaderright text-center text-md-end mt-3 mt-md-0">
-                            <div>
-                                <h4 class="mb-1 color fw-semibold" id="teacher-id">ID: 123456</h4>
+                        <div class="profileHeaderright mt-3 mt-md-0">
+                            <div class="text-center text-md-end">
+                                <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-2">
+                                    <div class="form-check form-switch d-inline-block ">
+                                        <input class="form-check-input focusNone ms-1" type="checkbox" id="Availability" checked>
+                                    </div>
+                                    <span class="text-muted">Availability</span>
+                                </div>
                                 <p class="text-muted mb-0 small">Joined: January 1, 2020</p>
                                 <p class="text-muted mb-0 small">Last Updated: September 15, 2023</p>
-                                <a href="accountDetails.html" class="btnCode mt-2 py-1">View Profile</a>
+                                <a href="accountDetails.html" class="btnOutlineCode text-white mt-2 py-1">View Profile</a>
                             </div>
                         </div>
                     </div>
@@ -142,6 +148,7 @@
                             <label for="address" class="form-label">Contract Time</label>
                             <select class="form-select borderColor focusNone" id="subjectFilter">
                                 <option value="hour">hour</option>
+                                <option value="day">day</option>
                                 <option value="month">month</option>
                                 <option value="year">year</option>
                             </select>

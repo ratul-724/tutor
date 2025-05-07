@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutor Finder Board</title>
+    <title>service provider | Media</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
@@ -34,14 +34,10 @@
             <div class="card-body p-4 rounded-4" style="border-left: 5px solid rgb(87, 145, 207);">
                 <div class="row">
                     <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold color"><i class="fa-solid fa-book"></i> Subject</label>
-                        <select class="form-select borderColor focusNone" id="subjectFilter">
-                            <option value="all">All Subjects</option>
-                            <option value="math">Mathematics</option>
-                            <option value="science">Science</option>
-                            <option value="english">English</option>
-                            <option value="history">ICT</option>
-                            <option value="programming">Programming</option>
+                        <label class="form-label fw-bold color"><i class="fa-solid fa-clock-rotate-left me-2"></i>Availability</label>
+                        <select class="form-select borderColor focusNone" id="availabilityFilter">
+                            <option value="Available">Available</option>
+                            <option value="Unavailable">Unavailable</option>
                         </select>
                     </div>
 
@@ -109,13 +105,12 @@
                 </div>
 
                 
-                <div id="serviceProviderList">
-                    <!-- Service Provider Card 1 -->
-                    <div class="bg card border-0 rounded-4 mb-4 overflow-hidden">
-                        <!-- Card Body -->
-                        <div class="card-body rounded-4 position-relative" style="border-left: 4px solid  #0285a9;">
+                <div id="serviceProviderList" class="row g-4">
+                    <!-- Tutor -->
+                    <div>
+                        <div class="card-body bg p-3 rounded-4 position-relative" style="border-left: 4px solid  #0285a9;">
                             <!-- Tutor Profile Section -->
-                            <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div class="d-flex justify-content-between align-items-start">
                                 <div class="d-flex align-items-center">
                                     <div class="position-relative me-3">
                                         <img src="assets/icons/user.png" alt="Tutor John Smith" width="80" height="80" 
@@ -124,11 +119,9 @@
                                     </div>
                                     <div>
                                         <h4 class="card-title fw-bold mb-1 text-dark">John Smith</h4>
-                                        <p class="m-0 text-muted small">
-                                            <i class="fas fa-envelope me-1"></i> jhonsmith@gmail.com
-                                        </p>
-                                        <div class="d-flex align-items-center justify-content-between mt-2">
-                                            <div class="badge bg-primary-gradient"> Teacher</div>
+                                        <p class="m-0 text-muted small"><i class="fas fa-phone me-1"></i> +880 1234-567890</p>
+                                        <div class="d-flex align-items-center justify-content-evenly mt-2">
+                                            <div class="badge bg-primary-gradient me-2"> Teacher</div>
                                             <div class="badge bg-success-gradient">ID : <span>123456</span></div>
                                         </div>
                                     </div>
@@ -146,17 +139,17 @@
                                 </div>
                             </div>
                             <!-- Divider -->
-                            <hr class="my-3 bg-opacity-10">
+                            <hr class="bg-opacity-10 my-2 p-0">
                             
                             <!-- Tutor Details -->
-                            <div class="row g-3 mb-4">
+                            <div class="row g-3 mb-2">
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-center">
                                         <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
-                                            <i class="fas fa-book color"></i>
+                                            <i class="fa-solid fa-user-gear color"></i>
                                         </div>
                                         <div>
-                                            <h6 class="mb-0 text-muted small">Subjects</h6>
+                                            <h6 class="mb-0 text-muted small">Specialized</h6>
                                             <p class="mb-0 fw-bold">Algebra, Calculus, Geometry</p>
                                         </div>
                                     </div>
@@ -185,21 +178,21 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="d-flex align-items-center">
-                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
-                                            <i class="fas fa-graduation-cap color"></i>
+                                        <div class="bg-primary color bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fa-solid fa-certificate"></i>
                                         </div>
                                         <div>
-                                            <h6 class="mb-0 text-muted small">Education</h6>
-                                            <p class="mb-0 fw-bold">Dhaka University <span>(MSc in Mathematics)</span></p>
+                                            <h6 class="mb-0 text-muted small">Certification</h6>
+                                            <p class="mb-0 fw-bold">Dhaka University (<span>MSc in Mathematics</span>)</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- Bio Section -->
-                            <div class="bg-light bg-opacity-25 p-3 rounded-3 mb-4">
-                                <h6 class="color mb-2"><i class="fas fa-quote-left me-2"></i>About Me</h6>
-                                <p class="mb-0 fst-italic">"Experienced mathematics tutor with a passion for helping students understand complex concepts through practical examples and real-world applications."</p>
+                            <div class="bg-light bg-opacity-25 px-3 rounded-3 pt-2 my-2">
+                                <h6 class="color"><i class="fas fa-quote-left me-2"></i>About Me</h6>
+                                <p class="pb-1 fst-italic">"Experienced mathematics tutor with a passion for helping students understand complex concepts through practical examples and real-world applications."</p>
                             </div>
                             
                             <!-- Action Buttons -->
@@ -208,32 +201,139 @@
                                     <i class="far fa-heart me-2"></i> Save
                                 </a>
                                 <a href="accountDetails.html" class="btnCode">
-                                    <i class="fas fa-envelope me-2"></i> Contact Tutor
+                                    <i class="fa-solid fa-address-book me-1"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Farmer -->
+                    <div>
+                        <div class="card-body bg p-3 rounded-4 position-relative" style="border-left: 4px solid  #0285a9;">
+                            <!-- Farmer Profile Section -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <img src="assets/icons/user.png" alt="Farmer John Smith" width="80" height="80" 
+                                            class="rounded-circle border border-3 border-primary">
+                                        <span class="position-absolute bottom-0  end-0 bg-success rounded-circle p-1 border border-2 border-white"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="card-title fw-bold mb-1 text-dark">John Doe</h4>
+                                        <p class="m-0 text-muted small"><i class="fas fa-phone me-1"></i> +880 1234-567890</p>
+                                        <div class="d-flex align-items-center justify-content-evenly mt-2">
+                                            <div class="badge bg-primary-gradient me-2"> Farmer</div>
+                                            <div class="badge bg-success-gradient">ID : <span>123456</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <h3 class="fw-bold color mb-1">৳2000<small class="fs-6 fw-normal">/day</small></h3>
+                                    <span class="badge bg-success bg-opacity-10 text-success">
+                                        <i class="fas fa-circle-check me-1"></i> Available
+                                    </span>
+                                    <div class="d-flex justify-content-end align-items-center color mt-2">
+                                        <i class="fas fa-star text-warning me-1"></i>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="ms-2">(128)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Divider -->
+                            <hr class="bg-opacity-10 my-2 p-0">
+                            
+                            <!-- Farmer Details -->
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fa-solid fa-user-gear color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Specialized</h6>
+                                            <p class="mb-0 fw-bold">Rice, Vegetables</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-map-marker-alt color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Location</h6>
+                                            <p class="mb-0 fw-bold">Mymenshingh (Trishal)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fas fa-briefcase color"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Experience</h6>
+                                            <p class="mb-0 fw-bold">7 years</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary color bg-opacity-10 p-2 rounded-circle me-3">
+                                            <i class="fa-solid fa-certificate"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-muted small">Certification</h6>
+                                            <p class="mb-0 fw-bold">Organic, Traditional</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bio Section -->
+                            <div class="bg-light bg-opacity-25 px-3 rounded-3 pt-2 my-2">
+                                <h6 class="color"><i class="fas fa-quote-left me-2"></i>About Me</h6>
+                                <p class="pb-1 fst-italic">"Experienced farmer with expertise in modern and traditional farming techniques. Provides fresh produce and farm labor services."</p>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btnOutlineCode">
+                                    <i class="far fa-heart me-2"></i> Save
+                                </a>
+                                <a href="accountDetails.html" class="btnCode">
+                                    <i class="fa-solid fa-address-book me-1"></i> Contact
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mt-4 pt-3">
+            <div class="col-lg-3 mt-5 pt-3">
                 <!-- serch my click start-->
-                <div class="searchByCategory rounded-2 p-3 mt-3 bg">
+                <div class="searchByCategory rounded-4 p-3 bg">
                     <h4 class="text-center color section-title">Search By Category</h4>
                     <div class="searchByCategoryAncors">
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">BUET</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">female</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Science</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Farmer</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Market</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Math</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Physics</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Driver</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Painter</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Electrician</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chemistry</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Chef</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Biology</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Cooker</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">English</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Vegetable</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Bangla</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">DU</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">Dhaka</a>
                         <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">male</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">public</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">JU</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All Subjects</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary m-1 ">All</a>
                     </div>
                 </div>
                 <!-- serch my click end -->

@@ -38,7 +38,11 @@
                             <form action="">
                                 <div>
                                     <input type="text" class="form-control mb-3 focusNone borderColor" id="phone" placeholder="Phone Number" required>
-                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="password" placeholder="Password" required>
+
+                                    <div class="position-relative">
+                                        <input type="password" class="form-control mb-3 focusNone borderColor pe-4" id="password" placeholder="Password" required>
+                                        <i class="fa fa-eye position-absolute translate-middle-y me-1" style="cursor: pointer; top: 20px; right: 0;" onclick="togglePasswordVisibility('password', this)"></i>
+                                    </div>
 
                                     <div class="d-flex justify-content-between mb-3">
                                         <div class="form-check">

@@ -61,7 +61,7 @@
                                 <div class="d-flex gap-2">
                                     <select name="" id="userType" class="form-select mb-3 focusNone borderColor" required>
                                         <option value="" disabled selected>Select Account Type</option>
-                                        <option value="serviceTaker">Service Taker</option>
+                                        <option value="serviceRecipient ">Service recipient </option>
                                         <option value="teacher">Teacher</option>
                                         <option value="farmer">Farmer</option>
                                         <option value="painter">Painter</option>
@@ -76,9 +76,15 @@
                                     </select>
                                 </div>
                                 <div class="d-flex gap-2">
-                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="password" placeholder="Password" required>
-                                    <input type="password" class="form-control mb-3 focusNone borderColor" id="confirmPassword" placeholder="Confirm Password" required>
-                                </div>
+                                    <div class="position-relative flex-grow-1">
+                                        <input type="password" class="form-control mb-3 focusNone borderColor pe-4" id="password" placeholder="Password" required>
+                                        <i class="fa fa-eye position-absolute translate-middle-y me-1" style="cursor: pointer; top: 20px; right: 0;" onclick="togglePasswordVisibility('password', this)"></i>
+                                    </div>
+                                    <div class="position-relative flex-grow-1">
+                                        <input type="password" class="form-control mb-3 focusNone borderColor pe-4" id="confirmPassword" placeholder="Confirm Password" required>
+                                        <i class="fa fa-eye position-absolute translate-middle-y me-1" style="cursor: pointer; top: 20px; right: 0;" onclick="togglePasswordVisibility('confirmPassword', this)"></i>
+                                    </div>
+                                </div>                 
 
                                 <input type="submit" value="Register" class="btn text-white bg-success-gradient fw-semibold w-100 mb-3 focusNone" id="registerBtn">
 

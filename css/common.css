@@ -198,7 +198,9 @@ body{
 .cardPop:hover .cardImgPop {
     transform: scale(1.1);
 }
+/* card hover effect end */
 
+/* navbar start */
 .navbar {
     transition: all 0.3s ease-in-out;
 }
@@ -296,7 +298,7 @@ body{
 /* Mobile View start*/
 @media (max-width: 968px) {
     .navbar-brand img{
-        height: 50px;
+        height: 40px;
         padding: 0;
     }
     .small-toggler {
@@ -323,6 +325,12 @@ body{
          display: none;
     } 
 
+}
+
+@media (max-width: 576px) {
+    .search-container {
+        width: 100% !important;
+    }
 }
 /* Mobile View End */
 /* code for some common function start */
@@ -480,6 +488,8 @@ body{
     0%, 60%, 100% { transform: translateY(0); }
     30% { transform: translateY(-5px); }
 }
+
+
 @media (max-width: 576px) {
     .chat-widget { bottom: 20px; right: 20px; }
     .chat-container { width: 300px; }
